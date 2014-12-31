@@ -2,7 +2,9 @@
 ## Jackie Gleason
 ###### Originally Presented 01-08-15 at CodeMash
 
-* About
+---
+
+### About
 
 We will explore real life experiances with Grails and AngularJS.
 
