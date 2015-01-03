@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Configure and deploy
+  Coherence deployment tiers</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50011" id="WLACH50011"></a>
+
+
+  <h1 class="topictitle1">Configure and deploy
+  Coherence deployment tiers</h1>
+
+  <div><!--topic body-->
+    <div class="prereq"><p class="sectiontitle"><b>
+        Before you begin
+      </b></p>
+      <div><ul>
+          <li>Verify whether your domain's topology can support separate
+          WebLogic Server clusters to represent Coherence deployment tiers.
+          See <a href="http://docs.oracle.com/middleware/1212/wls/CLUST/planning.htm">Cluster
+          Architectures</a> in <i>Administering Clusters for Oracle
+          WebLogic Server</i>.</li>
+
+          <li>Create and package a Coherence Grid Archive (GAR) module for any
+          application modules (Web application, EJB, etc.) that use Coherence.
+          See <a href="http://docs.oracle.com/middleware/1212/wls/WLCOH/create-application.htm#A260733">Packaging Coherence Applications</a>.</li>
+        </ul></div>
+    </div>
+
+    <div><br>
+      <p>For optimal performance or scalability, Coherence is typically setup
+      using WebLogic Server clusters. For example, a WebLogic Server cluster
+      is used as a Coherence data tier and hosts one or more storage-enabled
+      servers; a different WebLogic Server cluster is used as a Coherence
+      application tier and hosts one or more applications; and lastly (if
+      required) a different WebLogic Server cluster is used as a Coherence
+      proxy tier and hosts one or more Coherence proxy servers. See <a href="http://docs.oracle.com/middleware/1212/wls/CLUST/coherence.htm#BABGBBDB">Creating Coherence
+      Deployment Tiers</a> in <i><i>Administering Clusters for Oracle
+      WebLogic Server</i></i>.</p>
+
+      <p><a name="WLACH50011__startstop1198902" id="WLACH50011__startstop1198902"></a>The main steps for
+      configuring and deploying Coherence cluster tiers in WebLogic Server
+      are:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50011__servers1160647" id="WLACH50011__servers1160647"></a>Configure the
+        Coherence cluster resources in your domain that will be associated
+        with the corresponding WebLogic Server cluster tiers. See <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=coherence.CreateCoherenceClusters">Create Coherence
+  clusters</a></span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50011__servers1160647" id="WLACH50011__servers1160647"></a>Configure a
+        Coherence data tier. A data tier is a WebLogic Server cluster that is
+        associated with a Coherence cluster and hosts any number of
+        storage-enabled managed Coherence servers. Managed Coherence servers
+        in the data tier store and distribute data (both primary and backup)
+        on the cluster.</span>
+
+        <ol type="a">
+          <li>
+            <span>Create a WebLogic Server cluster. See <a href="http://docs.oracle.com/middleware/1212/wls/WLACH/taskhelp/clusters/ConfigureClusters.html">Configure clusters</a>.</span>
+          </li>
+
+          <li>
+            <span>Leave the default clustering mode (Unicast) and change the
+            broadcast channel as required, or use the drop-down list and
+            select Multicast and provide a different multicast address and
+            port if required.</span>
+          </li>
+
+          <li>
+            <span>Navigate to the <span>Cluster &gt; Coherence</span>
+            tab of the data tier cluster.</span>
+          </li>
+
+          <li>
+            <span>Use the <b>Coherence Cluster</b> drop-down
+            list and select a Coherence cluster to associate it with the
+            WebLogic Server cluster. By default, the Managed Coherence Servers
+            assigned to this WebLogic Server cluster will be storage-enabled
+            coherence members (cache servers) as indicated by the
+            <b>Local Storage Enabled</b> field.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span>Create managed Coherence servers for your data tier. See <a href="http://docs.oracle.com/middleware/1212/wls/WLACH/taskhelp/domainconfig/CreateManagedServers.html">Create Managed Servers</a>.</span>
+
+        <ol type="a">
+          <li>
+            <span>Click the <b>Yes</b> option to add the server
+            to an existing cluster, and use the drop-down list to select the
+            <i>data tier</i> WebLogic Server cluster. The managed server
+            inherits the Coherence settings from the data tier WebLogic Server
+            cluster.</span>
+          </li>
+
+          <li>
+            <span>Repeat this step to create additional managed servers as
+            required.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span><a name="WLACH50011__servers1160647" id="WLACH50011__servers1160647"></a>Configure a
+        Coherence application tier. An application tier is a WebLogic Server
+        cluster that is associated with a Coherence cluster and hosts any
+        number of storage-disabled managed Coherence servers. Managed
+        Coherence servers in the application tier host applications (cache
+        factory clients) and are Coherence cluster members.</span>
+
+        <ol type="a">
+          <li>
+            <span>Configure a WebLogic Server cluster. Leave the default
+            clustering mode (Unicast) and change the broadcast channel as
+            required, or use the drop-down list and select Multicast and
+            provide a different multicast address and port if required. See
+            <a href="http://docs.oracle.com/middleware/1212/wls/WLACH/taskhelp/clusters/ConfigureClusters.html">Configure clusters</a>.</span>
+          </li>
+
+          <li>
+            <span>Navigate to the <span>Cluster &gt; Coherence</span>
+            tab of the data tier cluster.</span>
+          </li>
+
+          <li>
+            <span>Use the <b>Coherence Cluster</b> drop-down
+            list and select a Coherence cluster to associate it with the
+            WebLogic Server cluster. Disable storage on the application tier
+            by clearing the <b>Local Storage Enabled</b> check
+            box. The managed Coherence servers assigned to this WebLogic
+            Server cluster will be <i>storage-disabled</i> Coherence members
+            (clients). Servers in the application tier should never be used to
+            store cache data.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span>Repeat step 4 to add managed Coherence servers to your
+        application tier. However, use the <b>Coherence
+        Cluster</b> drop-box to select the <i>application tier</i>
+        WebLogic Server cluster, so the managed server inherits the Coherence
+        settings from the application tier cluster. Repeat this step to create
+        additional managed servers as required.</span>
+      </li>
+
+      <li>
+        <span>If necessary, configure a Coherence proxy tier. Managed Coherence
+        proxy servers allow Coherence*Extend clients to use Coherence caches
+        without being cluster members.</span>
+
+        <ol type="a">
+          <li>
+            <span>Repeat step 5 to configure a Coherence proxy tier. Make sure
+            to clear the <b>Local Storage Enabled</b> check
+            box, so the managed Coherence servers assigned to this WebLogic
+            Server cluster will be <i>storage-disabled</i> Coherence members
+            (clients).</span>
+          </li>
+
+          <li>
+            <span>Repeat step 4 to add managed Coherence servers to your proxy
+            tier, using the <b>Coherence Cluster</b> drop-box
+            to select the <i>proxy tier</i> WebLogic Server cluster, so the
+            managed server inherits the Coherence settings from the proxy tier
+            cluster.</span>
+          </li>
+
+          <li>
+            <span>Repeat this step to create additional managed servers as
+            required.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span>Deploy your Coherence GAR module to your WebLogic Server domain.
+        Standalone GARs get deployed the same way as other JavaEE module. See
+        <a href="http://docs.oracle.com/middleware/1212/wls/WLCOH/deploy-wls-coherence.htm">Deploying
+        Coherence Applications in WebLogic Server</a>.</span>
+      </li>
+    </ol>
+  </div>
+
+  <div class="relatedtopics"><p class="relatedtopics">
+	Related Tasks
+   </p><ul><li><a href="http://docs.oracle.com/middleware/1212/wls/CLUST/planning.htm">Cluster Architectures</a></li><li><a href="http://docs.oracle.com/middleware/1212/wls/CLUST/coherence.htm#BABJDGDJ">Overview of
+    Coherence Clusters</a></li><li><a href="http://docs.oracle.com/middleware/1212/wls/WLCOH/index.html">Developing Oracle Coherence
+    Applications for Oracle WebLogic Server</a></li></ul></div>
+
+  <div class="relatedtopics"><p class="relatedtopics">
+	Related Topics
+   </p><ul><li><a href="http://docs.oracle.com/middleware/1212/wls/CLUST/overview.htm">Administering Clusters for
+    Oracle WebLogic Server</a></li><li><a href="http://docs.oracle.com/middleware/1212/wls/NODEM/index.html">Administering
+    Node Manager for Oracle WebLogic Server</a></li></ul></div>
+
+
+</body></html>

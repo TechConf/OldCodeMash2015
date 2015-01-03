@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="Core.core.server.serverservicesjolt.title">
+<title>Servers: Services: Jolt</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Servers: Services: Jolt</h1>
+<p>
+<a href="#table">Column Display</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Jolt is a Java-based client API that manages requests from generic Java
+    clients and applications on any J2EE Web server to Oracle Tuxedo services.
+    Jolt connection pools enable applications on WebLogic Server to connect to
+    Oracle Tuxedo domains.</p>
+<p>This page summarizes the Jolt connection pools that have been targeted
+    to the current server.</p>
+<p>The Jolt API is embedded within the WebLogic Server API and is
+    accessible from a servlet or any other application running on WebLogic
+    Server. Each WebLogic Server instance creates its Jolt connection pools at
+    startup and assigns connections to servlets or applications as needed. The
+    connection pool connects to Oracle Tuxedo via a Jolt Service Listener
+    (JSL), which runs on the Tuxedo server.</p>
+<h4>
+<a name="table">Column Display</a>
+</h4>
+<p>You can show fewer or additional data points on this page by expanding <b>Customize this table</b> and modifying the <b>Column Display</b> list. Each data point displays in its own table column.</p>
+<p>The following table lists all of the data points that you can display in columns on this page.</p>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="core.server.serverservicesjolt.table.label.name">Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The name of this Jolt connection pool.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#Name">JoltConnectionPoolMBean.Name</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="core.server.serverservicesjolt.table.label.primaryaddresses">Primary Addresses</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getPrimaryAddresses"></a><a name="PrimaryAddresses"></a>
+<p>The list of addresses for the primary Jolt Server Listeners (JSLs) on the Tuxedo system.</p>
+<p>The format of each address is: <tt>//hostname:port</tt>. Multiple addresses should be separated by commas.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#PrimaryAddresses">JoltConnectionPoolMBean.PrimaryAddresses</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="core.server.serverservicesjolt.table.label.failoveraddresses">Failover Addresses</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getFailoverAddresses"></a><a name="FailoverAddresses"></a>
+<p>The list of Jolt Server Listeners (JSLs) addresses that is used if the connection pool cannot estabilish connections to the Primary Addresses, or if the primary connections fail.</p>
+<p>The format of each address is: <tt>//hostname:port</tt>. Multiple addresses should be separated by commas.</p>
+<p>These JSLs need not reside on the same host as the primary JSLs.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#FailoverAddresses">JoltConnectionPoolMBean.FailoverAddresses</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="core.server.serverservicesjolt.table.label.minimumpoolsize">Minimum Pool Size</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMinimumPoolSize"></a><a name="MinimumPoolSize"></a>
+<p>The minimum number of connections to be added to this Jolt connection pool when WebLogic Server starts.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#MinimumPoolSize">JoltConnectionPoolMBean.MinimumPoolSize</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="core.server.serverservicesjolt.table.label.maximumpoolsize">Maximum Pool Size</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMaximumPoolSize"></a><a name="MaximumPoolSize"></a>
+<p>The maximum number of connections that can be made from this Jolt connection pool.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#MaximumPoolSize">JoltConnectionPoolMBean.MaximumPoolSize</a></code>
+</p>
+<p>Minimum value: <code>1</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="core.server.serverservicesjolt.table.label.userrole">User Role</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUserRole"></a><a name="UserRole"></a>
+<p>The Tuxedo user role for this Jolt connection pool. (This is required only when the security level in the Tuxedo domain is <tt>USER_AUTH</tt>, <tt>ACL</tt>, or <tt>MANDATORY_ACL</tt>).</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#UserRole">JoltConnectionPoolMBean.UserRole</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="core.server.serverservicesjolt.table.label.securitycontextenabled">Security Context Enabled</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getSecurityContextEnabled"></a><a name="SecurityContextEnabled"></a>
+<p>Indicates whether this Jolt connection pool passes the connection pool's security context (user name, password and other information) from the WebLogic Server user to the Tuxedo domain.</p>
+<p>If you enable the connection pool to pass the security context, you must start the Jolt Service Handler (JSH) with the <code>-a</code> option. When the JSH gets a message with the caller's identity, it calls <code>impersonate_user()</code> to get the appkey for the user. JSH caches the appkey, so the next time the caller makes a request, the appkey is retrieved from the cache and the request is forwarded to the service. A cache is maintained by each JSH, which means that there will be a cache maintained for all the session pools connected to the same JSH.</p>
+<p>You must enable Security Context if Tuxedo requires secured connections.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#SecurityContextEnabled">JoltConnectionPoolMBean.SecurityContextEnabled</a></code>
+</p>
+<p>Secure value: <code>true</code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="core.server.serverservicesjolt.table.label.recvtimeout">RecvTimeout</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUserRole"></a><a name="UserRole"></a>
+<p>The Tuxedo user role for this Jolt connection pool. (This is required only when the security level in the Tuxedo domain is <tt>USER_AUTH</tt>, <tt>ACL</tt>, or <tt>MANDATORY_ACL</tt>).</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#UserRole">JoltConnectionPoolMBean.UserRole</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="core.server.serverservicesjolt.table.label.username">User Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUserName"></a><a name="UserName"></a>
+<p>A user name that applications specify to connect to this Jolt connection pool. If Security Context is enabled, this name must be the name of an authorized Tuxedo user. (Specifying a Tuxedo user name is required if the Tuxedo authentication level is <code>USER_AUTH</code>.)</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#UserName">JoltConnectionPoolMBean.UserName</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=jolt.TargetJoltConnectionPools">Target Jolt connection
+  pools</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=jolt.ConnectToTuxedoViaJolt">Connect to Tuxedo with
+  Jolt</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=jolt.MonitorActiveJoltConnectionPoolInstances">Monitor Jolt connection
+  pools</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=jolt.ResetJoltConnectionPools">Reset Jolt
+  connections</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=jolt.DeleteJoltConnectionPools">Delete Jolt connection
+  pools</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

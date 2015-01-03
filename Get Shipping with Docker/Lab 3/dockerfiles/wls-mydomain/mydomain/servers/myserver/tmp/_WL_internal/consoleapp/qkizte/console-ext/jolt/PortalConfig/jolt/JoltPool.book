@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+             xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+             xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd"><!--
+	Definition file for the jolt connnection pool page, will be used to replace the dummy one in console. 
+	Copyright (c) 2007,2009, Oracle and/or its affiliates. All rights reserved.
+-->
+          <netuix:page markupName="page" markupType="Page"
+               definitionLabel="JoltConnectionPoolTablePage"
+               title="not.used"
+               hidden="true"
+               presentationClass="page-table">
+            <netuix:meta name="helpid" content="Jolt.jolt.joltconnectionpool.title;jolt"/>
+            <netuix:meta name="breadcrumb" content="joltconnectionpools.title"/>
+            <netuix:meta name="skeleton-resource-bundle" content="jolt"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="JoltJoltConnectionPoolTablePortlet"
+                                  contentUri="/PortalConfig/jolt/JoltConnectionPoolTable.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+</portal:root>

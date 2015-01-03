@@ -1,0 +1,13 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Don Taylor -- Enterprise Architect / Prototype Developer
+    Jim Greene -- Enterprise Architect / Prototype Developer
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Normalize.css, jQuery, Modernizr, Zurb Foundation, Zurb Foundation Icons
+    Moment.js, Moment-Timezone.js, Toastr.js

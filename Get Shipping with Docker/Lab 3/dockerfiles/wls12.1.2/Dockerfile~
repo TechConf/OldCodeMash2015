@@ -1,0 +1,14 @@
+# wls12.1.2 Docker image is based off jdk1.7.0_51
+FROM vmaephqcidrh018:5000/jdk1.7.0_51
+
+# The ECD team maintains this image
+MAINTAINER Enterprise Component Delivery Team
+
+# Add WLS and Configure
+ADD wls1212_dev.zip /appl/oracle/middleware/wls/wls1212_dev.zip
+RUN cd /appl/oracle/middleware/wls && unzip wls1212_dev.zip
+RUN cd /appl/oracle/middleware/wls && rm wls1212_dev.zip
+ENV MW_HOME /appl/oracle/middleware/wls/wls12120
+RUN cd /appl/oracle/middleware/wls/wls12120 && ./configure.sh -silent
+
+

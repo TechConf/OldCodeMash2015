@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN" "http://java.sun.com/products/javahelp/toc_2_0.dtd">
+<toc xml:lang="en-US" version="2.0" categoryclosedimage="chapter" topicimage="topic">
+  <tocitem text="Jolt Extension" target="intro">
+    <tocitem text="How Do I..." target="blank">
+      
+  <tocitem text="Connect to Tuxedo with Jolt" target="jolt.ConnectToTuxedoViaJolt"/>
+  <tocitem text="Create Jolt connection pools" target="jolt.CreateJoltConnectionPools"/>
+  <tocitem text="Delete Jolt connection pools" target="jolt.DeleteJoltConnectionPools"/>
+  <tocitem text="Target Jolt connection pools" target="jolt.TargetJoltConnectionPools"/>
+  <tocitem text="Configure a user identity" target="jolt.ConfigureAUserSecurityIdentity"/>
+  <tocitem text="Configure Jolt addresses" target="jolt.ConfigureConnectionFailureHandling"/>
+  <tocitem text="Configure Jolt startup and shutdown classes" target="jolt.CreateJoltStartupAndShutdownClasses"/>
+  <tocitem text="Monitor Jolt connection pools" target="jolt.MonitorActiveJoltConnectionPoolInstances"/>
+  <tocitem text="Reset Jolt connections" target="jolt.ResetJoltConnectionPools"/>
+
+  </tocitem>
+
+    <tocitem text="Jolt Reference" target="blank">
+    
+  <tocitem text="Servers: Services: Jolt" target="Corecoreserverserverservicesjolttitle"/>
+  <tocitem text="Clusters: Services: Jolt" target="Corecoreclusterclusterservicesjolttitle"/>
+  <tocitem text="Jolt Connection Pools" target="Joltjoltjoltconnectionpooltitle"/>
+  <tocitem text="Create a Jolt Connection Pool" target="Joltjoltcreatejoltconnectionpoolpagetitle"/>
+  <tocitem text="Delete a Jolt Connection Pool" target="Joltjoltdeletejoltconnectionpoolpagetitle"/>
+  <tocitem text="Jolt Connection Pools: Configuration: General" target="Joltjoltjoltconnectionpoolconfiggeneraltitle"><tocitem text="Jolt Connection Pools: Configuration: Addresses" target="Joltjoltjoltconnectionpoolconfigaddressestitle"/><tocitem text="Jolt Connection Pools: Configuration: User" target="Joltjoltjoltconnectionpoolconfigusertitle"/><tocitem text="Jolt Connection Pools: Configuration: SSL" target="Joltjoltjoltconnectionpoolconfigssltitle"/></tocitem>
+  <tocitem text="Jolt Connection Pools: Target and Deploy" target="Joltjoltjoltconnectionpooltargetdeploytitle"/>
+  <tocitem text="Jolt Connection Pools: Monitoring" target="Joltjoltjoltconnectionpoolmonitortitle"/>
+  <tocitem text="Jolt Connection Pools: Notes" target="Joltjoltjoltconnectionpoolnotestitle"/>
+
+  </tocitem>
+  </tocitem>
+</toc>

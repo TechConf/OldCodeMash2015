@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+             xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+             xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd"><!-- 
+    Definition file for the pages in the wtc.server subsystem
+    of the WebLogic Server administration console
+    
+    Copyright (c) 2004,2009, Oracle and/or its affiliates. All rights reserved.
+-->
+  <netuix:book definitionLabel="WTCServer" title="book.title" markupName="book"
+               markupType="Book"
+               presentationClass="invisible">
+    <netuix:content>
+      <netuix:book definitionLabel="WTCServerBook" title="book.title" markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="WtcServerPages"
+                       title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:book markupName="book" markupType="Book" definitionLabel="WtcServerBook"
+                               title="WtcServerBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                  <!-- Definition for the configuration tab -->
+                  <netuix:book markupName="book" markupType="Book"
+                                   definitionLabel="WTCServerConfigurationPage"
+                                   title="tab.configuration.label">
+                        <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+                        <netuix:content>
+                      <!-- Definition for the general tab -->
+                      <netuix:page markupName="page" markupType="Page" definitionLabel="WTCServerGeneralPage"
+                                       title="tab.general.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="WTC.wtc.server.wtcservergeneral.title;wtc"/>
+                            <netuix:meta name="breadcrumb-context" content="handle"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerGeneralPortlet"
+                                                          contentUri="/PortalConfig/wtc/server/WTCServerGeneral.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the localdomains tab -->
+                      <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="WTCServerContentsLocalDomains"
+                                       title="tab.localdomains.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="WTC.wtc.server.wtcservercontentslocaldomains.title;wtc"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerContentsLocalDomainsPortlet"
+                                                          contentUri="/PortalConfig/wtc/server/WTCServerContentsLocalDomains.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the remotedomains tab -->
+                      <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="WTCServerContentsRemoteDomainsPage"
+                                       title="tab.remotedomains.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="WTC.wtc.server.wtcservercontentsremotedomains.title;wtc"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerContentsRemoteDomainsPortlet"
+                                                          contentUri="/PortalConfig/wtc/server/WTCServerContentsRemoteDomains.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the exported tab -->
+                      <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="WTCServerContentsExportedPage"
+                                       title="tab.exported.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="WTC.wtc.server.wtcservercontentsexported.title;wtc"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerContentsExportedPortlet"
+                                                          contentUri="/PortalConfig/wtc/server/WTCServerContentsExported.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the imported tab -->
+                      <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="WTCServerContentsImportedPage"
+                                       title="tab.imported.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="WTC.wtc.server.wtcservercontentsimported.title;wtc"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerContentsImportedPortlet"
+                                                          contentUri="/PortalConfig/wtc/server/WTCServerContentsImported.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the passwords tab -->
+                      <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="WTCServerContentsPasswordsPage"
+                                       title="tab.passwords.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="WTC.wtc.server.wtcservercontentspasswords.title;wtc"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerContentsPasswordsPortlet"
+                                                          contentUri="/PortalConfig/wtc/server/WTCServerContentsPasswords.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the resources tab -->
+                      <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="WTCServerContentsResourcesPage"
+                                       title="tab.resources.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="WTC.wtc.server.wtcservercontentsresources.title;wtc"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerContentsResourcesPortlet"
+                                                          contentUri="/PortalConfig/wtc/server/WTCServerContentsResources.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the queuingbridge tab -->
+                      <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="WTCServerContentsQueuingBridgePage"
+                                       title="tab.queuingbridge.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="WTC.wtc.server.wtcservercontentsqueuingbridge.title;wtc"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerContentsQueuingBridgePortlet"
+                                                          contentUri="/PortalConfig/wtc/server/WTCServerContentsQueuingBridge.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the redirects tab -->
+                      <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="WTCServerContentsRedirectsPage"
+                                       title="tab.redirects.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="WTC.wtc.server.wtcservercontentsredirects.title;wtc"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerContentsRedirectsPortlet"
+                                                          contentUri="/PortalConfig/wtc/server/WTCServerContentsRedirects.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+                      <!-- Definition for the control tab -->
+                  <netuix:book markupName="book" markupType="Book" definitionLabel="WTCServerControlPage"
+                                   title="tab.control.label">
+                        <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+                        <netuix:content>
+                          <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="WTCServerControlConnections"
+                                       title="tab.connections.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="WTC.wtc.server.wtcservercontrolconnections.title;wtc"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerControlConnectionsPortlet"
+                                                          contentUri="/PortalConfig/wtc/server/WTCServerControlConnections.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <netuix:page markupName="page" markupType="Page" definitionLabel="WTCServerControlServices"
+                                       title="tab.services.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="WTC.wtc.server.wtcservercontrolservices.title;wtc"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerControlServicesPortlet"
+                                                          contentUri="/PortalConfig/wtc/server/WTCServerControlServices.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+                      <!-- Definition for the targetdeploy tab -->
+                  <netuix:page markupName="page" markupType="Page" definitionLabel="WTCServerTargetDeployPage"
+                                   title="tab.targets.label"
+                                   presentationClass="page-content">
+                        <netuix:meta name="helpid" content="WTC.wtc.server.wtcservertargetdeploy.title;wtc"/>
+                        <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerTargetDeployPortlet"
+                                                      contentUri="/PortalConfig/wtc/server/WTCServerTargetdeploy.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      <!-- Definition for the notes tab -->
+                  <netuix:page markupName="page" markupType="Page" definitionLabel="WTCServerNotesPage"
+                                   title="tab.notes.label"
+                                   presentationClass="page-content">
+                        <netuix:meta name="helpid" content="WTC.wtc.server.wtcservernotes.title;wtc"/>
+                        <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerNotesPortlet"
+                                                      contentUri="/PortalConfig/wtc/server/WTCServerNotes.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCServer creation assistant page -->
+  <netuix:book definitionLabel="CreateWTCServer" title="assistant.create.wtcserver.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CreateWTCServerPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.server.createwtcserver.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CreateWTCServerPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CreateWTCServer.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCServer clone assistant page -->
+  <netuix:book definitionLabel="CloneWTCServer" title="assistant.create.wtcserver.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CloneWTCServerPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.server.createwtcserver.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CloneWTCServerPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CloneWTCServer.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCServer deletion assistant page -->
+  <netuix:book definitionLabel="DeleteWTCServer" title="assistant.delete.wtcserver.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="DeleteWTCServerPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.server.deletewtcserver.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="DeleteWTCServerPortlet"
+                                          contentUri="/PortalConfig/wtc/server/DeleteWTCServer.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCExport creation assistant page -->
+  <netuix:book definitionLabel="CreateWTCExport" title="assistant.create.wtcexport.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CreateWTCExportPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.exports.createwtcexport.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CreateWTCExportPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CreateWTCExport.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCExport clone assistant page -->
+  <netuix:book definitionLabel="CloneWTCExport" title="assistant.clone.wtcexport.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CloneWTCExportPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.exports.createwtcexport.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CloneWTCExportPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CloneWTCExport.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCExport deletion assistant page -->
+  <netuix:book definitionLabel="DeleteWTCExport" title="assistant.delete.wtcexport.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="DeleteWTCExportPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.exports.deletewtcexport.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="DeleteWTCExportPortlet"
+                                          contentUri="/PortalConfig/wtc/server/DeleteWTCExport.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCImport creation assistant page -->
+  <netuix:book definitionLabel="CreateWTCImport" title="assistant.create.wtcimport.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CreateWTCImportPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.imports.createwtcimport.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CreateWTCImportPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CreateWTCImport.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCImport clone assistant page -->
+  <netuix:book definitionLabel="CloneWTCImport" title="assistant.clone.wtcimport.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CloneWTCImportPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.imports.createwtcimport.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CloneWTCImportPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CloneWTCImport.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCImport deletion assistant page -->
+  <netuix:book definitionLabel="DeleteWTCImport" title="assistant.delete.wtcimport.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="DeleteWTCImportPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.imports.deletewtcimport.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="DeleteWTCImportPortlet"
+                                          contentUri="/PortalConfig/wtc/server/DeleteWTCImport.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCLocalTuxDom creation assistant page -->
+  <netuix:book definitionLabel="CreateWTCLocalTuxDom"
+                   title="assistant.create.wtclocaltuxdom.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CreateWTCLocalTuxDomPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.localtuxdom.createwtclocaltuxdom.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CreateWTCLocalTuxDomPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CreateWTCLocalTuxDom.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCLocalTuxDom clone assistant page -->
+  <netuix:book definitionLabel="CloneWTCLocalTuxDom"
+                   title="assistant.clone.wtclocaltuxdom.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CloneWTCLocalTuxDomPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.localtuxdom.createwtclocaltuxdom.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CloneWTCLocalTuxDomPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CloneWTCLocalTuxDom.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCLocalTuxDom deletion assistant page -->
+  <netuix:book definitionLabel="DeleteWTCLocalTuxDom"
+                   title="assistant.delete.wtclocaltuxdom.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="DeleteWTCLocalTuxDomPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.localtuxdom.deletewtclocaltuxdom.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="DeleteWTCLocalTuxDomPortlet"
+                                          contentUri="/PortalConfig/wtc/server/DeleteWTCLocalTuxDom.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCRemoteTuxDom creation assistant page -->
+  <netuix:book definitionLabel="CreateWTCRemoteTuxDom"
+                   title="assistant.create.wtcremotetuxdom.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CreateWTCRemoteTuxDomPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.remotetuxdom.createwtcremotetuxdom.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CreateWTCRemoteTuxDomPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CreateWTCRemoteTuxDom.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCRemoteTuxDom clone assistant page -->
+  <netuix:book definitionLabel="CloneWTCRemoteTuxDom"
+                   title="assistant.clone.wtcremotetuxdom.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CloneWTCRemoteTuxDomPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.remotetuxdom.createwtcremotetuxdom.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CloneWTCRemoteTuxDomPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CloneWTCRemoteTuxDom.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCRemoteTuxDom deletion assistant page -->
+  <netuix:book definitionLabel="DeleteWTCRemoteTuxDom"
+                   title="assistant.delete.wtcremotetuxdom.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="DeleteWTCRemoteTuxDomPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.remotetuxdom.deletewtcremotetuxdom.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="DeleteWTCRemoteTuxDomPortlet"
+                                          contentUri="/PortalConfig/wtc/server/DeleteWTCRemoteTuxDom.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCPassword creation assistant page -->
+  <netuix:book definitionLabel="CreateWTCPassword" title="assistant.create.wtcpassword.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CreateWTCPasswordPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.password.createwtcpassword.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CreateWTCPasswordPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CreateWTCPassword.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCPassword clone assistant page -->
+  <netuix:book definitionLabel="CloneWTCPassword" title="assistant.clone.wtcpassword.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CloneWTCPasswordPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.password.createwtcpassword.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CloneWTCPasswordPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CloneWTCPassword.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCPassword deletion assistant page -->
+  <netuix:book definitionLabel="DeleteWTCPassword" title="assistant.delete.wtcpassword.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="DeleteWTCPasswordPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.password.deletewtcpassword.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="DeleteWTCPasswordPortlet"
+                                          contentUri="/PortalConfig/wtc/server/DeleteWTCPassword.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCResources creation assistant page -->
+  <netuix:book definitionLabel="CreateWTCResources"
+                   title="assistant.create.wtcresources.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CreateWTCResourcesPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.resources.createwtcresource.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CreateWTCResourcesPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CreateWTCResources.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCResources deletion assistant page -->
+  <netuix:book definitionLabel="DeleteWTCResources"
+                   title="assistant.delete.wtcresources.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="DeleteWTCResourcesPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.resources.deletewtcresource.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="DeleteWTCResourcesPortlet"
+                                          contentUri="/PortalConfig/wtc/server/DeleteWTCResources.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCtBridgeGlobal creation assistant page -->
+  <netuix:book definitionLabel="CreateWTCtBridgeGlobal"
+                   title="assistant.create.wtctbridgeglobal.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="CreateWTCtBridgeGlobalPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.tbridge.createwtctbridgeglobal.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CreateWTCtBridgeGlobalPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CreateWTCtBridgeGlobal.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCtBridgeGlobal deletion assistant page -->
+  <netuix:book definitionLabel="DeleteWTCtBridgeGlobal"
+                   title="assistant.delete.wtctbridgeglobal.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="DeleteWTCtBridgeGlobalPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.tbridge.deletewtctbridgeglobal.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="DeleteWTCtBridgeGlobalPortlet"
+                                          contentUri="/PortalConfig/wtc/server/DeleteWTCtBridgeGlobal.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCtBridgeRedirect creation assistant page -->
+  <netuix:book definitionLabel="CreateWTCtBridgeRedirect"
+                   title="assistant.create.wtctbridgeredirect.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="CreateWTCtBridgeRedirectPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.tbridge.createwtctbridgeredirect.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CreateWTCtBridgeRedirectPortlet"
+                                          contentUri="/PortalConfig/wtc/server/CreateWTCtBridgeRedirect.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCtBridgeRedirect deletion assistant page -->
+  <netuix:book definitionLabel="DeleteWTCtBridgeRedirect"
+                   title="assistant.delete.wtctbridgeredirect.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="DeleteWTCtBridgeRedirectPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.tbridge.deletewtctbridgeredirect.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="DeleteWTCtBridgeRedirectPortlet"
+                                          contentUri="/PortalConfig/wtc/server/DeleteWTCtBridgeRedirect.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCServer StartConnection assistant page -->
+  <netuix:book definitionLabel="WTCServerStartConnectionBook"
+                   title="assistant.wtcconnection.start.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="WTCServerStartConnection"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.wtcserver.lifecycle.page.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerStartConnectionPortlet"
+                                          contentUri="/PortalConfig/wtc/server/WTCServerStartConnection.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCServer StopConnection assistant page -->
+  <netuix:book definitionLabel="WTCServerStopConnectionBook"
+                   title="assistant.wtcconnection.stop.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="WTCServerStopConnection"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.wtcserver.lifecycle.page.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerStopConnectionPortlet"
+                                          contentUri="/PortalConfig/wtc/server/WTCServerStopConnection.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCServer Suspendservice assistant page -->
+  <netuix:book definitionLabel="WTCServerSuspendServiceBook"
+                   title="assistant.wtcservice.suspend.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="WTCServerSuspendService"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.wtcserver.lifecycle.page.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerSuspendServicePortlet"
+                                          contentUri="/PortalConfig/wtc/server/WTCServerSuspendService.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the WTCServer ResumeService assistant page -->
+  <netuix:book definitionLabel="WTCServerResumeServiceBook"
+                   title="assistant.wtcservice.resume.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="WTCServerResumeService"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="WTC.wtc.wtcserver.lifecycle.page.title;wtc"/>
+            <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerResumeServicePortlet"
+                                          contentUri="/PortalConfig/wtc/server/WTCServerResumeService.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+    </netuix:content>
+  </netuix:book>
+
+</portal:root>

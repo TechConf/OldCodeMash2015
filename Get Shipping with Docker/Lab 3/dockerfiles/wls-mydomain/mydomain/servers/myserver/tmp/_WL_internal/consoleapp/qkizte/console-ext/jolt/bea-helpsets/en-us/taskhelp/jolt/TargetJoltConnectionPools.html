@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Target Jolt connection
+  pools</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50909" id="WLACH50909"></a>
+
+
+  <h1 class="topictitle1">Target Jolt connection
+  pools</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p>After you create a Jolt connection pool you assign (target) it to
+      servers or clusters. Only servlets or applications on the targeted
+      servers or clusters can access Oracle Tuxedo.</p>
+
+      <div>When you target all or part of a cluster, the Administration Console
+      initiates a two-phase deployment. In general, such a deployment ensures
+      that if the deployment fails for one active server, it fails for all
+      active servers.<p><b>Note: </b>To temporarily disable access to
+      Tuxedo, un-target the connection pool from all servers by deselecting
+      them on the Target and Deploy tab.</p></div>
+
+      <p>To target Jolt connection pools:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50909__jolt1105580" id="WLACH50909__jolt1105580"></a>In the
+        Administration Console, expand <b>Interoperability</b>
+        and select <b>Jolt Connection Pools</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50909__jolt1106892" id="WLACH50909__jolt1106892"></a>On the Jolt
+        Connection Pools page, click the name of a connection pool.</span>
+      </li>
+
+      <li>
+        <span>Select the <span>Target and Deploy</span> tab.</span>
+      </li>
+
+      <li>
+        <span>To target servers that are not part of a cluster, under
+        <b>Servers</b>, check the server name.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50909__jolt1106893" id="WLACH50909__jolt1106893"></a>To target all or
+        part of a cluster, under <b>Clusters</b> check one or
+        more clusters. Then:</span>
+
+        <ul>
+          <li>To assign a connection pool to the all of the servers in a
+          cluster, select <b>All servers in the
+          cluster</b>.</li>
+
+          <li>To assign a connection pool to selected servers in a
+          cluster, select <b>Part of the cluster</b>. Check
+          one or more servers in the cluster.</li>
+        </ul>
+      </li>
+
+      <li>
+        <span><a name="WLACH50909__jolt1106897" id="WLACH50909__jolt1106897"></a>Click
+        <b>Save</b>.</span>
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+
+    <div class="postreq"><p class="sectiontitle"><b>
+        After you finish
+      </b></p>
+      <p>On each targeted server, <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=jolt.CreateJoltStartupAndShutdownClasses">Configure Jolt startup and
+  shutdown classes</a>.</p>
+    </div>
+  </div>
+
+
+</body></html>

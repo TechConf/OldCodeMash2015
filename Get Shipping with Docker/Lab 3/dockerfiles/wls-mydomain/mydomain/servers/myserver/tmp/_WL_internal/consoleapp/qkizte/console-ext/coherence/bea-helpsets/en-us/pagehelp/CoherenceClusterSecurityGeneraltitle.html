@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="CoherenceClusterSecurityGeneral.title">
+<title>Coherence Cluster: Security: General</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Coherence Cluster: Security: General</h1>
+<p>
+<a href="#table">Column Display</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to enable the Coherence security framework. If you do not
+    enable security, then any non-WebLogic Server JVM can access the Coherence
+    cluster without going through WebLogic Server authorization.</p>
+<ul>
+      
+<li>Use the <b>Identity</b> fields to enter a private key alias and
+      password to a keystore that contains the Coherence private key.
+      Alternatively, you can leave the fields blank to use the server's SSL
+      identity. The same Coherence identity must be found on every server
+      keystore.</li>
+      
+<li>Use the <b>Identity Assertion</b> fields to enter a Coherence
+      identity asserter implementation to restrict Coherence*Extend client
+      access to a Coherence proxy service. The implementation validates an
+      identity token that is created by an identity transformer on a
+      Coherence*Extend client.</li>
+    
+</ul>
+<p>Use the <b>Services</b> and <b>Caches</b> tabs to define WebLogic
+    Server roles and policies for authorizing access to Coherence services and
+    caches, respectively.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="CoherenceClusterSecurityGeneral.SecurityFrameworkEnabled">Security Framework Enabled</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getSecurityFrameworkEnabled"></a><a name="SecurityFrameworkEnabled"></a>
+<p>Check if security framework is enabled</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterParamsBean.html#SecurityFrameworkEnabled">CoherenceClusterParamsBean.SecurityFrameworkEnabled</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="CoherenceClusterSecurityGeneral.CoherenceIdentityAlias">Private Key Alias</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getCoherenceIdentityAlias"></a><a name="CoherenceIdentityAlias"></a>
+<p>The string alias used to store and retrieve the Coherence Identity private key in the keystore. This private key is associated with the Coherence Identity digital certificate. If this alias is null, the Server SSL identity alias will be used.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceKeystoreParamsBean.html#CoherenceIdentityAlias">CoherenceKeystoreParamsBean.CoherenceIdentityAlias</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="CoherenceClusterSecurityGeneral.CoherencePrivateKeyPassPhrase">Private Key Pass Phrase</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getCoherencePrivateKeyPassPhrase"></a><a name="CoherencePrivateKeyPassPhrase"></a>
+<p>The passphrase used to retrieve the private key for the Coherence Identity specified in the server configured keystore. This passphrase is assigned to the private key when the private key is generated.  Note that when you get the value of this attribute, WebLogic Server does the following:</p>
+<ol> 
+<li> 
+<p>Retrieves the value of the <code>CoherencePrivateKeyPassPhrase</code> attribute.</p> 
+</li>  
+<li> 
+<p>Decrypts the value and returns the unencrypted passphrase.</p> 
+</li> 
+</ol>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceKeystoreParamsBean.html#CoherencePrivateKeyPassPhrase">CoherenceKeystoreParamsBean.CoherencePrivateKeyPassPhrase</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="CoherenceClusterSecurityGeneral.ClassName">Identity Asserter Class</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getClassName"></a><a name="ClassName"></a>
+<p>The class that implements com.tangosol.net.security.IdentityAsserter. If className is empty, no IdentityAsserter will be configured.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceIdentityAsserterBean.html#ClassName">CoherenceIdentityAsserterBean.ClassName</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="CoherenceClusterSecurityGeneral.InitParams">Identity Asserter Constructor Arguments</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>Enter types and values of the arguments that will be passed to the
+        identity asserter's constructor, e.g.
+        <code>java.lang.Integer=120</code> or <code>java.lang.String=my
+        string</code>.</p>
+<p>Each argument must be of the form <code>type=value</code>. Blank
+        lines are ignored, and white space around the types and values is
+        trimmed. Multi-line values are not supported. The arguments are passed
+        to the constructor in the order they are specified on the page.</p>
+<p>The currently supported types are:</p>
+<ul>
+          
+<li>java.lang.String (or string)</li>
+          
+<li>java.lang.Boolean (or boolean)</li>
+          
+<li>java.lang.Integer (or int)</li>
+          
+<li>java.lang.Long (or long)</li>
+          
+<li>java.lang.Double (or double)</li>
+          
+<li>java.math.BigDecimal (or decimal)</li>
+          
+<li>java.io.File (or file)</li>
+          
+<li>java.sql.Date (or date)</li>
+          
+<li>java.sql.Time (or time)</li>
+          
+<li>java.sql.Timestamp (or datetime)</li>
+        
+</ul>
+<p>Each value must be appropriate for its corresponding type. Read the
+        Javadoc for the type's Java class to find out the correct format.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4>
+<a name="table">Column Display</a>
+</h4>
+<p>You can show fewer or additional data points on this page by expanding <b>Customize this table</b> and modifying the <b>Column Display</b> list. Each data point displays in its own table column.</p>
+<p>The following table lists all of the data points that you can display in columns on this page.</p>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="CoherenceClusterSecurityGeneral.IdentityAsserterInitParam.Name">Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getName"></a><a name="Name"></a>
+<p>A unique name that identifies this initialization parameter.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceInitParamBean.html#Name">CoherenceInitParamBean.Name</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="CoherenceClusterSecurityGeneral.IdentityAsserterInitParam.Type">Type</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getType"></a><a name="Type"></a>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceInitParamBean.html#Type">CoherenceInitParamBean.Type</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="CoherenceClusterSecurityGeneral.IdentityAsserterInitParam.Value">Value</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getValue"></a><a name="Value"></a>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceInitParamBean.html#Value">CoherenceInitParamBean.Value</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.CreateCoherenceClusters">Create Coherence
+  clusters</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureCoherenceClusters">Configure Coherence
+  clusters</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureWellKnownAddresses">Configure well known
+  addresses</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.TargetCoherenceClusters">Target Coherence
+  clusters</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureCoherenceLogging">Configure Coherence
+  logging</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/COHWL/index.html">Deploying Applications with
+    Oracle WebLogic Server ActiveCache</a>
+</li>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/CLUST/features.htm#CLUST127">Communications in a
+    Cluster</a>
+</li>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/CLUST/setup.htm#CLUST440">Cluster Addressing
+    Information</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

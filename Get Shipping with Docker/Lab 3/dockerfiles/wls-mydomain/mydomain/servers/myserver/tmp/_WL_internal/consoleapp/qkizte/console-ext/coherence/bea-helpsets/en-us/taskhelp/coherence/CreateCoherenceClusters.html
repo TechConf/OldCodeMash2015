@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Create Coherence
+  clusters</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50001" id="WLACH50001"></a>
+
+
+  <h1 class="topictitle1">Create Coherence
+  clusters</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="WLACH50001__startstop1208194" id="WLACH50001__startstop1208194"></a>Coherence clusters enable
+      applications to share data management and caching services among server
+      instances and clusters hosting the applications that need access to
+      them.</p>
+
+      <p>Configure cluster properties and then target Coherence clusters to
+      WebLogic Server instances or clusters in the domain.</p>
+
+      <p><a name="WLACH50001__startstop1198902" id="WLACH50001__startstop1198902"></a>To create Coherence
+      clusters:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50001__servers1160647" id="WLACH50001__servers1160647"></a>In the left pane
+        of the Console, expand <b>Environment</b> and select
+        <b>Coherence Clusters</b>.</span>
+
+        <span>
+          <p>The <span>Summary of Coherence Clusters</span> page
+          displays the Coherence cluster configurations that have been created
+          in this domain.</p>
+        </span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50001__startstop1213516" id="WLACH50001__startstop1213516"></a>Click
+        <b>New</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50001__startstop1204881" id="WLACH50001__startstop1204881"></a>On the
+        <span>Configuration: General</span> page, adjust the following
+        Coherence cluster properties values, if needed:</span>
+
+        <ol type="a">
+          <li>
+            <span><b>Name</b>: The name of this Coherence
+            cluster configuration.</span>
+          </li>
+
+          <li>
+            <span><b>Use a Custom Cluster Configuration
+            File</b>: Select whether to configure this cluster using
+            an external custom configuration file and click
+            <b>Next</b>.</span>
+
+             
+              <p><b>File Path</b>: Provide the file path
+              location of configuration file. The file must be present locally
+              on the Administration Server. Click <b>Next</b>
+              to select targets for the Coherence cluster.</p>
+            
+          </li>
+
+          <li>
+            <span><b>Clustering Mode</b>: Select either unicast
+            or multicast and specify the related settings.</span>
+          </li>
+
+          <li>
+            <span><b>Unicast Listen Address</b>: The IP address
+            for the cluster unicast listener.</span>
+          </li>
+
+          <li>
+            <span><b>Unicast Listen Port</b>: The port for the
+            cluster unicast listener. Valid values are between 0 and
+            65535.</span>
+          </li>
+
+          <li>
+            <span><b>Unicast Port Auto Adjust</b>: Specifies
+            whether the unicast port will be automatically incremented if the
+            port cannot be bound because it is already in use.</span>
+          </li>
+
+          <li>
+            <span><b>Multicast Listen Address</b>: The IP
+            address for the cluster multicast listener.</span>
+          </li>
+
+          <li>
+            <span><b>Multicast Listen Port</b>: The multicast
+            port used by cluster members to communicate with each other. Valid
+            values are between 1 and 65535.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span><a name="WLACH50001__startstop1202599" id="WLACH50001__startstop1202599"></a>Click
+        <b>Next</b> to select targets for the Coherence
+        cluster or click <b>Finish</b>.</span>
+      </li>
+
+      <li>
+        <span>Optionally, select WebLogic Server instances or clusters on which
+        this cluster configuration is accessible and click
+        <b>Finish</b>.</span>
+
+        <span>
+          <div>The new cluster configuration appears in the <span>Coherence
+          Clusters</span> table. <p><b>Note: </b>All Coherence changes
+          require a restart.</p></div>
+        </span>
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+  </div>
+
+
+</body></html>

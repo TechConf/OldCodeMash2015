@@ -1,0 +1,3 @@
+FROM taylodl/centos
+VOLUME /appl/derby/databases
+CMD /bin/bash -c "echo derby-volume container running; while true; do sleep 1; done"

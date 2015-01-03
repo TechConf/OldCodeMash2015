@@ -1,0 +1,150 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.taylodl</groupId>
+  <artifactId>jaxRS-maven</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>jaxRS-maven</name>
+
+  <properties>
+    <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <wls.mydomain>/appl/oracle/middleware/wls/wls12120/user_projects/domains/mydomain</wls.mydomain>
+    <wls.mydomain.autodeploy>${wls.mydomain}/autodeploy</wls.mydomain.autodeploy>
+    <wls.mydomain.port>7001</wls.mydomain.port>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>6.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <compilerArguments>
+            <endorseddirs>${endorsed.dir}</endorseddirs>
+          </compilerArguments>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.1.1</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.1</version>
+        <executions>
+          <execution>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${endorsed.dir}</outputDirectory>
+              <silent>true</silent>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>javax</groupId>
+                  <artifactId>javaee-endorsed-api</artifactId>
+                  <version>6.0</version>
+                  <type>jar</type>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+<!--
+	  <execution>
+	    <phase>pre-integration-test</phase>
+	    <goals>
+	      <goal>copy</goal>
+	    </goals>
+	    <configuration>
+	      <artifactItems>
+		<artifactItem>
+		  <groupId>${project.groupId}</groupId>
+		  <artifactId>${project.artifactId}</artifactId>
+		  <version>${project.version}</version>
+		  <type>${project.packaging}</type>
+		</artifactItem>
+	      </artifactItems>
+	      <outputDirectory>${wls.mydomain.autodeploy}</outputDirectory>
+	    </configuration>
+	  </execution>
+-->
+        </executions>
+      </plugin>
+      <plugin>
+	<!-- This is how we launch a Docker container -->
+	<groupId>org.jolokia</groupId>
+	<artifactId>docker-maven-plugin</artifactId>
+	<version>0.10.5</version>
+	<configuration>
+	  <!-- Use https://127.0.0.1:2376 for client SSL in Docker 1.3 -->
+	  <dockerHost>http://127.0.0.1:2375</dockerHost>
+	  <images>
+	    <image>
+	      <name>taylodl/wls-jaxRS-maven</name>
+	      <build>
+		<from>taylodl/wls-mydomain</from>
+		<exportDir>${wls.mydomain.autodeploy}</exportDir>
+		<assemblyDescriptorRef>artifact</assemblyDescriptorRef>
+		<ports>
+		  <port>7001</port>
+		</ports>
+		<command>${wls.mydomain}/bin/startWebLogic.sh</command>
+	      </build>
+	      <run>
+		<ports>
+		  <port>${wls.mydomain.port}:7001</port>
+		</ports>
+                <wait>
+		  <url>http://localhost:${wls.mydomain.port}/jaxRS-maven-1.0-SNAPSHOT/resources/helloworld/don/taylor</url>
+		  <time>60000</time>
+		</wait>
+	      </run>
+	    </image>
+	  </images>
+	</configuration>
+	<executions>
+	  <!-- Start container during pre-integration-test phase -->
+	  <execution>
+	    <id>start</id>
+	    <phase>pre-integration-test</phase>
+	    <goals>
+	      <goal>build</goal>
+	      <goal>start</goal>
+	    </goals>
+	  </execution>
+	  <!-- Stop container during post-integration-test phase -->
+	  <execution>
+	    <id>stop</id>
+	    <phase>post-integration-test</phase>
+	    <goals>
+	      <goal>stop</goal>
+	    </goals>
+	  </execution>
+	</executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

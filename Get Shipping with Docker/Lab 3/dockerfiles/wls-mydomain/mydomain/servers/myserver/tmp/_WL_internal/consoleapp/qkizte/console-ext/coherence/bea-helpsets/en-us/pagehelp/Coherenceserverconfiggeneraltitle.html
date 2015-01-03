@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="Coherence.serverconfiggeneral.title">
+<title>Coherence Server: Configuration: General</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Coherence Server: Configuration: General</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to configure Coherence servers when using ActiveCache.
+    Coherence servers are stand-alone cache servers, dedicated JVM instances
+    responsible for maintaining and managing cached data.</p>
+<p>
+<b>Note:</b> This page provides backward compatibility for existing
+    Coherence ActiveCache implementations. For new implementations, Coherence
+    is integrated within WebLogic Server as a container subsystem; therefore,
+    Coherence is typically set up in tiers within a WebLogic Server domain,
+    either as a single, managed server instance or using WebLogic Server
+    clusters.</p>
+<p>These settings are used for starting managed Coherence cache servers
+    only. The specified settings will not be used by an Administration Server
+    instance that is started by Node Manager.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfiggeneral.name">Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>An alphanumeric name for this server instance.</p>
+<p>This field will not accept spaces.</p>
+<p>The name must be unique for all configuration objects in the
+        domain. Within a domain, each server, machine, cluster, JDBC
+        connection pool, virtual host, and any other resource type must be
+        named uniquely and must not use the same name as the domain.</p>
+<p>The server name is not used as part of the URL for applications
+        that are deployed on the server. It is for your identification
+        purposes only. The server name displays in the Administration Console,
+        and if you use WebLogic Server command-line utilities or APIs, you use
+        this name to identify the server.</p>
+<p>In order to define a unicode server name, the underlying operating
+        system must support unicode characters.</p>
+<p>After you have created a server, you cannot change its name.
+        Instead, clone the server and provide a new name for the clone.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#Name">CoherenceServerMBean.Name</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfiggeneral.machine">Machine</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMachine"></a><a name="Machine"></a>
+<p>The WebLogic Server host computer (machine) on which this server is meant to run.</p>
+<p>If you want to use a Node Manager to start this server, you must assign the server to a machine and you must configure the machine for the Node Manager.</p>
+<p>You cannot change this value if a server instance is already running.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ManagedExternalServerMBean.html#Machine">ManagedExternalServerMBean.Machine</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfiggeneral.cluster">Cluster</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getCoherenceClusterSystemResource"></a><a name="CoherenceClusterSystemResource"></a>
+<p>The system-level Coherence cluster resource associated with this server.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#CoherenceClusterSystemResource">CoherenceServerMBean.CoherenceClusterSystemResource</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfiggeneral.unicastlistenaddress">Unicast Listen Address</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastListenAddress"></a><a name="UnicastListenAddress"></a>
+<p>The IP address for the cluster unicast listener.</p>
+<p>This attribute may be used to override the value of the referenced Coherence cluster.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#UnicastListenAddress">CoherenceServerMBean.UnicastListenAddress</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfiggeneral.unicastlistenport">Unicast Listen Port</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastListenPort"></a><a name="UnicastListenPort"></a>
+<p>The port for the cluster unicast listener.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#UnicastListenPort">CoherenceServerMBean.UnicastListenPort</a></code>
+</p>
+<p>Minimum value: <code>1</code>
+</p>
+<p>Maximum value: <code>65535</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfiggeneral.unicastportautoadjust">Unicast Port Auto Adjust Enabled</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastPortAutoAdjust"></a><a name="UnicastPortAutoAdjust"></a>
+<p>Specifies whether the unicast port will be automatically incremented if the port cannot be bound because it is already in use.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#UnicastPortAutoAdjust">CoherenceServerMBean.UnicastPortAutoAdjust</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfiggeneral.autorestart">Auto Restart Enabled</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getAutoRestart"></a><a name="AutoRestart"></a>
+<p>Specifies whether the Node Manager can automatically restart this server if it crashes or otherwise goes down unexpectedly.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ManagedExternalServerMBean.html#AutoRestart">ManagedExternalServerMBean.AutoRestart</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfiggeneral.restartintervalseconds">Restart Interval</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRestartIntervalSeconds"></a><a name="RestartIntervalSeconds"></a>
+<p>The number of seconds during which this server can be restarted, up to the number of times specified in RestartMax.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ManagedExternalServerMBean.html#RestartIntervalSeconds">ManagedExternalServerMBean.RestartIntervalSeconds</a></code>
+</p>
+<p>Minimum value: <code>300</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfiggeneral.restartmax">Restart Maximum Tries</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRestartMax"></a><a name="RestartMax"></a>
+<p>The number of times that the Node Manager can restart this server within the interval specified in RestartIntervalSeconds.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ManagedExternalServerMBean.html#RestartMax">ManagedExternalServerMBean.RestartMax</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfiggeneral.restartdelayseconds">Restart Delay</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRestartDelaySeconds"></a><a name="RestartDelaySeconds"></a>
+<p>The number of seconds the Node Manager should wait before restarting this server.</p>
+<p>After killing a server process, the system might need several seconds to release the TCP port(s) the server was using. If Node Manager attempts to restart the Managed Server while its ports are still active, the startup attempt fails.</p>
+<p>If AutoMigration is enabled and RestartDelaySeconds is 0, the RestartDelaySeconds is automatically set to the lease time. This prevents the server from failing to restart after migration when the previous lease is still valid.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ManagedExternalServerMBean.html#RestartDelaySeconds">ManagedExternalServerMBean.RestartDelaySeconds</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfiggeneral.nmsocketcreatetimeoutinmillis">Node Manager Connect Timeout</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getNMSocketCreateTimeoutInMillis"></a><a name="NMSocketCreateTimeoutInMillis"></a>
+<p>Returns the timeout value to be used by NodeManagerRuntime when creating a socket connection to the agent. Default set high as SSH agent may require a high connection establishment time.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ManagedExternalServerMBean.html#NMSocketCreateTimeoutInMillis">ManagedExternalServerMBean.NMSocketCreateTimeoutInMillis</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.CreateCoherenceServers">Create Coherence
+  servers</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureStartupArgumentsForCoherenceServers">Configure startup
+  arguments for Coherence servers</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.StartCoherenceServers">Start Coherence servers
+  from the Administration Console</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=machines.BindToProtectedPortsOnServersStartedByNodeManager">Configure Node
+  Manager</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://www.oracle.com/pls/topic/lookup?ctx=fmw121200&amp;id=COHAG5086">Deploying Coherence Applications to WebLogic Server</a>
+</li>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/COHWL/coh_wls.htm#COHWL729">Starting Cache
+    Servers Using Node Manager</a>
+</li>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/NODEM/index.html">Administering Node Manager for
+    Oracle WebLogic Server</a>
+</li>
+<li>
+<a href="http://docs.oracle.com/cd/E14526_01/coh.350/e14509/appoverride.htm#CHDEIIBJ">Allowable Coherence Server Startup Parameters</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

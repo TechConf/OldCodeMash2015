@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<startup-plan xmlns="http://xmlns.oracle.com/weblogic/jvm-config">
+  <startup-group server-topology-name="AdminServerStartupGroup_svrGroup" name="AdminServerStartupGroup" admin-server="true">
+    <server-group-name>BASE-WLS-ADMIN-SVR</server-group-name>
+  </startup-group>
+  <server-topology name="base-wls-config-def">
+    <env-config profile="Compact">
+      <post-classpath>
+        <path>%MW_HOME%/oracle_common/modules/com.oracle.cie.config-wls-online_8.0.0.0.jar</path>
+      </post-classpath>
+    </env-config>
+    <env-config profile="Expanded">
+      <post-classpath>
+        <path>%MW_HOME%/oracle_common/modules/com.oracle.cie.config-wls-online_8.0.0.0.jar</path>
+      </post-classpath>
+    </env-config>
+  </server-topology>
+  <server-topology name="AdminServerStartupGroup_svrGroup"/>
+</startup-plan>

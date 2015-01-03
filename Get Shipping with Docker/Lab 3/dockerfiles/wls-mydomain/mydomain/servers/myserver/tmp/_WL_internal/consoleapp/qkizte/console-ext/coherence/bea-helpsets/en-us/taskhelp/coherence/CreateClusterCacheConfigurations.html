@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Create cluster cache
+  configurations</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50019" id="WLACH50019"></a>
+
+
+  <h1 class="topictitle1">Create cluster cache
+  configurations</h1>
+
+  <div><!--topic body-->
+    <div class="prereq"><p class="sectiontitle"><b>
+        Before you begin
+      </b></p>
+      <p>Create and configure a Coherence cluster. See <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=coherence.CreateCoherenceClusters">Create Coherence
+  clusters</a> and <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=coherence.ConfigureCoherenceClusters">Configure Coherence
+  clusters</a>.</p>
+    </div>
+
+    <div><br>
+      <p><a name="WLACH50019__startstop1208194" id="WLACH50019__startstop1208194"></a>A Coherence cache
+      configuration file defines the caches and services that are used by an
+      application. Typically, a cache configuration file is included in a GAR
+      module. A GAR is deployed to all managed Coherence servers in the data
+      tier and can also be deployed as part of an EAR to the application tier.
+      The GAR ensures that the cache configuration is available on every
+      Oracle Coherence cluster member. However, there are use cases that
+      require a different cache configuration file to be used on specific
+      managed Coherence servers. For example, a proxy tier requires access to
+      all artifacts in the GAR but needs a different cache configuration file
+      that defines the proxy services to start..</p>
+
+      <p>You can use the Administration Console to define a cluster cache
+      configuration. A cache configuration file can be associated with
+      WebLogic clusters or Managed Coherence Servers at runtime. In this case,
+      the cache configuration overrides the cache configuration file that is
+      included in a GAR. You can also omit the cache configuration file from a
+      GAR file and assign it at runtime. To override a cache configuration
+      file at runtime, the cache configuration file must be bound to a JNDI
+      name. The JNDI name is defined using the
+      <code>override-property</code> attribute of the
+      <code>&lt;cache-configuration-ref&gt;</code> element. The element is
+      located in the <code>coherence-application.xml</code> file that is
+      packaged in a GAR file. For details on the
+      <code>coherence-application.xml</code> file, see <a href="http://docs.oracle.com/middleware/1212/wls/WLCOH/index.html">Oracle Fusion Middleware Developing
+      Oracle Coherence Applications for Oracle WebLogic Server</a>. For
+      more information on importing a cache configuration file, see <a href="http://docs.oracle.com/middleware/1212/wls/CLUST/coherence.htm#CLUST643">Using a Cluster Cache
+      Configuration File</a>.</p>
+
+      <p><a name="WLACH50019__startstop1198902" id="WLACH50019__startstop1198902"></a>To configure a cluster cache
+      configuration:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50019__servers1160647" id="WLACH50019__servers1160647"></a>In the left pane
+        of the Console, expand <b>Environment</b> and select
+        <b>Coherence Clusters</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50019__startstop1213516" id="WLACH50019__startstop1213516"></a>Select the
+        cluster for which you want to create a cluster cache
+        configuration.</span>
+      </li>
+
+      <li>
+        <span>Select the <b>Configuration: Cache Configurations</b> page, and
+        click <b>New</b>.</span>
+      </li>
+
+      <li>
+        <span>On the <b>Create a Cache Configuration</b> page, set the
+        following cache configuration properties:</span>
+
+        <ol type="a">
+          <li>
+            <span><b>Name</b>: Enter the name of this cluster
+            cache configuration.</span>
+          </li>
+
+          <li>
+            <span><b>JNDI Name</b>: Enter the JNDI name to
+            which the cache configuration file is bound. This JNDI name is
+            prefixed with <code>cache-config/</code> and must match the
+            value in the <code>override-property</code> of your
+            <code>cache-configuration-ref</code> entry in
+            <code>coherence-application.xml</code>. For example, JNDI name
+            of <code>ExamplesGAR</code> must match override-property of
+            <code>cache-config/ExamplesGAR</code>.</span>
+          </li>
+
+          <li>
+            <span><b>Cache Configuration File</b>: Enter the
+            full path to the cache configuration file. Alternatively, you may
+            specify a URL.</span>
+          </li>
+
+          <li>
+            <span><b>Import Cache Configuration File</b>:
+            Select this option to import the cache configuration file from the
+            specified location into the WebLogic Server directory
+            structure.</span>
+
+             
+              <p>If you do not select this option, the cache configuration
+              file is loaded directly from the specified location when the
+              server is started.</p>
+            
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span>Click <b>Save</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50019__startstop1202599" id="WLACH50019__startstop1202599"></a>Select the
+        <b>Targets</b> page to select the WebLogic Server
+        instances or clusters to which this cluster cache configuration is
+        targeted. Click <b>Save</b>.</span>
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+
+    <div class="result"><p class="sectiontitle"><b>	
+	Result
+      </b></p>
+      <p>The cluster cache configuration is listed from the <b>Configuration:
+      Cache Configurations</b> page of the Coherence cluster settings console
+      page.</p>
+    </div>
+  </div>
+
+
+</body></html>
