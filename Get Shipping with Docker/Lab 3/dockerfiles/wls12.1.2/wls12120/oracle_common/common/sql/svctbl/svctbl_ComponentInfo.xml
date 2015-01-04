@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- STB -->
+<!DOCTYPE ComponentInfo SYSTEM "ComponentInfo.dtd">
+<ComponentInfo>
+ <Component ID="STB" PROGRESS_UNITS="50" MANDATORY_SELECTED="TRUE" CHILD_OF="AS_COMMON">
+  <ValidIf DBTYPE="ORACLE"/>
+  <Display NLS_ID="STB_ID">ServiceTable</Display>
+  <RepositoryConfigFile>%RCU_HOME%/../oracle_common/common/sql/svctbl/svctbl.xml</RepositoryConfigFile>
+  <DetectQuery>select owner from schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%' and status in ('VALID','LOADED')</DetectQuery>
+  <DetectQuery OPERATION='DATALOAD'>select owner from schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%' and status = 'LOADED'</DetectQuery>
+  <DetectQuery OPERATION='DROP'>select owner from schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%'</DetectQuery>
+  <SchemaUser USER_EDITABLE="FALSE">STB</SchemaUser>
+  <DatabaseName>STB</DatabaseName> 
+  <Tablespaces>
+    <Tablespace TYPE="DEFAULT_TABLESPACE">
+       <Prompt NLS_ID="DEFAULT_TABLESPACE">Default Tablespace</Prompt>
+       <TablespaceName>STB</TablespaceName>
+    </Tablespace>
+    <Tablespace TYPE="TEMPORARY_TABLESPACE">
+       <Prompt NLS_ID="TEMPORARY_TABLESPACE">Temporary Tablespace</Prompt>
+       <TablespaceName>IAS_TEMP</TablespaceName>
+    </Tablespace>
+  </Tablespaces>
+ </Component>
+ <Component ID="STB" PROGRESS_UNITS="50" MANDATORY_SELECTED="TRUE" CHILD_OF="AS_COMMON">
+   <ValidIf DBTYPE="EBR"/>
+   <Display NLS_ID="STB_ID">ServiceTable</Display>
+   <RepositoryConfigFile>%RCU_HOME%/../oracle_common/common/sql/svctbl/svctbl.xml</RepositoryConfigFile>
+   <DetectQuery>select owner from schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%' and status in ('VALID','LOADED')</DetectQuery>
+   <DetectQuery OPERATION='DATALOAD'>select owner from schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%' and status = 'LOADED'</DetectQuery>
+   <DetectQuery OPERATION='DROP'>select owner from schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%'</DetectQuery>
+   <SchemaUser USER_EDITABLE="FALSE">STB</SchemaUser>
+   <DatabaseName>STB</DatabaseName> 
+   <Tablespaces>
+     <Tablespace TYPE="DEFAULT_TABLESPACE">
+        <Prompt NLS_ID="DEFAULT_TABLESPACE">Default Tablespace</Prompt>
+        <TablespaceName>STB</TablespaceName>
+     </Tablespace>
+     <Tablespace TYPE="TEMPORARY_TABLESPACE">
+        <Prompt NLS_ID="TEMPORARY_TABLESPACE">Temporary Tablespace</Prompt>
+        <TablespaceName>IAS_TEMP</TablespaceName>
+     </Tablespace>
+   </Tablespaces>
+ </Component>
+ <Component ID="STB" PROGRESS_UNITS="50" MANDATORY_SELECTED="TRUE" CHILD_OF="AS_COMMON">
+   <ValidIf DBTYPE="SQLSERVER"/>
+   <Display NLS_ID="STB_ID">ServiceTable</Display>
+   <RepositoryConfigFile>%RCU_HOME%/../oracle_common/common/sql/svctbl/svctbl.xml</RepositoryConfigFile>
+   <DetectQuery>select owner from schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%' and status in ('VALID','LOADED')</DetectQuery>
+   <DetectQuery OPERATION='DATALOAD'>select owner from schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%' and status = 'LOADED'</DetectQuery>
+   <DetectQuery OPERATION='DROP'>select owner from schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%'</DetectQuery>
+   <SchemaUser USER_EDITABLE="FALSE">STB</SchemaUser>
+   <DatabaseName>STB</DatabaseName> 
+ </Component>
+<Component ID="STB" PROGRESS_UNITS="50" MANDATORY_SELECTED="TRUE" CHILD_OF="AS_COMMON">
+  <ValidIf DBTYPE="IBMDB2"/>
+  <Display NLS_ID="STB_ID">ServiceTable</Display>
+  <RepositoryConfigFile>%RCU_HOME%/../oracle_common/common/sql/svctbl/svctbl.xml</RepositoryConfigFile>
+  <DetectQuery>select owner from nullid.schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%' and status in ('VALID','LOADED')</DetectQuery>
+  <DetectQuery OPERATION='DATALOAD'>select owner from nullid.schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%' and status = 'LOADED'</DetectQuery>
+  <DetectQuery OPERATION='DROP'>select owner from nullid.schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%'</DetectQuery>
+  <SchemaUser USER_EDITABLE="FALSE">STB</SchemaUser>
+  <DatabaseName>STB</DatabaseName> 
+  <Tablespaces>
+    <Tablespace TYPE="DEFAULT_TABLESPACE">
+       <Prompt NLS_ID="DEFAULT_TABLESPACE">Default Tablespace</Prompt>
+       <TablespaceName>STB</TablespaceName>
+    </Tablespace>
+    <Tablespace TYPE="TEMPORARY_TABLESPACE">
+       <Prompt NLS_ID="TEMPORARY_TABLESPACE">Temporary Tablespace</Prompt>
+       <TablespaceName>IAS_TEMP</TablespaceName>
+    </Tablespace>
+  </Tablespaces>
+</Component>
+<Component ID="STB" PROGRESS_UNITS="50" MANDATORY_SELECTED="TRUE" CHILD_OF="AS_COMMON">
+  <ValidIf DBTYPE="MYSQL"/>
+  <Display NLS_ID="STB_ID">ServiceTable</Display>
+  <RepositoryConfigFile>%RCU_HOME%/../oracle_common/common/sql/svctbl/svctbl.xml</RepositoryConfigFile>
+  <DetectQuery>select owner from schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%' and status in ('VALID','LOADED')</DetectQuery>
+  <DetectQuery OPERATION='DATALOAD'>select owner from schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%' and status = 'LOADED'</DetectQuery>
+  <DetectQuery OPERATION='DROP'>select owner from schema_version_registry where mr_type = 'STB' and mrc_name = '%PREFIX_NAME%'</DetectQuery>
+  <SchemaUser USER_EDITABLE="FALSE">STB</SchemaUser>
+  <DatabaseName>STB</DatabaseName> 
+ </Component>
+</ComponentInfo> 
+<!-- End Of STB -->

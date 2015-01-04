@@ -1,0 +1,177 @@
+//
+// This file contains the minimum set of security permissions necessary to run
+// Coherence.
+//
+// To use this file you must turn on the Java Security Manager by defining the
+// java.security.manager system property and setting the java.security.policy
+// system property to the location of this security policy file. You must also
+// set the tangosol.home system property to the location of your Coherence
+// installation.
+//
+// For example:
+//   java -Djava.security.manager
+//        -Djava.security.policy=c:/tangosol/lib/security/security.policy
+//        -Dtangosol.home=c:/tangosol
+//        -Doracle.common=c:/Oracle/Middleware/Oracle_Home/oracle_common
+//
+// You can edit this file and change the permissions for your application as
+// necessary.
+//
+// NOTE: This security policy file assumes the default JRE security
+// permissions have been granted. Therefore, you must be careful to use a
+// single equals sign (=) and not two equals signs (==) when setting the
+// java.security.policy system property.
+//
+
+grant codeBase "file:${tangosol.home}${/}lib${/}-" {
+  permission java.io.FilePermission ".${/}coherence-cache-config.xml", "read";
+  permission java.io.FilePermission ".${/}keystore.jks", "read";
+  permission java.io.FilePermission ".${/}tangosol-coherence-override.xml", "read";
+  permission java.io.FilePermission "${/}proc${/}cpuinfo", "read";
+  permission java.io.FilePermission "${/}coherence-cache-config.xml", "read";
+  permission java.io.FilePermission "${/}tangosol-coherence-override.xml", "read";
+  permission java.io.FilePermission "${/}tangosol-coherence-override-eval.xml", "read";
+  permission java.io.FilePermission "${/}tangosol-coherence-override-dev.xml", "read";
+  permission java.io.FilePermission "${/}tangosol-coherence-override-prod.xml", "read";
+  permission java.io.FilePermission "${/}custom-mbeans.xml", "read";
+  permission java.io.FilePermission "${tangosol.home}${/}lib${/}coherence.jar", "read";
+  permission java.io.FilePermission "http:/xmlns.oracle.com/coherence/-", "read";
+  permission java.io.FilePermission "META-INF/-", "read";
+  permission java.lang.management.ManagementPermission "monitor";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.management";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.misc";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.reflect";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.rmi.server";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.security.provider";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.security.x509";
+  permission java.lang.RuntimePermission "accessDeclaredMembers";
+  permission java.lang.RuntimePermission "createClassLoader";
+  permission java.lang.RuntimePermission "getClassLoader";
+  permission java.lang.RuntimePermission "getenv.*";
+  permission java.lang.RuntimePermission "getProtectionDomain";
+  permission java.lang.RuntimePermission "getStackTrace"; 
+  permission java.lang.RuntimePermission "modifyThreadGroup";
+  permission java.lang.RuntimePermission "reflectionFactoryAccess";
+  permission java.lang.RuntimePermission "selectorProvider";
+  permission java.lang.RuntimePermission "setContextClassLoader";
+  permission java.lang.RuntimePermission "shutdownHooks";
+  permission java.net.SocketPermission "*", "accept,connect,resolve,listen";
+  permission java.security.SecurityPermission "insertProvider.CoherenceSecurityProvider";
+  permission java.security.SecurityPermission "putProviderProperty.CoherenceSecurityProvider";
+  permission java.util.logging.LoggingPermission "control";
+  permission java.util.PropertyPermission "java.net.preferIPv4Stack", "read";
+  permission java.util.PropertyPermission "java.net.preferIPv6Addresses", "read";
+  permission java.util.PropertyPermission "java.version", "read";
+  permission java.util.PropertyPermission "os.arch", "read";
+  permission java.util.PropertyPermission "os.name", "read";
+  permission java.util.PropertyPermission "sun.arch.data.model", "read";
+  permission java.util.PropertyPermission "tangosol.*", "read";
+  permission java.util.PropertyPermission "user.dir", "read";
+  permission java.util.PropertyPermission "com.oracle.common.*", "read";
+  permission javax.management.MBeanPermission "com.sun.management.*", "*";
+  permission javax.management.MBeanPermission "com.tangosol.*", "*";
+  permission javax.management.MBeanPermission "sun.management.*", "*";
+  permission javax.management.MBeanPermission "jmx.*", "*";
+  permission javax.management.MBeanPermission "reporter.*","*";
+  permission javax.management.MBeanServerPermission "*";
+  permission javax.management.MBeanTrustPermission "*";
+  permission javax.security.auth.AuthPermission "getSubject";
+  permission java.security.SecurityPermission "putProviderProperty.OracleCommonsSecurityProvider";
+  permission java.security.SecurityPermission "insertProvider.OracleCommonsSecurityProvider";
+
+  // The following permissions are needed to run with Coherence Console:
+
+  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+  permission java.util.PropertyPermission "*", "read, write";
+  permission java.io.FilePermission ".${/}cache-factory-config.xml", "read";
+  permission java.io.FilePermission ".${/}cache-factory-builder-config.xml", "read";
+
+  // To run with the Coherence security framework enabled, please uncomment
+  // the following lines:
+
+  // permission java.io.FilePermission ".${/}permissions.xml", "read";
+  // permission java.io.FilePermission "${java.home}${/}keystore.jks", "read";
+  // permission javax.security.auth.AuthPermission "*";
+  // permission javax.security.auth.PrivateCredentialPermission "* * \"*\"", "read";
+
+  // To run with Coherence POF annotations with access to non-public fields
+  // or methods when using a security manager, please uncomment the following
+  // lines:
+
+  // permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+};
+
+// The following grant block is needed when using third party libraries such as hibernate or toplink. 
+
+// grant codeBase "file:${tangosol.home}${/}lib${/}-" {
+//  permission java.io.FilePermission "${tangosol.home}${/}lib${/}hibernate${/}-", "read";
+//  permission java.io.FilePermission "${oracle.common}${/}modules${/}oracle.toplink_12.1.2${/}-", "read";
+// };
+  
+// To allow the cluster node to run the HttpAdapter (by Sun Inc.),
+// you will need to set the jmx.lib system property to the location of the
+// jmxtools.jar library and uncomment the following two sections
+
+// grant codeBase "file:${tangosol.home}${/}lib${/}-" {
+//   permission java.util.PropertyPermission "jmx.*", "read,write";
+//   permission javax.management.MBeanPermission "com.sun.jdmk.comm.HtmlAdaptorServer", "*";
+// };
+
+// grant codeBase "file:${jmx.lib}${/}-" {
+//    permission java.security.AllPermission;
+// };
+
+// The following grant block is needed by Coherence*Web. If you are using
+// Coherence*Web, uncomment this block and replace ${WEB-INF} with the WEB-INF
+// directory of the web application into which Coherence*Web is installed.
+// Additionally, if you've installed Coherence*Web with the
+// coherence-cluster-owned parameter set to true, you should also start your
+// application server with the tangosol.home system parameter set to the
+// WEB-INF directory of the web application, rather than the location of your
+// Coherence installation.
+
+// grant codeBase "file:${WEB-INF}${/}lib${/}coherence-web.jar" {
+// permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+// permission java.lang.RuntimePermission "accessDeclaredMembers";
+// permission java.lang.RuntimePermission "createClassLoader";
+// permission java.lang.RuntimePermission "getClassLoader";
+// permission java.lang.RuntimePermission "getenv.*";
+// permission java.lang.RuntimePermission "getProtectionDomain";
+// permission java.lang.RuntimePermission "selectorProvider";
+// permission java.lang.RuntimePermission "setContextClassLoader";
+// permission java.lang.RuntimePermission "shutdownHooks";
+// permission java.lang.RuntimePermission "modifyThread";
+// permission java.net.SocketPermission "*", "accept,connect,resolve,listen";
+// permission java.security.SecurityPermission "insertProvider.CoherenceSecurityProvider";
+// permission java.security.SecurityPermission "putProviderProperty.CoherenceSecurityProvider";
+// permission java.util.PropertyPermission "java.net.preferIPv4Stack", "read";
+// permission java.util.PropertyPermission "java.net.preferIPv6Addresses", "read";
+// permission java.util.PropertyPermission "java.version", "read";
+// permission java.util.PropertyPermission "os.arch", "read";
+// permission java.util.PropertyPermission "os.name", "read";
+// permission java.util.PropertyPermission "sun.arch.data.model", "read";
+// permission java.util.PropertyPermission "tangosol.*", "read";
+// permission java.util.PropertyPermission "user.dir", "read";
+// permission java.util.PropertyPermission "buffermanager.*", "read";
+// permission java.util.PropertyPermission "sbm.cleanup.frequency", "read";
+// permission javax.management.MBeanPermission "com.tangosol.*", "*";
+// permission javax.management.MBeanServerPermission "*";
+// permission javax.management.MBeanTrustPermission "*";
+// permission javax.security.auth.AuthPermission "getSubject";
+// permission java.security.SecurityPermission "putProviderProperty.OracleCommonsSecurityProvider";
+// permission java.security.SecurityPermission "insertProvider.OracleCommonsSecurityProvider";
+// };
+
+// The following grant block is needed by Coherence REST. If you are using
+// Coherence REST, uncomment this block.
+
+//grant codeBase "file:${tangosol.home}${/}lib${/}coherence-rest.jar" {
+// permission java.io.FilePermission "${oracle.common}/modules/jersey-core-1.17.1.jar", "read";
+// permission java.io.FilePermission "${tangosol.home}/lib/jaxb/-", "read"; 
+// permission java.io.FilePermission "${tangosol.home}/lib/grizzly/-", "read"; 
+// permission java.lang.RuntimePermission "accessClassInPackage.com.sun.xml.internal.bind.v2";
+// permission java.lang.RuntimePermission "accessClassInPackage.com.sun.xml.internal.bind.v2.runtime.reflect";
+// permission java.lang.RuntimePermission "accessClassInPackage.sun.util.logging.resources";  
+//}; 
+
+

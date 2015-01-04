@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<connector xmlns="http://java.sun.com/xml/ns/j2ee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+                               http://java.sun.com/xml/ns/j2ee/connector_1_5.xsd"
+           version="1.5">
+
+  <display-name>Oracle JMS Connector</display-name>
+  <vendor-name>Oracle Corporation</vendor-name>
+  <eis-type>JMS</eis-type>
+  <resourceadapter-version>2.0</resourceadapter-version>
+
+  <resourceadapter>
+    <resourceadapter-class>weblogic.jms.ra.ResourceAdapterImpl</resourceadapter-class>
+    <config-property>
+      <config-property-name>resourceProviderDefinitions</config-property-name>
+      <config-property-type>java.lang.String</config-property-type>
+      <config-property-value></config-property-value>
+    </config-property>
+    <config-property>
+      <config-property-name>groupDefinitions</config-property-name>
+      <config-property-type>java.lang.String</config-property-type>
+      <config-property-value>
+        (:)
+      </config-property-value>
+    </config-property>
+
+    <outbound-resourceadapter>
+
+
+      <!-- *************  WebLogic JMS Connection Factories  ************* -->
+
+
+      <!--  WebLogic JMS non-XA javax.jms.ConnectionFactory  -->
+
+      <connection-definition>
+        <managedconnectionfactory-class>
+          weblogic.jms.ra.WLManagedConnectionFactory
+        </managedconnectionfactory-class>
+        <connectionfactory-interface>
+          weblogic.jms.ra.WLConnectionFactoryInterface
+        </connectionfactory-interface>
+        <connectionfactory-impl-class>
+          weblogic.jms.ra.WLConnectionFactory
+        </connectionfactory-impl-class>
+        <connection-interface>
+          weblogic.jms.ra.WLConnectionInterface
+        </connection-interface>
+        <connection-impl-class>
+          weblogic.jms.ra.WLConnection
+        </connection-impl-class>
+      </connection-definition>
+
+
+      <!--  WebLogic JMS non-XA javax.jms.QueueConnectionFactory  -->
+
+      <connection-definition>
+        <managedconnectionfactory-class>
+          weblogic.jms.ra.WLManagedQueueConnectionFactory
+        </managedconnectionfactory-class>
+        <connectionfactory-interface>
+          weblogic.jms.ra.WLQueueConnectionFactoryInterface
+        </connectionfactory-interface>
+        <connectionfactory-impl-class>
+          weblogic.jms.ra.WLQueueConnectionFactory
+        </connectionfactory-impl-class>
+        <connection-interface>
+          weblogic.jms.ra.WLQueueConnectionInterface
+        </connection-interface>
+        <connection-impl-class>
+          weblogic.jms.ra.WLQueueConnection
+        </connection-impl-class>
+      </connection-definition>
+
+
+      <!--  WebLogic JMS non-XA javax.jms.TopicConnectionFactory  -->
+
+      <connection-definition>
+        <managedconnectionfactory-class>
+          weblogic.jms.ra.WLManagedTopicConnectionFactory
+        </managedconnectionfactory-class>
+        <connectionfactory-interface>
+          weblogic.jms.ra.WLTopicConnectionFactoryInterface
+        </connectionfactory-interface>
+        <connectionfactory-impl-class>
+          weblogic.jms.ra.WLTopicConnectionFactory
+        </connectionfactory-impl-class>
+        <connection-interface>
+          weblogic.jms.ra.WLTopicConnectionInterface
+        </connection-interface>
+        <connection-impl-class>
+          weblogic.jms.ra.WLTopicConnection
+        </connection-impl-class>
+      </connection-definition>
+
+
+      <!--  WebLogic JMS XA javax.jms.ConnectionFactory  -->
+
+      <connection-definition>
+        <managedconnectionfactory-class>
+          weblogic.jms.ra.WLManagedXAConnectionFactory
+        </managedconnectionfactory-class>
+        <connectionfactory-interface>
+          weblogic.jms.ra.WLXAConnectionFactoryInterface
+        </connectionfactory-interface>
+        <connectionfactory-impl-class>
+          weblogic.jms.ra.WLXAConnectionFactory
+        </connectionfactory-impl-class>
+        <connection-interface>
+          weblogic.jms.ra.WLXAConnectionInterface
+        </connection-interface>
+        <connection-impl-class>
+          weblogic.jms.ra.WLXAConnection
+        </connection-impl-class>
+      </connection-definition>
+
+
+      <!--  WebLogic JMS XA javax.jms.QueueConnectionFactory  -->
+
+      <connection-definition>
+        <managedconnectionfactory-class>
+          weblogic.jms.ra.WLManagedXAQueueConnectionFactory
+        </managedconnectionfactory-class>
+        <connectionfactory-interface>
+          weblogic.jms.ra.WLXAQueueConnectionFactoryInterface
+        </connectionfactory-interface>
+        <connectionfactory-impl-class>
+          weblogic.jms.ra.WLXAQueueConnectionFactory
+        </connectionfactory-impl-class>
+        <connection-interface>
+          weblogic.jms.ra.WLXAQueueConnectionInterface
+        </connection-interface>
+        <connection-impl-class>
+          weblogic.jms.ra.WLXAQueueConnection
+        </connection-impl-class>
+      </connection-definition>
+
+
+      <!--  WebLogic JMS XA javax.jms.TopicConnectionFactory  -->
+
+      <connection-definition>
+        <managedconnectionfactory-class>
+          weblogic.jms.ra.WLManagedXATopicConnectionFactory
+        </managedconnectionfactory-class>
+        <connectionfactory-interface>
+          weblogic.jms.ra.WLXATopicConnectionFactoryInterface
+        </connectionfactory-interface>
+        <connectionfactory-impl-class>
+          weblogic.jms.ra.WLXATopicConnectionFactory
+        </connectionfactory-impl-class>
+        <connection-interface>
+          weblogic.jms.ra.WLXATopicConnectionInterface
+        </connection-interface>
+        <connection-impl-class>
+          weblogic.jms.ra.WLXATopicConnection
+        </connection-impl-class>
+      </connection-definition>
+
+
+      <!-- ******************  miscellaneous outbound   ****************** -->
+
+
+      <transaction-support>XATransaction</transaction-support>
+
+      <authentication-mechanism>
+        <authentication-mechanism-type>
+          BasicPassword
+        </authentication-mechanism-type>
+        <credential-interface>
+          javax.resource.spi.security.PasswordCredential
+        </credential-interface>
+      </authentication-mechanism>
+      <reauthentication-support>false</reauthentication-support>
+
+    </outbound-resourceadapter>
+
+    <inbound-resourceadapter>
+      <messageadapter>
+        <messagelistener>
+          <messagelistener-type>
+            javax.jms.MessageListener
+          </messagelistener-type>
+          <activationspec>
+            <activationspec-class>
+              weblogic.jms.ra.ActivationSpecImpl
+            </activationspec-class>
+            <required-config-property>
+              <config-property-name>ConnectionFactory</config-property-name>
+            </required-config-property>
+            <required-config-property>
+              <config-property-name>Destination</config-property-name>
+            </required-config-property>
+            <required-config-property>
+              <config-property-name>DestinationType</config-property-name>
+            </required-config-property>
+          </activationspec>
+        </messagelistener>
+      </messageadapter>
+    </inbound-resourceadapter>
+
+
+    <!-- ******************  WebLogic JMS Destinations  ****************** -->
+
+
+    <!-- WebLogic JMS javax.jms.Queue, weblogic.jms.extensions.WLDestination -->
+
+    <adminobject>
+      <adminobject-interface>
+        weblogic.jms.ra.WLQueueAdminInterface
+      </adminobject-interface>
+      <adminobject-class>
+        weblogic.jms.ra.WLQueueAdmin
+      </adminobject-class>
+    </adminobject>
+
+
+    <!-- WebLogic JMS javax.jms.Topic, weblogic.jms.extensions.WLDestination -->
+
+    <adminobject>
+      <adminobject-interface>
+        weblogic.jms.ra.WLTopicAdminInterface
+      </adminobject-interface>
+      <adminobject-class>
+        weblogic.jms.ra.WLTopicAdmin
+      </adminobject-class>
+    </adminobject>
+
+
+    <!-- javax.naming.Context for looking up weblogic.jms.extensions.WLDestination -->
+
+    <adminobject>
+      <adminobject-interface>
+        weblogic.jms.ra.WLDestinationContextInterface
+      </adminobject-interface>
+      <adminobject-class>
+        weblogic.jms.ra.WLDestinationContext
+      </adminobject-class>
+    </adminobject>
+
+
+  </resourceadapter>
+</connector>
+

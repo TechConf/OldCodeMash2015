@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MDS -->
+<!DOCTYPE StorageAttributes SYSTEM "Storage.dtd">
+<StorageAttributes>
+ <TablespaceAttributes NAME="STB" >
+  <Type>
+    REGULAR
+  </Type>
+  <DatafilesList>
+    <DatafileAttributes ID="%DATAFILE_LOCATION%/svctbl.dbf">
+      <Size UNIT="MB">
+        100
+      </Size>
+      <Reuse>
+        True
+      </Reuse>
+      <AutoExtend>
+        True
+      </AutoExtend>  
+      <Increment UNIT="MB">
+        50 
+      </Increment>
+      <Maxsize UNIT="MB">
+        1000
+      </Maxsize>
+     </DatafileAttributes>
+  </DatafilesList>  
+ </TablespaceAttributes>
+</StorageAttributes>

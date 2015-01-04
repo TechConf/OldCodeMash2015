@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature-definition xmlns="http://www.bea.com/ns/cie/feature" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="weblogic.client.modules" version="12.1.2.0">
+  <!--
+    <annotation>
+      <manifest xmlns="http://www.bea.com/ns/cie/manifest">
+        <attribute name="Implementation-Vendor" value="BEA Systems"/>
+        <attribute name="Implementation-Title" value="Oracle WebLogic Client Module Dependencies 12.1 Sat Mar 2 19:17:59 EST 2013 "/>
+        <attribute name="Source-Repository-Change-Id" value="1513398"/>
+        <attribute name="Source-Repository-URI" value="p4://depot/dev/src1212/repository/modules/features"/>
+        <attribute name="Implementation-Version" value="12.1.2.0"/>
+      </manifest>
+    </annotation>
+  -->
+  <modules>
+    <module file-name="com.bea.core.antlr.runtime_1.0.0.0_3-2.jar"/>
+    <module file-name="com.bea.core.logging_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.xml.staxb.runtime_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.annogen_2.1.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.i18n_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.xacml_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.saml2.utils_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.engine.impl_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.engine.api_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.api_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.impl_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.jdkutils_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.utils_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.saml2_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.saml2.manage_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.providers.utils_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.saml.utils_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.xacmlproviders.utils_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.providers.env_7.0.0.0.jar"/>
+    <module file-name="com.bea.core.certj_5.4.0.0.jar"/>
+    <module file-name="com.bea.core.ldapjdk_1.5.0.0.jar"/>
+    <module file-name="../../oracle_common/modules/javax.annotation_1.1.0.0_1-1.jar" isDirectory="true"/>
+    <module file-name="javax.interceptor_1.2.jar"/>
+    <module file-name="../../oracle_common/modules/javax.ejb_3.2.0.jar" isDirectory="true"/>
+    <module file-name="javax.jdo_2.0.3.jar"/>
+    <module file-name="javax.enterprise.deploy_1.3.jar"/>
+    <module file-name="../../oracle_common/modules/javax.jms_1.1.3.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/javax.jsp_3.0.0.0_2-2.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/javax.mail_1.1.0.0_1-4-4.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/javax.management.j2ee_1.1.0.0.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/javax.persistence_2.1.0.0_1-0-2.jar" isDirectory="true"/>
+    <module file-name="javax.resource_1.6.1.jar"/>
+    <module file-name="javax.security.jacc_1.1.0.0_1-1.jar"/>
+    <module file-name="../../oracle_common/modules/javax.servlet_2.1.0.0_3-0.jar" isDirectory="true"/>
+    <module file-name="javax.transaction_2.1.0.0_1-1.jar"/>
+    <module file-name="../../oracle_common/modules/javax.xml.bind_2.2.4.jar" isDirectory="true"/>
+    <module file-name="javax.xml.registry_1.1.0.0_1-0-4.jar"/>
+    <module file-name="../../oracle_common/modules/javax.xml.ws_2.3.0.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/javax.xml.rpc_1.2.3.jar" isDirectory="true"/>
+    <module file-name="com.oracle.jfr_1.1.0.0.jar"/>
+    <module file-name="com.bea.core.apache_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.beangen_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.beaninfo_3.1.0.0.jar"/>
+    <module file-name="com.bea.core.descriptor_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.diagnostics.core_4.0.0.0.jar"/>
+    <module file-name="com.bea.core.diagnostics.instrumentor_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.diagnostics.instrumentor.config_3.0.0.0.jar"/>
+    <module file-name="../../oracle_common/modules/com.bea.core.i18n_2.1.0.0.jar" isDirectory="true"/>
+    <module file-name="com.bea.core.management.core_4.0.0.0.jar"/>
+    <module file-name="com.bea.core.mbean.maker_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.mbean.support_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.messaging.kernel_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.resourcepool_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.rmi.client_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.security.auth_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.security.digest_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.security.identity_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.security.logger_2.0.0.0.jar"/>
+    <module file-name="com.oracle.css.weblogic.security.wls_7.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.saaj_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.socket.api_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.stax_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.store_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.store.gxa_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.store.admintool_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.store.jdbc_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.transaction_3.1.0.0.jar"/>
+    <module file-name="com.bea.core.utils.full_2.2.0.0.jar"/>
+    <module file-name="com.bea.core.utils.classloaders_4.0.0.0.jar"/>
+    <module file-name="com.bea.core.utils.expressions_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.utils.wrapper_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.timers_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.workmanager_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.workarea_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.jatmi_2.1.0.0.jar"/>
+    <module file-name="com.oracle.css.weblogic.security_7.0.0.0.jar"/>
+    <module file-name="com.bea.core.nodemanager.plugin_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.jmspool_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.lifecycle_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.management.jmx_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.descriptor.j2ee_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.descriptor.j2ee.binding_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.repackaged.asm_1.3.0.0_3-2-0.jar"/>
+    <module file-name="com.bea.core.redef_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.http.pubsub.mbean_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.diagnostics.accessor_3.0.0.0.jar"/>
+    <module file-name="javax.security.auth.message_2.1.jar"/>
+    <module file-name="javax.validation_1.1.0.jar"/>
+  </modules>
+  <requires>
+    <feature id="weblogic.client.modules.L10N" minVersion="12.1.2.0"/>
+  </requires>
+</feature-definition>

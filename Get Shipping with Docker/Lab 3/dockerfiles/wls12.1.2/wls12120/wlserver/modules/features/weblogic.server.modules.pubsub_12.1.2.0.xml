@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature-definition xmlns="http://www.bea.com/ns/cie/feature" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="weblogic.server.modules.pubsub" version="12.1.2.0">
+  <!--
+    <annotation>
+      <manifest xmlns="http://www.bea.com/ns/cie/manifest">
+        <attribute name="Implementation-Vendor" value="BEA Systems"/>
+        <attribute name="Implementation-Title" value="WebLogic Http Pub/Sub Feature Module 12.1 Wed May 30 20:57:38 UTC 2012 "/>
+        <attribute name="Source-Repository-Change-Id" value="1471371"/>
+        <attribute name="Source-Repository-URI" value="p4://depot/dev/src1212/repository/modules/features"/>
+        <attribute name="Implementation-Version" value="12.1.2.0"/>
+      </manifest>
+    </annotation>
+  -->
+  <modules>
+    <module file-name="com.bea.core.http.pubsub_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.http.pubsub.binding_2.1.0.0.jar"/>
+    <module file-name="com.bea.web.pubsub.jms_3.0.0.0.jar"/>
+    <module file-name="com.bea.web.pubsub.security_3.0.0.0.jar"/>
+  </modules>
+  
+</feature-definition>
