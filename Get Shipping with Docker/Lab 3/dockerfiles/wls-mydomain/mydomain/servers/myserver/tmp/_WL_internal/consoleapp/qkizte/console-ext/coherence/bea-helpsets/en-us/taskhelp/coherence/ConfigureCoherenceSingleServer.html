@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Configure and deploy
+  Coherence on a single-server cluster</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50013" id="WLACH50013"></a>
+
+
+  <h1 class="topictitle1">Configure and deploy
+  Coherence on a single-server cluster</h1>
+
+  <div><!--topic body-->
+    <div class="prereq"><p class="sectiontitle"><b>
+        Before you begin
+      </b></p>
+      <div><ul>
+          <li>Create and package a Coherence Grid Archive (GAR) module for any
+          application modules (Web Application, EJB, etc.) that use Coherence.
+          See <a href="http://docs.oracle.com/middleware/1212/wls/WLCOH/create-application.htm#A260733">Packaging Coherence Applications</a>.</li>
+        </ul></div>
+    </div>
+
+    <div><br>
+      <p>For ease of use during development, a single-server cluster offers a
+      quick way to start and stop a cluster. A single-server cluster is a
+      cluster that is constrained to run on a single managed server instance
+      and does not access the network. The server instance acts as a
+      storage-enabled cluster member, a client, and (optionally) a proxy.</p>
+
+      <p><a name="WLACH50013__startstop1198902" id="WLACH50013__startstop1198902"></a>The main steps for
+      configuring Coherence on a single-server cluster are:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50013__servers1160647" id="WLACH50013__servers1160647"></a>Create a
+        Coherence cluster and select a managed server instance to be a member
+        of the cluster. The <code>AdminServer</code> instance can be used
+        to facilitate setup. See <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=coherence.CreateCoherenceClusters">Create Coherence
+  clusters</a>.</span>
+      </li>
+
+      <li>
+        <span>On the <span>Summary of Coherence Clusters</span> page,
+        open the new Coherence cluster and set the <b>Time To
+        Live</b> value to <kbd>0</kbd> if using multicast
+        communication.</span>
+
+         
+          <p>For more information about communication for Coherence clusters,
+          see <a href="http://docs.oracle.com/middleware/1212/wls/CLUST/coherence.htm#BABHJIGF">Configure
+          Cluster Communication</a>.</p>
+        
+      </li>
+
+      <li>
+        <span><a name="WLACH50013__servers1160647" id="WLACH50013__servers1160647"></a>Configure the
+        managed server instance associated with Coherence cluster as
+        follows:</span>
+
+        <ol type="a">
+          <li>
+            <span>Navigate to the <span>Server &gt; Coherence</span>
+            tab.</span>
+          </li>
+
+          <li>
+            <span>Note that the <b>Coherence Cluster</b>
+            drop-box list displays the Coherence cluster associated with the
+            managed server. Also, the managed server will be a storage-enabled
+            Coherence member (cache server) by default, as indicated by the
+            <b>Local Storage Enabled</b> field.</span>
+          </li>
+
+          <li>
+            <span>Set the <b>Unicast Listen Address</b> to an
+            address that is routed to loop back. On most computers, setting
+            the address to <kbd>127.0.0.1</kbd> works.</span>
+
+             
+              <p>For more information about unicast settings for Coherence
+              cluster members, see <a href="http://docs.oracle.com/middleware/1212/wls/CLUST/coherence.htm#BABFHFEA">Configure Coherence Cluster Member Unicast
+              Settings</a>.</p>
+            
+          </li>
+
+          <li>
+            <span>Click <b>Save</b>.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span>Deploy your EAR module that contains your Coherence GAR module.
+        See <a href="http://docs.oracle.com/middleware/1212/wls/WLCOH/deploy-wls-coherence.htm">Deploying
+        Coherence Applications in WebLogic Server</a>.</span>
+      </li>
+    </ol>
+  </div>
+
+  <div class="relatedtopics"><p class="relatedtopics">
+	Related Tasks
+   </p><ul><li><a href="http://docs.oracle.com/middleware/1212/wls/CLUST/coherence.htm#BABJDGDJ">Overview of
+    Coherence Clusters</a></li><li><a href="http://docs.oracle.com/middleware/1212/wls/WLCOH/index.html">Developing Oracle Coherence
+    Applications for Oracle WebLogic Server</a></li></ul></div>
+
+  <div class="relatedtopics"><p class="relatedtopics">
+	Related Topics
+   </p><ul><li><a href="http://docs.oracle.com/middleware/1212/wls/CLUST/overview.htm">Administering Clusters for
+    Oracle WebLogic Server</a></li><li><a href="http://docs.oracle.com/middleware/1212/wls/NODEM/index.html">Administering
+    Node Manager for Oracle WebLogic Server</a></li></ul></div>
+
+
+</body></html>

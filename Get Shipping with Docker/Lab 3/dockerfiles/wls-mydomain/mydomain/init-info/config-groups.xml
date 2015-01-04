@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config-groups topology-profile="Expanded" xmlns="http://xmlns.oracle.com/weblogic/config-groups">
+  <app-svc-groups/>
+  <domain-topology>
+    <server-group name="BASE-WLS-ADMIN-SVR" admin-server="true" processed="true">
+      <server-name>myserver</server-name>
+    </server-group>
+    <jvm-config-group-mapping>
+      <jvm-config-def>base-wls-config-def</jvm-config-def>
+      <target-server-group>BASE-WLS-ADMIN-SVR</target-server-group>
+    </jvm-config-group-mapping>
+  </domain-topology>
+</config-groups>

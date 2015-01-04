@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<weblogic-portal-extension
+  xmlns="http://www.bea.com/servers/portal/weblogic-portal/8.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.bea.com/servers/portal/weblogic-portal/8.0 netuix-extension-1_0_0.xsd"
+>
+  <provider-info>
+    <title>Coherence</title>
+  </provider-info>
+
+  <portal-file>/console.portal</portal-file>
+
+  <book-extension>
+    <book-location>
+      <parent-label-location label="AppApplicationMonitorPage"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+    <page-content content-uri="/PortalConfig/coherence/MonitorAppCoherenceCluster.book"/>
+  </book-extension>
+
+  <book-extension>
+    <book-location>
+      <parent-label-location label="EJBComponentMonitorPage"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+    <page-content content-uri="/PortalConfig/coherence/MonitorEJBCoherenceCluster.book"/>
+  </book-extension>
+
+  <book-extension>
+    <book-location>
+      <parent-label-location label="WebAppModuleMonitorPage"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+    <page-content content-uri="/PortalConfig/coherence/MonitorWebAppCoherenceCluster.book"/>
+  </book-extension>
+
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ContentBook"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+    <page-content content-uri="/PortalConfig/coherence/GlobalClusters.book"/>
+  </book-extension>
+
+  <book-extension>                                                                                                      
+    <book-location>                                                                                                     
+      <parent-label-location label="ServerConfigTabconfigTabPage"/>                                                      
+      <book-insertion-point action="append"/>                                                                           
+    </book-location>                                                                                                    
+    <page-content content-uri="/PortalConfig/coherence/WLSServerConfig.book"/>                                          
+  </book-extension> 
+  
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ClusterconfigTabPage"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+    <page-content content-uri="/PortalConfig/coherence/WLSClusterConfig.book"/>
+  </book-extension>
+
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ContentBook"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+    <page-content content-uri="/PortalConfig/coherence/Garapp.book"/>
+  </book-extension>
+
+</weblogic-portal-extension>

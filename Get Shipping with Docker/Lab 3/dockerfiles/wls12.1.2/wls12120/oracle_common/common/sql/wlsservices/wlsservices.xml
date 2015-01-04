@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- DOCTYPE RepositoryConfig SYSTEM "file:////home/mmehta/development/XML/latest/RepositoryConfig.dtd" -->
+<!--
+  DESCRIPTION
+
+    RCU configuration file for creating WebLogic tables.
+
+  MODIFIED (MM/DD/YY)
+  alai      06/06/11 - Creation
+
+-->
+
+<!DOCTYPE RepositoryConfig SYSTEM "RepositoryConfig.dtd">
+<RepositoryConfig COMP_ID="WLS">
+   <PrerequisiteDescriptor>
+         <DBPrerequisite PREREQ_TYPE="TablespaceFreeMB" DATA_TYPE="NUMBER" COMPARE_OPERATOR="GT">
+            <ValidIf DBTYPE="ORACLE" />
+            <PrereqIdentifier>%DEFAULT_TABLESPACE%</PrereqIdentifier>
+            <PrereqValue>50</PrereqValue>
+         </DBPrerequisite>
+         <DBPrerequisite PREREQ_TYPE="TablespaceFreeMB" DATA_TYPE="NUMBER" COMPARE_OPERATOR="GT">
+            <ValidIf DBTYPE="ORACLE" />
+            <PrereqIdentifier>%TEMPORARY_TABLESPACE%</PrereqIdentifier>
+            <PrereqValue>20</PrereqValue>
+         </DBPrerequisite>
+         <DBPrerequisite PREREQ_TYPE="CustomSQL" DATA_TYPE="STRING" 
+                         COMPARE_OPERATOR="EQ">
+            <ValidIf DBTYPE="SQLSERVER"/>
+            <PrereqIdentifier>select is_read_committed_snapshot_on from 
+                              sys.databases where name='%DATABASE_NAME%' 
+            </PrereqIdentifier>
+            <PrereqValue>1</PrereqValue>
+            <PrereqErrorMsg>
+------------------------------------------------------------------------------
+Component     : WLS
+Error         : Repository creation check failed.
+Cause         : Database: '%DATABASE_NAME%' is not configured correctly.
+Action        : Alter database to turn on the READ_COMMITTED_SNAPSHOT option. 
+                Ensure you have DBA priviliges. Also the DBA should not have 
+                multiple logins on this database - else it will result in a 
+                lock error. 
+Command       : ALTER database %DATABASE_NAME% SET READ_COMMITTED_SNAPSHOT ON
+-------------------------------------------------------------------------------
+            </PrereqErrorMsg>
+          </DBPrerequisite>
+          <DBPrerequisite PREREQ_TYPE="CustomSQL" 
+                          DATA_TYPE="NUMBER" 
+                          COMPARE_OPERATOR="GE">
+            <ValidIf DBTYPE="SQLSERVER"/>
+            <PrereqIdentifier>select count(*) from sys.databases 
+            where name='%DATABASE_NAME%' AND
+            patindex('%%[_]CS[_]%%', collation_name) > 0
+            </PrereqIdentifier>
+            <PrereqValue>1</PrereqValue>
+            <PrereqErrorMsg>
+-------------------------------------------------------------------------------
+Component     : WLS
+Error         : Repository creation check failed.
+Cause         : Database: '%DATABASE_NAME%' is not configured correctly.
+Action        : Alter database to apply the correct collate to the database. 
+                Ensure you have DBA priviliges. Also, the DBA should not have 
+                multiple logins on this database - else it will result in a 
+                lock error.
+Command       : DECLARE @collate   sysname
+                SELECT @collate = convert(sysname, serverproperty('COLLATION'))
+                IF ( charindex(N'_CI', @collate) > 0 )
+                BEGIN
+                  select @collate = replace(@collate, N'_CI', N'_CS')
+                  exec ('ALTER database $(DATABASE_NAME) COLLATE ' + @collate)
+                END
+                GO 
+-------------------------------------------------------------------------------
+             </PrereqErrorMsg>
+           </DBPrerequisite>
+
+   </PrerequisiteDescriptor>
+
+   <PrerequisiteDescriptor TYPE="DROP"> 
+       <DBPrerequisite PREREQ_TYPE="CustomSQL" DATA_TYPE="NUMBER" COMPARE_OPERATOR="EQ">
+              
+           <ValidIf DBTYPE="ORACLE" /> 
+               <PrereqIdentifier>select count(*) from v$session where 
+                  username='%SCHEMA_USER%'</PrereqIdentifier> 
+           <PrereqValue>0</PrereqValue> 
+           <PrereqErrorMsg>The schema owner '%SCHEMA_USER%' is connected to the 
+                database. Please disconnect and try again.</PrereqErrorMsg> 
+       </DBPrerequisite> 
+       <DBPrerequisite PREREQ_TYPE="CustomSQL" DATA_TYPE="NUMBER" COMPARE_OPERATOR="EQ">
+              
+           <ValidIf DBTYPE="EBR" /> 
+               <PrereqIdentifier>select count(*) from v$session where 
+                  username='%SCHEMA_USER%'</PrereqIdentifier> 
+           <PrereqValue>0</PrereqValue> 
+           <PrereqErrorMsg>The schema owner '%SCHEMA_USER%' is connected to the 
+                database. Please disconnect and try again.</PrereqErrorMsg> 
+       </DBPrerequisite> 
+   </PrerequisiteDescriptor> 
+
+
+   <ExecutionDescriptor>
+     <Action TYPE="Java" PERCENT_PROGRESS="10" CONNECT_AS_REGISTRYOWNER="TRUE">
+         <Command TYPE="METHOD">oracle.ias.version.SchemaVersionUtil:utilCreateRegistryEntry</Command>
+         <Parameters>
+            <Parameter TYPE="Connection"></Parameter>
+            <Parameter TYPE="String">WLS</Parameter>
+            <Parameter TYPE="String">WebLogic Services</Parameter>
+            <Parameter TYPE="String">%PREFIX_NAME%</Parameter>
+            <Parameter TYPE="String">WLS</Parameter>
+            <Parameter TYPE="String">WLS</Parameter>
+            <Parameter TYPE="String">%SCHEMA_USER%</Parameter>
+            <Parameter TYPE="String">12.1.2.0.0</Parameter>
+            <Parameter TYPE="String">LOADING</Parameter>
+         </Parameters>
+      </Action>
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="10">
+        <ValidIf DBTYPE="ORACLE" />
+        <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/sql/create_user.sql</Command>
+        <Parameters>
+          <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+          <Parameter TYPE="CmdLine">%SCHEMA_PASSWORD%</Parameter>
+          <Parameter TYPE="CmdLine">%DEFAULT_TABLESPACE%</Parameter>
+          <Parameter TYPE="CmdLine">%TEMPORARY_TABLESPACE%</Parameter>
+        </Parameters>
+      </Action>
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="10">
+        <ValidIf DBTYPE="EBR" />
+        <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/oracle_ebr/create_user.sql</Command>
+        <Parameters>
+          <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+          <Parameter TYPE="CmdLine">%SCHEMA_PASSWORD%</Parameter>
+          <Parameter TYPE="CmdLine">%DEFAULT_TABLESPACE%</Parameter>
+          <Parameter TYPE="CmdLine">%TEMPORARY_TABLESPACE%</Parameter>
+          <Parameter TYPE="CmdLine">%EDITION_NAME%</Parameter>
+        </Parameters>
+      </Action>
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="10">
+         <ValidIf DBTYPE="SQLSERVER" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/MSSQL/create-user-rcu.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%DATABASE_NAME%</Parameter>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+            <Parameter TYPE="CmdLine">%SCHEMA_PASSWORD%</Parameter>
+         </Parameters>
+      </Action>      
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="10">
+         <ValidIf DBTYPE="IBMDB2" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/db2/create-user-rcu.db2</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+	    <Parameter TYPE="CmdLine">%DEFAULT_TABLESPACE%</Parameter>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="10">
+         <ValidIf DBTYPE="MYSQL" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/mysql/create-user-rcu.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+            <Parameter TYPE="CmdLine">%SCHEMA_PASSWORD%</Parameter>
+         </Parameters>
+      </Action>      
+      <Action TYPE="Java" PERCENT_PROGRESS="20" CONNECT_AS_REGISTRYOWNER="TRUE">
+         <Command TYPE="METHOD">oracle.ias.version.SchemaVersionUtil:utilSetComponentLoaded</Command>
+         <Parameters>
+            <Parameter TYPE="String">WLS</Parameter>
+         </Parameters>
+      </Action>
+   </ExecutionDescriptor>
+
+   <ExecutionDescriptor TYPE="DataLoad">
+
+      <!-- create CORE tables -->
+
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="ORACLE" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/sql/create-rcu.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="EBR" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/oracle_ebr/create-rcu.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+            <Parameter TYPE="CmdLine">%EDITION_NAME%</Parameter>
+         </Parameters>
+      </Action>
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="SQLSERVER" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/MSSQL/create-rcu.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%DATABASE_NAME%</Parameter>
+            <Parameter TYPE="CmdLine">%RCU_VARCHAR%</Parameter>
+         </Parameters>
+      </Action>      
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="IBMDB2" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/db2/create-rcu.db2</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+            <Parameter TYPE="CmdLine">%DEFAULT_TABLESPACE%</Parameter>
+            <Parameter TYPE="CmdLine">%TEMPORARY_TABLESPACE%</Parameter>
+         </Parameters>
+      </Action>
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="MYSQL" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/mysql/create-rcu.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>
+
+
+    <!-- Create WLS Security tables -->
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="ORACLE" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../wlserver/server/lib/rdbms_security_store_oracle.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>
+
+     <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="SQLSERVER" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../wlserver/server/lib/rdbms_security_store_sqlserver.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>      
+
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="IBMDB2" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../wlserver/server/lib/rdbms_security_store_db2.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>      
+
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="MYSQL" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../wlserver/server/lib/rdbms_security_store_mysql.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>
+    <!-- End of Create WLS Security tables -->
+      
+<!--       
+        Create WLDF tables 
+       
+      
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="ORACLE" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/diagnostics/oracle/wls_events_ddl.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="ORACLE" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/diagnostics/oracle/wls_hvst_ddl.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="EBR" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/diagnostics/oracle/wls_events_ddl.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="EBR" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/diagnostics/oracle/wls_hvst_ddl.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>
+
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="SQLSERVER" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/diagnostics/sqlserver/wls_hvst_ddl.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>      
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="SQLSERVER" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/diagnostics/sqlserver/wls_events_ddl.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>      
+
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="IBMDB2" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/diagnostics/db2/wldf_tables.db2</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>      
+
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="MYSQL" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/diagnostics/mysql/wls_hvst_ddl.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20" CONNECT_AS_OWNER="TRUE">
+         <ValidIf DBTYPE="MYSQL" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/diagnostics/mysql/wls_events_ddl.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>
+      
+ -->
+       <!--
+        END Create WLDF tables 
+        -->
+      
+      <Action TYPE="Java" CONNECT_AS_REGISTRYOWNER="TRUE">
+         <Command TYPE="METHOD">oracle.ias.version.SchemaVersionUtil:utilSetComponentValid</Command>
+         <Parameters>
+            <Parameter TYPE="Connection"></Parameter>
+            <Parameter TYPE="String">%PREFIX_NAME%</Parameter>
+            <Parameter TYPE="String">WLS</Parameter>
+         </Parameters>
+      </Action>
+   </ExecutionDescriptor>
+
+   <DeleteDescriptor>
+      <Action TYPE="JDBC" PERCENT_PROGRESS="20">
+         <ValidIf DBTYPE="ORACLE" />
+         <Command TYPE="INLINE">DROP USER %SCHEMA_USER% CASCADE</Command>
+      </Action>
+      <Action TYPE="JDBC" PERCENT_PROGRESS="20">
+         <ValidIf DBTYPE="EBR" />
+         <Command TYPE="INLINE">DROP USER %SCHEMA_USER% CASCADE</Command>
+      </Action>
+      <Action TYPE="JDBC" PERCENT_PROGRESS="20">
+         <ValidIf DBTYPE="MYSQL" />
+         <Command TYPE="INLINE">DROP USER %SCHEMA_USER% </Command>
+      </Action>      
+      <Action TYPE="JDBC" PERCENT_PROGRESS="20">
+         <ValidIf DBTYPE="MYSQL" />
+         <Command TYPE="INLINE">DROP SCHEMA IF EXISTS %SCHEMA_USER% </Command>
+      </Action>      
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20">
+         <ValidIf DBTYPE="SQLSERVER" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/MSSQL/drop-user-rcu.sql</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%DATABASE_NAME%</Parameter>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>      
+      <Action TYPE="JDBCSqlScript" PERCENT_PROGRESS="20">
+         <ValidIf DBTYPE="IBMDB2" />
+         <Command TYPE="SCRIPT">%RCU_HOME%/../oracle_common/common/sql/wlsservices/db2/drop-user-rcu.db2</Command>
+         <Parameters>
+            <Parameter TYPE="CmdLine">%SCHEMA_USER%</Parameter>
+         </Parameters>
+      </Action>      
+      <Action TYPE="Java">
+          <ValidIf DBTYPE="IBMDB2" />
+          <Command TYPE="METHOD">oracle.sysman.assistants.common.dbutil.jdbc.DB2DropUtil:dropCompRepos</Command>
+          <Parameters>
+             <Parameter TYPE="Connection"></Parameter>
+             <Parameter TYPE="String">%SCHEMA_USER%</Parameter>
+          </Parameters>
+      </Action>
+      <Action TYPE="Java">
+         <Command TYPE="METHOD">oracle.ias.version.SchemaVersionUtil:utilDropRegistryEntry</Command>
+         <Parameters>
+            <Parameter TYPE="Connection"></Parameter>
+            <Parameter TYPE="String">WLS</Parameter>
+            <Parameter TYPE="String">%PREFIX_NAME%</Parameter>
+            <Parameter TYPE="String">WLS</Parameter>
+         </Parameters>
+      </Action>
+   </DeleteDescriptor>
+</RepositoryConfig>

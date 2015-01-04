@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="WTC.wtc.tbridge.wtctbridgeglobalgeneral.title">
+<title>Queuing Bridge: General</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Queuing Bridge: General</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to define the general configuration for this Tuxedo
+    queuing bridge.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeglobalgeneral.transactional.label">Transactional</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTransactional"></a><a name="Transactional"></a>
+<p>Specifies whether this Tuxedo queuing bridge should use transactions when retrieving messages from a source location and when placing messages on a target location.</p>
+<p>A value of <code>YES</code> means that transactions are used for both operations; a value of <code>NO</code> means that transactions are not used for either operation.</p>
+<p>
+<i>Note:</i> Transactional is not supported in this release.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeGlobalMBean.html#Transactional">WTCtBridgeGlobalMBean.Transactional</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeglobalgeneral.wlserrordestination.label">WLS Error Destination</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getWlsErrorDestination"></a><a name="WlsErrorDestination"></a>
+<p>The name of the location used to store WebLogic Server JMS messages when a message cannot be redirected.</p>
+<p>If not specified, all messages not redirected are lost. If the message cannot be placed into <code>WlsErrorDestination</code> for any reason, an error is logged and the message is lost.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeGlobalMBean.html#WlsErrorDestination">WTCtBridgeGlobalMBean.WlsErrorDestination</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeglobalgeneral.tuxerrorqueue.label">Tuxedo Error Queue</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTuxErrorQueue"></a><a name="TuxErrorQueue"></a>
+<p>The name of the Tuxedo queue used to store a message that cannot be redirected to a Tuxedo/Q source queue.</p>
+<p>If not specified, all messages not redirected are lost. If the message cannot be placed into the <code>TuxErrorQueue</code>, an error is logged and the message is lost.</p>
+<p>
+<i>Note:</i> This queue is in the same queue space as the source queue.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeGlobalMBean.html#TuxErrorQueue">WTCtBridgeGlobalMBean.TuxErrorQueue</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeglobalgeneral.deliverymodeoverride.label">Delivery Mode Override</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getDeliveryModeOverride"></a><a name="DeliveryModeOverride"></a>
+<p>The delivery mode to use when placing messages onto the target location.</p>
+<p>If this value is not specified, the message is placed on the target location with the same delivery mode specified from the source location.</p>
+<p>
+<i>Note:</i> This value overrides any delivery mode associated with a message.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeGlobalMBean.html#DeliveryModeOverride">WTCtBridgeGlobalMBean.DeliveryModeOverride</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeglobalgeneral.defaultreplydeliverymode.label">Default Reply Delivery Mode</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getDefaultReplyDeliveryMode"></a><a name="DefaultReplyDeliveryMode"></a>
+<p>The reply delivery mode to associate with a message when placing messages onto the target location.</p>
+<p>Usage Notes:</p>
+<ul> 
+<li> 
+<p>Use when messages are being redirected to Tuxedo/Q from JMS and the <code>JMS_BEA_TuxGtway_Tuxedo_ReplyDeliveryMode</code> property is not set for a message.</p> 
+</li>  
+<li> 
+<p>If the <code>defaultReplyDeliveryMode</code> and <code>JMS_BEA_TuxGtway_Tuxedo_ReplyDeliveryMode</code> are not set, the default semantics defined for Tuxedo are enforced by the Tuxedo/Q subsystem.</p> 
+</li> 
+</ul>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeGlobalMBean.html#DefaultReplyDeliveryMode">WTCtBridgeGlobalMBean.DefaultReplyDeliveryMode</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeglobalgeneral.userid.label">User ID</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUserId"></a><a name="UserId"></a>
+<p>The user identity for all messages handled by this Tuxedo queuing bridge for ACL checks when security is configured.</p>
+<p>All messages assume this identity until the security/authentication contexts are passed between the subsystems. Until the security contexts are passed, there is no secure method to identify who generated a message received from the source location.</p>
+<p>
+<i>Note:</i> The <code>user</code> argument may be specified as either a user name or a user identification number (uid).</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeGlobalMBean.html#UserId">WTCtBridgeGlobalMBean.UserId</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeglobalgeneral.allownonstandardtypes.label">Allow Non Standard Types</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getAllowNonStandardTypes"></a><a name="AllowNonStandardTypes"></a>
+<p>Specifies whether non-standard data types are allowed to pass through this Tuxedo queuing bridge.</p>
+<p>A value of <code>NO</code> means that non standard types are rejected and placed onto a specified error location; a value of <code>YES</code> means that non-standard types are placed on the target location as BLOBs with a tag indicating the original type.</p>
+<p>
+<i>Note:</i> Standard types are: ASCII text (TextMessage, STRING), or BLOB (BytesMessage, CARRAY).</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeGlobalMBean.html#AllowNonStandardTypes">WTCtBridgeGlobalMBean.AllowNonStandardTypes</a></code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.CreateTuxedoQueuingBridgeConnections">Create queuing bridge
+  connections</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.RemoveTuxedoQueuingBridgeConnections">Delete queuing bridge
+  connections</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.ConfigureConnectionAttributesForTuxedoQueuingBridges">Configure connections for
+  queuing bridges</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.ConfigureConnectionFactoriesForTuxedoQueuingBridges">Configure connection factories
+  for queuing bridges</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.ConfigurePriorityMappingForTuxedoQueuingBridgeConnections">Configure priority mapping for
+  queuing bridges</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/WTCCF/tbridge.htm">How to Configure the Oracle
+    Tuxedo Queuing Bridge</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

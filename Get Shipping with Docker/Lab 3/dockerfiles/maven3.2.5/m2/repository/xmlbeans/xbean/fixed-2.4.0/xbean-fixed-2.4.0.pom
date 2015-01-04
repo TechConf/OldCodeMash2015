@@ -1,0 +1,6 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>xmlbeans</groupId>
+  <artifactId>xbean</artifactId>
+  <version>fixed-2.4.0</version>
+</project>

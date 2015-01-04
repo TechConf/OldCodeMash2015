@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="Jolt.jolt.joltconnectionpoolconfiguser.title">
+<title>Jolt Connection Pools: Configuration: User</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Jolt Connection Pools: Configuration: User</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Use this page to establish user credentials for accessing this
+    connection pool. If you have enabled this connection pool to pass its
+    security context to Tuxedo, the user name and password must be the name of
+    an authorized Tuxedo user.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="jolt.joltconnectionpoolconfiguser.username.label">User Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUserName"></a><a name="UserName"></a>
+<p>A user name that applications specify to connect to this Jolt connection pool. If Security Context is enabled, this name must be the name of an authorized Tuxedo user. (Specifying a Tuxedo user name is required if the Tuxedo authentication level is <code>USER_AUTH</code>.)</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#UserName">JoltConnectionPoolMBean.UserName</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="jolt.joltconnectionpoolconfiguser.userrole.label">User Role</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUserRole"></a><a name="UserRole"></a>
+<p>The Tuxedo user role for this Jolt connection pool. (This is required only when the security level in the Tuxedo domain is <tt>USER_AUTH</tt>, <tt>ACL</tt>, or <tt>MANDATORY_ACL</tt>).</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#UserRole">JoltConnectionPoolMBean.UserRole</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="jolt.joltconnectionpoolconfiguser.userpassword.label">User Password</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUserPassword"></a><a name="UserPassword"></a>
+<p>The user password for this Jolt connection pool.</p>
+<p>As of 8.1 sp4, when you get the value of this attribute, WebLogic Server does the following:</p>
+<ol> 
+<li> 
+<p>Retrieves the value of the <code>UserPasswordEncrypted</code> attribute.</p> 
+</li>  
+<li> 
+<p>Decrypts the value and returns the unencrypted password as a String.</p> 
+</li> 
+</ol>
+<p>When you set the value of this attribute, WebLogic Server does the following:</p>
+<ol> 
+<li> 
+<p>Encrypts the value.</p> 
+</li>  
+<li> 
+<p>Sets the value of the <code>UserPasswordEncrypted</code> attribute to the encrypted value.</p> 
+</li> 
+</ol>
+<p>Using this attribute (<code>UserPassword</code>) is a potential security risk because the String object (which contains the unencrypted password) remains in the JVM's memory until garbage collection removes it and the memory is reallocated. Depending on how memory is allocated in the JVM, a significant amount of time could pass before this unencrypted data is removed from memory.</p>
+<p>Instead of using this attribute, use <code>UserPasswordEncrypted</code>.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#UserPassword">JoltConnectionPoolMBean.UserPassword</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="jolt.joltconnectionpoolconfiguser.applicationpassword.label">Application Password</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getApplicationPassword"></a><a name="ApplicationPassword"></a>
+<p>The application password for this Jolt connection pool. (This is required only when the security level in the Tuxedo domain is <tt>USER_AUTH</tt>, <tt>ACL</tt> or <tt>MANDATORY_ACL</tt>).</p>
+<p>As of 8.1 sp4, when you get the value of this attribute, WebLogic Server does the following:</p>
+<ol> 
+<li> 
+<p>Retrieves the value of the <code>ApplicationPasswordEncrypted</code> attribute.</p> 
+</li>  
+<li> 
+<p>Decrypts the value and returns the unencrypted password as a String.</p> 
+</li> 
+</ol>
+<p>When you set the value of this attribute, WebLogic Server does the following:</p>
+<ol> 
+<li> 
+<p>Encrypts the value.</p> 
+</li>  
+<li> 
+<p>Sets the value of the <code>ApplicationPasswordEncrypted</code> attribute to the encrypted value.</p> 
+</li> 
+</ol>
+<p>Using this attribute (<code>ApplicationPassword</code>) is a potential security risk because the String object (which contains the unencrypted password) remains in the JVM's memory until garbage collection removes it and the memory is reallocated. Depending on how memory is allocated in the JVM, a significant amount of time could pass before this unencrypted data is removed from memory.</p>
+<p>Instead of using this attribute, use <code>ApplicationPasswordEncrypted</code>.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#ApplicationPassword">JoltConnectionPoolMBean.ApplicationPassword</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=jolt.ConfigureAUserSecurityIdentity">Configure a user
+  identity</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

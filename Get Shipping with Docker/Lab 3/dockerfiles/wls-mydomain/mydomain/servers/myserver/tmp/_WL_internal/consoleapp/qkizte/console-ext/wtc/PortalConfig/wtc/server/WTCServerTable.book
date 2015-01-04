@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+             xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+             xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd"><!-- 
+    Definition file for the pages in the wtc.server subsystem
+    of the WebLogic Server administration console
+    
+    Copyright (c) 2004,2009, Oracle and/or its affiliates. All rights reserved.
+-->
+    <netuix:page markupName="page" markupType="Page" definitionLabel="WTCServerTablePage"
+               title="not.used"
+               hidden="true"
+               presentationClass="page-table">
+      <netuix:meta name="helpid" content="WTC.wtc.server.wtcservertable.title;wtc"/>
+      <netuix:meta name="breadcrumb" content="wtcservers.title"/>
+      <netuix:content>
+        <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+          <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+            <netuix:portletInstance markupType="Portlet" instanceLabel="WTCServerTablePortlet"
+                                  contentUri="/PortalConfig/wtc/server/WTCServerTable.portlet"/>
+          </netuix:placeholder>
+        </netuix:layout>
+      </netuix:content>
+    </netuix:page>
+</portal:root>

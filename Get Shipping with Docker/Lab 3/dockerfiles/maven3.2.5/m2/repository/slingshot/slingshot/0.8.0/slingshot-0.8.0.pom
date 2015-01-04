@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>slingshot</groupId>
+  <artifactId>slingshot</artifactId>
+  <version>0.8.0</version>
+  <name>slingshot</name>
+  <description>Enhanced throw, try, leveraging Clojure's capabilities</description>
+  <scm>
+    <tag>d63e90034e0fa82875667014d333dbe35c7fcee3</tag>
+  </scm>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <testSourceDirectory>test</testSourceDirectory>
+    <resources>
+      <resource>
+        <directory>resources</directory>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>test-resources</directory>
+      </testResource>
+    </testResources>
+  </build>
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>http://repo1.maven.org/maven2</url>
+    </repository>
+    <repository>
+      <id>clojars</id>
+      <url>http://clojars.org/repo/</url>
+    </repository>
+  </repositories>
+  <dependencies>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>clojure</artifactId>
+      <version>1.2.1</version>
+    </dependency>
+  </dependencies>
+</project>

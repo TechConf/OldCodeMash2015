@@ -1,0 +1,88 @@
+@ECHO OFF
+SETLOCAL
+
+SET SCRIPT_PATH=%~dp0
+FOR %%i IN ("%SCRIPT_PATH%") DO SET SCRIPT_PATH=%%~fsi
+
+@REM Set CURRENT_HOME...
+FOR %%i IN ("%SCRIPT_PATH%\..\..") DO SET CURRENT_HOME=%%~fsi
+
+@REM Set the MW_HOME relative to the CURRENT_HOME...
+FOR %%i IN ("%CURRENT_HOME%\..") DO SET MW_HOME=%%~fsi
+
+@REM Set the home directories...
+CALL "%SCRIPT_PATH%\setHomeDirs.cmd"
+
+@REM Set the DELEGATE_ORACLE_HOME to CURRENT_HOME if it's not set...
+IF "%DELEGATE_ORACLE_HOME%"=="" (
+  SET DELEGATE_ORACLE_HOME=%CURRENT_HOME%
+)
+SET ORACLE_HOME=%DELEGATE_ORACLE_HOME%
+
+@REM Set the directory to get wlst commands from...
+SET COMMON_WLST_HOME=%COMMON_COMPONENTS_HOME%\common\wlst
+SET WLST_HOME=%COMMON_WLST_HOME%;%WLST_HOME%
+
+@REM some scripts in the the WLST_HOME directory reference ORACLE_HOME
+SET WLST_PROPERTIES=%WLST_PROPERTIES% -DORACLE_HOME=%ORACLE_HOME% -DCOMMON_COMPONENTS_HOME=%COMMON_COMPONENTS_HOME%
+
+@REM Set the WLST extended env...
+IF EXIST %COMMON_COMPONENTS_HOME%\common\bin\setWlstEnv.cmd CALL %COMMON_COMPONENTS_HOME%\common\bin\setWlstEnv.cmd
+
+@REM Appending additional jar files to the CLASSPATH...
+IF EXIST %COMMON_WLST_HOME%\lib FOR %%G IN (%COMMON_WLST_HOME%\lib\*.jar) DO (CALL :APPEND_CLASSPATH %%~FSG)
+
+@REM Appending additional resource bundles to the CLASSPATH...
+IF EXIST %COMMON_WLST_HOME%\resources FOR %%G IN (%COMMON_WLST_HOME%\resources\*.jar) DO (CALL :APPEND_CLASSPATH %%~FSG) 
+
+IF DEFINED WLS_NOT_BRIEF_ENV (
+  IF "%WLS_NOT_BRIEF_ENV%"=="true" SET WLS_NOT_BRIEF_ENV=
+  IF "%WLS_NOT_BRIEF_ENV%"=="TRUE" SET WLS_NOT_BRIEF_ENV=
+) ELSE (
+  SET WLS_NOT_BRIEF_ENV=false
+)
+
+IF EXIST "%WL_HOME%\server\bin\setWLSEnv.cmd" (
+  CALL "%WL_HOME%\server\bin\setWLSEnv.cmd"
+) ELSE (
+  CALL "%MW_HOME%\oracle_common\common\bin\commEnv.cmd"
+)
+
+if exist %SCRIPT_PATH%\cam_wlst.cmd (
+  call %SCRIPT_PATH%\cam_wlst.cmd
+)
+
+
+if NOT "%WLST_HOME%"=="" (
+  set WLST_PROPERTIES=-Dweblogic.wlstHome=%WLST_HOME% %WLST_PROPERTIES%
+)
+
+SET CLASSPATH=%CLASSPATH%;%FMWLAUNCH_CLASSPATH%;%DERBY_CLASSPATH%;%DERBY_TOOLS%
+
+if "%WLS_NOT_BRIEF_ENV%"=="" (
+@echo.
+@echo CLASSPATH=%CLASSPATH%
+)
+
+SET JVM_ARGS=-Dprod.props.file="%WL_HOME%\.product.properties" %WLST_PROPERTIES% %MEM_ARGS% %CONFIG_JVM_ARGS%
+
+IF EXIST %JAVA_HOME% (
+ "%JAVA_HOME%\bin\java" %JVM_ARGS% weblogic.WLST %*
+) ELSE (
+  CALL :SET_RC 1
+)
+
+SET RETURN_CODE=%ERRORLEVEL%
+
+IF DEFINED USE_CMD_EXIT (
+  EXIT %RETURN_CODE%
+) ELSE (
+  EXIT /B %RETURN_CODE%
+)
+
+:SET_RC
+EXIT /B %1
+
+:APPEND_CLASSPATH
+SET CLASSPATH=%CLASSPATH%;%1
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN" "http://java.sun.com/products/javahelp/toc_2_0.dtd">
+<toc xml:lang="en-US" version="2.0" categoryclosedimage="chapter" topicimage="topic">
+  <tocitem text="WTC Extension" target="intro">
+    <tocitem text="How Do I..." target="blank">
+      
+    <tocitem text="Create WTC servers" target="wtc.CreateWTCServices"/>
+
+    <tocitem text="Delete WTC servers" target="wtc.DeleteWTCServices"/>
+
+    <tocitem text="Target WTC servers" target="wtc.AssignWTCServicesToServers"/>
+
+    <tocitem text="Resume WTC services" target="wtc.ResumeWTCServices"/>
+
+    <tocitem text="Suspend WTC services" target="wtc.SuspendWTCServices"/>
+
+    <tocitem text="Start WTC server connections" target="wtc.StartWTCServerConnections"/>
+
+    <tocitem text="Stop WTC server connections" target="wtc.StopWTCServerConnections"/>
+
+    <tocitem text="Create local access points" target="wtc.CreateLocalTuxedoAccessPoints"><tocitem text="Configure connections for local access points" target="wtc.ConfigureConnectionAttributesForLocalTuxedoAccessPoints"/><tocitem text="Configure security for local access points" target="wtc.ConfigureLocalTuxedoAccessPointSecurity"/><tocitem text="Delete local access points" target="wtc.DeleteLocalTuxedoAccessPoints"/></tocitem>
+
+    <tocitem text="Create remote access points" target="wtc.CreateRemoteTuxedoAccessPoints"><tocitem text="Configure connections for remote access points" target="wtc.ConfigureConnectionAttributesForRemoteTuxedoAccessPoints"/><tocitem text="Configure security for remote access points" target="wtc.ConfigureRemoteTuxedoAccessPointSecurity"/><tocitem text="Delete remote access points" target="wtc.DeleteRemoteTuxedoAccessPoints"/></tocitem>
+
+    <tocitem text="Create exported services" target="wtc.CreateExportedServices"/>
+
+    <tocitem text="Delete exported services" target="wtc.DeleteExportedServices"/>
+
+    <tocitem text="Create imported services" target="wtc.CreateImportedServices"/>
+
+    <tocitem text="Delete imported services" target="wtc.DeleteImportedServices"/>
+
+    <tocitem text="Create password configurations" target="wtc.CreatePasswordConfigurations"/>
+
+    <tocitem text="Delete password configurations" target="wtc.DeletePasswordConfigurations"/>
+
+    <tocitem text="Create resources" target="wtc.CreateResources"/>
+
+    <tocitem text="Delete resources" target="wtc.RemoveResources"/>
+
+    <tocitem text="Create queuing bridge connections" target="wtc.CreateTuxedoQueuingBridgeConnections"><tocitem text="Configure connections for queuing bridges" target="wtc.ConfigureConnectionAttributesForTuxedoQueuingBridges"/><tocitem text="Configure connection factories for queuing bridges" target="wtc.ConfigureConnectionFactoriesForTuxedoQueuingBridges"/><tocitem text="Configure priority mapping for queuing bridges" target="wtc.ConfigurePriorityMappingForTuxedoQueuingBridgeConnections"/><tocitem text="Delete queuing bridge connections" target="wtc.RemoveTuxedoQueuingBridgeConnections"/></tocitem>
+
+    <tocitem text="Create Tuxedo queuing bridge redirections" target="wtc.CreateATuxedoQueuingBridgeRedirection"/>
+
+    <tocitem text="Delete Tuxedo queuing bridge redirections" target="wtc.DeleteATuxedoQueuingBridgeRedirection"/>
+
+  </tocitem>
+
+    <tocitem text="WTC Reference" target="blank">
+    
+  <tocitem text="WTC Servers" target="WTCwtcserverwtcservertabletitle"/>
+
+  <tocitem text="WTC Server: Configuration: General" target="WTCwtcserverwtcservergeneraltitle"><tocitem text="Servers: Services: WTC" target="Corecoreserverserverserviceswtctitle"/><tocitem text="Create a WTC Server" target="WTCwtcservercreatewtcservertitle"/><tocitem text="Delete a WTC Server" target="WTCwtcserverdeletewtcservertitle"/><tocitem text="WTC Server: Configuration: Local APs" target="WTCwtcserverwtcservercontentslocaldomainstitle"><tocitem text="Create a WTC Local Tuxedo Access Point" target="WTCwtclocaltuxdomcreatewtclocaltuxdomtitle"/><tocitem text="Delete a WTC Local Tuxedo Access Point" target="WTCwtclocaltuxdomdeletewtclocaltuxdomtitle"/><tocitem text="Local Tuxedo Access Points: General" target="WTCwtclocaltuxdomwtclocaltuxdomgeneraltitle"/><tocitem text="Local Tuxedo Access Points: Connections" target="WTCwtclocaltuxdomwtclocaltuxdomconnectionstitle"/><tocitem text="Local Tuxedo Access Points: Security" target="WTCwtclocaltuxdomwtclocaltuxdomsecuritytitle"/></tocitem><tocitem text="WTC Server: Configuration: Remote APs" target="WTCwtcserverwtcservercontentsremotedomainstitle"><tocitem text="Create a WTC Remote Tuxedo Access Point" target="WTCwtcremotetuxdomcreatewtcremotetuxdomtitle"/><tocitem text="Delete a WTC Remote Tuxedo Access Point" target="WTCwtcremotetuxdomdeletewtcremotetuxdomtitle"/><tocitem text="Remote Tuxedo Access Points: General" target="WTCwtcremotetuxdomwtcremotetuxdomgeneraltitle"/><tocitem text="Remote Tuxedo Access Points: Connections" target="WTCwtcremotetuxdomwtcremotetuxdomconnectionstitle"/><tocitem text="Remote Tuxedo Access Points: Security" target="WTCwtcremotetuxdomwtcremotetuxdomsecuritytitle"/></tocitem><tocitem text="WTC Server: Configuration: Exported" target="WTCwtcserverwtcservercontentsexportedtitle"><tocitem text="Create a WTC Exported Service" target="WTCwtcexportscreatewtcexporttitle"/><tocitem text="Delete a WTC Exported Service" target="WTCwtcexportsdeletewtcexporttitle"/><tocitem text="Exported Services: General" target="WTCwtcexportswtcexportgeneraltitle"/></tocitem><tocitem text="WTC Server: Configuration: Imported" target="WTCwtcserverwtcservercontentsimportedtitle"><tocitem text="Create a WTC Imported Service" target="WTCwtcimportscreatewtcimporttitle"/><tocitem text="Delete a WTC Imported Service" target="WTCwtcimportsdeletewtcimporttitle"/><tocitem text="Imported Services: General" target="WTCwtcimportswtcimportgeneraltitle"/></tocitem><tocitem text="WTC Server: Configuration: Passwords" target="WTCwtcserverwtcservercontentspasswordstitle"><tocitem text="Create a WTC Password Configuration" target="WTCwtcpasswordcreatewtcpasswordtitle"/><tocitem text="Delete a WTC Password" target="WTCwtcpassworddeletewtcpasswordtitle"/><tocitem text="Passwords: Configuration" target="WTCwtcpasswordwtcpasswordconfigtitle"/></tocitem><tocitem text="WTC Server: Configuration: Resources" target="WTCwtcserverwtcservercontentsresourcestitle"><tocitem text="Create a WTC Resource Configuration" target="WTCwtcresourcescreatewtcresourcetitle"/><tocitem text="Delete a WTC Resource Configuration" target="WTCwtcresourcesdeletewtcresourcetitle"/><tocitem text="Resources: Configuration" target="WTCwtcresourceswtcresourcesconfigtitle"/></tocitem><tocitem text="WTC Server: Configuration: Queuing Bridge" target="WTCwtcserverwtcservercontentsqueuingbridgetitle"><tocitem text="Create a WTC Queuing Bridge Connection" target="WTCwtctbridgecreatewtctbridgeglobaltitle"/><tocitem text="Delete a WTC Queuing Bridge Connection" target="WTCwtctbridgedeletewtctbridgeglobaltitle"/><tocitem text="Queuing Bridge: General" target="WTCwtctbridgewtctbridgeglobalgeneraltitle"/><tocitem text="Queuing Bridge: Connections" target="WTCwtctbridgewtctbridgeglobalconnectionstitle"/><tocitem text="Queuing Bridge: Factories" target="WTCwtctbridgewtctbridgeglobalfactoriestitle"/><tocitem text="Queuing Bridge: Priority Mapping" target="WTCwtctbridgewtctbridgeglobalprioritiestitle"/></tocitem><tocitem text="WTC Server: Configuration: Redirections" target="WTCwtcserverwtcservercontentsredirectstitle"><tocitem text="Create a WTC Queuing Bridge Redirection" target="WTCwtctbridgecreatewtctbridgeredirecttitle"/><tocitem text="Delete a WTC Queuing Bridge Redirection" target="WTCwtctbridgedeletewtctbridgeredirecttitle"/><tocitem text="Redirection: General" target="WTCwtctbridgewtctbridgeredirectgeneraltitle"/></tocitem></tocitem>
+
+  <tocitem text="WTC Server: Control: Services" target="WTCwtcserverwtcservercontrolservicestitle"/>
+
+  <tocitem text="WTC Server: Control: Connections" target="WTCwtcserverwtcservercontrolconnectionstitle"/>
+
+  <tocitem text="WTC Server: Targets" target="WTCwtcserverwtcservertargetdeploytitle"/>
+
+  <tocitem text="WTC Server: Notes" target="WTCwtcserverwtcservernotestitle"/>
+
+  </tocitem>
+  </tocitem>
+</toc>

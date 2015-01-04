@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Configure Coherence
+  servers</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50012" id="WLACH50012"></a>
+
+
+  <h1 class="topictitle1">Configure Coherence
+  servers</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="WLACH50012__servers1160646" id="WLACH50012__servers1160646"></a>To configure existing
+      Coherence servers:</p>
+
+      <p><b>Note: </b>The Coherence servers feature is deprecated and
+      remains supported for backwards compatibility. Coherence tiers should be
+      configured to use Managed Coherence Servers instead. See <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=coherence.ConfigureCoherenceClusterTiers">Configure and deploy
+  Coherence deployment tiers</a></p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50012__servers1160647" id="WLACH50012__servers1160647"></a>In the left pane
+        of the Console, expand <b>Environment</b> and select
+        <b>Coherence Servers</b>.</span>
+
+        <span>
+          <p>The Coherence servers table displays all the Coherence servers
+          defined in the domain.</p>
+        </span>
+      </li>
+
+      <li>
+        <span>Select the name of the server you want to configure.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50012__servers1160649" id="WLACH50012__servers1160649"></a>On the
+        <span>Coherence Server Properties</span> page, adjust the
+        server properties values as needed.</span>
+
+        <ol type="a">
+          <li>
+            <span>Enter the name of the server in the
+            <b>Name</b> field.</span>
+
+             
+              <p><a name="WLACH50012__servers1160653" id="WLACH50012__servers1160653"></a>The server name is not
+              used as part of the URL for applications that are deployed on
+              the server. It is for your identification purposes only. The
+              server name displays in the Administration Console, and if you
+              use WebLogic Server command-line utilities or APIs, you use this
+              name to identify the server.</p>
+            
+          </li>
+
+          <li>
+            <span>Select an existing <b>Machine</b> (WebLogic
+            Server host computer name on which this server is meant to run)
+            from the drop down list.</span>
+
+             
+              <p>In order to use Node Manager to start this Coherence server,
+              you must assign the server to a machine and you configure the
+              machine for the Node Manager. See <a href="http://docs.oracle.com/middleware/1212/wls//../WLACH/taskhelp/machines/ConfigureMachines.html">Create and configure machines</a>.</p>
+            
+          </li>
+
+          <li>
+            <span>Optional. In <b>Cluster</b>, enter the
+            system-level Coherence cluster resource associated with this
+            server.</span>
+          </li>
+
+          <li>
+            <span>Optional. In <b>Unicast Listen Address</b>,
+            enter the IP address for the cluster unicast listener. This
+            attribute may be used to override the value of the referenced
+            Coherence cluster.</span>
+          </li>
+
+          <li>
+            <span>Optional. In <b>Unicast Listen Port</b>,
+            enter the port for the cluster unicast listener.</span>
+          </li>
+
+          <li>
+            <span>Optional. Use the <b>Unicast Port Auto
+            Adjust</b> check box to specify whether the unicast port
+            will be automatically incremented if the port cannot be bound
+            because it is already in use.</span>
+          </li>
+
+          <li>
+            <span>Optional. Use the <b>Auto Restart Enabled</b>
+            check box to specify whether the Node Manager can automatically
+            restart this server if it crashes or otherwise goes down
+            unexpectedly.</span>
+          </li>
+
+          <li>
+            <span>Optional. In <b>Restart Interval</b>, enter
+            the number of seconds during which this server can be restarted,
+            up to the number of times specified in <b>Restart Maximum
+            Tries</b>.</span>
+          </li>
+
+          <li>
+            <span>Optional. In <b>Restart Maximum Tries</b>,
+            enter the number of times that the Node Manager can restart this
+            server within the interval specified in <b>Restart
+            Interval</b>.</span>
+          </li>
+
+          <li>
+            <span>Optional. In <b>Restart Delay</b>, enter the
+            number of seconds the Node Manager should wait before restarting
+            this server.</span>
+          </li>
+
+          <li>
+            <span>Optional. In <b>Node Manager Connect
+            Timeout</b>, enter the timeout value in milliseconds to be
+            used by the Node Manager when creating a socket connection to the
+            agent.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span>When you are finished making changes, click
+        <b>Save</b>.</span>
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+  </div>
+
+
+</body></html>

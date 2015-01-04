@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="js/foundation/css/foundation.css">
+        <link rel="stylesheet" href="js/foundation/css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="js/tablesaw/tablesaw.css">
+        <link rel="stylesheet" href="js/toastr/toastr.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="row">
+            <div class="large-12 columns">
+                <span>&nbsp;</span>
+                <div class="panel">
+                    <h3>Device Agnostic ToDo</h3>
+                    <p>This is a place to try out different ideas for web site implementation per the Device Agnostic working group</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="large-12 columns">
+                <div class="panel">
+                    <table class="tablesaw tablesaw-stack tablesaw-sortable" data-sortable>
+                        <thead>
+                            <tr>
+                                <th data-sortable-col class="sortable-head">Done</th>
+                                <th data-sortable-col class="sortable-head">Priority</th>
+                                <th>Task</th>
+                                <th data-sortable-col data-sortable-default-col class="sortable-head sortable-descending">Due By</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: items">
+                            <tr>
+                                <td><input type="checkbox" data-bind="checked: isDone" /></td>
+                                <td data-bind="text: priority" />
+                                <td data-bind="text: task, style: { textDecoration: isDone() ? 'line-through' : 'none' }" />
+                                <!-- <td><input type="datetime" data-bind="value: dueBy" /></td> -->
+                                <td data-bind="text: dueBy" />
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        
+        <!-- initialize toastr -->
+        <script src="js/toastr/toastr.js"></script>
+        <script>
+            toastr.options.closeButton = true;
+            toastr.info("toastr properly initialized");
+        </script>
+        
+        <!-- Initialize log4javascript -->
+        <script src="js/log4javascript/log4javascript.js"></script>
+        <script>
+            var logger = log4javascript.getLogger();
+            logger.addAppender((function() {
+                var appender = new log4javascript.BrowserConsoleAppender();
+                return appender;
+            })());
+            logger.debug("log4javascript properly initialized");
+        </script>
+
+        <script src="js/main.js"></script>
+        <script src="js/tablesaw/tablesaw.js"></script>
+        <script src="js/knockout/knockout-min.js"></script>
+        <script src="js/viewmodel.js"></script>
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+            (function(d, t) {
+                var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                g.src = '//www.google-analytics.com/ga.js';
+                s.parentNode.insertBefore(g, s)
+            }(document, 'script'));
+        </script>
+    </body>
+</html>

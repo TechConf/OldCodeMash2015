@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="WTC.wtc.exports.wtcexportgeneral.title">
+<title>Exported Services: General</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Exported Services: General</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to define the exported services configuration for a local
+    Tuxedo access point that will be used with this WTC server.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.exports.wtcexportgeneral.resourcename.label">Resource Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getResourceName"></a><a name="ResourceName"></a>
+<p>The name used to identify an exported service.</p>
+<p>The combination of ResourceName and LocalAccessPoint must be unique within defined Exports. This allows you to define unique configurations having the same ResourceName.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCExportMBean.html#ResourceName">WTCExportMBean.ResourceName</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.exports.wtcexportgeneral.localaccesspoint.label">Local Access Point</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getLocalAccessPoint"></a><a name="LocalAccessPoint"></a>
+<p>The name of the local access point that exports this service.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCExportMBean.html#LocalAccessPoint">WTCExportMBean.LocalAccessPoint</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.exports.wtcexportgeneral.ejbname.label">EJB Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getEJBName"></a><a name="EJBName"></a>
+<p>The complete name of the EJB home interface to use when invoking a service.</p>
+<p>If not specified, the default interface used is <code>tuxedo.services.<i>servicename</i>Home</code>. For example: If the service being invoked is TOUPPER and EJBName attribute is not specified, the home interface looked up in JNDI would be <code>tuxedo.services.TOUPPERHome</code>.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCExportMBean.html#EJBName">WTCExportMBean.EJBName</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.exports.wtcexportgeneral.remotename.label">Remote Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRemoteName"></a><a name="RemoteName"></a>
+<p>The remote name of this service.</p>
+<p>If this value is not specified, the ResourceName value is used.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCExportMBean.html#RemoteName">WTCExportMBean.RemoteName</a></code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.CreateExportedServices">Create exported
+  services</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.DeleteExportedServices">Delete exported
+  services</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/WTCCF/install.htm">Configuring Oracle WebLogic
+    Tuxedo Connector</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="Coherence.serverconfigstartup.title">
+<title>Coherence Server: Configuration: Server Start</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Coherence Server: Configuration: Server Start</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Node Manager is a WebLogic Server utility that you can use to start,
+    suspend, shut down, and restart servers in normal or unexpected
+    conditions. Use this page to configure the startup settings that Node
+    Manager will use to start this Coherence server on a remote machine.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfigstartup.javahome">Java Home</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getJavaHome"></a><a name="JavaHome"></a>
+<p>The Java home directory (path on the machine running Node Manager) to use when starting this server.</p>
+<p>Specify the parent directory of the JDK's <code>bin</code> directory. For example, <code>c:\bea\jdk141</code>.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ManagedExternalServerStartMBean.html#JavaHome">ManagedExternalServerStartMBean.JavaHome</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfigstartup.javavendor">Java Vendor</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getJavaVendor"></a><a name="JavaVendor"></a>
+<p>The Java Vendor value to use when starting this server.</p>
+<p> If the server is part of a cluster and configured for automatic migration across possibly different platforms with different vendors providing the JDKs, then, both JavaVendor and JavaHome should be set in the generated configuration file instead.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ManagedExternalServerStartMBean.html#JavaVendor">ManagedExternalServerStartMBean.JavaVendor</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfigstartup.beahome">BEA Home</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getBeaHome"></a><a name="BeaHome"></a>
+<p>The BEA home directory (path on the machine running Node Manager) to use when starting this server.</p>
+<p>Specify the directory on the Node Manager machine under which all of Oracle's BEA products were installed. For example, <code>c:\Oracle\Middleware\</code>.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ManagedExternalServerStartMBean.html#BeaHome">ManagedExternalServerStartMBean.BeaHome</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfigstartup.rootdirectory">Root Directory</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRootDirectory"></a><a name="RootDirectory"></a>
+<p>The directory that this server uses as its root directory. This directory must be on the computer that hosts the Node Manager. If you do not specify a Root Directory value, the domain directory is used by default.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ManagedExternalServerStartMBean.html#RootDirectory">ManagedExternalServerStartMBean.RootDirectory</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfigstartup.classpath">Class Path</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getClassPath"></a><a name="ClassPath"></a>
+<p>The classpath (path on the machine running Node Manager) to use when starting this server.</p>
+<p>If you need to add user classes to the classpath, in addition you will need to add the following: <code>FEATURES_HOME/weblogic.server.modules.coherence.server_10.3.4.0.jar:COHERENCE_HOME/lib/coherence.jar</code>
+</p>
+<p>where <code>FEATURES_HOME</code> is the features directory (typically <code>$MW_HOME/modules/features</code>) and <code>COHERENCE_HOME</code> the coherence directory (typically <code>$MW_HOME/coherence_3.6</code>) on the Node Manager machine. If you do not specify a classpath the above will be used automatically.</p>
+<p>The operating system determines which character separates path elements. On Windows, use a semicolon (;). On UNIX a colon (:).</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ManagedExternalServerStartMBean.html#ClassPath">ManagedExternalServerStartMBean.ClassPath</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="serverconfigstartup.arguments">Arguments</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getArguments"></a><a name="Arguments"></a>
+<p>The arguments to use when starting this server.</p>
+<p>These are the first arguments appended immediately after <code>java</code> portion of the startup command. For example, you can set Java heap memory or specify any <code>weblogic.nodemanager.server.provider.WeblogicCacheServer</code> option.</p>
+<p>Separate arguments with a space.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ManagedExternalServerStartMBean.html#Arguments">ManagedExternalServerStartMBean.Arguments</a></code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=machines.BindToProtectedPortsOnServersStartedByNodeManager">Configure Node
+  Manager</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureStartupArgumentsForCoherenceServers">Configure startup
+  arguments for Coherence servers</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.StartCoherenceServers">Start Coherence servers
+  from the Administration Console</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ShutdownCoherenceServers">Shutdown Coherence
+  servers</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/COHWL/coh_wls.htm#COHWL729">Starting Cache
+    Servers Using Node Manager</a>
+</li>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/NODEM/index.html">Administering Node Manager for
+    Oracle WebLogic Server</a>
+</li>
+<li>
+<a href="http://docs.oracle.com/cd/E14526_01/coh.350/e14509/appoverride.htm#CHDEIIBJ">Allowable Coherence Server Startup Parameters</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

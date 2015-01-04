@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2009, Oracle and/or its affiliates. 
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<PRD_LIST>
+  <TL_LIST>
+    <COMP NAME="oracle.wls.top" VER="12.1.2.0" RELEASE="Production" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" INST_LOC="@ORACLE_HOME@">
+      <EXT_NAME>Oracle.wls.top</EXT_NAME>
+      <DESC/>
+      <DESCID/>
+      <LANG_IDX_MAP/>
+      <PLAT_IDX_MAP/>
+      <DEP_GRP_LIST>
+        <DEP_GRP NAME="Required" EXT_NAME="Required" TYPE="O">
+          <DEP_LIST>
+            <DEP NAME="Bogus" VER=""/>
+          </DEP_LIST>
+        </DEP_GRP>
+      </DEP_GRP_LIST>
+      <DEP_LIST>
+        <DEP NAME="Bogus" VER="" DEP_GRP_NAME="Required"/>
+      </DEP_LIST>
+    </COMP>
+  </TL_LIST>
+  <COMP_LIST>
+    <COMP NAME="Bogus" VER="" RELEASE="Production" BUILD_NUMBER="0" REP_VER="0.0.0.0.0">
+      <EXT_NAME>Core Application Server</EXT_NAME>
+      <DESC/>
+      <DESCID/>
+      <LANG_IDX_MAP/>
+      <PLAT_IDX_MAP/>
+    </COMP>
+  </COMP_LIST>
+  <ONEOFF_LIST/>
+</PRD_LIST>

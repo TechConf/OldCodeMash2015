@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cheshire</groupId>
+  <artifactId>cheshire</artifactId>
+  <version>3.1.0</version>
+  <name>cheshire</name>
+  <description>JSON and JSON SMILE encoding, fast.</description>
+  <url>https://github.com/dakrone/cheshire</url>
+  <licenses>
+    <license />
+  </licenses>
+  <scm>
+    <connection>scm:git:git://github.com/dakrone/cheshire.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/dakrone/cheshire.git</developerConnection>
+    <tag>cf0c11ab42ae1a43a5af88007577479dda104e16</tag>
+    <url>https://github.com/dakrone/cheshire</url>
+  </scm>
+  <build>
+    <sourceDirectory>/Users/hinmanm/src/clj/cheshire/src</sourceDirectory>
+    <testSourceDirectory>/Users/hinmanm/src/clj/cheshire/test</testSourceDirectory>
+    <resources>
+      <resource>
+        <directory>/Users/hinmanm/src/clj/cheshire/resources</directory>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>/Users/hinmanm/src/clj/cheshire/resources</directory>
+      </testResource>
+    </testResources>
+  </build>
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>http://repo1.maven.org/maven2</url>
+    </repository>
+    <repository>
+      <id>clojars</id>
+      <url>http://clojars.org/repo/</url>
+    </repository>
+  </repositories>
+  <dependencies>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>clojure</artifactId>
+      <version>1.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.dataformat</groupId>
+      <artifactId>jackson-dataformat-smile</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+  </dependencies>
+</project>

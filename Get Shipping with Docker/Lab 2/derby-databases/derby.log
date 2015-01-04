@@ -1,0 +1,14 @@
+Wed Dec 31 09:58:27 EST 2014 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Wed Dec 31 10:25:55 EST 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-014a-a0da-e46b-000002d4043c 
+on database directory /appl/derby/databases/tododb with class loader sun.misc.Launcher$AppClassLoader@9fa8988 
+Loaded from file:/appl/derby/db-derby-10.10.2.0-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_51-b13
+user.dir=/appl/derby/databases
+os.name=Linux
+os.arch=amd64
+os.version=2.6.32-431.el6.x86_64
+derby.system.home=/appl/derby/databases
+Database Class Loader started - derby.database.classpath=''

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.jolokia</groupId>
+  <artifactId>docker-maven-plugin</artifactId>
+  <versioning>
+    <latest>0.10.6-SNAPSHOT</latest>
+    <versions>
+      <version>0.10.6-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20141229185553</lastUpdated>
+  </versioning>
+</metadata>

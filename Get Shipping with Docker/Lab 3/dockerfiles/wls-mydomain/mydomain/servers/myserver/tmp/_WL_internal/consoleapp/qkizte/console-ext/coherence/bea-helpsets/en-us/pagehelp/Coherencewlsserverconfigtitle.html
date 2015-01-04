@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="Coherence.wlsserverconfig.title">
+<title>Server: Configuration: Coherence</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Server: Configuration: Coherence</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Use this page to configure this server instance as a Coherence cluster
+    member by selecting the Coherence cluster that it belongs to. After this
+    configuration is saved, you can configure Coherence cluster member
+    properties as required.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wlsserverconfig.unicastlistenaddress">Unicast Listen Address</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastListenAddress"></a><a name="UnicastListenAddress"></a>
+<p>The IP address for the Coherence unicast listener.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceMemberConfigMBean.html#UnicastListenAddress">CoherenceMemberConfigMBean.UnicastListenAddress</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wlsserverconfig.unicastlistenport">Unicast Listen Port</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastListenPort"></a><a name="UnicastListenPort"></a>
+<p>The port for the Coherence unicast listener. A value of 0 indicates that the unicast listener port value from the Coherence Cluster configuration will be used. Any other non-zero value set here will override the value set at the Coherence Cluster configuration.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceMemberConfigMBean.html#UnicastListenPort">CoherenceMemberConfigMBean.UnicastListenPort</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>65535</code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wlsserverconfig.unicastportautoadjust">Unicast Port Auto Adjust</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastPortAutoAdjust"></a><a name="UnicastPortAutoAdjust"></a>
+<p>Specifies whether the unicast port will be automatically incremented if the port cannot be bound because it is already in use.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceMemberConfigMBean.html#UnicastPortAutoAdjust">CoherenceMemberConfigMBean.UnicastPortAutoAdjust</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wlsserverconfig.localstorageenabled">Local Storage Enabled</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getLocalStorageEnabled"></a><a name="LocalStorageEnabled"></a>
+<p>Specifies whether or not this member will contribute storage to the Coherence cluster i.e. maintain partitions. This attribute is used only when the WebLogic Server is not part of a WLS Cluster.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceMemberConfigMBean.html#LocalStorageEnabled">CoherenceMemberConfigMBean.LocalStorageEnabled</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wlsserverconfig.coherenceweblocalstorageenabled">Coherence Web Local Storage Enabled</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getCoherenceWebLocalStorageEnabled"></a><a name="CoherenceWebLocalStorageEnabled"></a>
+<p>Specifies whether Local Storage is enabled for the Coherence Web cluster member</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceMemberConfigMBean.html#CoherenceWebLocalStorageEnabled">CoherenceMemberConfigMBean.CoherenceWebLocalStorageEnabled</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wlsserverconfig.sitename">Site Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getSiteName"></a><a name="SiteName"></a>
+<p>Specifies the name of the geographic site where this member is hosted.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceMemberConfigMBean.html#SiteName">CoherenceMemberConfigMBean.SiteName</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wlsserverconfig.rackname">Rack Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRackName"></a><a name="RackName"></a>
+<p>Specifies the location within a geographic site where this member is hosted.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceMemberConfigMBean.html#RackName">CoherenceMemberConfigMBean.RackName</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wlsserverconfig.rolename">Role Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRoleName"></a><a name="RoleName"></a>
+<p>Specifies a name used to logically group similar members.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceMemberConfigMBean.html#RoleName">CoherenceMemberConfigMBean.RoleName</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wlsserverconfig.coherencecluster">Coherence Cluster</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getCoherenceClusterSystemResource"></a><a name="CoherenceClusterSystemResource"></a>
+<p>The system-level Coherence cluster resource associated with this server.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ServerMBean.html#CoherenceClusterSystemResource">ServerMBean.CoherenceClusterSystemResource</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureCoherenceClusterTiers">Configure and deploy
+  Coherence deployment tiers</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureCoherenceSingleServer">Configure and deploy
+  Coherence on a single-server cluster</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

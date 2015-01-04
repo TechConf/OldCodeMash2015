@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+             xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+             xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd">
+<!-- 
+    Definition file for the pages for interacting with the basic
+    GAR deployable modules and standalone applications
+    
+    There are several main branches in this book:
+
+     - GARApplicationBook is used for a standalone GAR deployments
+     - GARModuleBook is used for a GAR module within an app
+
+    Copyright (c) 2004,2011, Oracle and/or its affiliates. All rights reserved.
+-->
+  <!-- Definition for the GARApplicationBook configuration pages -->
+  <netuix:book definitionLabel="GARBook" title="book.title" markupName="book"
+               presentationClass="invisible">
+    <netuix:content>
+      <netuix:book definitionLabel="GARApplicationBook" title="book.title" markupName="book"
+                   backingFile="com.bea.console.utils.GeneralBackingFile"
+                   threadsafe="true"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" definitionLabel="GARApplicationPages" title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupName="ph1">
+                  <netuix:book markupName="book" definitionLabel="GARApplicationTabsBook" title="AppBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      <!-- Definition for the Overview tab -->
+                      <netuix:page markupName="page" definitionLabel="GARApplicationOverviewPage"
+                                   presentationClass="page-content"
+                                   title="tab.overview.label">
+                        <netuix:meta name="helpid" content="Coherence.coherence.garoverview.title;coherence"/>
+                        <netuix:meta name="breadcrumb-context" content="handle"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupName="ph1">
+                              <netuix:portlet definitionLabel="GARApplicationOverviewPortlet">
+                                <netuix:strutsContent module="/coherence" action="GARApplicationOverview"
+                                                      refreshAction="GARApplicationOverview"/>
+                              </netuix:portlet>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      
+                      <!-- Definition for the configuration tab -->
+                      <netuix:page markupName="page" definitionLabel="GARApplicationConfigurationPage"
+                                   presentationClass="page-content"
+                                   title="tab.configuration.label">
+                        <netuix:meta name="helpid" content="Coherence.coherence.garconfiguration.title;coherence"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupName="ph1">
+                              <netuix:portlet definitionLabel="GARApplicationConfigurationPortlet">
+                                <netuix:strutsContent module="/coherence" action="GARConfiguration" refreshAction="GARConfiguration"/>
+                              </netuix:portlet>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      
+                      <!-- Definition for the targets tab -->
+                      <netuix:page markupName="page" definitionLabel="GARApplicationTargetsPage"
+                                   presentationClass="page-content"
+                                   title="tab.targets.label">
+                        <netuix:meta name="helpid" content="Coherence.coherence.gartargets.title;coherence"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupName="ph1">
+                              <netuix:portlet definitionLabel="GARApplicationTargetsPortlet">
+                                <netuix:strutsContent module="/coherence" action="GARTargets" refreshAction="GARTargets"/>
+                              </netuix:portlet>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      <!-- Definition for the control tab -->
+                      <netuix:page markupName="page" definitionLabel="GARApplicationControlPage"
+                                   presentationClass="page-content"
+                                   title="tab.control.label">
+                        <netuix:meta name="helpid" content="Coherence.coherence.garcontrol.title;coherence"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupName="ph1">
+                              <netuix:portlet definitionLabel="GARApplicationControlPortlet">
+                                <netuix:strutsContent module="/coherence" action="GARControl" refreshAction="GARControl"/>
+                              </netuix:portlet>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      <!-- Definition for the notes tab -->
+                      <netuix:page markupName="page" definitionLabel="GARApplicationNotesPage"
+                                   presentationClass="page-content"
+                                   title="tab.notes.label">
+                        <netuix:meta name="helpid" content="Coherence.coherence.garnotes.title;coherence"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupName="ph1">
+                              <netuix:portlet definitionLabel="GARApplicationNotesPortlet">
+                                <netuix:strutsContent module="/coherence" action="GARNotes" refreshAction="GARNotes"/>
+                              </netuix:portlet>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      
+      <!-- Definition for the GARModuleBook configuration pages -->
+      <netuix:book definitionLabel="GARModuleInEarBook" title="book.title" markupName="book"
+                   backingFile="com.bea.console.utils.GeneralBackingFile"
+                   threadsafe="true"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" definitionLabel="GARModulePages" title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupName="ph1">
+                  <netuix:book markupName="book" definitionLabel="GARModuleTabsBook" title="AppBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      <!-- Definition for the Overview tab -->
+                      <netuix:page markupName="page" definitionLabel="GARModuleOverviewPage"
+                                   presentationClass="page-content"
+                                   title="tab.overview.label">
+                        <netuix:meta name="helpid" content="Coherence.coherence.garoverview.title;coherence"/>
+                        <netuix:meta name="breadcrumb-context" content="handle"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupName="ph1">
+                              <netuix:portlet definitionLabel="GARModuleOverviewPortlet">
+                                <netuix:strutsContent module="/coherence" action="GARModuleOverview" refreshAction="GARModuleOverview"/>
+                              </netuix:portlet>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      
+                      <!-- Definition for the configuration tab -->
+                      <netuix:page markupName="page" definitionLabel="GARModuleConfigurationPage"
+                                   presentationClass="page-content"
+                                   title="tab.configuration.label">
+                        <netuix:meta name="helpid" content="Coherence.coherence.garconfiguration.title;coherence"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupName="ph1">
+                              <netuix:portlet definitionLabel="GARModuleConfigurationPortlet">
+                                <netuix:strutsContent module="/coherence" action="GARConfiguration" refreshAction="GARConfiguration"/>
+                              </netuix:portlet>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+    </netuix:content>
+  </netuix:book>
+</portal:root>

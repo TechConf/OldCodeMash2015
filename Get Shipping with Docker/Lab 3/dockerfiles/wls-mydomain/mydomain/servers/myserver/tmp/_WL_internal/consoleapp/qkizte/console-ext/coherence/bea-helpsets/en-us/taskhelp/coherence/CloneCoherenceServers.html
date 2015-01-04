@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Clone Coherence
+  servers</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50010" id="WLACH50010"></a>
+
+
+  <h1 class="topictitle1">Clone Coherence
+  servers</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p>Cloning servers creates new servers based on existing ones. After
+      cloning, update the configuration of the cloned servers if needed.</p>
+
+      <p><b>Note: </b>The Coherence servers feature is deprecated and
+      remains supported for backwards compatibility. Coherence tiers should be
+      configured to use Managed Coherence Servers instead. See <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=coherence.ConfigureCoherenceClusterTiers">Configure and deploy
+  Coherence deployment tiers</a></p>
+
+      <p><a name="WLACH50010__servers1160646" id="WLACH50010__servers1160646"></a>To clone Coherence
+      servers:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50010__servers1160647" id="WLACH50010__servers1160647"></a>In the left pane
+        of the Console, expand <b>Environment</b> and select
+        <b>Coherence Servers</b>.</span>
+
+        <span>
+          <p>The Coherence servers table displays all the Coherence servers
+          defined in the domain.</p>
+        </span>
+      </li>
+
+      <li>
+        <span>Select the check box next to the name of the server you want to
+        clone and click <b>Clone</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50010__servers1160649" id="WLACH50010__servers1160649"></a>On the
+        <span>Coherence Server Properties</span> page, adjust the
+        server properties values as needed.</span>
+
+         
+          <p>For information about these fields, refer to <a href="http://docs.oracle.com/middleware/1212/wls//../WLACH/pagehelp/Coherenceserverconfiggeneraltitle.html#attributes">Configuration Options</a>.</p>
+        
+      </li>
+
+      <li>
+        <span>When you are finished making changes, click
+        <b>Finish</b>.</span>
+
+         
+          <p>The new server appears in the Summary of Coherence Servers
+          table.</p>
+        
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+
+    <div class="postreq"><p class="sectiontitle"><b>
+        After you finish
+      </b></p>
+      <p>(Optional) Do any of the following:</p>
+
+      <ul>
+        <li><a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=coherence.StartCoherenceServers">Start Coherence servers
+  from the Administration Console</a></li>
+
+        <li><a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=coherence.DeleteCoherenceServers">Delete Coherence
+  servers</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+</body></html>

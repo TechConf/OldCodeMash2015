@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature-definition xmlns="http://www.bea.com/ns/cie/feature" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="oracle.wls.common.cam" version="1.0.0.0">
+  <!--
+    <annotation>
+      <manifest xmlns="http://www.bea.com/ns/cie/manifest">
+        <attribute name="Implementation-Vendor" value="BEA Systems"/>
+        <attribute name="Implementation-Title" value="Common jar files in WebLogic and CAM Module Dependencies 1.0 Thu Feb 21 09:37:33 PST 2013 "/>
+        <attribute name="Source-Repository-Change-Id" value="1511420"/>
+        <attribute name="Source-Repository-URI" value="p4://depot/dev/src1212/repository/modules/features"/>
+        <attribute name="Implementation-Version" value="1.0.0.0"/>
+      </manifest>
+    </annotation>
+  -->
+  <modules>
+    <module file-name="com.bea.core.descriptor_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.logging_2.1.0.0.jar"/>
+    <module file-name="../../oracle_common/modules/com.bea.core.i18n_2.1.0.0.jar" isDirectory="true"/>
+    <module file-name="com.bea.core.utils.classloaders_4.0.0.0.jar"/>
+    <module file-name="com.bea.core.utils.full_2.2.0.0.jar"/>
+    <module file-name="com.bea.core.utils_2.2.0.0.jar"/>
+    <module file-name="com.bea.core.management.core_4.0.0.0.jar"/>
+    <module file-name="com.bea.core.nodemanager.plugin_2.1.0.0.jar"/>
+    <module file-name="com.oracle.core.nodemanager.common_1.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.lifecycle_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.workmanager_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.security.identity_3.0.0.0.jar"/>
+  </modules>
+  
+</feature-definition>

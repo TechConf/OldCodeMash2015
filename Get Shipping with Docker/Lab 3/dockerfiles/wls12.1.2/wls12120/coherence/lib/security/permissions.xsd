@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="permissions">
+    <xs:complexType>    
+      <xs:sequence>
+
+        <xs:element name="grant" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>    
+            <xs:sequence>
+
+              <xs:element name="principal" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <!--
+                    If the principal/class value is javax.security.auth.x500.X500Principal
+                    the principal/name value should be in format defined in RFC 2253.
+                    -->
+                    <xs:element name="class" type="xs:string" minOccurs="0"/>
+                    <xs:element name="name" type="xs:string"/>
+                  </xs:all>
+                </xs:complexType>
+              </xs:element>
+              
+              <xs:element name="permission" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="target" type="xs:string"/>
+                    <xs:element name="action" type="xs:string"/>
+                  </xs:all>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>        
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>       
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>
