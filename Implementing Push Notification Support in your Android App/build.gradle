@@ -1,0 +1,49 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        // Build requires the Android Gradle plugin
+        classpath 'com.android.tools.build:gradle:1.0.0'
+    }
+}
+
+// Use Gradle wrapper to guarantee that proper
+// Gradle version is available for building
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.leadingedje.androidpushnotificationdemo"
+        minSdkVersion 16
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+        }
+    }
+
+    // Set the Java language version
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+// Dependencies required for Google Play Services
+dependencies {
+    compile 'com.android.support:appcompat-v7:21.+'
+    compile 'com.google.android.gms:play-services:6.1+'
+}
