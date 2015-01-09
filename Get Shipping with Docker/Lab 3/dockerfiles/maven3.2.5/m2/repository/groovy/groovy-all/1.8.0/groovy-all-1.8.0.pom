@@ -1,6 +1,0 @@
-<project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>groovy</groupId>
-  <artifactId>groovy-all</artifactId>
-  <version>1.8.0</version>
-</project>
