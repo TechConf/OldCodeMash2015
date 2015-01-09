@@ -1,0 +1,45 @@
+{
+  "name": "fridgewords",
+  "version": "0.0.1",
+  "description": "CodeMash 2014 - how to do frontend with gulp.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/testem/testem.js -l PhantomJS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bengladwell/fridgewords.git"
+  },
+  "author": "Ben Gladwell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bengladwell/fridgewords/issues"
+  },
+  "homepage": "https://github.com/bengladwell/fridgewords",
+  "dependencies": {
+    "express": "^4.10.6",
+    "express-hbs": "^0.7.11",
+    "serve-static": "^1.7.1"
+  },
+  "devDependencies": {
+    "browserify": "^8.0.3",
+    "chai": "^1.10.0",
+    "connect-livereload": "^0.5.2",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.2",
+    "gulp-handlebars": "^3.0.1",
+    "gulp-jshint": "^1.9.0",
+    "gulp-less": "^2.0.1",
+    "gulp-livereload": "^3.0.2",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.0.2",
+    "gulp-wrap": "^0.5.0",
+    "jshint-stylish": "^1.0.0",
+    "main-bower-files": "^2.4.1",
+    "mocha": "^2.1.0",
+    "sinon": "^1.12.2",
+    "testem": "^0.6.24",
+    "vinyl-transform": "^1.0.0"
+  }
+}
