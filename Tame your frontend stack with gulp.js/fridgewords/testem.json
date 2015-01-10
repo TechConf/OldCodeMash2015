@@ -1,7 +1,0 @@
-{
-  "framework": "mocha",
-  "src_files": [
-    "public/js/vendor.js",
-    "tmp/**/*.js"
-  ]
-}
