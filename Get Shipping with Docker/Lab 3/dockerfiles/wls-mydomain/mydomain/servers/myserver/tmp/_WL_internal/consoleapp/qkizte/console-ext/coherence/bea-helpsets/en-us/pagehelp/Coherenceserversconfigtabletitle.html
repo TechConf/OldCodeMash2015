@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="Coherence.serversconfigtable.title">
+<title>Coherence Servers: Configure</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Coherence Servers: Configure</h1>
+<p>
+<a href="#table">Column Display</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Coherence servers are stand-alone cache servers, dedicated JVM
+    instances responsible for maintaining and managing cached data.</p>
+<p>This page displays the Coherence server configurations that have been
+    created in this domain.</p>
+<h4>
+<a name="table">Column Display</a>
+</h4>
+<p>You can show fewer or additional data points on this page by expanding <b>Customize this table</b> and modifying the <b>Column Display</b> list. Each data point displays in its own table column.</p>
+<p>The following table lists all of the data points that you can display in columns on this page.</p>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.serversconfig.name">Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>Name of this Coherence server configuration.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.serversconfig.clustername">Cluster</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>Name of the Coherence cluster associated with this server.</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.serversconfig.machinename">Machine</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>Name of the machine associated with this server.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.serversconfig.unicastlistenaddress">Unicast Listen Address</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastListenAddress"></a><a name="UnicastListenAddress"></a>
+<p>The IP address for the cluster unicast listener.</p>
+<p>This attribute may be used to override the value of the referenced Coherence cluster.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#UnicastListenAddress">CoherenceServerMBean.UnicastListenAddress</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.serversconfig.unicastlistenport">Unicast Listen Port</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastListenPort"></a><a name="UnicastListenPort"></a>
+<p>The port for the cluster unicast listener.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#UnicastListenPort">CoherenceServerMBean.UnicastListenPort</a></code>
+</p>
+<p>Minimum value: <code>1</code>
+</p>
+<p>Maximum value: <code>65535</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.serversconfig.unicastportautoadjust">Unicast Port Auto Adjust</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastPortAutoAdjust"></a><a name="UnicastPortAutoAdjust"></a>
+<p>Specifies whether the unicast port will be automatically incremented if the port cannot be bound because it is already in use.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#UnicastPortAutoAdjust">CoherenceServerMBean.UnicastPortAutoAdjust</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.serversconfig.restartintervalseconds">Restart Interval</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRestartIntervalSeconds"></a><a name="RestartIntervalSeconds"></a>
+<p>The number of seconds during which this server can be restarted, up to the number of times specified in RestartMax.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#RestartIntervalSeconds">CoherenceServerMBean.RestartIntervalSeconds</a></code>
+</p>
+<p>Minimum value: <code>300</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.serversconfig.restartmax">Restart Max</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRestartMax"></a><a name="RestartMax"></a>
+<p>The number of times that the Node Manager can restart this server within the interval specified in RestartIntervalSeconds.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#RestartMax">CoherenceServerMBean.RestartMax</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.serversconfig.restartdelayseconds">Restart Delay</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRestartDelaySeconds"></a><a name="RestartDelaySeconds"></a>
+<p>The number of seconds the Node Manager should wait before restarting this server.</p>
+<p>After killing a server process, the system might need several seconds to release the TCP port(s) the server was using. If Node Manager attempts to restart the Managed Server while its ports are still active, the startup attempt fails.</p>
+<p>If AutoMigration is enabled and RestartDelaySeconds is 0, the RestartDelaySeconds is automatically set to the lease time. This prevents the server from failing to restart after migration when the previous lease is still valid.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#RestartDelaySeconds">CoherenceServerMBean.RestartDelaySeconds</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.CreateCoherenceServers">Create Coherence
+  servers</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureCoherenceServers">Configure Coherence
+  servers</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureStartupArgumentsForCoherenceServers">Configure startup
+  arguments for Coherence servers</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.StartCoherenceServers">Start Coherence servers
+  from the Administration Console</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/COHWL/index.html">Deploying Applications with
+    Oracle WebLogic Server ActiveCache</a>
+</li>
+<li>
+<a href="http://docs.oracle.com/cd/E14526_01/coh.350/e14509/appoverride.htm#CHDEIIBJ">Allowable Coherence Server Startup Parameters</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

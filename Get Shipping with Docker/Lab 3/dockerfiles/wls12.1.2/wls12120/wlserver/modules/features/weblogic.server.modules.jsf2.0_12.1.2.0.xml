@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature-definition xmlns="http://www.bea.com/ns/cie/feature" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="weblogic.server.modules.jsf2.0" version="12.1.2.0">
+  <!--
+    <annotation>
+      <manifest xmlns="http://www.bea.com/ns/cie/manifest">
+        <attribute name="Implementation-Vendor" value="BEA Systems"/>
+        <attribute name="Implementation-Title" value="WebLogic JSF Feature Module 12.1 Fri Mar 8 06:29:02 PST 2013 "/>
+        <attribute name="Source-Repository-Change-Id" value="1514630"/>
+        <attribute name="Source-Repository-URI" value="p4://depot/dev/src1212/repository/modules/features"/>
+        <attribute name="Implementation-Version" value="12.1.2.0"/>
+      </manifest>
+    </annotation>
+  -->
+  <modules>
+    <module file-name="glassfish.jsf_1.0.0.0_2-1-20.jar"/>
+  </modules>
+  
+</feature-definition>

@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Create Jolt connection
+  pools</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50904" id="WLACH50904"></a>
+
+
+  <h1 class="topictitle1">Create Jolt connection
+  pools</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p>Oracle recommends that you create one Jolt connection pool for each
+      application running on WebLogic Server.</p>
+
+      <p>To create a Jolt connection pool:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50904__snmp1116691" id="WLACH50904__snmp1116691"></a>In the
+        Administration Console, expand <b>Interoperability</b>
+        and select <b>Jolt Connection Pools</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50904__snmp1127571" id="WLACH50904__snmp1127571"></a>On the
+        <span>Jolt Connection Pools</span> page, click
+        <b>New</b>.</span>
+
+         
+          <p><b>Note: </b>Once you create a connection pool, you cannot
+          rename it. Instead, you must delete it and create another one that
+          uses the new name.</p>
+        
+      </li>
+
+      <li>
+        <span><a name="WLACH50904__snmp1127669" id="WLACH50904__snmp1127669"></a>On the
+        <span>Create a Jolt Connection Pool</span> page, enter a name
+        for the connection, then click <b>Finish</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50904__jolt1104953" id="WLACH50904__jolt1104953"></a>On the
+        <span>Jolt Connection Pools</span> page, click the name of the
+        connection pool you created.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50904__jolt1104955" id="WLACH50904__jolt1104955"></a>Click the
+        <span>Addresses</span> tab and provide Jolt Service Listener
+        (JSL) addresses for a connection pool.</span>
+
+         
+          <p>See <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=jolt.ConfigureConnectionFailureHandling">Configure Jolt
+  addresses</a>.</p>
+        
+      </li>
+
+      <li>
+        <span>To secure connections to the Jolt server, <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=jolt.ConfigureAUserSecurityIdentity">Configure a user
+  identity</a>.</span>
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+
+    <div class="postreq"><p class="sectiontitle"><b>
+        After you finish
+      </b></p>
+      <ul>
+        <li><a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=jolt.TargetJoltConnectionPools">Target Jolt connection
+  pools</a></li>
+
+        <li><a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=jolt.CreateJoltStartupAndShutdownClasses">Configure Jolt startup and
+  shutdown classes</a></li>
+
+        <li>Because Jolt requires a server startup class, you must restart the
+        Administration Server after creating a connection pool. You also must
+        restart the Administration Server if you modify an existing connection
+        pool.</li>
+      </ul>
+    </div>
+  </div>
+
+
+</body></html>

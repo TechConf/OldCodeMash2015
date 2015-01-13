@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="Coherence.servercreate.title">
+<title>Create a Coherence Server configuration</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Create a Coherence Server configuration</h1>
+<p>
+<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Use this page to create a new Coherence server configuration.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="servercreate.name">Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>Enter a name for the Coherence server.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="servercreate.clustername">Cluster</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>Name of the Coherence cluster associated with this server.</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="servercreate.machinename">Machine</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>Name of the machine associated with this server.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="servercreate.unicastlistenaddress">Unicast Listen Address</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastListenAddress"></a><a name="UnicastListenAddress"></a>
+<p>The IP address for the cluster unicast listener.</p>
+<p>This attribute may be used to override the value of the referenced Coherence cluster.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#UnicastListenAddress">CoherenceServerMBean.UnicastListenAddress</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="servercreate.unicastlistenport">Unicast Listen Port</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastListenPort"></a><a name="UnicastListenPort"></a>
+<p>The port for the cluster unicast listener.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#UnicastListenPort">CoherenceServerMBean.UnicastListenPort</a></code>
+</p>
+<p>Minimum value: <code>1</code>
+</p>
+<p>Maximum value: <code>65535</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="servercreate.unicastportautoadjust">Unicast Port Auto Adjust</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastPortAutoAdjust"></a><a name="UnicastPortAutoAdjust"></a>
+<p>Specifies whether the unicast port will be automatically incremented if the port cannot be bound because it is already in use.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceServerMBean.html#UnicastPortAutoAdjust">CoherenceServerMBean.UnicastPortAutoAdjust</a></code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.CloneCoherenceServers">Clone Coherence
+  servers</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureStartupArgumentsForCoherenceServers">Configure startup
+  arguments for Coherence servers</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.DeleteCoherenceServers">Delete Coherence
+  servers</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

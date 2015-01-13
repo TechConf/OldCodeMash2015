@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="js/lib/foundation/css/foundation.css">
+        <link rel="stylesheet" href="js/lib/foundation/css/normalize.css">
+        <link rel="stylesheet" href="js/lib/foundation-icons/foundation-icons.css"/>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="js/lib/tablesaw/tablesaw.css">
+        <link rel="stylesheet" href="js/lib/toastr/toastr.min.css">        
+        <style>
+            .size-12 { font-size: 12px; }
+            .size-14 { font-size: 14px; }
+            .size-16 { font-size: 16px; }
+            .size-18 { font-size: 18px; }
+            .size-21 { font-size: 21px; }
+            .size-24 { font-size: 24px; }
+            .size-36 { font-size: 36px; }
+            .size-48 { font-size: 48px; }
+            .size-60 { font-size: 60px; }
+            .size-72 { font-size: 72px; }            
+        </style>
+
+        <script data-main="js/app/config" src="js/lib/require.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="fixed">
+            <nav class="top-bar" data-topbar>
+                <ul class="title-area">
+                    <li class="name">
+                        <h1><a href="#">Responsive To Do Application</a></h1>
+                    </li>
+                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                </ul>
+
+                <section class="top-bar-section">
+                    <!-- Right Nav Section -->
+                    <ul class="right">
+                        <li class="active"><a href="#" data-reveal-id="newitemModal">Create New Item</a></li>
+                        <li class="active"><a href="#">Logout</a></li>
+                    </ul>
+                </section>
+            </nav>        
+        </div>
+        <section role="main">
+            <!-- Add your site or application content here -->
+            <div class="row">
+                <div class="large-12 columns">
+                    <span>&nbsp;</span>
+                    <div class="panel">
+                        <!-- <h3>Device Agnostic ToDo</h3> -->
+                        <p>This is a place to try out different ideas for web site implementation per the Device Agnostic working group</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <div class="panel">
+                        <table class="tablesaw" data-mode="stack">
+                            <thead>
+                                <tr>
+                                    <th>Done</th>
+                                    <th>Priority</th>
+                                    <th>Task</th>
+                                    <th>Due By</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: items">
+                                <tr>
+                                    <td><input type="checkbox" data-bind="checked: isDone" /></td>
+                                    <td><span data-bind="text: priority"></span></td>
+                                    <td><span data-bind="text: task, style: { textDecoration: isDone() ? 'line-through' : 'none' }"></span></td>
+                                    <td><span data-bind="text: dueBy"></span></td>
+                                    <td><a href="#" data-bind="click: $parent.removeItem"><i class="step fi-trash medium"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>   
+
+            <div id="newitemModal" class="reveal-modal" data-reveal>
+                <div class="panel"><h4>New To Do Item</h4></div>
+                <div id="newitemalertbox" data-alert class="alert-box alert" data-bind="visible: newItemErrors().length > 0"> 
+                    <big><b>Field Errors</b></big>
+                    <hr/>
+                    <ul data-bind="foreach: newItemErrors">
+                        <li data-bind="text: $data" style="font-size: smaller;"></li>
+                    </ul>  
+                </div>
+                <div class="panel large-12 columns">
+                    <form id="newitemform" data-bind="submit: createNewItem">
+                        <div class="row">
+                            <div class="large-4 columns">
+                                <label>Done 
+                                    <input type="checkbox" name="done" checked="false" data-bind="checked: newIsDone"/>
+                                </label>
+                            </div>    
+                        </div>
+                        <div class="row">
+                            <div class="large-4 columns">
+                                <label>Priority
+                                    <select name="priority" data-bind="value: newPriority">
+                                        <option value="2">Low</option>
+                                        <option value="1">Medium</option>
+                                        <option value="0">High</option>
+                                    </select>
+                                </label>
+                            </div>                                
+                        </div>          
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <label>Task <small>Required</small>
+                                    <textarea rows="4" name="task" data-bind="value: newTask" required></textarea>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-4 columns">
+                                <label>Due By <small>Required - [YYYY-MM-DD, MM/DD/YYYY]</small>
+                                    <input type="date" name="dueby" data-bind="value: newDueBy" required/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-12 columns" style="text-align: right;">
+                                <a href="#" class="button [tiny small large]" onclick="$('#newitemform').submit();">Submit</a>
+                                <a href="#" class="button [tiny small large]" data-bind="click: disposeNewItemForm">Cancel</a>
+                            </div>
+                        </div>
+                    </form>                   
+                </div>
+            </div>            
+        </section>            
+    </body>
+</html>

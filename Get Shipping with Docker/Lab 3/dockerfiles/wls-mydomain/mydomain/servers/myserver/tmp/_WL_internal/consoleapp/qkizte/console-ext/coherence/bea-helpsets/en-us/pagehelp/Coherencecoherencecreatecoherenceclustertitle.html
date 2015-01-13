@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="Coherence.coherence.createcoherencecluster.title">
+<title>Create a Coherence Cluster configuration</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Create a Coherence Cluster configuration</h1>
+<p>
+<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to create a new Coherence cluster configuration.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.createcoherencecluster.name">Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>Enter a name for the Coherence cluster.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.createcoherencecluster.customclusterconfigurationfilename">Custom Configuration File Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getCustomClusterConfigurationFileName"></a><a name="CustomClusterConfigurationFileName"></a>
+<p>The external custom Coherence cluster configuration file.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterSystemResourceMBean.html#CustomClusterConfigurationFileName">CoherenceClusterSystemResourceMBean.CustomClusterConfigurationFileName</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.createcoherencecluster.clusteringmode">Clustering Mode</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getClusteringMode"></a><a name="ClusteringMode"></a>
+<p>Specifies a clustering mode of either Unicast or Multicast. If multicast is undesirable or unavailable in an environment, or when an environment is not properly configured to support multicast, then setting up the Well Known Addresses (WKA) feature is required. All cluster multicast communication is disabled if WKA is enabled.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterParamsBean.html#ClusteringMode">CoherenceClusterParamsBean.ClusteringMode</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.createcoherencecluster.unicastlistenport">Unicast Listen Port</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastListenPort"></a><a name="UnicastListenPort"></a>
+<p>The port for the cluster unicast listener. A value of 0 indicates that the unicast listener port value will be derived from the server listen port. This value or the derived value will be used only if the CoherenceMemberConfigMBean unicast listen port is 0.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterParamsBean.html#UnicastListenPort">CoherenceClusterParamsBean.UnicastListenPort</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>65535</code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.createcoherencecluster.multicastlistenaddress">Multicast Listen Address</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMulticastListenAddress"></a><a name="MulticastListenAddress"></a>
+<p>The IP address for the cluster multicast listener.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterParamsBean.html#MulticastListenAddress">CoherenceClusterParamsBean.MulticastListenAddress</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.createcoherencecluster.multicastlistenport">Multicast Listen Port</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMulticastListenPort"></a><a name="MulticastListenPort"></a>
+<p>The port for the cluster multicast listener.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterParamsBean.html#MulticastListenPort">CoherenceClusterParamsBean.MulticastListenPort</a></code>
+</p>
+<p>Minimum value: <code>1</code>
+</p>
+<p>Maximum value: <code>65535</code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.CreateCoherenceClusters">Create Coherence
+  clusters</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureCoherenceClusters">Configure Coherence
+  clusters</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureWellKnownAddresses">Configure well known
+  addresses</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.TargetCoherenceClusters">Target Coherence
+  clusters</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureCoherenceLogging">Configure Coherence
+  logging</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/COHWL/index.html">Deploying Applications with
+    Oracle WebLogic Server ActiveCache</a>
+</li>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/CLUST/features.htm#CLUST127">Communications in a
+    Cluster</a>
+</li>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/CLUST/setup.htm#CLUST440">Cluster Addressing
+    Information</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

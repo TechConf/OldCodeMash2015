@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+             xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+             xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd"><!-- 
+    Definition file for the pages in the wtc.exports subsystem
+    of the WebLogic Server administration console
+    
+    Copyright (c) 2004,2009, Oracle and/or its affiliates. All rights reserved.
+-->
+  <netuix:book definitionLabel="WtcExportsSubsystemPages" title="book.title" markupName="book"
+               markupType="Book"
+               backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+               presentationClass="wlsc-frame">
+    <netuix:titlebar/>
+    <netuix:content>
+      <netuix:page markupName="page" markupType="Page" definitionLabel="WtcExportsPages"
+                   title="not.used"
+                   hidden="true">
+        <netuix:content>
+          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+              <netuix:book markupName="book" markupType="Book" definitionLabel="WtcExportsBook"
+                           title="WtcExportsBook">
+                <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                <netuix:content>
+                  <!-- Definition for the general tab -->
+                  <netuix:page markupName="page" markupType="Page" definitionLabel="WTCExportGeneralPage"
+                               title="tab.general.label"
+                               presentationClass="page-content">
+                    <netuix:meta name="helpid" content="WTC.wtc.exports.wtcexportgeneral.title;wtc"/>
+                    <netuix:meta name="breadcrumb-context" content="handle"/>
+                    <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                    <netuix:content>
+                      <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                        <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                          <netuix:portletInstance markupType="Portlet" instanceLabel="WTCExportGeneralPortlet"
+                                                  contentUri="/PortalConfig/wtc/exports/WTCExportGeneral.portlet"/>
+                        </netuix:placeholder>
+                      </netuix:layout>
+                    </netuix:content>
+                  </netuix:page>
+                </netuix:content>
+              </netuix:book>
+            </netuix:placeholder>
+          </netuix:layout>
+        </netuix:content>
+      </netuix:page>
+    </netuix:content>
+  </netuix:book>
+</portal:root>

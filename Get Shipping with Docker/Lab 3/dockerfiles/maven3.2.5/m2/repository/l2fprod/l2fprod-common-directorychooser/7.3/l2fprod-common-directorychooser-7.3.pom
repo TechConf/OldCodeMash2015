@@ -1,0 +1,6 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>l2fprod</groupId>
+  <artifactId>l2fprod-common-directorychooser</artifactId>
+  <version>7.3</version>
+</project>

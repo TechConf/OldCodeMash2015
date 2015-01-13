@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.apache.maven</groupId>
+    <artifactId>maven-parent</artifactId>
+    <version>21</version>
+  </parent>
+
+  <groupId>org.apache.maven.archetype</groupId>
+  <artifactId>maven-archetype</artifactId>
+  <version>2.2</version>
+  <packaging>pom</packaging>
+
+  <name>Maven Archetype</name>
+  <description>Maven Archetype is a set of tools to deal with archetypes, i.e. an abstract representation of a kind of project
+   that can be instantiated into a concrete customized Maven project.
+   An archetype knows which files will be part of the instantiated project and which properties to fill to properly customize
+   the project.
+  </description>
+  <url>http://maven.apache.org/archetype</url>
+  <inceptionYear>2007</inceptionYear>
+
+  <modules>
+    <module>archetype-testing</module>
+    <module>archetype-models</module>
+    <module>archetype-common</module>
+    <module>maven-archetype-plugin</module>
+    <module>archetype-packaging</module>
+  </modules>
+
+  <mailingLists>
+    <mailingList>
+      <name>Maven User List</name>
+      <subscribe>users-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>users-unsubscribe@maven.apache.org</unsubscribe>
+      <post>users@maven.apache.org</post>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-users</archive>
+      <otherArchives>
+        <otherArchive>http://www.mail-archive.com/users@maven.apache.org/</otherArchive>
+        <otherArchive>http://old.nabble.com/Maven---Users-f178.html</otherArchive>
+        <otherArchive>http://maven.users.markmail.org/</otherArchive>
+      </otherArchives>
+    </mailingList>
+    <mailingList>
+      <name>Maven Developer List</name>
+      <subscribe>dev-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>dev-unsubscribe@maven.apache.org</unsubscribe>
+      <post>dev@maven.apache.org</post>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-dev</archive>
+      <otherArchives>
+        <otherArchive>http://www.mail-archive.com/dev@maven.apache.org/</otherArchive>
+        <otherArchive>http://old.nabble.com/Maven-Developers-f179.html</otherArchive>
+        <otherArchive>http://maven.dev.markmail.org/</otherArchive>
+      </otherArchives>
+    </mailingList>
+    <mailingList>
+      <name>Maven Issues List</name>
+      <subscribe>issues-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>issues-unsubscribe@maven.apache.org</unsubscribe>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-issues/</archive>
+      <otherArchives>
+        <otherArchive>http://www.mail-archive.com/issues@maven.apache.org</otherArchive>
+        <otherArchive>http://old.nabble.com/Maven---Issues-f15573.html</otherArchive>
+        <otherArchive>http://maven.issues.markmail.org/</otherArchive>
+      </otherArchives>
+    </mailingList>
+    <mailingList>
+      <name>Maven Commits List</name>
+      <subscribe>commits-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>commits-unsubscribe@maven.apache.org</unsubscribe>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-dev</archive>
+      <otherArchives>
+        <otherArchive>http://www.mail-archive.com/commits@maven.apache.org</otherArchive>
+        <otherArchive>http://old.nabble.com/Maven---Commits-f15575.html</otherArchive>
+        <otherArchive>http://maven.commits.markmail.org/</otherArchive>
+      </otherArchives>
+    </mailingList>
+    <mailingList>
+      <name>Maven Announcements List</name>
+      <post>announce@maven.apache.org</post>
+      <subscribe>announce-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>announce-unsubscribe@maven.apache.org</unsubscribe>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-announce/</archive>
+      <otherArchives>
+        <otherArchive>http://www.mail-archive.com/announce@maven.apache.org</otherArchive>
+        <otherArchive>http://old.nabble.com/Maven-Announcements-f15617.html</otherArchive>
+        <otherArchive>http://maven.announce.markmail.org/</otherArchive>
+      </otherArchives>
+    </mailingList>
+    <mailingList>
+      <name>Maven Notifications List</name>
+      <subscribe>notifications-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>notifications-unsubscribe@maven.apache.org</unsubscribe>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-notifications/</archive>
+      <otherArchives>
+        <otherArchive>http://www.mail-archive.com/notifications@maven.apache.org</otherArchive>
+        <otherArchive>http://old.nabble.com/Maven---Notifications-f15574.html</otherArchive>
+        <otherArchive>http://maven.notifications.markmail.org/</otherArchive>
+      </otherArchives>
+    </mailingList>
+  </mailingLists>
+
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/archetype/tags/maven-archetype-2.2</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/archetype/tags/maven-archetype-2.2</developerConnection>
+    <url>http://svn.apache.org/viewvc/maven/archetype/tags/maven-archetype-2.2</url>
+  </scm>
+  <issueManagement>
+    <system>jira</system>
+    <url>http://jira.codehaus.org/browse/ARCHETYPE</url>
+  </issueManagement>
+  <ciManagement>
+    <system>Jenkins</system>
+    <url>https://builds.apache.org/job/maven-archetype/</url>
+  </ciManagement>
+
+  <distributionManagement>
+    <site>
+      <id>apache.website</id>
+      <url>scp://people.apache.org/www/maven.apache.org/archetype/</url>
+    </site>
+  </distributionManagement>
+
+  <properties>
+    <mavenVersion>2.0.8</mavenVersion><!-- with 2.0.9 proxy test fails-->
+    <netbeans.hint.useExternalMaven>true</netbeans.hint.useExternalMaven>
+    <mavenPluginPluginVersion>2.9</mavenPluginPluginVersion>
+    <wagonVersion>1.0</wagonVersion>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-catalog</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-descriptor</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-registry</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-common</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-plugin-api</artifactId>
+        <version>${mavenVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-model</artifactId>
+        <version>${mavenVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-project</artifactId>
+        <version>${mavenVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-core</artifactId>
+        <version>${mavenVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.maven.shared</groupId>
+        <artifactId>maven-invoker</artifactId>
+        <version>2.0.11</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-container-default</artifactId>
+        <version>1.0-alpha-9-stable-1</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-utils</artifactId>
+        <version>1.5.8</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-interactivity-api</artifactId>
+        <version>1.0-alpha-5</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-velocity</artifactId>
+        <version>1.1.8</version>
+        <exclusions>
+          <exclusion>
+            <groupId>velocity</groupId>
+            <artifactId>velocity</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>velocity</groupId>
+            <artifactId>velocity-api</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>1.4</version>
+      </dependency>
+      <dependency>
+        <groupId>dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>1.6.1</version>
+      </dependency>
+      <dependency>
+        <groupId>jdom</groupId>
+        <artifactId>jdom</artifactId>
+        <version>1.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.velocity</groupId>
+        <artifactId>velocity</artifactId>
+        <version>1.5</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sourceforge.jchardet</groupId>
+        <artifactId>jchardet</artifactId>
+        <version>1.0</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>3.2.1</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.8.2</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.shared</groupId>
+        <artifactId>maven-plugin-testing-harness</artifactId>
+        <version>1.1</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-file</artifactId>
+        <version>${wagonVersion}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-http</artifactId>
+        <version>${wagonVersion}</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <repositories>
+    <repository>
+      <id>apache.snapshots</id>
+      <name>Apache Snapshot Repository</name>
+      <url>http://repository.apache.org/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
+  </repositories>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <configuration>
+            <tagBase>https://svn.apache.org/repos/asf/maven/archetype/tags</tagBase>
+            <preparationGoals>clean install</preparationGoals>
+            <autoVersionSubmodules>true</autoVersionSubmodules>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-plugin-plugin</artifactId>
+          <version>${mavenPluginPluginVersion}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <configuration>
+            <stagingSiteURL>scp://people.apache.org/www/maven.apache.org/archetype-${project.version}</stagingSiteURL>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>2.1.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.mortbay.jetty</groupId>
+          <artifactId>maven-jetty-plugin</artifactId>
+          <version>6.1.6</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-component-metadata</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate-metadata</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.rat</groupId>
+        <artifactId>apache-rat-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>.gitignore</exclude>
+            <exclude>DEPENDENCIES</exclude>
+            <exclude>README.txt</exclude>
+            <exclude>*.sh</exclude>
+            <exclude>.git/**</exclude>
+            <exclude>.idea/**</exclude>
+            <exclude>**/generated-sources/**</exclude>
+            <exclude>**/.gitattributes</exclude>
+            <exclude>archetype-samples/**</exclude>
+            <exclude>**/*.sha1</exclude>
+            <!-- exclude template files for generated content -->
+            <exclude>src/main/resources/org/apache/maven/archetype/creator/*</exclude>
+            <!-- exclude some classes coming from dom4j -->
+            <exclude>**/Format.java</exclude>
+            <exclude>**/NamespaceStack.java</exclude>
+            <exclude>**/XMLOutputter.java</exclude>
+            <!-- disable test directories -->
+            <exclude>src/test/**</exclude>
+            <exclude>src/it/**</exclude>
+            <exclude>.repository/**</exclude><!-- for CI -->
+          </excludes>
+        </configuration>
+        <executions>
+          <execution>
+            <id>rat-check</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <phase>verify</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>reporting</id>
+      <reporting>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-maven-plugin</artifactId>
+            <version>1.3.8</version>
+          </plugin>
+        </plugins>
+      </reporting>
+    </profile>
+  </profiles>
+</project>

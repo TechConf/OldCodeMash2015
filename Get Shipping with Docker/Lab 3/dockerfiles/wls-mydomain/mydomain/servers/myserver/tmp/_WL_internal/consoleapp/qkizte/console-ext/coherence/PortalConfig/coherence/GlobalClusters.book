@@ -1,0 +1,1471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+    xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+    xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd">
+
+  <netuix:book definitionLabel="CoherenceGlobalCoherenceClusters" title="book.title" markupName="book"
+               markupType="Book"
+               presentationClass="invisible">
+    <netuix:content>
+
+      <netuix:book definitionLabel="CoherenceGlobalCoherenceServersBook" title="coherenceservers.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="CoherenceServersTablePages"
+                       title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:book markupName="book" markupType="Book" definitionLabel="CoherenceServersTablesBook"
+                               title="coherenceservers.title">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+
+                      <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServersConfigPage"
+                                   title="tab.configuration.label"
+                                   presentationClass="page-table">
+                        <netuix:meta name="helpid" content="Coherence.serversconfigtable.title;coherence"/>
+                        <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                        <netuix:meta name="breadcrumb" content="coherenceservers.title"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" 
+                                                      instanceLabel="CoherenceServersConfigPortlet"
+                                                      contentUri="/PortalConfig/coherence/ServersConfig.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      
+                      <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServersControlPage"
+                                   title="tab.control.label"
+                                   presentationClass="page-table">
+                        <netuix:meta name="helpid" content="Coherence.serverscontroltable.title;coherence"/>
+                        <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                        <netuix:meta name="breadcrumb" content="coherenceservers.title"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" 
+                                                      instanceLabel="CoherenceServersControlPortlet"
+                                                      contentUri="/PortalConfig/coherence/ServersControl.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCoherenceServerBook" title="book.title" markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCoherenceServerPages"
+                       title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:book markupName="book" markupType="Book" definitionLabel="CoherenceConfigCoherenceServerBook"
+                               title="CoherenceConfigCoherenceServerBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      <netuix:book markupName="book" markupType="Book"
+                                   definitionLabel="CoherenceServerConfigPage"
+                                   title="tab.configuration.label">
+                        <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+                        <netuix:content>
+                          <!-- Definition for the general tab -->
+                          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServerConfigGeneralPage"
+                                       title="tab.general.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Coherence.serverconfiggeneral.title;coherence"/>
+                            <netuix:meta name="breadcrumb-context" content="handle"/>
+                            <netuix:meta name="configuration-page" content="CoherenceServer"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceServerConfigGeneralPortlet"
+                                                          contentUri="/PortalConfig/coherence/ServerConfigGeneral.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="CoherenceServerConfigStartupPage"
+                                       title="tab.serverstart.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Coherence.serverconfigstartup.title;coherence"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceServerConfigStartupPortlet"
+                                                          contentUri="/PortalConfig/coherence/ServerConfigStartup.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+                      <netuix:book markupName="book" markupType="Book"
+                                   definitionLabel="CoherenceServerControlPage"
+                                   title="tab.control.label">
+                        <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+                        <netuix:content>
+                          <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="CoherenceServerControlStartStopPage"
+                                       title="tab.startstop.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Coherence.servercontrolstartstop.title;coherence"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceServerControlStartStopPortlet"
+                                                          contentUri="/PortalConfig/coherence/ServerControlStartStop.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+                      <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServerConfigNotesPage"
+                                   title="tab.notes.label"
+                                   presentationClass="page-content">
+                        <netuix:meta name="helpid" content="Coherence.serverconfignotes.title;coherence"/>
+                        <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceServerConfigNotesPortlet"
+                                                      contentUri="/PortalConfig/coherence/ServerConfigNotes.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceGlobalCoherenceClustersBook" title="coherenceclusters.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceGlobalCoherenceClustersPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-table">
+            <netuix:meta name="helpid" content="Coherence.globalclusterstable.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:meta name="breadcrumb" content="coherenceclusters.title"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" 
+                                          instanceLabel="CoherenceGlobalCoherenceClustersPortlet"
+                                          contentUri="/PortalConfig/coherence/GlobalClustersTable.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCoherenceClusterBook" title="book.title" markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCoherenceClusterPages"
+                       title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:book markupName="book" markupType="Book" definitionLabel="CoherenceConfigCoherenceClusterBook"
+                               title="CoherenceConfigCoherenceClusterBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      <netuix:book markupName="book" markupType="Book"
+                                   definitionLabel="CoherenceConfigCoherenceClusterPage"
+                                   title="tab.configuration.label">
+                        <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+                        <netuix:content>
+                          <!-- Definition for the general tab -->
+                          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceConfigCoherenceClusterGeneralPage"
+                                       title="tab.general.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Coherence.configcoherenceclustergeneral.title;coherence"/>
+                            <netuix:meta name="breadcrumb-context" content="handle"/>
+                            <netuix:meta name="configuration-page" content="CoherenceClusterSystemResource"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceConfigCoherenceClusterGeneralPortlet"
+                                                          contentUri="/PortalConfig/coherence/ConfigCoherenceClusterGeneral.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="CoherenceCacheConfigsPage"
+                                       title="tab.cacheconfigs.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Coherence.coherencecacheconfigs.title;coherence"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portlet definitionLabel="CoherenceCacheConfigsPortlet">
+                                    <netuix:strutsContent module="/coherence" 
+                                                          action="CoherenceCacheConfigs"
+                                                          refreshAction="CoherenceCacheConfigs"/>            
+                                  </netuix:portlet>                                 
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="CoherenceConfigCoherenceClusterWellKnownAddressesPage"
+                                       title="tab.wellknownaddresses.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Coherence.configcoherenceclusterwellknownaddresses.title;coherence"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceConfigCoherenceClusterWellKnownAddressesPortlet"
+                                                          contentUri="/PortalConfig/coherence/ConfigCoherenceClusterWellKnownAddresses.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="CoherenceConfigAddressProvidersPage"
+                                       title="tab.addressproviders.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Coherence.configcoherenceaddressproviders.title;coherence"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:portlet definitionLabel="CoherenceConfigAddressProvidersPortlet">
+                                  <netuix:strutsContent module="/coherence" 
+                                                        action="ConfigCoherenceAddressProviders"
+                                                        refreshAction="ConfigCoherenceAddressProviders"/>
+                                </netuix:portlet>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="CoherenceConfigCoherenceClusterLoggingPage"
+                                       title="tab.logging.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Coherence.configcoherenceclusterlogging.title;coherence"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceConfigCoherenceClusterLoggingPortlet"
+                                                          contentUri="/PortalConfig/coherence/ConfigCoherenceClusterLogging.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+                      <netuix:book markupName="book" markupType="Book"
+                                   definitionLabel="CoherenceClusterSecurityBook"
+                                   title="tab.security.label">
+                        <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+                        <netuix:content>
+                          <!-- Definition for the general tab -->
+                          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceClusterSecurityGeneralPage"
+                                       title="tab.general.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="CoherenceClusterSecurityGeneral.title;coherence"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portlet definitionLabel="CoherenceClusterSecurityGeneralPortlet">
+                                    <netuix:strutsContent module="/coherence" action="CoherenceClusterSecurityGeneral"
+                                                          refreshAction="CoherenceClusterSecurityGeneral"/>
+                                  </netuix:portlet>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the services tab -->
+                          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServicesPage"
+                                       title="tab.coherence.services.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="CoherenceServices.title;coherence"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portlet definitionLabel="CoherenceServicesPortlet">
+                                    <netuix:strutsContent module="/coherence" action="CoherenceServices"
+                                                          refreshAction="CoherenceServices"/>
+                                  </netuix:portlet>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the caches tab -->
+                          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCachesPage"
+                                       title="tab.coherence.caches.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="CoherenceCaches.title;coherence"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portlet definitionLabel="CoherenceCachesPortlet">
+                                    <netuix:strutsContent module="/coherence" action="CoherenceCaches"
+                                                          refreshAction="CoherenceCaches"/>
+                                  </netuix:portlet>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+                      <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceConfigCoherenceClusterTargetsPage"
+                                   title="tab.members.label"
+                                   presentationClass="page-content">
+                        <netuix:meta name="helpid" content="Coherence.configcoherenceclustertargets.title;coherence"/>
+                        <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceConfigCoherenceClusterTargetsPortlet"
+                                                      contentUri="/PortalConfig/coherence/ConfigCoherenceClusterTargets.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceConfigCoherenceClusterNotesPage"
+                                   title="tab.notes.label"
+                                   presentationClass="page-content">
+                        <netuix:meta name="helpid" content="Coherence.configcoherenceclusternotes.title;coherence"/>
+                        <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceConfigCoherenceClusterNotesPortlet"
+                                                      contentUri="/PortalConfig/coherence/ConfigCoherenceClusterNotes.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCoherenceAddressProviderBook" title="book.title" markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCoherenceAddressProviderPages"
+                       title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:book markupName="book" markupType="Book" definitionLabel="CoherenceConfigCoherenceAddressProviderBook"
+                               title="CoherenceConfigCoherenceClusterBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      <netuix:book markupName="book" markupType="Book"
+                                   definitionLabel="CoherenceConfigCoherenceAddressProviderConfigPages"
+                                   title="tab.configuration.label">
+                        <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+                        <netuix:content>
+                          <!-- Definition for the general tab -->
+                          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceConfigAddressProviderPage"
+                                       title="tab.general.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Coherence.configaddressprovider.title;coherence"/>
+                            <netuix:meta name="breadcrumb-context" content="handle"/>
+                            <netuix:meta name="configuration-page" content="CoherenceAddressProvider"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portlet definitionLabel="CoherenceAddressProviderPortlet">
+                                    <netuix:strutsContent module="/coherence" action="ConfigCoherenceAddressProvider"
+                                                          refreshAction="ConfigCoherenceAddressProvider"/>
+                                  </netuix:portlet>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCoherenceSocketAddressBook" title="book.title" markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCoherenceSocketAddressPages"
+                       title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:book markupName="book" markupType="Book" definitionLabel="CoherenceConfigCoherenceSocketAddressBook"
+                               title="CoherenceConfigCoherenceClusterBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      <netuix:book markupName="book" markupType="Book"
+                                   definitionLabel="CoherenceConfigCoherenceSocketAddressConfigPages"
+                                   title="tab.configuration.label">
+                        <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+                        <netuix:content>
+                          <!-- Definition for the general tab -->
+                          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceConfigSocketAddressPage"
+                                       title="tab.general.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Coherence.configsocketaddress.title;coherence"/>
+                            <netuix:meta name="breadcrumb-context" content="handle"/>
+                            <netuix:meta name="configuration-page" content="CoherenceSocketAddress"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portlet definitionLabel="CoherenceSocketAddressPortlet">
+                                    <netuix:strutsContent module="/coherence" action="ConfigCoherenceSocketAddress"
+                                                          refreshAction="ConfigCoherenceSocketAddress"/>
+                                  </netuix:portlet>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCoherenceClusterWellKnownAddressBook" title="book.title" markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCoherenceClusterWellKnownAddressPages"
+                       title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:book markupName="book" markupType="Book" definitionLabel="CoherenceConfigCoherenceClusterWellKnownAddressBook"
+                               title="CoherenceConfigCoherenceClusterBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      <netuix:book markupName="book" markupType="Book"
+                                   definitionLabel="CoherenceConfigCoherenceClusterWellKnownAddressConfigPages"
+                                   title="tab.configuration.label">
+                        <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+                        <netuix:content>
+                          <!-- Definition for the general tab -->
+                          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceConfigCoherenceClusterWellKnownAddressPage"
+                                       title="tab.general.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Coherence.configcoherenceclusterwellknownaddress.title;coherence"/>
+                            <netuix:meta name="breadcrumb-context" content="handle"/>
+                            <netuix:meta name="configuration-page" content="CoherenceClusterWellKnownAddress"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceConfigCoherenceClusterWellKnownAddressPortlet"
+                                                          contentUri="/PortalConfig/coherence/ConfigCoherenceClusterWellKnownAddress.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCacheConfigBook" title="book.title" markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCacheConfigPage"
+                       title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:book markupName="book" markupType="Book" definitionLabel="CoherenceCacheConfigTabsBook"
+                               title="CoherenceCacheConfigBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      
+                      <!-- definition for the configuration page -->
+                      <netuix:page markupName="page" definitionLabel="CoherenceCacheConfigConfigurationPage"
+                                   presentationClass="page-content"
+                                   title="tab.config.label">
+                        <netuix:meta name="helpid" content="Coherence.cacheconfigconfiguration.title;coherence"/>
+                        <netuix:meta name="configuration-page" content="CoherenceCacheConfig"/>
+                        <netuix:meta name="breadcrumb-context" content="handle"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupName="ph1">
+                              <netuix:portlet definitionLabel="CoherenceCacheConfigConfigurationPortlet">
+                                <netuix:strutsContent module="/coherence" action="CoherenceCacheConfigConfiguration"
+                                                      refreshAction="CoherenceCacheConfigConfiguration"/>
+                              </netuix:portlet>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      <!-- definition for the targets page -->
+                      <netuix:page markupName="page" definitionLabel="CoherenceCacheConfigTargetsPage"
+                                   presentationClass="page-content"
+                                   title="tab.targets.label">
+                        <netuix:meta name="helpid" content="Coherence.cacheconfigtargets.title;coherence"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupName="ph1">
+                              <netuix:portlet definitionLabel="CoherenceCacheConfigTargetsPortlet">
+                                <netuix:strutsContent module="/coherence" action="CoherenceCacheConfigTargets"
+                                                      refreshAction="CoherenceCacheConfigTargets"/>
+                              </netuix:portlet>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                        
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      
+      <netuix:book definitionLabel="CoherenceCachesBook" title="book.title" markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCachePages"
+                       title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:book markupName="book" markupType="Book" definitionLabel="CoherenceCacheBook"
+                               title="CoherenceCacheBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      <netuix:book markupName="book" markupType="Book"
+                                   definitionLabel="CoherenceCacheSecurityPages"
+                                   title="tab.security.label">
+                        <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+                        <netuix:content>
+                          <!-- definition for the roles page -->
+                          <netuix:page markupName="page" definitionLabel="CoherenceCacheRolesPage"
+                                       presentationClass="page-content"
+                                       title="tab.roles.label">
+                            <netuix:meta name="helpid" content="CoherenceCacheRoles.title;coherence"/>
+                            <netuix:meta name="breadcrumb-context" content="handle"/>
+                            <netuix:meta name="configuration-page" content="CoherenceCache"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupName="ph1">
+                                  <netuix:portlet definitionLabel="CoherenceCacheRolesPortlet">
+                                    <netuix:strutsContent module="/coherence" action="CoherenceCacheRoles"
+                                                          refreshAction="CoherenceCacheRoles"/>
+                                  </netuix:portlet>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- definition for the policies page -->
+                          <netuix:page markupName="page" definitionLabel="CoherenceCachePoliciesPage"
+                                       presentationClass="page-content"
+                                       title="tab.policies.label">
+                            <netuix:meta name="helpid" content="CoherenceCachePolicies.title;coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupName="ph1">
+                                  <netuix:portlet definitionLabel="CoherenceCachePoliciesPortlet">
+                                    <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/cache/policies/Flow.jpf"
+                                                            action="begin"
+                                                            refreshAction="begin"/>
+                                  </netuix:portlet>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceServicesBook" title="book.title" markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServicePages"
+                       title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:book markupName="book" markupType="Book" definitionLabel="CoherenceServiceBook"
+                               title="CoherenceServiceBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      <netuix:book markupName="book" markupType="Book"
+                                   definitionLabel="CoherenceServiceSecurityPages"
+                                   title="tab.security.label">
+                        <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+                        <netuix:content>
+                          <!-- definition for the roles page -->
+                          <netuix:page markupName="page" definitionLabel="CoherenceServiceRolesPage"
+                                       presentationClass="page-content"
+                                       title="tab.roles.label">
+                            <netuix:meta name="helpid" content="CoherenceServiceRoles.title;coherence"/>
+                            <netuix:meta name="breadcrumb-context" content="handle"/>
+                            <netuix:meta name="configuration-page" content="CoherenceService"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupName="ph1">
+                                  <netuix:portlet definitionLabel="CoherenceServiceRolesPortlet">
+                                    <netuix:strutsContent module="/coherence" action="CoherenceServiceRoles"
+                                                          refreshAction="CoherenceServiceRoles"/>
+                                  </netuix:portlet>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- definition for the policies page -->
+                          <netuix:page markupName="page" definitionLabel="CoherenceServicePoliciesPage"
+                                       presentationClass="page-content"
+                                       title="tab.policies.label">
+                            <netuix:meta name="helpid" content="CoherenceServicePolicies.title;coherence"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupName="ph1">
+                                  <netuix:portlet definitionLabel="CoherenceServicePoliciesPortlet">
+                                    <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/service/policies/Flow.jpf"
+                                                            action="begin"
+                                                            refreshAction="begin"/>
+                                  </netuix:portlet>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceDeleteGlobalCoherenceClusterBook"
+                   title="coherence.assistant.deleteglobalcluster.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceDeleteGlobalCoherenceClusterPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.coherence.deletecoherencecluster.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceDeleteGlobalCoherenceClusterPortlet"
+                                          contentUri="/PortalConfig/coherence/DeleteGlobalCluster.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCreateAddressProviderBook"
+                   title="coherence.assistant.createcoherenceaddressprovider.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCreateAddressProviderPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.coherence.createcoherenceaddressprovider.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portlet definitionLabel="CoherenceCreateAddressProviderPortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/createaddressprovider/Flow.jpf"
+                                            action="begin"
+                                            refreshAction="begin"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceDeleteAddressProviderBook"
+                   title="coherence.assistant.deletecoherenceaddressprovider.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceDeleteAddressProviderPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.coherence.deletecoherenceaddressprovider.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portlet definitionLabel="CoherenceDeleteAddressProviderPortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/deleteaddressprovider/Flow.jpf"
+                                            action="begin"
+                                            refreshAction="begin"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCreateSocketAddressBook"
+                   title="coherence.assistant.createcoherencesocketaddress.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCreateSocketAddressPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.coherence.createcoherencesocketaddress.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portlet definitionLabel="CoherenceCreateSocketAddressPortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/createsocketaddress/Flow.jpf"
+                                            action="begin"
+                                            refreshAction="begin"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceDeleteSocketAddressBook"
+                   title="coherence.assistant.deletecoherencesocketaddress.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceDeleteSocketAddressPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.coherence.deletecoherencesocketaddress.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portlet definitionLabel="CoherenceDeleteSocketAddressPortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/deletesocketaddress/Flow.jpf"
+                                            action="begin"
+                                            refreshAction="begin"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCreateGlobalCoherenceClusterWellKnownAddressBook"
+                   title="coherence.assistant.createglobalclusterwellknownaddress.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCreateGlobalCoherenceClusterWellKnownAddressPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.coherence.createcoherenceclusterwellknownaddress.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceCreateGlobalCoherenceClusterWellKnownAddressPortlet"
+                                          contentUri="/PortalConfig/coherence/CreateGlobalClusterWellKnownAddress.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceDeleteGlobalCoherenceClusterWellKnownAddressBook"
+                   title="coherence.assistant.deleteglobalclusterwellknownaddress.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceDeleteGlobalCoherenceClusterWellKnownAddressPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.coherence.deletecoherenceclusterwellknownaddress.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceDeleteGlobalCoherenceClusterWellKnownAddressPortlet"
+                                          contentUri="/PortalConfig/coherence/DeleteGlobalClusterWellKnownAddress.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCreateGlobalCoherenceClusterBook"
+                   title="coherence.assistant.createglobalcluster.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCreateGlobalCoherenceClusterPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.coherence.createcoherencecluster.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceCreateGlobalCoherenceClusterPortlet"
+                                          contentUri="/PortalConfig/coherence/CreateGlobalCluster.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceServerCreateBook"
+                   title="coherence.assistant.servercreate.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServerCreatePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.servercreate.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceServerCreatePortlet"
+                                          contentUri="/PortalConfig/coherence/ServerCreate.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceServerCloneBook"
+                   title="coherence.assistant.serverclone.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServerClonePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.servercreate.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceServerClonePortlet"
+                                          contentUri="/PortalConfig/coherence/ServerClone.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceServerDeleteBook"
+                   title="coherence.assistant.serverdelete.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServerDeletePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.serverdelete.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceServerDeletePortlet"
+                                          contentUri="/PortalConfig/coherence/ServerDelete.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceServerControlStartBook"
+                   title="coherence.assistant.servercontrolstart.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServerControlStartPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.servercontrol.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceServerControlStartPortlet"
+                                          contentUri="/PortalConfig/coherence/ServerControlStart.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceServerControlForceShutdownBook"
+                   title="coherence.assistant.servercontrolforceshutdown.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServerControlForceShutdownPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.servercontrol.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceServerControlForceShutdownPortlet"
+                                          contentUri="/PortalConfig/coherence/ServerControlForceShutdown.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+
+      <netuix:book definitionLabel="CoherenceServersControlStartBook"
+                   title="coherence.assistant.servercontrolstart.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServersControlStartPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.serverscontrol.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceServersControlStartPortlet"
+                                          contentUri="/PortalConfig/coherence/ServersControlStart.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceServersControlForceShutdownBook"
+                   title="coherence.assistant.servercontrolforceshutdown.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServersControlForceShutdownPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.serverscontrol.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceServersControlForceShutdownPortlet"
+                                          contentUri="/PortalConfig/coherence/ServersControlForceShutdown.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceServiceCreateBook"
+                   title="coherence.assistant.service.create.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServiceCreatePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="CoherenceServiceCreate.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceServiceCreatePortlet"
+                                          contentUri="/PortalConfig/coherence/CoherenceServiceCreate.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceServiceDeleteBook"
+                   title="coherence.assistant.service.delete.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceServiceDeletePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="CoherenceServiceDelete.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceServiceDeletePortlet"
+                                          contentUri="/PortalConfig/coherence/CoherenceServiceDelete.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceServiceRoleEditBook" markupName="book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   threadsafe="true"
+                   title="coherence.assistant.service.role.edit.title"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" definitionLabel="CoherenceServiceRoleEditPage" title="not.used"
+                       presentationClass="page-content">
+            <netuix:meta name="helpid" content="CoherenceServiceRoleEdit.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupName="ph1">
+                  <netuix:portlet definitionLabel="CoherenceServiceRoleEditPortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/service/role/edit/Flow.jpf"
+                                            action="begin"
+                                            refreshAction="begin"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceServiceRoleCreateBook" markupName="book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   threadsafe="true"
+                   title="coherence.assistant.service.role.create.title"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" definitionLabel="CoherenceServiceRoleCreatePage" title="not.used"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="CoherenceServiceRoleCreate.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupName="ph1">
+                  <netuix:portlet definitionLabel="CoherenceServiceRoleCreatePortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/service/role/create/Flow.jpf"
+                                            action="begin"
+                                            refreshAction="begin"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceServiceRoleDeleteBook" markupName="book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   threadsafe="true"
+                   title="coherence.assistant.service.role.delete.title"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" definitionLabel="CoherenceServiceRoleDeletePage" title="not.used"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="CoherenceServiceRoleDelete.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupName="ph1">
+                  <netuix:portlet definitionLabel="CoherenceServiceRoleDeletePortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/service/role/delete/Flow.jpf"
+                                            action="begin"
+                                            refreshAction="begin"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCacheCreateBook"
+                   title="coherence.assistant.cache.create.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCacheCreatePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="CoherenceCacheCreate.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceCacheCreatePortlet"
+                                          contentUri="/PortalConfig/coherence/CoherenceCacheCreate.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCacheDeleteBook"
+                   title="coherence.assistant.cache.delete.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCacheDeletePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="CoherenceCacheDelete.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CoherenceCacheDeletePortlet"
+                                          contentUri="/PortalConfig/coherence/CoherenceCacheDelete.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCacheRoleEditBook" markupName="book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   threadsafe="true"
+                   title="coherence.assistant.cache.role.edit.title"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" definitionLabel="CoherenceCacheRoleEditPage" title="not.used"
+                       presentationClass="page-content">
+            <netuix:meta name="helpid" content="CoherenceCacheRoleEdit.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupName="ph1">
+                  <netuix:portlet definitionLabel="CoherenceCacheRoleEditPortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/cache/role/edit/Flow.jpf"
+                                            action="begin"
+                                            refreshAction="begin"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCacheRoleCreateBook" markupName="book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   threadsafe="true"
+                   title="coherence.assistant.cache.role.create.title"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" definitionLabel="CoherenceCacheRoleCreatePage" title="not.used"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="CoherenceCacheRoleCreate.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupName="ph1">
+                  <netuix:portlet definitionLabel="CoherenceCacheRoleCreatePortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/cache/role/create/Flow.jpf"
+                                            action="begin"
+                                            refreshAction="begin"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCacheRoleDeleteBook" markupName="book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   threadsafe="true"
+                   title="coherence.assistant.cache.role.delete.title"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" definitionLabel="CoherenceCacheRoleDeletePage" title="not.used"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="CoherenceCacheRoleDelete.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupName="ph1">
+                  <netuix:portlet definitionLabel="CoherenceCacheRoleDeletePortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/cache/role/delete/Flow.jpf"
+                                            action="begin"
+                                            refreshAction="begin"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+      <netuix:book definitionLabel="CoherenceCreateCacheConfigBook"
+                   title="coherence.assistant.createcacheconfig.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceCreateCacheConfigPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.coherence.createcacheconfig.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portlet definitionLabel="CoherenceCreateCacheConfigPortlet">
+                        <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/createcacheconfig/Flow.jpf"
+                                                action="begin"
+                                                refreshAction="begin"/>
+                  </netuix:portlet>                        
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+    
+      <netuix:book definitionLabel="CoherenceDeleteCacheConfigBook"
+                   title="coherence.assistant.deletecacheconfig.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.CoherenceBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CoherenceDeleteCacheConfigPage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Coherence.coherence.deletecacheconfig.title;coherence"/>
+            <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portlet definitionLabel="CoherenceDeleteCacheConfigPortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/coherence/deletecacheconfig/Flow.jpf"
+                                            action="begin"
+                                            refreshAction="begin"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      
+    </netuix:content>
+  </netuix:book>
+
+</portal:root>

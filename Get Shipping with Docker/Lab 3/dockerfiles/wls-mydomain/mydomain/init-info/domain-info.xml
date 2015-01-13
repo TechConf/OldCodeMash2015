@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-info javahome="/appl/java/jdk1.7.0_51" appdir="" mwhome="/appl/oracle/middleware/wls/wls12120" messagingType="WLSJMS" isManagedDomain="false" xmlns="http://xmlns.oracle.com/weblogic/domain-info">
+  <domain-template-ref name="Basic WebLogic Server Domain" version="12.1.2.0" location="/appl/oracle/middleware/wls/wls12120/wlserver/common/templates/wls/wls.jar" symbol="Generated_wlserver_0.0.0.0_ORACLE_HOME"/>
+  <install-comp-ref name="wlserver" version="0.0.0.0" symbol="Generated_wlserver_0.0.0.0_ORACLE_HOME" product_home="/appl/oracle/middleware/wls/wls12120/wlserver"/>
+</domain-info>

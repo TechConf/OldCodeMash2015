@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.leadingedje.androidpushnotificationdemo">
+
+    <!--
+        These permissions are required to support push notification via GCM
+        See Step 2: Edit Your Application's Manifest in the link below for additional details
+        http://developer.android.com/google/gcm/client.html
+    -->
+    <!--
+        App can register and receive messages
+    -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <!--
+        Android application can send the registration ID to the 3rd party server     
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--
+        GCM requires a Google account, 
+        necessary only if if the device is running a version lower than Android 4.0.4     
+    -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!--
+        App can keep the processor from sleeping when a message is received 
+    -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--
+        Notifications cause devices to vibrate 
+    -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--
+        Creates a custom permission so only this app can receive its messages.
+        NOTE: the permission *must* be called PACKAGE.permission.C2D_MESSAGE,
+              where PACKAGE is the application's package name.
+    -->
+    <permission android:name="com.leadingedje.androidpushnotificationdemo.permission.C2D_MESSAGE"
+                android:protectionLevel="signature" />
+    <uses-permission android:name="com.leadingedje.androidpushnotificationdemo.permission.C2D_MESSAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/lelogo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.leadingedje.androidpushnotificationdemo.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+            This section is required to support push notification via GCM
+            See Step 2: Edit Your Application's Manifest in the link below for additional details
+            http://developer.android.com/google/gcm/client.html
+        -->
+        <!--
+          BroadcastReceiver that will receive intents from GCM
+          services and handle them to the custom IntentService defined below.
+
+          The com.google.android.c2dm.permission.SEND permission is necessary
+          so only GCM services can send data messages for the app.
+        -->
+        <receiver android:name="com.leadingedje.androidpushnotificationdemo.GCMBroadcastReceiver"
+                  android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!-- Receives the registration id. -->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.leadingedje.androidpushnotificationdemo" />
+            </intent-filter>
+        </receiver>
+
+        <!--
+          Application-specific subclass of GCMBaseIntentService that will
+          handle received messages.
+        -->
+        <service android:name="com.leadingedje.androidpushnotificationdemo.GCMIntentService" />
+        
+        <!--
+            This meta-data tag is required to use Google Play Services
+        -->
+        <meta-data android:name="com.google.android.gms.version"
+                   android:value="@integer/google_play_services_version" />
+        
+    </application>
+
+</manifest>

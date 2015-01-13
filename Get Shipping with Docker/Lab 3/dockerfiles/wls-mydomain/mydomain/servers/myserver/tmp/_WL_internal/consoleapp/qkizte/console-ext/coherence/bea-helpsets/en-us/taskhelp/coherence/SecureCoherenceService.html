@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Secure Coherence service
+  configurations</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50020" id="WLACH50020"></a>
+
+
+  <h1 class="topictitle1">Secure Coherence service
+  configurations</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="WLACH50020__startstop1208194" id="WLACH50020__startstop1208194"></a>Oracle WebLogic Server
+      authorization can be used to restrict access to Oracle Coherence
+      services. Specifying authorization on a cache service affects access to
+      all the caches that are created by that service.</p>
+
+      <p>To specify service authorization:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50020__startstop1198904" id="WLACH50020__startstop1198904"></a>In the left
+        pane of the Console, select <b>Environment &gt; Coherence
+        Clusters</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50020__startstop1213516" id="WLACH50020__startstop1213516"></a>In the
+        Coherence Clusters table, select your Coherence cluster.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50020__startstop1204881" id="WLACH50020__startstop1204881"></a>Select the
+        <b>Security: Services</b> page.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50020__startstop1208210" id="WLACH50020__startstop1208210"></a>Click
+        <b>New</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50020__startstop1202695" id="WLACH50020__startstop1202695"></a>In
+        <b>Name</b>, enter the name of the service. The name
+        of the service must exactly match the name of the service used in an
+        application.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50020__startstop1202695" id="WLACH50020__startstop1202695"></a>Click
+        <b>Finish</b>.</span>
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+
+    <div class="result"><p class="sectiontitle"><b>	
+	Result
+      </b></p>
+      <p>The service is displayed in the Coherence Services table. Select the
+      service in the table to access its settings page where you can define
+      scoped roles and policies using the <span>Roles</span> and
+      <span>Policies</span> pages, respectively.</p>
+    </div>
+  </div>
+
+
+</body></html>

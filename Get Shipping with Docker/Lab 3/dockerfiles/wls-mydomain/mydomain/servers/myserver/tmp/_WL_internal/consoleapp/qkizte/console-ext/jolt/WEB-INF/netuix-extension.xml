@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-portal-extension
+  xmlns="http://www.bea.com/servers/portal/weblogic-portal/8.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.bea.com/servers/portal/weblogic-portal/8.0 netuix-extension-1_0_0.xsd">
+
+  <provider-info>
+    <title>Jolt Connection Pages</title>
+    <version>10.3</version>
+    <description>Jolt connection pools enable applications on WebLogic Server to connect to Oracle Tuxedo domains. This extension provides the console pages to configure, monitor, and control Jolt Connection Pools.</description>
+    <author>Oracle</author>
+    <support-url>http://www.oracle.com</support-url>
+  </provider-info>
+
+  <portal-file>/console.portal</portal-file>
+
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ContentBook"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/jolt/JoltFullFeatures.book" />
+  </book-extension>
+
+  <!-- replace default Jolt connection pool table page --> 
+  <book-extension>
+    <book-location>
+      <parent-label-location label="JoltConnectionPoolTable"/>
+      <book-insertion-point page-label="JoltConnectionPoolTablePage" action="replace"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/jolt/JoltPool.book" />
+  </book-extension>
+  
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ServerServicesTabservicesTabPage"/>
+      <book-insertion-point page-label="ServerServicesXMLPage" action="append"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/core/server/CoreServerJolt.book" />
+  </book-extension>
+  
+    <book-extension>
+    <book-location>
+      <parent-label-location label="ClusterServicesPages"/>
+      <book-insertion-point page-label="ClusterServicesMessagingBridgePage" action="append"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/core/cluster/CoreClusterJolt.book" />
+  </book-extension>
+  
+</weblogic-portal-extension>
