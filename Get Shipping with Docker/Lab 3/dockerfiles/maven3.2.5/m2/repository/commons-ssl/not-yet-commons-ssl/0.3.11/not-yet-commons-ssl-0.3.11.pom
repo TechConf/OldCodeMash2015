@@ -1,0 +1,6 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>commons-ssl</groupId>
+  <artifactId>not-yet-commons-ssl</artifactId>
+  <version>0.3.11</version>
+</project>

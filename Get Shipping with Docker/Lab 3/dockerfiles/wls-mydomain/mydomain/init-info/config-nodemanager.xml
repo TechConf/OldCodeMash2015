@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nod:nodeManagerInfo xmlns:nod="http://xmlns.oracle.com/cie/nodemanager">
+  <nod:userName>weblogic</nod:userName>
+  <nod:password>{AES}KA/D1B8bJRLx/8C6sorxdd9/EpKBqw4UtqGMicL4wTA=</nod:password>
+  <nod:nodeManagerHome>/appl/oracle/middleware/wls/wls12120/user_projects/domains/mydomain/nodemanager</nod:nodeManagerHome>
+  <nod:perDomainNodeManager>true</nod:perDomainNodeManager>
+  <nod:customLocationNodeManager>false</nod:customLocationNodeManager>
+  <nod:manualNodeManagerSetup>false</nod:manualNodeManagerSetup>
+</nod:nodeManagerInfo>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+             xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+             xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd">
+             
+<!--
+    Book file for the tag Deployments / Monitoring / EJB tab
+    of the WebLogic Server administration console
+
+    Copyright (c) 2007,2011, Oracle and/or its affiliates. All rights reserved.
+-->
+
+	<!-- Definition for the ejb pages in the deployments table pageset -->
+    <netuix:book markupName="book" markupType="Book"
+                 definitionLabel="AppDeploymentsMonitorEJBPage"
+                 title="tab.ejbmodules.label">
+      <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level2"/>
+      <netuix:content>
+        <!-- Definition for the ejb stateless tab -->
+        <netuix:page markupName="page" markupType="Page"
+                     definitionLabel="AppDeploymentsMonitorEJBStatelessPage"
+                     presentationClass="page-content"
+                     title="tab.ejbstateless.label">
+          <netuix:meta name="helpid" content="J2EE.app.deploymentsmonitorejbstateless.title;j2ee"/>
+          <netuix:content>
+            <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+              <netuix:portlet definitionLabel="AppDeploymentsMonitorEJBStatelessPortlet">
+                <netuix:strutsContent module="/core-ejb" 
+                                      action="AppDeploymentsMonitorEJBStateless"
+                                      refreshAction="AppDeploymentsMonitorEJBStateless"/>
+              </netuix:portlet>
+            </netuix:layout>
+          </netuix:content>
+        </netuix:page>
+        <!-- Definition for the ejb stateful tab -->
+        <netuix:page markupName="page" markupType="Page"
+                     definitionLabel="AppDeploymentsMonitorEJBStatefulPage"
+                     presentationClass="page-content"
+                     title="tab.ejbstateful.label">
+          <netuix:meta name="helpid" content="J2EE.app.deploymentsmonitorejbstateful.title;j2ee"/>
+          <netuix:content>
+            <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+              <netuix:portlet definitionLabel="AppDeploymentsMonitorEJBStatefulPortlet">
+                <netuix:strutsContent module="/core-ejb" 
+                                      action="AppDeploymentsMonitorEJBStateful"
+                                      refreshAction="AppDeploymentsMonitorEJBStateful"/>
+              </netuix:portlet>
+            </netuix:layout>
+          </netuix:content>
+        </netuix:page>
+        <!-- Definition for the ejb singleton tab -->
+        <netuix:page markupName="page" markupType="Page"
+                     definitionLabel="AppDeploymentsMonitorEJBSingletonPage"
+                     presentationClass="page-content"
+                     title="tab.ejbsingleton.label">
+          <netuix:meta name="helpid" content="J2EE.app.deploymentsmonitorejbsingleton.title;j2ee"/>
+          <netuix:content>
+            <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+              <netuix:portlet definitionLabel="AppDeploymentsMonitorEJBSingletonPortlet">
+                <netuix:strutsContent module="/core-ejb" 
+                                      action="AppDeploymentsMonitorEJBSingleton"
+                                      refreshAction="AppDeploymentsMonitorEJBSingleton"/>
+              </netuix:portlet>
+            </netuix:layout>
+          </netuix:content>
+        </netuix:page>
+        <!-- Definition for the ejb entity tab -->
+        <netuix:page markupName="page" markupType="Page"
+                     definitionLabel="AppDeploymentsMonitorEJBEntityPage"
+                     presentationClass="page-content"
+                     title="tab.ejbentity.label">
+          <netuix:meta name="helpid" content="J2EE.app.deploymentsmonitorejbentity.title;j2ee"/>
+          <netuix:content>
+            <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+              <netuix:portlet definitionLabel="EJBApplicationOverviewPortlet">
+                <netuix:strutsContent module="/core-ejb" 
+                                      action="AppDeploymentsMonitorEJBEntity"
+                                      refreshAction="AppDeploymentsMonitorEJBEntity"/>
+              </netuix:portlet>
+            </netuix:layout>
+          </netuix:content>
+        </netuix:page>
+        <!-- Definition for the ejb message driven tab -->
+        <netuix:page markupName="page" markupType="Page"
+                     definitionLabel="AppDeploymentsMonitorEJBMessageDrivenPage"
+                     presentationClass="page-content"
+                     title="tab.ejbmessagedriven.label">
+          <netuix:meta name="configuration-page" content="MessageDrivenEJBRuntime"/>
+          <netuix:meta name="helpid" content="J2EE.app.deploymentsmonitorejbmessagedriven.title;j2ee"/>
+          <netuix:content>
+            <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+              <netuix:portlet definitionLabel="AppDeploymentsMonitorEJBMessageDrivenPortlet">
+                <netuix:strutsContent module="/core-ejb" 
+                                      action="AppDeploymentsMonitorEJBMessageDriven"
+                                      refreshAction="AppDeploymentsMonitorEJBMessageDriven"/>
+              </netuix:portlet>
+            </netuix:layout>
+          </netuix:content>
+        </netuix:page>
+      </netuix:content>
+    </netuix:book>
+</portal:root>

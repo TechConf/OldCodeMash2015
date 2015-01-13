@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="WTC.wtc.tbridge.wtctbridgeredirectgeneral.title">
+<title>Redirection: General</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Redirection: General</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to define the general configuration for this
+    redirection.</p>
+<p>The Tuxedo queuing bridge establishes a one-way data connection between
+    instances of a JMS queue and a Tuxedo /Q or a JMS queue and a Tuxedo
+    service. Each data connection provides a one-to-one connection between the
+    identified points.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeredirectgeneral.name.label">Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The name of this redirection.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeredirectgeneral.direction.label">Direction</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getDirection"></a><a name="Direction"></a>
+<p>The direction of data flow. At least one redirection must be specified or the Tuxedo queuing bridge will fail to start and an error will be logged.</p>
+<p>Each defined direction is handled by starting a new thread.</p>
+<p>Redirection keywords:</p>
+<ul> 
+<li>
+<code>JmsQ2TuxQ</code>   
+<p>- From JMS to TUXEDO /Q</p> 
+</li>  
+<li>
+<code>TuxQ2JmsQ</code>   
+<p>- From TUXEDO /Q to JMS</p> 
+</li>  
+<li>
+<code>JmsQ2TuxS</code>   
+<p>- From JMS to TUXEDO Service reply to JMS</p> 
+</li>  
+<li>
+<code>JmsQ2JmsQ</code>   
+<p>- From JMS to JMS</p> 
+</li> 
+</ul>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeRedirectMBean.html#Direction">WTCtBridgeRedirectMBean.Direction</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeredirectgeneral.translatefml.label">Translation Type</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTranslateFML"></a><a name="TranslateFML"></a>
+<p>The type of XML/FML translation.</p>
+<p>
+<code>NO</code> indicates that no data translation is performed. <code>FLAT</code> indicates that the message payload is transformed using the WebLogic Tuxedo Connector translator. <code>WLXT</code> indicates that translation is performed by the XML-to-non-XML WebLogic XML Translator (WLXT).</p>
+<p>
+<i>Note:</i> WLXT is not supported for this release.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeRedirectMBean.html#TranslateFML">WTCtBridgeRedirectMBean.TranslateFML</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeredirectgeneral.metadatafile.label">Meta Data File</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMetaDataFile"></a><a name="MetaDataFile"></a>
+<p>The name of the metadata file URL used to pass the call to the XML-to-non-XML WebLogic XML Translator (WLXT).</p>
+<p>
+<i>Note:</i> Not supported for this release.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeRedirectMBean.html#MetaDataFile">WTCtBridgeRedirectMBean.MetaDataFile</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeredirectgeneral.replyq.label">Reply Q</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getReplyQ"></a><a name="ReplyQ"></a>
+<p>The name of the JMS queue used specifically for synchronous calls to a Tuxedo service. The response is returned to the JMS ReplyQ.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeRedirectMBean.html#ReplyQ">WTCtBridgeRedirectMBean.ReplyQ</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeredirectgeneral.sourceaccesspoint.label">Source Access Point</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getSourceAccessPoint"></a><a name="SourceAccessPoint"></a>
+<p>The name of the local or remote access point where the source is located.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeRedirectMBean.html#SourceAccessPoint">WTCtBridgeRedirectMBean.SourceAccessPoint</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeredirectgeneral.sourceqspace.label">Source Qspace</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getSourceQspace"></a><a name="SourceQspace"></a>
+<p>The name of the Qspace for a source location.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeRedirectMBean.html#SourceQspace">WTCtBridgeRedirectMBean.SourceQspace</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeredirectgeneral.sourcename.label">Source Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getSourceName"></a><a name="SourceName"></a>
+<p>The name of a source queue or service. Specifies a JMS queue name, a Tuxedo queue name, or the name of a Tuxedo service.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeRedirectMBean.html#SourceName">WTCtBridgeRedirectMBean.SourceName</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeredirectgeneral.targetaccesspoint.label">Target Access Point</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTargetAccessPoint"></a><a name="TargetAccessPoint"></a>
+<p>The name of the local or remote access point where the target is located.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeRedirectMBean.html#TargetAccessPoint">WTCtBridgeRedirectMBean.TargetAccessPoint</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeredirectgeneral.targetqspace.label">Target Qspace</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTargetQspace"></a><a name="TargetQspace"></a>
+<p>The name of the Qspace for a target location.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeRedirectMBean.html#TargetQspace">WTCtBridgeRedirectMBean.TargetQspace</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeredirectgeneral.targetname.label">Target Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTargetName"></a><a name="TargetName"></a>
+<p>The name of the target queue or service. Specifies a JMS queue name, a Tuxedo queue name, or the name of a Tuxedo service.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeRedirectMBean.html#TargetName">WTCtBridgeRedirectMBean.TargetName</a></code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.CreateATuxedoQueuingBridgeRedirection">Create Tuxedo queuing bridge
+  redirections</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.DeleteATuxedoQueuingBridgeRedirection">Delete Tuxedo queuing bridge
+  redirections</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/WTCCF/tbridge.htm">How to Configure the Oracle
+    Tuxedo Queuing Bridge</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

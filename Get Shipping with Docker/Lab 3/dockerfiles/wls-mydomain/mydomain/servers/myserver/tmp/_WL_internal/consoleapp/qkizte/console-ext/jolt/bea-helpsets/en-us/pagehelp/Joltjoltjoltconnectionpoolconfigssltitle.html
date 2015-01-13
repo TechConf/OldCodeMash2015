@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="Jolt.jolt.joltconnectionpoolconfigssl.title">
+<title>Jolt Connection Pools: Configuration: SSL</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Jolt Connection Pools: Configuration: SSL</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Use this page to configure SSL for this connection pool.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="jolt.joltconnectionpoolconfigssl.keypassphrase">Key Pass Phrase</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getKeyPassPhrase"></a><a name="KeyPassPhrase"></a>
+<p>The encrypted identity passphrase.</p>
+<p>When you get the value of this attribute, WebLogic Server does the following:</p>
+<ol> 
+<li> 
+<p>Retrieves the value of the <code>KeyPassPhraseEncrypted</code> attribute.</p> 
+</li>  
+<li> 
+<p>Decrypts the value and returns the unencrypted password as a String.</p> 
+</li> 
+</ol>
+<p>When you set the value of this attribute, WebLogic Server does the following:</p>
+<ol> 
+<li> 
+<p>Encrypts the value.</p> 
+</li>  
+<li> 
+<p>Sets the value of the <code>KeyPassPhraseEncrypted</code> attribute to the encrypted value.</p> 
+</li> 
+</ol>
+<p>Using this attribute (<code>KeyPassPhrase</code>) is a potential security risk because the String object (which contains the unencrypted password) remains in the JVM's memory until garbage collection removes it and the memory is reallocated. Depending on how memory is allocated in the JVM, a significant amount of time could pass before this unencrypted data is removed from memory.</p>
+<p>Instead of using this attribute, use <code>KeyPassPhraseEncrypted</code>.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#KeyPassPhrase">JoltConnectionPoolMBean.KeyPassPhrase</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="jolt.joltconnectionpoolconfigssl.keystorename">Key Store Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getKeyStoreName"></a><a name="KeyStoreName"></a>
+<p>The path and file name of the keystore containing the private key used in SSL mutual authentication.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#KeyStoreName">JoltConnectionPoolMBean.KeyStoreName</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="jolt.joltconnectionpoolconfigssl.keystorepassphrase">Key Store Pass Phrase</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getKeyStorePassPhrase"></a><a name="KeyStorePassPhrase"></a>
+<p>The encrypted identity keystore's passphrase. If empty or null, then the keystore will be opened without a passphrase.</p>
+<p>When you get the value of this attribute, WebLogic Server does the following:</p>
+<ol> 
+<li> 
+<p>Retrieves the value of the <code>KeyStorePassPhraseEncrypted</code> attribute.</p> 
+</li>  
+<li> 
+<p>Decrypts the value and returns the unencrypted password as a String.</p> 
+</li> 
+</ol>
+<p>When you set the value of this attribute, WebLogic Server does the following:</p>
+<ol> 
+<li> 
+<p>Encrypts the value.</p> 
+</li>  
+<li> 
+<p>Sets the value of the <code>KeyStorePassPhraseEncrypted</code> attribute to the encrypted value.</p> 
+</li> 
+</ol>
+<p>Using this attribute (<code>KeyStorePassPhrase</code>) is a potential security risk because the String object (which contains the unencrypted password) remains in the JVM's memory until garbage collection removes it and the memory is reallocated. Depending on how memory is allocated in the JVM, a significant amount of time could pass before this unencrypted data is removed from memory.</p>
+<p>Instead of using this attribute, use <code>KeyStorePassPhraseEncrypted</code>.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#KeyStorePassPhrase">JoltConnectionPoolMBean.KeyStorePassPhrase</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="jolt.joltconnectionpoolconfigssl.truststorename">Trust Store Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTrustStoreName"></a><a name="TrustStoreName"></a>
+<p>The path and file name of the keystore containing the trust certificates.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#TrustStoreName">JoltConnectionPoolMBean.TrustStoreName</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="jolt.joltconnectionpoolconfigssl.truststorepassphrase">Trust Store Pass Phrase</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTrustStorePassPhrase"></a><a name="TrustStorePassPhrase"></a>
+<p>The encrypted trust keystore's passphrase. If empty or null, then the keystore will be opened without a passphrase.</p>
+<p>When you get the value of this attribute, WebLogic Server does the following:</p>
+<ol> 
+<li> 
+<p>Retrieves the value of the <code>TrustStorePassPhraseEncrypted</code> attribute.</p> 
+</li>  
+<li> 
+<p>Decrypts the value and returns the unencrypted password as a String.</p> 
+</li> 
+</ol>
+<p>When you set the value of this attribute, WebLogic Server does the following:</p>
+<ol> 
+<li> 
+<p>Encrypts the value.</p> 
+</li>  
+<li> 
+<p>Sets the value of the <code>TrustStorePassPhraseEncrypted</code> attribute to the encrypted value.</p> 
+</li> 
+</ol>
+<p>Using this attribute (<code>TrustStorePassPhrase</code>) is a potential security risk because the String object (which contains the unencrypted password) remains in the JVM's memory until garbage collection removes it and the memory is reallocated. Depending on how memory is allocated in the JVM, a significant amount of time could pass before this unencrypted data is removed from memory.</p>
+<p>Instead of using this attribute, use <code>TrustStorePassPhraseEncrypted</code>.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/JoltConnectionPoolMBean.html#TrustStorePassPhrase">JoltConnectionPoolMBean.TrustStorePassPhrase</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</blockquote>
+</body>
+</html>

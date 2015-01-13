@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature-definition xmlns="http://www.bea.com/ns/cie/feature" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="weblogic.server.modules.sca" version="12.1.2.0">
+  <!--
+    <annotation>
+      <manifest xmlns="http://www.bea.com/ns/cie/manifest">
+        <attribute name="Implementation-Vendor" value="BEA Systems"/>
+        <attribute name="Implementation-Title" value="WebLogic SCA Feature Module 12.1 Fri Apr 5 02:30:45 EDT 2013 "/>
+        <attribute name="Source-Repository-Change-Id" value="1520341"/>
+        <attribute name="Source-Repository-URI" value="p4://depot/dev/src1212/repository/modules/features"/>
+        <attribute name="Implementation-Version" value="12.1.2.0"/>
+      </manifest>
+    </annotation>
+  -->
+  <modules>
+    <module file-name="../../oracle_common/modules/javax.servlet_2.1.0.0_3-0.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/javax.ejb_3.2.0.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/com.oracle.webservices.wls.wls-ws-metainf-services_2.0.0.0.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/com.oracle.webservices.wls.wls-ws-api_2.0.0.0.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/internal/features/oracle.webservices.base.wls.classpath_12.1.2.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/com.sun.xml.bind.jaxb-core_2.2.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/com.sun.xml.bind.jaxb-impl_2.2.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/com.sun.xml.bind.jaxb-xjc_2.2.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/com.sun.xml.bind.jaxb-jxc_2.2.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/com.oracle.webservices.orawsdl-api_12.1.2.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/oracle.http_client_12.1.2.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/org.codehaus.woodstox.stax2-api_3.1.1.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/org.codehaus.woodstox.woodstox-core-asl_4.1.2.jar" isDirectory="true"/>
+    <module file-name="com.bea.core.apache.commons.logging_1.1.2.jar"/>
+    <module file-name="../../oracle_common/modules/com.oracle.weblogic.sca.engine_3.0.0.0.jar" isDirectory="true"/>
+    <module file-name="com.bea.core.repackaged.asm_1.3.0.0_3-2-0.jar"/>
+    <module file-name="com.bea.core.descriptor_2.1.0.0.jar"/>
+    <module file-name="com.oracle.css.weblogic.security.wls_7.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.security.identity_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.management.core_4.0.0.0.jar"/>
+    <module file-name="../../oracle_common/modules/com.oracle.webservices.ws-databinding-api_3.0.0.0.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/com.oracle.webservices.ws-databinding-impl_3.0.0.0.jar" isDirectory="true"/>
+    <module file-name="com.bea.core.utils.full_2.2.0.0.jar"/>
+    <module file-name="com.bea.core.utils.classloaders_4.0.0.0.jar"/>
+    <module file-name="../../oracle_common/modules/com.bea.core.i18n_2.1.0.0.jar" isDirectory="true"/>
+    <module file-name="com.oracle.css.weblogic.security_7.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.workmanager_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.logging_2.1.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.api_7.0.0.0.jar"/>
+    <module file-name="../../oracle_common/modules/oracle.toplink_12.1.2/eclipselink.jar" isDirectory="true"/>
+    <module file-name="commonj.sdo_1.1.0.0_1-0.jar"/>
+    <module file-name="../../oracle_common/modules/javax.mail_1.1.0.0_1-4-4.jar" isDirectory="true"/>
+  </modules>
+  
+</feature-definition>

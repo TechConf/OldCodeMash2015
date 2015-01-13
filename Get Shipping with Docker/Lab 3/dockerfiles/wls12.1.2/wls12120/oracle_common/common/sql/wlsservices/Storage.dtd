@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!ELEMENT StorageAttributes ( ComponentStorageFiles?, TablespaceAttributes*)>
+<!ELEMENT ComponentStorageFiles (StorageFile*)>
+<!ATTLIST StorageFile
+          ID CDATA #REQUIRED>
+<!ELEMENT StorageFile (#PCDATA)>
+<!ELEMENT TablespaceAttributes (Type?,DefaultTemp?,BlockSize?,ExtentSize?,PageSize?,AutoResize?,IncreaseSize?,MaxSize?,Bigfile?,AutoSegmentSpaceManagement?, DatafilesList)>
+<!ATTLIST TablespaceAttributes
+	NAME CDATA #REQUIRED>
+<!ELEMENT Type (#PCDATA)>
+<!ELEMENT DefaultTemp (#PCDATA)>
+<!ELEMENT BlockSize (#PCDATA)>
+<!ELEMENT ExtentSize (#PCDATA)>
+<!ELEMENT PageSize (#PCDATA)>
+<!ATTLIST PageSize
+        UNIT (KB|NoUnit) 'KB'>
+<!ELEMENT AutoResize (#PCDATA)>
+<!ELEMENT IncreaseSize (#PCDATA)>
+<!ATTLIST IncreaseSize
+        UNIT (KB|MB|GB) 'MB'>
+<!ELEMENT MaxSize (#PCDATA)>
+<!ATTLIST MaxSize
+        UNIT (KB|MB|GB) 'MB'>
+<!ELEMENT Bigfile (#PCDATA)>
+<!ELEMENT AutoSegmentSpaceManagement (#PCDATA)>
+<!ELEMENT DatafilesList (DatafileAttributes+)>
+<!ELEMENT DatafileAttributes (Size, Reuse?, AutoExtend?, Increment?, Maxsize?)>
+<!ATTLIST DatafileAttributes
+ ID CDATA #REQUIRED>
+<!ELEMENT Size (#PCDATA)>
+<!ATTLIST Size
+	UNIT (KB|MB|GB) 'MB'>
+<!ELEMENT Reuse (#PCDATA)>
+<!ELEMENT AutoExtend (#PCDATA)>
+<!ELEMENT Increment (#PCDATA)>
+<!ATTLIST Increment
+	UNIT (KB|MB|GB) 'KB'>
+<!ELEMENT Maxsize (#PCDATA)>
+<!ATTLIST Maxsize
+	UNIT (KB|MB|GB) 'MB'>

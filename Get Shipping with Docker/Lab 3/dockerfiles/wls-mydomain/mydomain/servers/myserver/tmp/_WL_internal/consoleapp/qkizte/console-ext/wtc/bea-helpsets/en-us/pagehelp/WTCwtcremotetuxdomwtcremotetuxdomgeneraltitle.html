@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="WTC.wtc.remotetuxdom.wtcremotetuxdomgeneral.title">
+<title>Remote Tuxedo Access Points: General</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Remote Tuxedo Access Points: General</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to define the general configuration of a remote Tuxedo
+    access point that will be used with this WTC server.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomgeneral.accesspoint.label">Access Point</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getAccessPoint"></a><a name="AccessPoint"></a>
+<p>The unique name used to identify this remote Tuxedo access point. This name should be unique for all local and remote Tuxedo access points defined within a WTC Service. This allows you to define unique configurations having the same Access Point ID.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#AccessPoint">WTCRemoteTuxDomMBean.AccessPoint</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomgeneral.accesspointid.label">Access Point ID</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getAccessPointId"></a><a name="AccessPointId"></a>
+<p>The connection principal name used to identify this remote Tuxedo access point when attempting to establish a session connection to local Tuxedo access points.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#AccessPointId">WTCRemoteTuxDomMBean.AccessPointId</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomgeneral.localaccesspoint.label">Local Access Point</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getLocalAccessPoint"></a><a name="LocalAccessPoint"></a>
+<p>The local domain name from which this remote Tuxedo domain is reached.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#LocalAccessPoint">WTCRemoteTuxDomMBean.LocalAccessPoint</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomgeneral.nwaddr.label">Network Address</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getNWAddr"></a><a name="NWAddr"></a>
+<p>The network address and port number of this remote Tuxedo access point.</p>
+<p>Specify the address in one of the following formats:</p>
+<ul> 
+<li> 
+<p>TCP/IP address in the format <code>//hostname:port_number</code> or <code>//#.#.#.#:port_number</code>.</p> 
+</li>  
+<li> 
+<p>SDP address in the format <code>sdp://hostname:port_number</code> or <code>sdp://#.#.#.#:port_number</code>.</p> 
+</li> 
+</ul>
+<i>Notes:</i>
+<ul> 
+<li> 
+<p>If the hostname is used, the access point finds an address for hostname using the local name resolution facilities (usually DNS). If dotted decimal format is used, each # should be a number from 0 to 255. This dotted decimal number represents the IP address of the local machine. The port_number is the TCP/SDP port number at which the access point listens for incoming requests.</p> 
+</li>  
+<li> 
+<p>If SDP format address is specified, the transport protocol for this access point is SDP instead of TCP. This feature is only available when WTC and Tuxedo domain gateway are both deployed on Oracle Exalogic platform. Requires Tuxedo 11gR1PS2 and higher.</p> 
+</li> 
+</ul>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#NWAddr">WTCRemoteTuxDomMBean.NWAddr</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomgeneral.federationurl.label">Federation URL</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getFederationURL"></a><a name="FederationURL"></a>
+<p>The URL for a foreign name service that is federated into JNDI.</p>
+<p>
+<i>Note:</i> The Weblogic Tuxedo Connector can federate to non-CORBA service providers.</p>
+<p>
+<i>Note:</i> If this value is not specified, the WebLogic Tuxedo Connector:</p>
+<ul> 
+<li> 
+<p>Assumes there is a CosNaming server in the foreign domain.</p> 
+</li>  
+<li> 
+<p>Federates to the CosNaming server using TGIOP.</p> 
+</li> 
+</ul>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#FederationURL">WTCRemoteTuxDomMBean.FederationURL</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomgeneral.federationname.label">Federation Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getFederationName"></a><a name="FederationName"></a>
+<p>The context at which this remote Tuxedo access point federates to a foreign name service. If omitted, the default federation point is <code>tuxedo.domains</code>.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#FederationName">WTCRemoteTuxDomMBean.FederationName</a></code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.CreateRemoteTuxedoAccessPoints">Create remote access
+  points</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.ConfigureConnectionAttributesForRemoteTuxedoAccessPoints">Configure connections for
+  remote access points</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.ConfigureRemoteTuxedoAccessPointSecurity">Configure security for remote
+  access points</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.DeleteRemoteTuxedoAccessPoints">Delete remote access
+  points</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/WTCCF/install.htm">Configuring Oracle WebLogic
+    Tuxedo Connector</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

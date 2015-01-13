@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-portal-extension
+  xmlns="http://www.bea.com/servers/portal/weblogic-portal/8.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.bea.com/servers/portal/weblogic-portal/8.0 netuix-extension-1_0_0.xsd">
+
+  <provider-info>
+    <title>WebLogic Tuxedo Connector Pages</title>
+    <version>10.3</version>
+    <description>This extension adds console pages to support configuring, monitoring, and controlling WebLogic Tuxedo Connector.</description>
+    <author>Oracle</author>
+    <support-url>http://www.oracle.com</support-url>
+  </provider-info>
+
+  <portal-file>/console.portal</portal-file>
+  <!-- This extension changes the look and feel of the console portal  -->
+
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ContentBook"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/wtc/exports/WtcExports.book" />
+  </book-extension>
+  
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ContentBook"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/wtc/imports/WtcImports.book" />
+  </book-extension>
+  
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ContentBook"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/wtc/localtuxdom/WtcLocaltuxdom.book" />
+  </book-extension>
+  
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ContentBook"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/wtc/password/WtcPassword.book" />
+  </book-extension>
+  
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ContentBook"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/wtc/remotetuxdom/WtcRemotetuxdom.book" />
+  </book-extension>
+  
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ContentBook"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/wtc/resources/WtcResources.book" />
+  </book-extension>
+  
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ContentBook"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/wtc/tbridge/WtcTbridge.book" />
+  </book-extension>
+
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ContentBook"/>
+      <book-insertion-point action="append"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/wtc/server/WtcServer.book" />
+  </book-extension>
+  
+  <book-extension>
+    <book-location>
+      <parent-label-location label="WTCServerTable"/>
+      <book-insertion-point page-label="WTCServerTablePage" action="replace"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/wtc/server/WTCServerTable.book" />
+  </book-extension>
+  
+  <book-extension>
+    <book-location>
+      <parent-label-location label="ServerServicesTabservicesTabPage"/>
+      <book-insertion-point page-label="ServerServicesXMLPage" action="append"/>
+    </book-location>
+	 <page-content content-uri="/PortalConfig/core/server/CoreServerWTC.book" />
+  </book-extension>
+  
+
+  
+</weblogic-portal-extension>

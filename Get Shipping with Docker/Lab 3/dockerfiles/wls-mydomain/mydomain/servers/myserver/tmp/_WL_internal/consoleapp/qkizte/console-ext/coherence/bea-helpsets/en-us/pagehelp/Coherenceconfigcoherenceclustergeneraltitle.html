@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="Coherence.configcoherenceclustergeneral.title">
+<title>Coherence Cluster: Configuration: General</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Coherence Cluster: Configuration: General</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to configure properties for this Coherence cluster.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.configcoherenceclustergeneral.name">Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>Name of this Coherence cluster configuration.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.configcoherenceclustergeneral.usingcustomclusterconfigurationfile">Use a Custom Cluster Configuration File</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>Specifies whether this configuration resides in an external custom
+        configuration file.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterSystemResourceMBean.html#UsingCustomClusterConfigurationFile">CoherenceClusterSystemResourceMBean.UsingCustomClusterConfigurationFile</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.configcoherenceclustergeneral.customclusterconfigurationfilename">Custom Configuration File Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The location of the custom configuration file. Use this field to
+        import a new configuration file.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterSystemResourceMBean.html#CustomClusterConfigurationFileName">CoherenceClusterSystemResourceMBean.CustomClusterConfigurationFileName</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.configcoherenceclustergeneral.unicastlistenport">Unicast Listen Port</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastListenPort"></a><a name="UnicastListenPort"></a>
+<p>The port for the cluster unicast listener. A value of 0 indicates that the unicast listener port value will be derived from the server listen port. This value or the derived value will be used only if the CoherenceMemberConfigMBean unicast listen port is 0.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterParamsBean.html#UnicastListenPort">CoherenceClusterParamsBean.UnicastListenPort</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>65535</code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.configcoherenceclustergeneral.unicastportautoadjust">Unicast Port Auto Adjust</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getUnicastPortAutoAdjust"></a><a name="UnicastPortAutoAdjust"></a>
+<p>Specifies whether the unicast port will be automatically incremented if the port cannot be bound because it is already in use.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterParamsBean.html#UnicastPortAutoAdjust">CoherenceClusterParamsBean.UnicastPortAutoAdjust</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.configcoherenceclustergeneral.transport">Transport</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTransport"></a><a name="Transport"></a>
+<p>Specify the underlying transport protocol to use for cluster communication.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterParamsBean.html#Transport">CoherenceClusterParamsBean.Transport</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.configcoherenceclustergeneral.multicastlistenaddress">Multicast Listen Address</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMulticastListenAddress"></a><a name="MulticastListenAddress"></a>
+<p>The IP address for the cluster multicast listener.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterParamsBean.html#MulticastListenAddress">CoherenceClusterParamsBean.MulticastListenAddress</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.configcoherenceclustergeneral.clusteringmode">Clustering Mode</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getClusteringMode"></a><a name="ClusteringMode"></a>
+<p>Specifies a clustering mode of either Unicast or Multicast. If multicast is undesirable or unavailable in an environment, or when an environment is not properly configured to support multicast, then setting up the Well Known Addresses (WKA) feature is required. All cluster multicast communication is disabled if WKA is enabled.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterParamsBean.html#ClusteringMode">CoherenceClusterParamsBean.ClusteringMode</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.configcoherenceclustergeneral.multicastlistenport">Multicast Listen Port</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMulticastListenPort"></a><a name="MulticastListenPort"></a>
+<p>The port for the cluster multicast listener.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterParamsBean.html#MulticastListenPort">CoherenceClusterParamsBean.MulticastListenPort</a></code>
+</p>
+<p>Minimum value: <code>1</code>
+</p>
+<p>Maximum value: <code>65535</code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.configcoherenceclustergeneral.timetolive">Time To Live</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTimeToLive"></a><a name="TimeToLive"></a>
+<p>Sets the time-to-live (TTL) setting for the multicast message. The TTL setting designates how far multicast UDP/IP packets can travel on a network. The TTL is expressed in terms of how many hops a packet survives; each network interface, router, and managed switch is considered one hop. The TTL value should be set to the lowest integer value that works. Setting the value too high can use unnecessary bandwidth on other LAN segments and can even cause the operating system or network devices to disable multicast traffic.</p>
+<p>Typically, setting the TTL value to 1 works on a simple switched backbone. A value of 2 or more may be required on an advanced backbone with intelligent switching. A value of 0 is used for single server clusters that are used for development and testing.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/CoherenceClusterParamsBean.html#TimeToLive">CoherenceClusterParamsBean.TimeToLive</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>255</code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.CreateCoherenceClusters">Create Coherence
+  clusters</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureCoherenceClusters">Configure Coherence
+  clusters</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureWellKnownAddresses">Configure well known
+  addresses</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.TargetCoherenceClusters">Target Coherence
+  clusters</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureCoherenceLogging">Configure Coherence
+  logging</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/COHWL/index.html">Deploying Applications with
+    Oracle WebLogic Server ActiveCache</a>
+</li>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/CLUST/features.htm#CLUST127">Communications in a
+    Cluster</a>
+</li>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/CLUST/setup.htm#CLUST440">Cluster Addressing
+    Information</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

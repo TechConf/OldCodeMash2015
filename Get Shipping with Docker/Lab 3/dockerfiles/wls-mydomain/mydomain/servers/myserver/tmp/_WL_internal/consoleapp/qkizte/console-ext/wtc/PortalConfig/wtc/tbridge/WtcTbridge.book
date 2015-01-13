@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+             xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+             xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd"><!-- 
+    Definition file for the pages in the wtc.tbridge subsystem
+    of the WebLogic Server administration console
+    
+    Copyright (c) 2004,2009, Oracle and/or its affiliates. All rights reserved.
+-->
+  <netuix:book definitionLabel="WtcTbridgeSubsystemPages" title="book.title" markupName="book"
+               markupType="Book"
+               backingFile="com.bea.console.utils.WtcGeneralBackingFile"
+               presentationClass="wlsc-frame">
+    <netuix:titlebar/>
+    <netuix:content>
+      <netuix:page markupName="page" markupType="Page" definitionLabel="WTCtBridgeGlobalPages"
+                   title="not.used"
+                   hidden="true">
+        <netuix:content>
+          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+              <netuix:book markupName="book" markupType="Book" definitionLabel="WTCtBridgeGlobalBook"
+                           title="WtcTbridgeBook">
+                <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                <netuix:content>
+                  <!-- Definition for the general tab -->
+                  <netuix:page markupName="page" markupType="Page"
+                               definitionLabel="WTCtBridgeGlobalGeneralPage"
+                               title="tab.general.label"
+                               presentationClass="page-content">
+                    <netuix:meta name="helpid" content="WTC.wtc.tbridge.wtctbridgeglobalgeneral.title;wtc"/>
+                    <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                    <netuix:content>
+                      <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                        <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                          <netuix:portletInstance markupType="Portlet" instanceLabel="WTCtBridgeGlobalGeneralPortlet"
+                                                  contentUri="/PortalConfig/wtc/tbridge/WTCtBridgeGlobalGeneral.portlet"/>
+                        </netuix:placeholder>
+                      </netuix:layout>
+                    </netuix:content>
+                  </netuix:page>
+                  <!-- Definition for the connections tab -->
+                  <netuix:page markupName="page" markupType="Page"
+                               definitionLabel="WTCtBridgeGlobalConnectionsPage"
+                               title="tab.connections.label"
+                               presentationClass="page-content">
+                    <netuix:meta name="helpid" content="WTC.wtc.tbridge.wtctbridgeglobalconnections.title;wtc"/>
+                    <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                    <netuix:content>
+                      <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                        <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                          <netuix:portletInstance markupType="Portlet" instanceLabel="WTCtBridgeGlobalConnectionsPortlet"
+                                                  contentUri="/PortalConfig/wtc/tbridge/WTCtBridgeGlobalConnections.portlet"/>
+                        </netuix:placeholder>
+                      </netuix:layout>
+                    </netuix:content>
+                  </netuix:page>
+                  <!-- Definition for the factories tab -->
+                  <netuix:page markupName="page" markupType="Page"
+                               definitionLabel="WTCtBridgeGlobalFactoriesPage"
+                               title="tab.factories.label"
+                               presentationClass="page-content">
+                    <netuix:meta name="helpid" content="WTC.wtc.tbridge.wtctbridgeglobalfactories.title;wtc"/>
+                    <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                    <netuix:content>
+                      <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                        <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                          <netuix:portletInstance markupType="Portlet" instanceLabel="WTCtBridgeGlobalFactoriesPortlet"
+                                                  contentUri="/PortalConfig/wtc/tbridge/WTCtBridgeGlobalFactories.portlet"/>
+                        </netuix:placeholder>
+                      </netuix:layout>
+                    </netuix:content>
+                  </netuix:page>
+                  <!-- Definition for the priorities tab -->
+                  <netuix:page markupName="page" markupType="Page"
+                               definitionLabel="WTCtBridgeGlobalPrioritiesPage"
+                               title="tab.priorities.label"
+                               presentationClass="page-content">
+                    <netuix:meta name="helpid" content="WTC.wtc.tbridge.wtctbridgeglobalpriorities.title;wtc"/>
+                    <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                    <netuix:content>
+                      <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                        <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                          <netuix:portletInstance markupType="Portlet" instanceLabel="WTCtBridgeGlobalPrioritiesPortlet"
+                                                  contentUri="/PortalConfig/wtc/tbridge/WTCtBridgeGlobalPriorities.portlet"/>
+                        </netuix:placeholder>
+                      </netuix:layout>
+                    </netuix:content>
+                  </netuix:page>
+                </netuix:content>
+              </netuix:book>
+            </netuix:placeholder>
+          </netuix:layout>
+        </netuix:content>
+      </netuix:page>
+      <netuix:page markupName="page" markupType="Page"
+                   definitionLabel="WTCtBridgeRedirectGeneralPages"
+                   title="not.used"
+                   hidden="true">
+        <netuix:content>
+          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+              <netuix:book markupName="book" markupType="Book"
+                           definitionLabel="WTCtBridgeRedirectGeneralBook"
+                           title="WtcTbridgeBook">
+                <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                <netuix:content>
+                  <!-- Definition for the general tab -->
+                  <netuix:page markupName="page" markupType="Page"
+                               definitionLabel="WTCtBridgeRedirectGeneralPage"
+                               title="tab.general.label"
+                               presentationClass="page-content">
+                    <netuix:meta name="helpid" content="WTC.wtc.tbridge.wtctbridgeredirectgeneral.title;wtc"/>
+                    <netuix:meta name="skeleton-resource-bundle" content="wtc"/>
+                    <netuix:meta name="breadcrumb-context" content="handle"/>
+                    <netuix:content>
+                      <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                        <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                          <netuix:portletInstance markupType="Portlet" instanceLabel="WTCtBridgeRedirectGeneralPortlet"
+                                                  contentUri="/PortalConfig/wtc/tbridge/WTCtBridgeRedirectGeneral.portlet"/>
+                        </netuix:placeholder>
+                      </netuix:layout>
+                    </netuix:content>
+                  </netuix:page>
+                </netuix:content>
+              </netuix:book>
+            </netuix:placeholder>
+          </netuix:layout>
+        </netuix:content>
+      </netuix:page>
+    </netuix:content>
+  </netuix:book>
+</portal:root>

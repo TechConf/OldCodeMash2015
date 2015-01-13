@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature-definition xmlns="http://www.bea.com/ns/cie/feature" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="weblogic.saml2.modules" version="12.1.2.0">
+  <!--
+    <annotation>
+      <manifest xmlns="http://www.bea.com/ns/cie/manifest">
+        <attribute name="Implementation-Vendor" value="BEA Systems"/>
+        <attribute name="Implementation-Title" value="Oracle WebLogic Server SAML2 Classloader Module Dependencies 12.1 Tue Feb 26 11:55:38 PST 2013 "/>
+        <attribute name="Source-Repository-Change-Id" value="1512476"/>
+        <attribute name="Source-Repository-URI" value="p4://depot/dev/src1212/repository/modules/features"/>
+        <attribute name="Implementation-Version" value="12.1.2.0"/>
+      </manifest>
+    </annotation>
+  -->
+  <modules>
+    <module file-name="com.oracle.css.opensaml2_7.0.0.0.jar"/>
+    <module file-name="com.bea.core.apache.xalan_2.7.2.jar"/>
+    <module file-name="com.bea.core.apache.xml.serializer_2.7.2.jar"/>
+    <module file-name="com.bea.core.apache.xml.security_1.4.7.jar"/>
+    <module file-name="com.bea.core.apache.commons.logging_1.1.2.jar"/>
+    <module file-name="com.bea.core.apache.log4j_1.2.0.0_1-2-15.jar"/>
+    <module file-name="javolution_3.7.19.2.jar"/>
+    <module file-name="joda.time_1.2.1.2.jar"/>
+    <module file-name="com.oracle.css.common.security.utils_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.saml2.utils_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.saml2_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.providers.utils_7.0.0.0.jar"/>
+  </modules>
+  
+</feature-definition>

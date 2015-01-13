@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature-definition xmlns="http://www.bea.com/ns/cie/feature" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="weblogic.server.modules.L10N" version="12.1.2.0">
+  <!--
+    <annotation>
+      <manifest xmlns="http://www.bea.com/ns/cie/manifest">
+        <attribute name="Implementation-Vendor" value="BEA Systems"/>
+        <attribute name="Implementation-Title" value="Oracle WebLogic Server L10N Module Dependencies 12.1 Tue Mar 5 14:12:03 EST 2013 "/>
+        <attribute name="Source-Repository-Change-Id" value="1513720"/>
+        <attribute name="Source-Repository-URI" value="p4://depot/dev/src1212/repository/modules/features"/>
+        <attribute name="Implementation-Version" value="12.1.2.0"/>
+      </manifest>
+    </annotation>
+  -->
+  <requires>
+    <and>
+      <feature id="weblogic.server.modules.de" minVersion="12.1.2.0"/>
+      <feature id="weblogic.server.modules.es" minVersion="12.1.2.0"/>
+      <feature id="weblogic.server.modules.fr" minVersion="12.1.2.0"/>
+      <feature id="weblogic.server.modules.it" minVersion="12.1.2.0"/>
+      <feature id="weblogic.server.modules.pt.BR" minVersion="12.1.2.0"/>
+      <feature id="weblogic.server.modules.ja" minVersion="12.1.2.0"/>
+      <feature id="weblogic.server.modules.ko" minVersion="12.1.2.0"/>
+      <feature id="weblogic.server.modules.zh.CN" minVersion="12.1.2.0"/>
+      <feature id="weblogic.server.modules.zh.TW" minVersion="12.1.2.0"/>
+    </and>
+  </requires>
+</feature-definition>

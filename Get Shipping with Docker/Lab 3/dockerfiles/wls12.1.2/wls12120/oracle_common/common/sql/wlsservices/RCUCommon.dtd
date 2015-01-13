@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!ELEMENT PrerequisiteDescriptor (DBPrerequisiteSet*, DBPrerequisite*)>
+<!ATTLIST PrerequisiteDescriptor
+        TYPE (CREATE|DROP|REGISTER|DEREGISTER|DATALOAD) 'CREATE'>
+<!ELEMENT DBPrerequisiteSet (ValidIfSet?, ValidIf?, PrereqSetErrorMsg?, DBPrerequisite*)>
+<!ATTLIST DBPrerequisiteSet
+          OPERATOR (OR|AND) "OR" 
+          SOFT (TRUE|FALSE) "FALSE">
+<!ELEMENT DBPrerequisite (ValidIfSet?, ValidIf?, PrereqIdentifier, PrereqValue, PrereqErrorMsg?)>
+<!ATTLIST DBPrerequisite
+PREREQ_TYPE (InitParameter|DBOption|Java|DBComponent|DBVersion|DBObject|CustomSQL|TablespaceFreeMB) "CustomSQL"
+        DATA_TYPE (STRING|NUMBER|VERSION) "STRING"
+        COMPARE_OPERATOR (EQ|GT|LT|NE|GE|LE|COMPARE_VERSION) "EQ"
+        SOFT (TRUE|FALSE) "FALSE">
+
+<!ELEMENT PrereqIdentifier (#PCDATA)>
+<!ELEMENT PrereqValue (#PCDATA)>
+<!ELEMENT PrereqSetErrorMsg (#PCDATA)>
+<!ATTLIST PrereqSetErrorMsg
+        NLS_ID CDATA #IMPLIED>
+<!ELEMENT PrereqErrorMsg (#PCDATA)>
+<!ATTLIST PrereqErrorMsg
+        NLS_ID CDATA #IMPLIED>
+<!ATTLIST PrereqValue
+        UNIT (KB|MB|NoUnit) 'NoUnit'>
+<!ELEMENT ExecutionDescriptor (Action*)>
+<!ATTLIST ExecutionDescriptor
+        TYPE (Load|PreLoad|PostLoad|DataLoad) "Load">
+<!ELEMENT Action (ValidIfSet?, ValidIf?, Command, Parameters?, FatalErrors?, IgnorableErrors?)>
+<!ATTLIST Action
+        TYPE (JDBCSqlScript|JDBC|SQLPlus|HostCmd|Java) "JDBCSqlScript"
+        DB_VERSION CDATA #IMPLIED
+        PERCENT_PROGRESS CDATA #IMPLIED
+        CONNECT_AS_OWNER (TRUE|FALSE) "FALSE"
+        RESET_SESSION (TRUE|FALSE) "FALSE">
+<!ELEMENT Command (#PCDATA)>
+<!ATTLIST Command
+        TYPE (SCRIPT|INLINE|METHOD) "SCRIPT">
+<!ELEMENT Parameters (Parameter*)>
+<!ELEMENT Parameter (#PCDATA)>
+<!ATTLIST Parameter
+        TYPE (BindVar|CmdLine|ProcessInput|EnvVar|Connection|int|String|StringArray|boolean) "CmdLine">
+<!ELEMENT FatalErrors (Error*)>
+<!ELEMENT IgnorableErrors (Error*)>
+<!ELEMENT Error (#PCDATA)>
+<!ATTLIST Error
+        Type CDATA #REQUIRED>
+<!ELEMENT ValidIfSet (ValidIf*)>
+<!ATTLIST ValidIfSet
+          DBTYPE CDATA #IMPLIED
+          DBVERSION CDATA #IMPLIED 
+          OSNAME CDATA #IMPLIED
+          OPERATOR (OR|AND) "OR">
+<!ELEMENT ValidIf (CustomQueryFilter?)>
+<!ATTLIST ValidIf
+        DBTYPE CDATA #IMPLIED
+        DBVERSION CDATA #IMPLIED 
+        OSNAME CDATA #IMPLIED >
+<!ELEMENT CustomQueryFilter (#PCDATA)>
+<!ATTLIST CustomQueryFilter
+        DATA_TYPE (STRING|NUMBER) "STRING"
+        COMPARE_OPERATOR (EQ|GT|LT|NE|GE|LE|COMPARE_VERSION) "EQ"
+        VALUE CDATA #REQUIRED >

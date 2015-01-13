@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+             xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+             xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd">
+<!-- 
+    Definition file for the pages in the OSGi framework
+    of the WebLogic Server administration console
+    
+    Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
+-->
+  <netuix:book definitionLabel="OsgiFrameworkTopBook" title="book.title" markupName="book"
+               presentationClass="invisible">
+    <netuix:content>
+      <netuix:book definitionLabel="OsgiFrameworkBook" title="book.title" markupName="book"
+                   backingFile="com.bea.console.utils.GeneralBackingFile"
+                   threadsafe="true"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" definitionLabel="OsgiFrameworkPages" title="not.used" hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupName="ph1">
+                  <netuix:book markupName="book" definitionLabel="OsgiFrameworkPagesBook" title="OsgiFrameworkBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      <!-- Definition for the config tab -->
+                      <netuix:page markupName="page" definitionLabel="OsgiFrameworkConfigTabPage"
+                                   presentationClass="page-content"
+                                   title="tab.config.label">
+                        <netuix:meta name="helpid" content="OsgiFramework.osgiframework.osgiframeworkconfig.title;osgiframework"/>
+                        <netuix:meta name="configuration-page" content="OsgiFramework"/>
+                        <netuix:meta name="breadcrumb-context" content="handle"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupName="ph1">
+                              <netuix:portlet definitionLabel="OsgiFrameworkOsgiFrameworkConfigPortlet">
+                                <netuix:strutsContent module="/osgiframework" action="OsgiFrameworkOsgiFrameworkConfig"
+                                                      refreshAction="OsgiFrameworkOsgiFrameworkConfig"/>
+                              </netuix:portlet>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      <!-- Definition for the targetdeploy tab -->
+                  <netuix:page markupName="page" definitionLabel="OsgiFrameworkTargetDeployTabPage"
+                                   presentationClass="page-content"
+                                   title="tab.targets.label">
+                        <netuix:meta name="helpid" content="OsgiFramework.osgiframework.osgiframeworktargetdeploy.title;osgiframework"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupName="ph1">
+                              <netuix:portlet definitionLabel="OsgiFrameworkOsgiFrameworkTargetDeployPortlet">
+                                <netuix:strutsContent module="/osgiframework" action="OsgiFrameworkOsgiFrameworkTargetdeploy"
+                                                      refreshAction="OsgiFrameworkOsgiFrameworkTargetdeploy"/>
+                              </netuix:portlet>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      <!-- Definition for the notes tab -->
+                      <netuix:page markupName="page" definitionLabel="OsgiFrameworkNotesTabPage"
+                                   presentationClass="page-content"
+                                   title="tab.notes.label">
+                        <netuix:meta name="helpid" content="OsgiFramework.osgiframework.osgiframeworknotes.title;osgiframework"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupName="ph1">
+                              <netuix:portlet definitionLabel="OsgiFrameworkOsgiFrameworkNotesPortlet">
+                                <netuix:strutsContent module="/osgiframework" action="OsgiFrameworkOsgiFrameworkNotes"
+                                                      refreshAction="OsgiFrameworkOsgiFrameworkNotes"/>
+                              </netuix:portlet>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the OsgiFramework table page -->
+      <netuix:book definitionLabel="OsgiFrameworkTable" markupName="book"
+                   backingFile="com.bea.console.utils.GeneralBackingFile"
+                   threadsafe="true"
+                   title="osgiframeworks.title"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" definitionLabel="OsgiFrameworkOsgiFrameworkTablePage" title="not.used"
+                       hidden="true"
+                       presentationClass="page-table">
+            <netuix:meta name="helpid" content="OsgiFramework.osgiframework.title;osgiframework"/>
+            <netuix:meta name="breadcrumb" content="osgiframeworks.title"/>
+            <netuix:content>
+              <netuix:layout type="no" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupName="ph1">
+                  <netuix:portlet definitionLabel="OsgiFrameworkOsgiFrameworkTablePortlet">
+                    <netuix:strutsContent module="/osgiframework" action="OsgiFrameworkOsgiFrameworkTable"
+                                          refreshAction="OsgiFrameworkOsgiFrameworkTable"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the OsgiFramework creation assistant page -->
+      <netuix:book definitionLabel="OsgiFrameworkCreateOsgiFrameworkPage" markupName="book"
+                   backingFile="com.bea.console.utils.GeneralBackingFile"
+                   threadsafe="true"
+                   title="assistant.create.osgiframework.title"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" definitionLabel="OsgiFrameworkCreateOsgiFramework" title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="OsgiFramework.osgiframework.createosgiframework.page.title;osgiframework"/>
+            <netuix:content>
+              <netuix:layout type="no" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupName="ph1">
+                  <netuix:portlet definitionLabel="OsgiFrameworkCreateOsgiFrameworkPortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/osgiframework/createosgiframework/CreateOsgiFramework.jpf"
+                                            action="begin"
+                                            refreshAction="begin"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the OsgiFramework clone assistant page -->
+      <netuix:book definitionLabel="OsgiFrameworkClone" markupName="book"
+                   backingFile="com.bea.console.utils.GeneralBackingFile"
+                   threadsafe="true"
+                   title="assistant.clone.osgiframework.title"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" definitionLabel="OsgiFrameworkCloneOsgiFramework" title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="OsgiFramework.osgiframework.createosgiframework.page.title;osgiframework"/>
+            <netuix:content>
+              <netuix:layout type="no" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupName="ph1">
+                  <netuix:portlet definitionLabel="OsgiFrameworkCloneOsgiFrameworkPortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/osgiframework/createosgiframework/CreateOsgiFramework.jpf"
+                                            action="clone"
+                                            refreshAction="clone"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the OsgiFramework deletion assistant page -->
+  <netuix:book definitionLabel="OsgiFrameworkDelete" markupName="book"
+                   backingFile="com.bea.console.utils.GeneralBackingFile"
+                   threadsafe="true"
+                   title="assistant.delete.osgiframework.title"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" definitionLabel="OsgiFrameworkDeleteOsgiFramework" title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="OsgiFramework.osgiframework.deleteosgiframework.page.title;osgiframework"/>
+            <netuix:content>
+              <netuix:layout type="no" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupName="ph1">
+                  <netuix:portlet definitionLabel="OsgiFrameworkDeleteOsgiFrameworkPortlet">
+                    <netuix:pageflowContent contentUri="/com/bea/console/actions/osgiframework/deleteosgiframework/DeleteOsgiFramework.jpf"
+                                            action="begin"
+                                            refreshAction="begin"/>
+                  </netuix:portlet>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+
+    </netuix:content>
+  </netuix:book>
+
+</portal:root>

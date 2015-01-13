@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature-definition xmlns="http://www.bea.com/ns/cie/feature" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="weblogic.client.modules.L10N" version="12.1.2.0">
+  <!--
+    <annotation>
+      <manifest xmlns="http://www.bea.com/ns/cie/manifest">
+        <attribute name="Implementation-Vendor" value="BEA Systems"/>
+        <attribute name="Implementation-Title" value="Oracle WebLogic Client L10N Module Dependencies 12.1 Mon Dec 12 16:49:50 PST 2011 "/>
+        <attribute name="Source-Repository-Change-Id" value="1446163"/>
+        <attribute name="Source-Repository-URI" value="p4://depot/dev/src1212/repository/modules/features"/>
+        <attribute name="Implementation-Version" value="12.1.2.0"/>
+      </manifest>
+    </annotation>
+  -->
+  <requires>
+    <and>
+      <feature id="weblogic.client.modules.ja" minVersion="12.1.2.0"/>
+      <feature id="weblogic.client.modules.ko" minVersion="12.1.2.0"/>
+      <feature id="weblogic.client.modules.zh.CN" minVersion="12.1.2.0"/>
+      <feature id="weblogic.client.modules.zh.TW" minVersion="12.1.2.0"/>
+    </and>
+  </requires>
+</feature-definition>

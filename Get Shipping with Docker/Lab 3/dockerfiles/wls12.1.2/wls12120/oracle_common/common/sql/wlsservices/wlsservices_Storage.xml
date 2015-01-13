@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE StorageAttributes SYSTEM "Storage.dtd"><!-- WLS --><StorageAttributes>
+  <TablespaceAttributes NAME="WLS" >    <Type>      REGULAR    </Type>  
+    <DatafilesList>      <DatafileAttributes ID="%DATAFILE_LOCATION%/wlsservices.dbf">        <Size UNIT="MB">          60        </Size>        <Reuse>          True        </Reuse>        <AutoExtend>          True        </AutoExtend>          <Increment UNIT="MB">          10         </Increment>      </DatafileAttributes>    </DatafilesList>    </TablespaceAttributes></StorageAttributes>
+<!-- End of WLS -->

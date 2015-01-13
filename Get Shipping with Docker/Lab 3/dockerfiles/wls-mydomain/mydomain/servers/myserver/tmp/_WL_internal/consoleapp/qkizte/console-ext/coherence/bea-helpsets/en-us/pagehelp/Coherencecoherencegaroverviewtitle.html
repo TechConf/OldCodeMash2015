@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="Coherence.coherence.garoverview.title">
+<title>Coherence Archive: Overview</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Coherence Archive: Overview</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Use this page to view basic information about the selected Coherence
+    Grid Archive (GAR).</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.garoverview.name.label">Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The name of this application deployment.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.garoverview.archiveversion">Archive Version</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The archive version, from the manifest or overridden during
+        deployment.</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.garoverview.planversion">Plan Version</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The deployment plan version, specified during deployment.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.garoverview.appname.label">Application Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The name of this application deployment.</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.garoverview.moduleuri.label">Coherence Archive Module Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The name of this module.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.garoverview.stagingpath.label">Staging Path</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getPath"></a><a name="Path"></a>
+<p>The URI, located on the Administration Server, of the original source files for this application.</p>
+<p>Relative paths are based on the root of the Administration Server installation directory. It is highly recommended that you use absolute paths to minimize possible issues when upgrading the server.</p>
+<p>If the application is not being staged (StagingMode==nostage) then the path must be valid on the target server.</p>
+<p>The path to an Enterprise application (EAR) is the location of the EAR file or the root of the EAR if it is unarchived, e.g., Path="myapps/app.ear" is valid. If the application is a standalone module, then the path is the parent directory of the module. For example, if the module is located at myapps/webapp/webapp.war, the Path="myapps/webapp" is correct, whereas Path="myapps/webapp/webapp.war" is incorrect.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/ApplicationMBean.html#Path">ApplicationMBean.Path</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.garoverview.sourcepath.label">Source Path</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getSourcePath"></a><a name="SourcePath"></a>
+<p>The path to the source of the deployable unit on the Administration Server.</p>
+<p>Rules:</p>
+<p>If the source path is relative, it is resolved relative to <code><i>InstallDir/app</i></code> if InstallDir is not null; otherwise, it is resolved relative to the domain root.</p>
+<p>Use AbsoluteSourcePath to get a fully resolved value.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/AppDeploymentMBean.html#SourcePath">AppDeploymentMBean.SourcePath</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.garoverview.planpath.label">Deployment Plan</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getPlanPath"></a><a name="PlanPath"></a>
+<p>The path to the deployment plan document on the Administration Server.</p>
+<p>Rules:</p>
+<p>If the plan path is a relative path, it is resolved relative to PlanDir if PlanDir is not null; otherwise, it is resolved relative to the domain root.</p>
+<p>Use AbsolutePlanPath to get a fully resolved value.</p>
+<p>If there is no plan, this returns no plan specified.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/AppDeploymentMBean.html#PlanPath">AppDeploymentMBean.PlanPath</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.garoverview.stagingmode.label">Staging Mode</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The mode that specifies whether an application's files are copied
+        from a source on the Administration Server to the Managed Server's
+        staging area during application preparation.</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.garoverview.deploymentorder.label">Deployment Order</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getDeploymentOrder"></a><a name="DeploymentOrder"></a>
+<p>An integer value that indicates when this unit is deployed, relative to other deployable units on a server, during startup.</p>
+<p> Units with lower values are deployed before those with higher values.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/AppDeploymentMBean.html#DeploymentOrder">AppDeploymentMBean.DeploymentOrder</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="coherence.garoverview.deploymentprincipalname.label">Deployment Principal Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getDeploymentPrincipalName"></a><a name="DeploymentPrincipalName"></a>
+<p>A string value that indicates the principal that should be used when deploying the file or archive during startup and shutdown. This principal will be used to set the current subject when calling out into application code for interfaces such as ApplicationLifecycleListener. If no principal name is specified, then the anonymous principal will be used.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/BasicDeploymentMBean.html#DeploymentPrincipalName">BasicDeploymentMBean.DeploymentPrincipalName</a></code>
+</p>
+<p>
+<a href="en-us/restart.html" onClick="return popup(this,'glossarypopup')"> 
+                                                    Changes take effect after you redeploy the module or restart the server.</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=coherence.ConfigureCoherenceArchive">Configure Coherence Grid
+  Archives (GARs)</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

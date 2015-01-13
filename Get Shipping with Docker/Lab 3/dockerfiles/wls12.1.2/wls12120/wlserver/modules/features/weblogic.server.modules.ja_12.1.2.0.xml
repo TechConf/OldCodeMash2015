@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature-definition xmlns="http://www.bea.com/ns/cie/feature" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="weblogic.server.modules.ja" version="12.1.2.0">
+  <!--
+    <annotation>
+      <manifest xmlns="http://www.bea.com/ns/cie/manifest">
+        <attribute name="Implementation-Vendor" value="BEA Systems"/>
+        <attribute name="Implementation-Title" value="Oracle WebLogic Server Japanese Module Dependencies 12.1 Thu Feb 21 09:37:33 PST 2013 "/>
+        <attribute name="Source-Repository-Change-Id" value="1511420"/>
+        <attribute name="Source-Repository-URI" value="p4://depot/dev/src1212/repository/modules/features"/>
+        <attribute name="Implementation-Version" value="12.1.2.0"/>
+      </manifest>
+    </annotation>
+  -->
+  <modules>
+    <module file-name="com.bea.core.redef.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.redefagent.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.monitoring.harvester.api.ja_3.1.0.0.jar"/>
+    <module file-name="com.bea.core.monitoring.harvester.jmx.ja_3.1.0.0.jar"/>
+    <module file-name="com.bea.adaptive.harvester.utils.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.http.pubsub.mbean.ja_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.kodo.integration.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.logging.ja_2.1.0.0.jar"/>
+    <module file-name="com.bea.mbean.typing.util.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.ejbgen.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.datasource6.ja_2.2.0.0.jar"/>
+    <module file-name="com.bea.core.descriptor.j2ee.ja_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.descriptor.wl.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.diagnostics.core.ja_4.0.0.0.jar"/>
+    <module file-name="com.bea.core.diagnostics.instrumentor.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.diagnostics.notifications.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.diagnostics.snmp.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.i18n.generator.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.i18n.tools.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.jatmi.ja_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.jmspool.ja_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.management.eventbus.ja_2.0.0.0.jar"/>
+    <module file-name="com.bea.core.management.core.ja_4.0.0.0.jar"/>
+    <module file-name="com.bea.core.management.jmx.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.messaging.kernel.ja_3.0.0.0.jar"/>
+    <module file-name="com.oracle.core.weblogic.msgcat.ja_2.0.0.0.jar"/>
+    <module file-name="com.bea.core.resourcepool.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.rmi.client.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.security.logger.ja_2.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.security.t3.standalone.client.ja_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.lifecycle.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.store.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.transaction.ja_3.1.0.0.jar"/>
+    <module file-name="com.bea.web.pubsub.jms.ja_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.workmanager.ja_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.servicehelper.ja_10.0.0.0.jar"/>
+    <module file-name="com.oracle.core.coherence.integration.ja_3.0.0.0.jar"/>
+    <module file-name="com.oracle.core.nodemanager.common.ja_1.0.0.0.jar"/>
+    <module file-name="com.oracle.core.nodemanager.client.ja_1.0.0.0.jar"/>
+    <module file-name="com.oracle.core.nodemanager.server.ja_1.0.0.0.jar"/>
+    <module file-name="javax.validation.ja_1.1.0.jar"/>
+    <module file-name="com.oracle.css.common.engine.impl_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.impl_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.i18n_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.common.security.saml2_7.0.0.0.jar"/>
+  </modules>
+  
+</feature-definition>

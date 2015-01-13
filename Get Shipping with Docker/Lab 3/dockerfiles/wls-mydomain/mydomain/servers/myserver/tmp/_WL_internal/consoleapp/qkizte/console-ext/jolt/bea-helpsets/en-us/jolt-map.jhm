@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 2.0//EN" "http://java.sun.com/products/javahelp/map_2_0.dtd">
+<map xml:lang="en-US" version="2.0">
+<mapID target="intro" url="index.html"/>
+<mapID target="blank" url="index.html"/>
+<mapID target="Homehomehomepagetitle" url="pagehelp/Homehomehomepagetitle.html"/>
+
+  
+    
+      
+  <mapID target="jolt.ConnectToTuxedoViaJolt" url="taskhelp/jolt/ConnectToTuxedoViaJolt.html"/>
+
+  <mapID target="jolt.CreateJoltConnectionPools" url="taskhelp/jolt/CreateJoltConnectionPools.html"/>
+
+  <mapID target="jolt.DeleteJoltConnectionPools" url="taskhelp/jolt/DeleteJoltConnectionPools.html"/>
+
+  <mapID target="jolt.TargetJoltConnectionPools" url="taskhelp/jolt/TargetJoltConnectionPools.html"/>
+
+  <mapID target="jolt.ConfigureAUserSecurityIdentity" url="taskhelp/jolt/ConfigureAUserSecurityIdentity.html"/>
+
+  <mapID target="jolt.ConfigureConnectionFailureHandling" url="taskhelp/jolt/ConfigureConnectionFailureHandling.html"/>
+
+  <mapID target="jolt.CreateJoltStartupAndShutdownClasses" url="taskhelp/jolt/CreateJoltStartupAndShutdownClasses.html"/>
+
+  <mapID target="jolt.MonitorActiveJoltConnectionPoolInstances" url="taskhelp/jolt/MonitorActiveJoltConnectionPoolInstances.html"/>
+
+  <mapID target="jolt.ResetJoltConnectionPools" url="taskhelp/jolt/ResetJoltConnectionPools.html"/>
+
+
+  
+
+    
+    
+  <mapID target="Corecoreserverserverservicesjolttitle" url="pagehelp/Corecoreserverserverservicesjolttitle.html"/>
+
+  <mapID target="Corecoreclusterclusterservicesjolttitle" url="pagehelp/Corecoreclusterclusterservicesjolttitle.html"/>
+
+  <mapID target="Joltjoltjoltconnectionpooltitle" url="pagehelp/Joltjoltjoltconnectionpooltitle.html"/>
+
+  <mapID target="Joltjoltcreatejoltconnectionpoolpagetitle" url="pagehelp/Joltjoltcreatejoltconnectionpoolpagetitle.html"/>
+
+  <mapID target="Joltjoltdeletejoltconnectionpoolpagetitle" url="pagehelp/Joltjoltdeletejoltconnectionpoolpagetitle.html"/>
+
+  <mapID target="Joltjoltjoltconnectionpoolconfiggeneraltitle" url="pagehelp/Joltjoltjoltconnectionpoolconfiggeneraltitle.html"/>
+<mapID target="Joltjoltjoltconnectionpoolconfigaddressestitle" url="pagehelp/Joltjoltjoltconnectionpoolconfigaddressestitle.html"/>
+<mapID target="Joltjoltjoltconnectionpoolconfigusertitle" url="pagehelp/Joltjoltjoltconnectionpoolconfigusertitle.html"/>
+<mapID target="Joltjoltjoltconnectionpoolconfigssltitle" url="pagehelp/Joltjoltjoltconnectionpoolconfigssltitle.html"/>
+
+  <mapID target="Joltjoltjoltconnectionpooltargetdeploytitle" url="pagehelp/Joltjoltjoltconnectionpooltargetdeploytitle.html"/>
+
+  <mapID target="Joltjoltjoltconnectionpoolmonitortitle" url="pagehelp/Joltjoltjoltconnectionpoolmonitortitle.html"/>
+
+  <mapID target="Joltjoltjoltconnectionpoolnotestitle" url="pagehelp/Joltjoltjoltconnectionpoolnotestitle.html"/>
+
+
+  
+  
+</map>

@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<!--
+  - This build file is used to setup the registry.xml and 
+  - .product.properties required for the configuration provisioning system
+  -
+  - Note, this build file requires that the WebLogic environment has been 
+  - setup. I.e., the file - MW_HOME/wlserver/server/bin/setWLSEnv.sh(cmd)
+  - must have been sourced
+  -->
+
+<project name="configure" default="all">
+
+    <property environment="env"/>
+      <target name="all" depends="inventory, product.property">
+    </target>
+
+
+    <target name="registry">
+      <property name="filename" value="${env.MW_HOME}/registry.xml"/>
+      <copy file="${env.MW_HOME}/registry.template" tofile="${filename}" overwrite="true"/>
+      <replace file="${filename}" token="@BEA_HOME@" value="${env.MW_HOME}"/>
+      <replace file="${filename}" token="@WL_HOME@" value="${env.WL_HOME}"/>
+      <replace file="${filename}" token="@JAVA_HOME@" value="${env.JAVA_HOME}"/>
+      <replace file="${filename}" token="@HOSTNAME@" value="${env.HOST}"/>
+    </target>
+
+    <target name="inventory">
+      <replace file="${env.MW_HOME}/wlserver/inventory/ContentsXML/comps.xml"
+               token="@ORACLE_HOME@"
+               value="${env.MW_HOME}/wlserver"/>
+      <replace file="${env.MW_HOME}/oracle_common/inventory/ContentsXML/comps.xml"
+               token="@ORACLE_HOME@"
+               value="${env.MW_HOME}/oracle_common"/>
+    </target>
+
+   <!--
+      - NOTE! The echo:ing actually need to have the formatting it has right 
+      - now since we do want to have a newline after every line in the file 
+      - and if we were to indent the echo:s below, that indentation would also 
+      - appear in the .product.properties file, which we do not want
+    -->
+    <target name="product.property" depends="detect.os">
+	    <property name="propertyfile" value="${env.WL_HOME}/.product.properties"/>
+        <property name="DOCURL" value="http\://www.oracle.com/pls/topic/lookup?ctx=fmw121200&amp;amp;id=wlshome"/>
+<echo file="${propertyfile}">DOCSWEBROOT=${DOCURL}
+</echo>
+<echo file="${propertyfile}" append="true">ProgramGroupName=BEA WebLogic Platform 12.1 (Integrated Build)
+</echo>
+<echo file="${propertyfile}" append="true">PLATFORMHOME=${env.WL_HOME}
+</echo>
+<echo file="${propertyfile}" append="true">JAVA_HOME=${env.JAVA_HOME}
+</echo>
+<echo file="${propertyfile}" append="true">WLS_INSTALL_DIR=${env.WL_HOME}
+</echo>
+<echo file="${propertyfile}" append="true">USER_INSTALL_DIR=${env.WL_HOME}
+</echo>
+<echo file="${propertyfile}" append="true">CONFIGWIZ_HOME=${env.WL_HOME}
+</echo>
+<echo file="${propertyfile}" append="true">BEAHOME=${env.MW_HOME}
+</echo>
+<echo file="${propertyfile}" append="true">MW_HOME=${env.MW_HOME}
+</echo>
+<echo file="${propertyfile}" append="true">WL_HOME=${env.WL_HOME}
+</echo>
+         <antcall target="product.property.unix" />
+         <antcall target="product.property.windows" />
+    </target>
+
+    <target name="product.property.unix" if="isUnix">
+       <!-- Currently we do not do anything extra for when executing on a unix 
+          - machine. However, this target is kept in here for consistency 
+        -->
+    </target>
+
+    <target name="product.property.windows" if="isWindows">
+       <property name="propertyfile" value="${env.WL_HOME}/.product.properties"/>
+       <replace file="${propertyfile}" token="\" value="\\"/>
+       <fixcrlf file="${env.MW_HOME}/README.txt" />
+    </target>
+
+    <!-- Detect which type of OS we are executing on -->
+    <target name="detect.os">
+       <condition property="isUnix">
+          <os family="unix" />
+       </condition>
+       <condition property="isWindows">
+          <os family="windows" />
+       </condition>
+    </target>
+
+</project>

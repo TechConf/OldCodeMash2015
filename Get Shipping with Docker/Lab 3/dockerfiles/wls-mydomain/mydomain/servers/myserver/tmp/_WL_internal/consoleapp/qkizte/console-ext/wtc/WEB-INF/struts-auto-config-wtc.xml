@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="genericTableForm"
+      type="org.apache.struts.action.DynaActionForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="contents" type="java.util.Collection" />
+      <form-property name="chosenContents" type="[Ljava.lang.String;" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="tablePreferences"
+        type="com.bea.console.cvo.preferences.TablePreferences" />
+    </form-bean>
+    <form-bean name="notesForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="interfaceClassName" type="java.lang.String" />
+      <form-property name="notes" type="com.bea.console.cvo.NotesBean" />
+    </form-bean>
+    <form-bean name="wtcExportGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtcExportGeneral"
+        type="com.bea.console.cvo.wtc.exports.WTCExportGeneralBean" />
+    </form-bean>
+    <form-bean name="wtcImportGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtcImportGeneral"
+        type="com.bea.console.cvo.wtc.imports.WTCImportGeneralBean" />
+    </form-bean>
+    <form-bean name="wtcLocalTuxDomGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtcLocalTuxDomGeneral"
+        type="com.bea.console.cvo.wtc.localtuxdom.WTCLocalTuxDomGeneralBean" />
+    </form-bean>
+    <form-bean name="wtcLocalTuxDomConnectionsForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtcLocalTuxDomConnections"
+        type="com.bea.console.cvo.wtc.localtuxdom.WTCLocalTuxDomConnectionsBean" />
+    </form-bean>
+    <form-bean name="wtcLocalTuxDomSecurityForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtcLocalTuxDomSecurity"
+        type="com.bea.console.cvo.wtc.localtuxdom.WTCLocalTuxDomSecurityBean" />
+    </form-bean>
+    <form-bean name="wtcPasswordConfigForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtcPasswordConfig"
+        type="com.bea.console.cvo.wtc.password.WTCPasswordConfigBean" />
+    </form-bean>
+    <form-bean name="wtcRemoteTuxDomGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtcRemoteTuxDomGeneral"
+        type="com.bea.console.cvo.wtc.remotetuxdom.WTCRemoteTuxDomGeneralBean" />
+    </form-bean>
+    <form-bean name="wtcRemoteTuxDomConnectionsForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtcRemoteTuxDomConnections"
+        type="com.bea.console.cvo.wtc.remotetuxdom.WTCRemoteTuxDomConnectionsBean" />
+    </form-bean>
+    <form-bean name="wtcRemoteTuxDomSecurityForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtcRemoteTuxDomSecurity"
+        type="com.bea.console.cvo.wtc.remotetuxdom.WTCRemoteTuxDomSecurityBean" />
+    </form-bean>
+    <form-bean name="wtcResourcesConfigForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtcResourcesConfig"
+        type="com.bea.console.cvo.wtc.resources.WTCResourcesConfigBean" />
+    </form-bean>
+    <form-bean name="wtcServerGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtcServerGeneral"
+        type="com.bea.console.cvo.wtc.server.WTCServerGeneralBean" />
+    </form-bean>
+    <form-bean name="wtcServerTargetDeployForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtcServerTargetdeploy"
+        type="com.bea.console.cvo.wtc.server.WTCServerTargetDeployBean" />
+    </form-bean>
+    <form-bean name="wtcTbridgeGlobalGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtctBridgeGlobalGeneral"
+        type="com.bea.console.cvo.wtc.tbridge.WTCtBridgeGlobalGeneralBean" />
+    </form-bean>
+    <form-bean name="wtcTbridgeGlobalConnectionsForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtctBridgeGlobalConnections"
+        type="com.bea.console.cvo.wtc.tbridge.WTCtBridgeGlobalConnectionsBean" />
+    </form-bean>
+    <form-bean name="wtcTbridgeGlobalFactoriesForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtctBridgeGlobalFactories"
+        type="com.bea.console.cvo.wtc.tbridge.WTCtBridgeGlobalFactoriesBean" />
+    </form-bean>
+    <form-bean name="wtcTbridgeGlobalPrioritiesForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtctBridgeGlobalPriorities"
+        type="com.bea.console.cvo.wtc.tbridge.WTCtBridgeGlobalPrioritiesBean" />
+    </form-bean>
+    <form-bean name="wtcTbridgeRedirectGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="wtctBridgeRedirectGeneral"
+        type="com.bea.console.cvo.wtc.tbridge.WTCtBridgeRedirectGeneralBean" />
+    </form-bean>
+    <form-bean name="customizedForm"
+      type="com.bea.console.actionforms.CustomizerForm">
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="tablePrefererences"
+        type="com.bea.console.cvo.preferences.TablePreferences" />
+    </form-bean>
+  </form-beans>
+  <!-- Global Exception Handlers for this module -->
+  <global-exceptions>
+    <exception key="global" type="java.lang.Exception"
+      handler="com.bea.console.utils.UnexpectedExceptionHandler" />
+  </global-exceptions>
+  <action-mappings>
+    <action path="/TablePreferencesUpdatedAction"
+      type="com.bea.console.actions.preferences.TablePreferencesUpdatedAction"
+      scope="request" validate="false" name="customizedForm">
+    </action>
+    <action path="/WTCExportGeneral"
+      type="com.bea.console.actions.wtc.exports.WTCExportGeneralAction"
+      name="wtcExportGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/exports/WTCExportGeneralForm.jsp" />
+    </action>
+    <action path="/WTCExportGeneralUpdated"
+      type="com.bea.console.actions.wtc.exports.WTCExportGeneralUpdatedAction"
+      name="wtcExportGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/exports/WTCExportGeneralForm.jsp" />
+      <forward name="success" path="/WTCExportGeneral.do" />
+    </action>
+    <action path="/WTCImportGeneral"
+      type="com.bea.console.actions.wtc.imports.WTCImportGeneralAction"
+      name="wtcImportGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/imports/WTCImportGeneralForm.jsp" />
+    </action>
+    <action path="/WTCImportGeneralUpdated"
+      type="com.bea.console.actions.wtc.imports.WTCImportGeneralUpdatedAction"
+      name="wtcImportGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/imports/WTCImportGeneralForm.jsp" />
+      <forward name="success" path="/WTCImportGeneral.do" />
+    </action>
+    <action path="/WTCLocalTuxDomGeneral"
+      type="com.bea.console.actions.wtc.localtuxdom.WTCLocalTuxDomGeneralAction"
+      name="wtcLocalTuxDomGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/localtuxdom/WTCLocalTuxDomGeneralForm.jsp" />
+    </action>
+    <action path="/WTCLocalTuxDomGeneralUpdated"
+      type="com.bea.console.actions.wtc.localtuxdom.WTCLocalTuxDomGeneralUpdatedAction"
+      name="wtcLocalTuxDomGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/localtuxdom/WTCLocalTuxDomGeneralForm.jsp" />
+      <forward name="success" path="/WTCLocalTuxDomGeneral.do" />
+    </action>
+    <action path="/WTCLocalTuxDomConnections"
+      type="com.bea.console.actions.wtc.localtuxdom.WTCLocalTuxDomConnectionsAction"
+      name="wtcLocalTuxDomConnectionsForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/localtuxdom/WTCLocalTuxDomConnectionsForm.jsp" />
+    </action>
+    <action path="/WTCLocalTuxDomConnectionsUpdated"
+      type="com.bea.console.actions.wtc.localtuxdom.WTCLocalTuxDomConnectionsUpdatedAction"
+      name="wtcLocalTuxDomConnectionsForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/localtuxdom/WTCLocalTuxDomConnectionsForm.jsp" />
+      <forward name="success" path="/WTCLocalTuxDomConnections.do" />
+    </action>
+    <action path="/WTCLocalTuxDomSecurity"
+      type="com.bea.console.actions.wtc.localtuxdom.WTCLocalTuxDomSecurityAction"
+      name="wtcLocalTuxDomSecurityForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/localtuxdom/WTCLocalTuxDomSecurityForm.jsp" />
+    </action>
+    <action path="/WTCLocalTuxDomSecurityUpdated"
+      type="com.bea.console.actions.wtc.localtuxdom.WTCLocalTuxDomSecurityUpdatedAction"
+      name="wtcLocalTuxDomSecurityForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/localtuxdom/WTCLocalTuxDomSecurityForm.jsp" />
+      <forward name="success" path="/WTCLocalTuxDomSecurity.do" />
+    </action>
+    <action path="/WTCPasswordConfig"
+      type="com.bea.console.actions.wtc.password.WTCPasswordConfigAction"
+      name="wtcPasswordConfigForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/password/WTCPasswordConfigForm.jsp" />
+    </action>
+    <action path="/WTCPasswordConfigUpdated"
+      type="com.bea.console.actions.wtc.password.WTCPasswordConfigUpdatedAction"
+      name="wtcPasswordConfigForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/password/WTCPasswordConfigForm.jsp" />
+      <forward name="success" path="/WTCPasswordConfig.do" />
+    </action>
+    <action path="/WTCRemoteTuxDomGeneral"
+      type="com.bea.console.actions.wtc.remotetuxdom.WTCRemoteTuxDomGeneralAction"
+      name="wtcRemoteTuxDomGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/remotetuxdom/WTCRemoteTuxDomGeneralForm.jsp" />
+    </action>
+    <action path="/WTCRemoteTuxDomGeneralUpdated"
+      type="com.bea.console.actions.wtc.remotetuxdom.WTCRemoteTuxDomGeneralUpdatedAction"
+      name="wtcRemoteTuxDomGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/remotetuxdom/WTCRemoteTuxDomGeneralForm.jsp" />
+      <forward name="success" path="/WTCRemoteTuxDomGeneral.do" />
+    </action>
+    <action path="/WTCRemoteTuxDomConnections"
+      type="com.bea.console.actions.wtc.remotetuxdom.WTCRemoteTuxDomConnectionsAction"
+      name="wtcRemoteTuxDomConnectionsForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/remotetuxdom/WTCRemoteTuxDomConnectionsForm.jsp" />
+    </action>
+    <action path="/WTCRemoteTuxDomConnectionsUpdated"
+      type="com.bea.console.actions.wtc.remotetuxdom.WTCRemoteTuxDomConnectionsUpdatedAction"
+      name="wtcRemoteTuxDomConnectionsForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/remotetuxdom/WTCRemoteTuxDomConnectionsForm.jsp" />
+      <forward name="success" path="/WTCRemoteTuxDomConnections.do" />
+    </action>
+    <action path="/WTCRemoteTuxDomSecurity"
+      type="com.bea.console.actions.wtc.remotetuxdom.WTCRemoteTuxDomSecurityAction"
+      name="wtcRemoteTuxDomSecurityForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/remotetuxdom/WTCRemoteTuxDomSecurityForm.jsp" />
+    </action>
+    <action path="/WTCRemoteTuxDomSecurityUpdated"
+      type="com.bea.console.actions.wtc.remotetuxdom.WTCRemoteTuxDomSecurityUpdatedAction"
+      name="wtcRemoteTuxDomSecurityForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/remotetuxdom/WTCRemoteTuxDomSecurityForm.jsp" />
+      <forward name="success" path="/WTCRemoteTuxDomSecurity.do" />
+    </action>
+    <action path="/WTCResourcesConfig"
+      type="com.bea.console.actions.wtc.resources.WTCResourcesConfigAction"
+      name="wtcResourcesConfigForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/resources/WTCResourcesConfigForm.jsp" />
+    </action>
+    <action path="/WTCResourcesConfigUpdated"
+      type="com.bea.console.actions.wtc.resources.WTCResourcesConfigUpdatedAction"
+      name="wtcResourcesConfigForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/resources/WTCResourcesConfigForm.jsp" />
+      <forward name="success" path="/WTCResourcesConfig.do" />
+    </action>
+    <action path="/WTCServerGeneral"
+      type="com.bea.console.actions.wtc.server.WTCServerGeneralAction"
+      name="wtcServerGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerGeneralForm.jsp" />
+    </action>
+    <action path="/WTCServerGeneralUpdated"
+      type="com.bea.console.actions.wtc.server.WTCServerGeneralUpdatedAction"
+      name="wtcServerGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerGeneralForm.jsp" />
+      <forward name="success" path="/WTCServerGeneral.do" />
+    </action>
+    <action path="/WTCServerTargetDeploy"
+      type="com.bea.console.actions.wtc.server.WTCServerTargetdeployAction"
+      name="wtcServerTargetDeployForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerTargetdeployForm.jsp" />
+    </action>
+    <action path="/WTCServerTargetDeployUpdated"
+      type="com.bea.console.actions.wtc.server.WTCServerTargetdeployUpdatedAction"
+      name="wtcServerTargetDeployForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerTargetdeployForm.jsp" />
+      <forward name="success" path="/WTCServerTargetDeploy.do" />
+    </action>
+    <action path="/WTCServerControlConnections"
+      type="com.bea.console.actions.wtc.server.WTCServerControlConnectionsAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerControlConnections.jsp" />
+    </action>
+    <action path="/WTCServerControlServices"
+      type="com.bea.console.actions.wtc.server.WTCServerControlServicesAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerControlServices.jsp" />
+    </action>
+    <action path="/WTCServerContentsLocalDomains"
+      type="com.bea.console.actions.wtc.server.WTCServerContentsLocalDomainsAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerContentsLocalDomainsForm.jsp" />
+    </action>
+    <action path="/WTCServerContentsRemoteDomains"
+      type="com.bea.console.actions.wtc.server.WTCServerContentsRemoteDomainsAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerContentsRemoteDomainsForm.jsp" />
+    </action>
+    <action path="/WTCServerContentsExported"
+      type="com.bea.console.actions.wtc.server.WTCServerContentsExportedAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerContentsExportedForm.jsp" />
+    </action>
+    <action path="/WTCServerContentsImported"
+      type="com.bea.console.actions.wtc.server.WTCServerContentsImportedAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerContentsImportedForm.jsp" />
+    </action>
+    <action path="/WTCServerContentsPasswords"
+      type="com.bea.console.actions.wtc.server.WTCServerContentsPasswordsAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerContentsPasswordsForm.jsp" />
+    </action>
+    <action path="/WTCServerContentsResources"
+      type="com.bea.console.actions.wtc.server.WTCServerContentsResourcesAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerContentsResourcesForm.jsp" />
+    </action>
+    <action path="/WTCServerContentsQueuingBridge"
+      type="com.bea.console.actions.wtc.server.WTCServerContentsQueuingBridgeAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerContentsQueuingBridgeForm.jsp" />
+    </action>
+    <action path="/WTCServerContentsRedirects"
+      type="com.bea.console.actions.wtc.server.WTCServerContentsRedirectsAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerContentsRedirectsForm.jsp" />
+    </action>
+    <action path="/WTCServerNotes" type="com.bea.console.actions.NotesAction"
+      name="notesForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerNotesForm.jsp" />
+    </action>
+    <action path="/WTCServerNotesUpdated"
+      type="com.bea.console.actions.NotesUpdatedAction" name="notesForm"
+      scope="request" validate="false" input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerNotesForm.jsp" />
+      <forward name="success" path="/WTCServerNotes.do" />
+    </action>
+    <action path="/WTCServerTable"
+      type="com.bea.console.actions.wtc.server.WTCServerTableAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/server/WTCServerTable.jsp" />
+    </action>
+    <action path="/WTCtBridgeGlobalGeneral"
+      type="com.bea.console.actions.wtc.tbridge.WTCtBridgeGlobalGeneralAction"
+      name="wtcTbridgeGlobalGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/tbridge/WTCtBridgeGlobalGeneralForm.jsp" />
+    </action>
+    <action path="/WTCtBridgeGlobalGeneralUpdated"
+      type="com.bea.console.actions.wtc.tbridge.WTCtBridgeGlobalGeneralUpdatedAction"
+      name="wtcTbridgeGlobalGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/tbridge/WTCtBridgeGlobalGeneralForm.jsp" />
+      <forward name="success" path="/WTCtBridgeGlobalGeneral.do" />
+    </action>
+    <action path="/WTCtBridgeGlobalConnections"
+      type="com.bea.console.actions.wtc.tbridge.WTCtBridgeGlobalConnectionsAction"
+      name="wtcTbridgeGlobalConnectionsForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/tbridge/WTCtBridgeGlobalConnectionsForm.jsp" />
+    </action>
+    <action path="/WTCtBridgeGlobalConnectionsUpdated"
+      type="com.bea.console.actions.wtc.tbridge.WTCtBridgeGlobalConnectionsUpdatedAction"
+      name="wtcTbridgeGlobalConnectionsForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/tbridge/WTCtBridgeGlobalConnectionsForm.jsp" />
+      <forward name="success" path="/WTCtBridgeGlobalConnections.do" />
+    </action>
+    <action path="/WTCtBridgeGlobalFactories"
+      type="com.bea.console.actions.wtc.tbridge.WTCtBridgeGlobalFactoriesAction"
+      name="wtcTbridgeGlobalFactoriesForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/tbridge/WTCtBridgeGlobalFactoriesForm.jsp" />
+    </action>
+    <action path="/WTCtBridgeGlobalFactoriesUpdated"
+      type="com.bea.console.actions.wtc.tbridge.WTCtBridgeGlobalFactoriesUpdatedAction"
+      name="wtcTbridgeGlobalFactoriesForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/tbridge/WTCtBridgeGlobalFactoriesForm.jsp" />
+      <forward name="success" path="/WTCtBridgeGlobalFactories.do" />
+    </action>
+    <action path="/WTCtBridgeGlobalPriorities"
+      type="com.bea.console.actions.wtc.tbridge.WTCtBridgeGlobalPrioritiesAction"
+      name="wtcTbridgeGlobalPrioritiesForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/tbridge/WTCtBridgeGlobalPrioritiesForm.jsp" />
+    </action>
+    <action path="/WTCtBridgeGlobalPrioritiesUpdated"
+      type="com.bea.console.actions.wtc.tbridge.WTCtBridgeGlobalPrioritiesUpdatedAction"
+      name="wtcTbridgeGlobalPrioritiesForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/tbridge/WTCtBridgeGlobalPrioritiesForm.jsp" />
+      <forward name="success" path="/WTCtBridgeGlobalPriorities.do" />
+    </action>
+    <action path="/WTCtBridgeRedirectGeneral"
+      type="com.bea.console.actions.wtc.tbridge.WTCtBridgeRedirectGeneralAction"
+      name="wtcTbridgeRedirectGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/wtc/tbridge/WTCtBridgeRedirectGeneralForm.jsp" />
+    </action>
+    <action path="/WTCtBridgeRedirectGeneralUpdated"
+      type="com.bea.console.actions.wtc.tbridge.WTCtBridgeRedirectGeneralUpdatedAction"
+      name="wtcTbridgeRedirectGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/wtc/tbridge/WTCtBridgeRedirectGeneralForm.jsp" />
+      <forward name="success" path="/WTCtBridgeRedirectGeneral.do" />
+    </action>
+    <!-- ServerServicesWTC action moved from core module to wtc module -->
+    <action path="/ServerServicesWTC"
+      type="com.bea.console.actions.core.server.ServerServicesWtcAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/core/server/ServerServicesWtcForm.jsp" />
+    </action>
+  </action-mappings>
+  <controller
+    processorClass="com.bea.console.internal.ConsolePageFlowRequestProcessor">
+    <set-property property="nocache" value="true" />
+    <set-property property="contentType" value="text/html;charset=UTF-8" />
+  </controller>
+  <message-resources factory="com.bea.console.utils.ConsoleMessageResourcesFactory" null="false" parameter="wtc" key="wtc"/>
+</struts-config>

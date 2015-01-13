@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature-definition xmlns="http://www.bea.com/ns/cie/feature" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="oracle.wls.cam.wlst" version="1.0.0.0">
+  <!--
+    <annotation>
+      <manifest xmlns="http://www.bea.com/ns/cie/manifest">
+        <attribute name="Implementation-Vendor" value="BEA Systems"/>
+        <attribute name="Implementation-Title" value="WLST Standalone in CAM 1.0 Fri Jun 7 15:37:28 PDT 2013 "/>
+        <attribute name="Source-Repository-Change-Id" value="1530982 WLS_12.1.2.0.0_GENERIC_130607.1100"/>
+        <attribute name="Source-Repository-URI" value="ADE://depot/wls/src/repository/modules/features"/>
+        <attribute name="Implementation-Version" value="1.0.0.0"/>
+      </manifest>
+    </annotation>
+  -->
+  <modules>
+    <module file-name="./wlstCore-classes.jar" isDirectory="true"/>
+    <module file-name="./wlstt3client.jar" isDirectory="true"/>
+  </modules>
+  
+</feature-definition>

@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Configure a user
+  identity</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50901" id="WLACH50901"></a>
+
+
+  <h1 class="topictitle1">Configure a user
+  identity</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p>You can secure access to your Jolt connection pool by specifying a
+      user name and password. Applications must provide this user name and
+      password to access the connection pool.</p>
+
+      <p>If Tuxedo requires clients to provide user credentials, you must
+      specify the user name and password of an existing Tuxedo user. You must
+      also enable the connection pool to pass the security context to
+      Tuxedo.</p>
+
+      <p>To configure a user identity:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50901__jolt1105580" id="WLACH50901__jolt1105580"></a>In the
+        Administration Console, expand <b>Interoperability</b>
+        and select <b>Jolt Connection Pools</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50901__jolt1106892" id="WLACH50901__jolt1106892"></a>On the
+        <span>Jolt Connection Pools</span> page, click the name of a
+        connection pool.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50901__jolt1105736" id="WLACH50901__jolt1105736"></a>Click the
+        <span>Configuration: User</span> tab.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50901__jolt1105737" id="WLACH50901__jolt1105737"></a>On the
+        <span>User</span> tab, in <b>User Name</b>,
+        enter a user name.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50901__jolt1105757" id="WLACH50901__jolt1105757"></a>In <b>User
+        Password</b>, enter the user's password.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50901__jolt1105756" id="WLACH50901__jolt1105756"></a>If the Tuxedo
+        authentication level is set to USER_AUTH or APP_PW:</span>
+
+        <ol type="a">
+          <li>
+            <span>In <b>User Role</b>, enter a Tuxedo user
+            role.</span>
+          </li>
+
+          <li>
+            <span>In <b>Application Password</b>, enter a
+            Tuxedo application password.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span><a name="WLACH50901__jolt1105761" id="WLACH50901__jolt1105761"></a>Click
+        <b>Save</b>.</span>
+      </li>
+
+      <li>
+        <span>If Tuxedo requires clients to provide user credentials:</span>
+
+        <ol type="a">
+          <li>
+            <span>Click the <b>Configuration: General</b>
+            tab.</span>
+          </li>
+
+          <li>
+            <span>Check <b>Security Context Enabled</b>.</span>
+          </li>
+
+          <li>
+            <span>Click <b>Save</b>.</span>
+          </li>
+        </ol>
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+  </div>
+
+
+</body></html>

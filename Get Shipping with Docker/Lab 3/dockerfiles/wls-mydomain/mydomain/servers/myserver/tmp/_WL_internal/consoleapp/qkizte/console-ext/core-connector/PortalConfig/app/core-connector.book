@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+             xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+             xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd">
+             
+<!--
+    Book file for the tag cluster-services-jolt tab
+    of the WebLogic Server administration console
+
+    Copyright (c) 2007,2009, Oracle and/or its affiliates. All rights reserved.
+-->
+	<!-- Definition for the ejb pages in the deployments table pageset -->
+                          <!-- Definition for the connector tab -->
+                          <netuix:book markupName="book" markupType="Book"
+                                       definitionLabel="AppDeploymentsMonitorConnectorBook"
+                                       title="tab.connector.label">
+                            <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level2"/>
+                            <netuix:content>
+                              <!-- Definition for the Inbound Listeners tab -->
+                              <netuix:page markupName="page" markupType="Page"
+                                           definitionLabel="ConnectorGlobalMonitorInboundListenersPage"
+                                           presentationClass="page-content"
+                                           title="tab.inboundlisteners.label">
+                                <netuix:meta name="helpid"
+                                             content="J2EE.connector.connectormonitorinboundlisteners.title;j2ee"/>
+                                <netuix:content>
+                                  <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                    <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                      <netuix:portletInstance markupType="Portlet"
+                                                              instanceLabel="ConnectorGlobalMonitorInboundListenersPortlet"
+                                                              contentUri="/PortalConfig/connector/ConnectorGlobalMonitorInboundListeners.portlet"/>
+                                    </netuix:placeholder>
+                                  </netuix:layout>
+                                </netuix:content>
+                              </netuix:page>
+                              <!-- Definition for the Outbound Connection Pools tab -->
+                              <netuix:page markupName="page" markupType="Page"
+                                           definitionLabel="ConnectorGlobalMonitorConnectionPoolTablePage"
+                                           presentationClass="page-content"
+                                           title="tab.outboundconnectionpools.label">
+                                <netuix:meta name="helpid"
+                                             content="J2EE.connector.connectormonitorconnectionpooltable.title;j2ee"/>
+                                <netuix:content>
+                                  <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                    <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                      <netuix:portletInstance markupType="Portlet"
+                                                              instanceLabel="ConnectorGlobalMonitorConnectionPoolTablePortlet"
+                                                              contentUri="/PortalConfig/connector/ConnectorGlobalMonitorConnectionPoolTable.portlet"/>
+                                    </netuix:placeholder>
+                                  </netuix:layout>
+                                </netuix:content>
+                              </netuix:page>
+                            </netuix:content>
+                          </netuix:book>
+</portal:root>

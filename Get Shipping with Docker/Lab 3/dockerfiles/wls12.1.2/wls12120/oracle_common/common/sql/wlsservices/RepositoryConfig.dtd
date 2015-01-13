@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!ENTITY % commonDTD SYSTEM "RCUCommon.dtd">
+%commonDTD;
+<!ELEMENT RepositoryConfig (PrerequisiteDescriptor*, ExecutionDescriptor*, DeleteDescriptor?)>
+<!ATTLIST RepositoryConfig
+        COMP_ID CDATA #REQUIRED>
+<!ELEMENT DeleteDescriptor (Action*)>

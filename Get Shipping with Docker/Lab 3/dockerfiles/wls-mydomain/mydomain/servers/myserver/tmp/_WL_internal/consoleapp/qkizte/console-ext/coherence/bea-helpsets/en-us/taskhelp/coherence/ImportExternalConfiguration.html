@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Import a custom cluster
+  configuration</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50007" id="WLACH50007"></a>
+
+
+  <h1 class="topictitle1">Import a custom cluster
+  configuration</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="WLACH50007__startstop1208194" id="WLACH50007__startstop1208194"></a>You can configure Coherence
+      clusters within WebLogic Server or externally in a custom configuration
+      file. You import a custom configuration by specifying its file path
+      location on your system.</p>
+
+      <p><a name="WLACH50007__startstop1198902" id="WLACH50007__startstop1198902"></a>To import a custom cluster
+      configuration:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50007__servers1160647" id="WLACH50007__servers1160647"></a>In the left pane
+        of the Console, expand <b>Environment</b> and select
+        <b>Coherence Clusters</b>.</span>
+
+        <span>
+          <p>The <span>Summary of Coherence Clusters</span> page
+          displays the Coherence cluster configurations that have been created
+          in this domain.</p>
+        </span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50007__startstop1213516" id="WLACH50007__startstop1213516"></a>Click
+        <b>New</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50007__startstop1204881" id="WLACH50007__startstop1204881"></a>On the
+        <span>Configuration: General</span> page:</span>
+
+        <ol type="a">
+          <li>
+            <span><b>Name</b>: Provide a name for this
+            Coherence cluster configuration.</span>
+          </li>
+
+          <li>
+            <span><b>Use a Custom Cluster Configuration
+            File</b>: Select to configure this cluster using an
+            external custom configuration file and click
+            <b>Next</b>.</span>
+          </li>
+
+          <li>
+            <span><b>File Path</b>: Provide the file path
+            location of configuration file. The file must be present locally
+            on the Administration Server.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span><a name="WLACH50007__startstop1202599" id="WLACH50007__startstop1202599"></a>Click
+        <b>Next</b> to select targets for the Coherence
+        cluster or click <b>Finish</b>.</span>
+      </li>
+
+      <li>
+        <span>Optionally, select WebLogic Server instances or clusters on which
+        this cluster configuration is accessible and click
+        <b>Finish</b>.</span>
+
+        <span>
+          <p>The new cluster configuration appears in the <span>Coherence
+          Clusters</span> table.</p>
+        </span>
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+  </div>
+
+
+</body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Configure startup
+  arguments for Coherence servers</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50014" id="WLACH50014"></a>
+
+
+  <h1 class="topictitle1">Configure startup
+  arguments for Coherence servers</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="WLACH50014__startstop1234604" id="WLACH50014__startstop1234604"></a>Specify the startup settings
+      that Node Manager will use to start this Coherence server on a remote
+      machine.</p>
+
+      <p><b>Note: </b>The Coherence servers feature is deprecated and
+      remains supported for backwards compatibility. Coherence tiers should be
+      configured to use Managed Coherence Servers instead. See <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=coherence.ConfigureCoherenceClusterTiers">Configure and deploy
+  Coherence deployment tiers</a></p>
+
+      <p><a name="WLACH50014__startstop1234908" id="WLACH50014__startstop1234908"></a>To configure startup
+      options:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50014__startstop1234605" id="WLACH50014__startstop1234605"></a>In the left
+        pane of the Console, expand <b>Environment</b> and
+        select <b>Coherence Servers</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50014__startstop1234610" id="WLACH50014__startstop1234610"></a>In the
+        <b>Coherence Servers</b> table, select the name of the
+        Coherence server you want to configure.</span>
+      </li>
+
+      <li>
+        <span>Select <b>Configuration &gt; Server
+        Start</b>.</span>
+      </li>
+
+      <li>
+        <span>Specify the following startup settings:</span>
+
+        <ol type="a">
+          <li>
+            <span><b>Java Home</b> - Specify the Java home
+            directory (path on the machine running Node Manager) to use when
+            starting this server. Specify the parent directory of the JDK's
+            bin directory. For example,
+            <tt>c:\Oracle\Middleware\jdk1.7.0_10</tt>.</span>
+          </li>
+
+          <li>
+            <span><b>Java Vendor</b> - Specify the Java vendor
+            value to use when starting this server.</span>
+          </li>
+
+          <li>
+            <span><b>Oracle Home</b> - Specify the directory on
+            the Node Manager machine under which all of Oracle's WebLogic
+            products were installed. For example,
+            <tt>c:\Oracle\Middleware\</tt>.</span>
+          </li>
+
+          <li>
+            <span><b>Root Directory</b> - Specify the directory
+            that this server uses as its root directory. This directory must
+            be on the computer that hosts the Node Manager. If you do not
+            specify a <b>Root Directory</b> value, the domain
+            directory is used by default.</span>
+          </li>
+
+          <li>
+            <span><b>Class Path</b> - Specify the classpath
+            (path on the machine running Node Manager) to use when starting
+            this server.</span>
+
+             
+              <p>The operating system determines which character you use to
+              separate path elements. On Windows use a semicolon (;). On UNIX
+              use a colon (:).</p>
+            
+          </li>
+
+          <li>
+            <span><b>Arguments</b> - The arguments to use when
+            starting this server. These are the first arguments appended
+            immediately after <code>java</code> portion of the startup
+            command. Separate arguments with a space.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span><a name="WLACH50014__startstop1243156" id="WLACH50014__startstop1243156"></a>Click
+        <b>Save</b>.</span>
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+  </div>
+
+
+</body></html>

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "struts-config_1_1.dtd">
+<struts-config>
+
+  <form-beans>
+
+    <form-bean name="genericTableForm"
+      type="org.apache.struts.action.DynaActionForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="running" type="java.lang.Boolean" />
+      <form-property name="contents" type="java.util.Collection" />
+      <form-property name="chosenContents" type="java.util.Collection" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="tablePreferences"
+        type="com.bea.console.cvo.preferences.TablePreferences" />
+    </form-bean>
+    <form-bean name="customizedForm"
+      type="com.bea.console.actionforms.CustomizerForm">
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="tablePrefererences"
+        type="com.bea.console.cvo.preferences.TablePreferences" />
+    </form-bean>
+    <form-bean name="notesForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="interfaceClassName" type="java.lang.String" />
+      <form-property name="notes" type="com.bea.console.cvo.NotesBean" />
+    </form-bean>
+    <form-bean name="targetsForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="targets" type="com.bea.console.cvo.TargetBean" />
+    </form-bean>
+    <form-bean name="coherenceClusterConfigGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="coherenceClusterConfigGeneral"
+        type="com.bea.console.cvo.coherence.CoherenceClusterConfigGeneralBean" />
+    </form-bean>
+    <form-bean name="coherenceClusterConfigLoggingForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="coherenceClusterConfigLogging"
+        type="com.bea.console.cvo.coherence.CoherenceClusterConfigLoggingBean" />
+    </form-bean>
+    <form-bean name="coherenceConfigAddressProviderForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="coherenceConfigAddressProvider"
+        type="com.bea.console.cvo.coherence.CoherenceConfigAddressProviderBean" />
+      <form-property name="contents" type="java.util.Collection" />
+      <form-property name="chosenContents" type="java.util.Collection" />
+      <form-property name="tablePreferences"
+        type="com.bea.console.cvo.preferences.TablePreferences" />
+    </form-bean>
+    <form-bean name="coherenceConfigSocketAddressForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="coherenceConfigSocketAddress"
+        type="com.bea.console.cvo.coherence.CoherenceConfigSocketAddressBean" />
+    </form-bean>
+    <form-bean name="coherenceClusterConfigWellKnownAddressForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="coherenceClusterConfigWellKnownAddress"
+        type="com.bea.console.cvo.coherence.CoherenceClusterConfigWellKnownAddressBean" />
+    </form-bean>
+    <form-bean name="cacheConfigConfigurationForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="cacheConfigConfiguration"
+        type="com.bea.console.cvo.coherence.CacheConfigBean" />
+    </form-bean>
+    <form-bean name="coherenceClusterSecurityGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="cvo"
+        type="com.bea.console.cvo.coherence.CoherenceClusterSecurityGeneralBean" />
+    </form-bean>
+    <form-bean name="coherenceServerConfigGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="cvo" type="com.bea.console.cvo.coherence.ServerConfigGeneralBean" />
+    </form-bean>
+    <form-bean name="coherenceServerConfigStartupForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="cvo" type="com.bea.console.cvo.coherence.ServerConfigStartupBean" />
+    </form-bean>
+    <form-bean name="coherenceWLSServerConfigForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="cvo" type="com.bea.console.cvo.coherence.WLSServerConfigBean" />
+    </form-bean>
+    <form-bean name="coherenceWLSClusterConfigForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="cvo" type="com.bea.console.cvo.coherence.WLSClusterConfigBean" />
+    </form-bean>
+    <form-bean name="garOverviewForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="garOverview"
+        type="com.bea.console.cvo.coherence.GAROverviewBean" />
+      <form-property name="contents" type="java.util.Collection" />
+    </form-bean>
+    <form-bean name="garConfigurationForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="garConfiguration"
+        type="com.bea.console.cvo.coherence.GARConfigurationBean" />
+      <form-property name="cacheFactoryInitParams" type="java.util.Collection" />
+      <form-property name="listenerInitParams" type="java.util.Collection" />
+    </form-bean>
+  </form-beans>
+
+  <!-- Global Exception Handlers for this module -->
+  <global-exceptions>
+    <exception key="global" type="java.lang.Exception"
+      handler="com.bea.console.utils.UnexpectedExceptionHandler" />
+  </global-exceptions>
+
+  <global-forwards/>
+
+  <action-mappings>
+  
+    <action path="/TablePreferencesUpdatedAction"
+      type="com.bea.console.actions.preferences.TablePreferencesUpdatedAction"
+      scope="request" validate="false" name="customizedForm">
+    </action>
+
+    <action path="/GlobalClustersTable"
+      type="com.bea.console.actions.coherence.GlobalClustersTable"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/GlobalClustersTable.jsp" />
+    </action>
+
+    <action path="/ServersConfig"
+      type="com.bea.console.actions.coherence.ServersTable"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ServersConfig.jsp" />
+    </action>
+
+    <action path="/ServersControl"
+      type="com.bea.console.actions.coherence.ServersTable"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ServersControl.jsp" />
+    </action>
+
+    <action path="/ConfigCoherenceClusterGeneral"
+      type="com.bea.console.actions.coherence.ConfigCoherenceClusterGeneral"
+      name="coherenceClusterConfigGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ConfigCoherenceClusterGeneral.jsp" />
+    </action>
+    
+    <action path="/ConfigCoherenceClusterGeneralUpdated"
+      type="com.bea.console.actions.coherence.ConfigCoherenceClusterGeneralUpdated"
+      name="coherenceClusterConfigGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/ConfigCoherenceClusterGeneral.do" />
+    </action>
+
+    <action path="/ConfigCoherenceClusterLogging"
+      type="com.bea.console.actions.coherence.ConfigCoherenceClusterLogging"
+      name="coherenceClusterConfigLoggingForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ConfigCoherenceClusterLogging.jsp" />
+    </action>
+    
+    <action path="/ConfigCoherenceClusterLoggingUpdated"
+      type="com.bea.console.actions.coherence.ConfigCoherenceClusterLoggingUpdated"
+      name="coherenceClusterConfigLoggingForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/ConfigCoherenceClusterLogging.do" />
+    </action>
+
+    <action path="/ConfigCoherenceAddressProviders"
+      type="com.bea.console.actions.coherence.ConfigAddressProviders"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ConfigCoherenceAddressProviders.jsp" />
+    </action>
+    
+    <action path="/ConfigCoherenceClusterWellKnownAddresses"
+      type="com.bea.console.actions.coherence.ConfigCoherenceClusterWellKnownAddresses"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ConfigCoherenceClusterWellKnownAddresses.jsp" />
+    </action>
+    
+    <action path="/ConfigCoherenceAddressProvider"
+      type="com.bea.console.actions.coherence.ConfigAddressProvider"
+      name="coherenceConfigAddressProviderForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ConfigCoherenceAddressProvider.jsp" />
+    </action>
+    
+    <action path="/ConfigCoherenceAddressProviderUpdated"
+      type="com.bea.console.actions.coherence.ConfigAddressProviderUpdated"
+      name="coherenceConfigAddressProviderForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/ConfigCoherenceAddressProvider.do" />
+    </action>
+
+    <action path="/ConfigCoherenceSocketAddress"
+      type="com.bea.console.actions.coherence.ConfigSocketAddress"
+      name="coherenceConfigSocketAddressForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ConfigCoherenceSocketAddress.jsp" />
+    </action>
+    
+    <action path="/ConfigCoherenceSocketAddressUpdated"
+      type="com.bea.console.actions.coherence.ConfigSocketAddressUpdated"
+      name="coherenceConfigSocketAddressForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/ConfigCoherenceSocketAddress.do" />
+    </action>
+
+    <action path="/ConfigCoherenceClusterWellKnownAddress"
+      type="com.bea.console.actions.coherence.ConfigCoherenceClusterWellKnownAddress"
+      name="coherenceClusterConfigWellKnownAddressForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ConfigCoherenceClusterWellKnownAddress.jsp" />
+    </action>
+    
+    <action path="/ConfigCoherenceClusterWellKnownAddressUpdated"
+      type="com.bea.console.actions.coherence.ConfigCoherenceClusterWellKnownAddressUpdated"
+      name="coherenceClusterConfigWellKnownAddressForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/ConfigCoherenceClusterWellKnownAddress.do" />
+    </action>
+
+    <action path="/CoherenceCacheConfigs"
+      type="com.bea.console.actions.coherence.CacheConfigsTable"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/CacheConfigsTable.jsp" />
+    </action>
+
+    <action path="/CoherenceCacheConfigConfiguration"
+      type="com.bea.console.actions.coherence.CacheConfigConfiguration"
+      name="cacheConfigConfigurationForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/CacheConfigConfiguration.jsp" />
+    </action>
+    
+    <action path="/CoherenceCacheConfigConfigurationUpdated"
+      type="com.bea.console.actions.coherence.CacheConfigConfigurationUpdated"
+      name="cacheConfigConfigurationForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/CoherenceCacheConfigConfiguration.do" />
+    </action>
+    
+    <action path="/CoherenceCacheConfigTargets" 
+      type="com.bea.console.actions.coherence.CacheConfigTargets"
+      name="targetsForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/CacheConfigTargets.jsp" />
+    </action>
+
+    <action path="/CoherenceCacheConfigTargetsUpdated"
+      type="com.bea.console.actions.coherence.CacheConfigTargetsUpdated" 
+      name="targetsForm" scope="request" validate="false" input="success">
+      <forward name="success" path="/CoherenceCacheConfigTargets.do" />
+    </action>
+    
+    <action path="/CoherenceClusterSecurityGeneral"
+      type="com.bea.console.actions.coherence.CoherenceClusterSecurityGeneral"
+      name="coherenceClusterSecurityGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/CoherenceClusterSecurityGeneral.jsp" />
+    </action>
+    
+    <action path="/CoherenceClusterSecurityGeneralUpdated"
+      type="com.bea.console.actions.coherence.CoherenceClusterSecurityGeneralUpdated"
+      name="coherenceClusterSecurityGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/CoherenceClusterSecurityGeneral.do" />
+    </action>
+
+    <action path="/CoherenceServices"
+      type="com.bea.console.actions.coherence.CoherenceServices"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/CoherenceServices.jsp" />
+    </action>
+
+    <action path="/CoherenceCaches"
+      type="com.bea.console.actions.coherence.CoherenceCaches"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/CoherenceCaches.jsp" />
+    </action>
+
+    <action path="/CoherenceCacheRoles"
+      type="com.bea.console.actions.coherence.CoherenceCacheRolesAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/CoherenceCacheRoles.jsp" />
+    </action>
+
+    <action path="/CoherenceServiceRoles"
+      type="com.bea.console.actions.coherence.CoherenceServiceRolesAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/CoherenceServiceRoles.jsp" />
+    </action>
+
+    <action path="/ConfigCoherenceClusterNotes" type="com.bea.console.actions.coherence.ConfigCoherenceClusterNotes"
+      name="notesForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ConfigCoherenceClusterNotes.jsp" />
+    </action>
+
+    <action path="/ConfigCoherenceClusterNotesUpdated"
+      type="com.bea.console.actions.coherence.ConfigCoherenceClusterNotesUpdated" name="notesForm"
+      scope="request" validate="false" input="success">
+      <forward name="success" path="/ConfigCoherenceClusterNotes.do" />
+    </action>
+
+    <action path="/ConfigCoherenceClusterTargets" type="com.bea.console.actions.coherence.ConfigCoherenceClusterTargets"
+      name="targetsForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ConfigCoherenceClusterTargets.jsp" />
+    </action>
+
+    <action path="/ConfigCoherenceClusterTargetsUpdated"
+      type="com.bea.console.actions.coherence.ConfigCoherenceClusterTargetsUpdated" name="targetsForm"
+      scope="request" validate="false" input="success">
+      <forward name="success" path="/ConfigCoherenceClusterTargets.do" />
+    </action>
+
+    <action path="/ServerConfigGeneral"
+      type="com.bea.console.actions.coherence.ServerConfigGeneral"
+      name="coherenceServerConfigGeneralForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ServerConfigGeneral.jsp" />
+    </action>
+    
+    <action path="/ServerConfigGeneralUpdated"
+      type="com.bea.console.actions.coherence.ServerConfigGeneralUpdated"
+      name="coherenceServerConfigGeneralForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/ServerConfigGeneral.do" />
+    </action>
+
+    <action path="/ServerConfigStartup"
+      type="com.bea.console.actions.coherence.ServerConfigStartup"
+      name="coherenceServerConfigStartupForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ServerConfigStartup.jsp" />
+    </action>
+    
+    <action path="/ServerConfigStartupUpdated"
+      type="com.bea.console.actions.coherence.ServerConfigStartupUpdated"
+      name="coherenceServerConfigStartupForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/ServerConfigStartup.do" />
+    </action>
+
+    <action path="/ServerConfigNotes" type="com.bea.console.actions.coherence.ServerConfigNotes"
+      name="notesForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ServerConfigNotes.jsp" />
+    </action>
+
+    <action path="/ServerConfigNotesUpdated"
+      type="com.bea.console.actions.coherence.ServerConfigNotesUpdated" name="notesForm"
+      scope="request" validate="false" input="success">
+      <forward name="success" path="/ServerConfigNotes.do" />
+    </action>
+
+    <action path="/ServerControlStartStop"
+      type="com.bea.console.actions.coherence.ServerControlStartStop"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/ServerControlStartStop.jsp" />
+    </action>
+    
+    <action path="/MonitorAppCoherenceCluster"
+      type="com.bea.console.actions.coherence.MonitorAppCoherenceCluster"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/MonitorAppCoherenceCluster.jsp" />
+    </action>
+
+    <action path="/MonitorEJBCoherenceCluster"
+      type="com.bea.console.actions.coherence.MonitorEJBCoherenceCluster"
+      name="genericTableForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/MonitorEJBCoherenceCluster.jsp" />
+    </action>
+    
+    <action path="/MonitorWebAppCoherenceCluster"
+      type="com.bea.console.actions.coherence.MonitorWebAppCoherenceCluster"
+      name="genericTableForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/MonitorWebAppCoherenceCluster.jsp" />
+    </action>
+
+    <action path="/WLSServerConfigCoherence"
+      type="com.bea.console.actions.coherence.WLSServerConfig"
+      name="coherenceWLSServerConfigForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/WLSServerConfig.jsp" />
+    </action>
+    
+    <action path="/WLSServerConfigCoherenceUpdated"
+      type="com.bea.console.actions.coherence.WLSServerConfigUpdated"
+      name="coherenceWLSServerConfigForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/WLSServerConfigCoherence.do" />
+    </action>
+    
+    <action path="/WLSClusterConfigCoherence"
+      type="com.bea.console.actions.coherence.WLSClusterConfig"
+      name="coherenceWLSClusterConfigForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/WLSClusterConfig.jsp" />
+    </action>
+    
+    <action path="/WLSClusterConfigCoherenceUpdated"
+      type="com.bea.console.actions.coherence.WLSClusterConfigUpdated"
+      name="coherenceWLSClusterConfigForm" scope="request" validate="false"
+      input="success">
+      <forward name="success" path="/WLSClusterConfigCoherence.do" />
+    </action>
+
+    <action path="/GARApplicationOverview"
+      type="com.bea.console.actions.coherence.GARApplicationOverviewAction"
+      name="garOverviewForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/GARApplicationOverviewForm.jsp" />
+    </action>
+    <action path="/GARApplicationOverviewUpdated"
+      type="com.bea.console.actions.coherence.GARApplicationOverviewUpdatedAction"
+      name="garOverviewForm" scope="request" validate="false" input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/coherence/GARApplicationOverviewForm.jsp" />
+      <forward name="success" path="/GARApplicationOverview.do" />
+    </action>
+    <action path="/GARModuleOverview"
+      type="com.bea.console.actions.coherence.GARModuleOverviewAction"
+      name="garOverviewForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/GARModuleOverviewForm.jsp" />
+    </action>
+    <action path="/GARConfiguration"
+      type="com.bea.console.actions.coherence.GARConfigurationAction"
+      name="garConfigurationForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/GARConfigurationForm.jsp" />
+    </action>
+    <action path="/GARTargets"
+      type="com.bea.console.actions.app.ApplicationTargetsAction"
+      name="targetsForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/GARTargetsForm.jsp" />
+    </action>
+    <action path="/GARTargetsUpdated"
+      type="com.bea.console.actions.app.ApplicationTargetsUpdatedAction"
+      name="targetsForm" scope="request" validate="false" input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/coherence/GARTargetsForm.jsp" />
+      <forward name="success" path="/GARTargets.do" />
+    </action>
+    <action path="/GARControl"
+      type="com.bea.console.actions.app.ApplicationControlAction"
+      name="genericTableForm" scope="session" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/GARControlForm.jsp" />
+    </action>
+    <action path="/GARNotes" type="com.bea.console.actions.NotesAction"
+      name="notesForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/coherence/GARNotesForm.jsp" />
+    </action>
+    <action path="/GARNotesUpdated"
+      type="com.bea.console.actions.NotesUpdatedAction" name="notesForm"
+      scope="request" validate="false" input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/coherence/GARNotesForm.jsp" />
+      <forward name="success" path="/GARNotes.do" />
+    </action>
+  </action-mappings>
+ <controller
+    processorClass="com.bea.console.internal.ConsolePageFlowRequestProcessor">
+    <set-property property="nocache" value="true" />
+    <set-property property="contentType" value="text/html;charset=UTF-8" />
+  </controller>
+  <message-resources factory="com.bea.console.utils.ConsoleMessageResourcesFactory" null="false" parameter="coherence" key="coherence"/>
+</struts-config>

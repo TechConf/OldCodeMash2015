@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="genericTableForm"
+      type="org.apache.struts.action.DynaActionForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="contents" type="java.util.Collection" />
+      <form-property name="chosenContents" type="[Ljava.lang.String;" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="tablePreferences"
+        type="com.bea.console.cvo.preferences.TablePreferences" />
+    </form-bean>
+    <form-bean name="notesForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="interfaceClassName" type="java.lang.String" />
+      <form-property name="notes" type="com.bea.console.cvo.NotesBean" />
+    </form-bean>
+    <form-bean name="targetDeployForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="targetDeploy" type="com.bea.console.cvo.TargetBean" />
+    </form-bean>
+    <form-bean name="joltConnectionPoolConfigGeneralForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="joltConnectionPoolConfigGeneral"
+        type="com.bea.console.cvo.jolt.JoltConnectionPoolConfigGeneralBean" />
+    </form-bean>
+    <form-bean name="joltConnectionPoolConfigAddressesForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="joltConnectionPoolConfigAddresses"
+        type="com.bea.console.cvo.jolt.JoltConnectionPoolConfigAddressesBean" />
+    </form-bean>
+    <form-bean name="joltConnectionPoolConfigUserForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="joltConnectionPoolConfigUser"
+        type="com.bea.console.cvo.jolt.JoltConnectionPoolConfigUserBean" />
+    </form-bean>
+    <form-bean name="joltConnectionPoolConfigSSLForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="joltConnectionPoolConfigSSL"
+        type="com.bea.console.cvo.jolt.JoltConnectionPoolConfigSSLBean" />
+    </form-bean>
+    <form-bean name="customizedForm"
+      type="com.bea.console.actionforms.CustomizerForm">
+      <form-property name="handle" type="com.bea.console.handles.Handle" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="tablePrefererences"
+        type="com.bea.console.cvo.preferences.TablePreferences" />
+    </form-bean>
+  </form-beans>
+  <!-- Global Exception Handlers for this module -->
+  <global-exceptions>
+    <exception key="global" type="java.lang.Exception"
+      handler="com.bea.console.utils.UnexpectedExceptionHandler" />
+  </global-exceptions>
+  <action-mappings>
+    <action path="/TablePreferencesUpdatedAction"
+      type="com.bea.console.actions.preferences.TablePreferencesUpdatedAction"
+      scope="request" validate="false" name="customizedForm">
+    </action>
+    <action path="/JoltConnectionPoolConfigGeneral"
+      type="com.bea.console.actions.jolt.JoltConnectionPoolConfigGeneralAction"
+      name="joltConnectionPoolConfigGeneralForm" scope="request"
+      validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolConfigGeneralForm.jsp" />
+    </action>
+    <action path="/JoltConnectionPoolConfigGeneralUpdated"
+      type="com.bea.console.actions.jolt.JoltConnectionPoolConfigGeneralUpdatedAction"
+      name="joltConnectionPoolConfigGeneralForm" scope="request"
+      validate="false" input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolConfigGeneralForm.jsp" />
+      <forward name="success" path="/JoltConnectionPoolConfigGeneral.do" />
+    </action>
+    <action path="/JoltConnectionPoolConfigAddresses"
+      type="com.bea.console.actions.jolt.JoltConnectionPoolConfigAddressesAction"
+      name="joltConnectionPoolConfigAddressesForm" scope="request"
+      validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolConfigAddressesForm.jsp" />
+    </action>
+    <action path="/JoltConnectionPoolConfigAddressesUpdated"
+      type="com.bea.console.actions.jolt.JoltConnectionPoolConfigAddressesUpdatedAction"
+      name="joltConnectionPoolConfigAddressesForm" scope="request"
+      validate="false" input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolConfigAddressesForm.jsp" />
+      <forward name="success" path="/JoltConnectionPoolConfigAddresses.do" />
+    </action>
+    <action path="/JoltConnectionPoolConfigUser"
+      type="com.bea.console.actions.jolt.JoltConnectionPoolConfigUserAction"
+      name="joltConnectionPoolConfigUserForm" scope="request"
+      validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolConfigUserForm.jsp" />
+    </action>
+    <action path="/JoltConnectionPoolConfigUserUpdated"
+      type="com.bea.console.actions.jolt.JoltConnectionPoolConfigUserUpdatedAction"
+      name="joltConnectionPoolConfigUserForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolConfigUserForm.jsp" />
+      <forward name="success" path="/JoltConnectionPoolConfigUser.do" />
+    </action>
+    <action path="/JoltConnectionPoolConfigSSL"
+      type="com.bea.console.actions.jolt.JoltConnectionPoolConfigSSLAction"
+      name="joltConnectionPoolConfigSSLForm" scope="request"
+      validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolConfigSSLForm.jsp" />
+    </action>
+    <action path="/JoltConnectionPoolConfigSSLUpdated"
+      type="com.bea.console.actions.jolt.JoltConnectionPoolConfigSSLUpdatedAction"
+      name="joltConnectionPoolConfigSSLForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolConfigSSLForm.jsp" />
+      <forward name="success" path="/JoltConnectionPoolConfigSSL.do" />
+    </action>
+    <action path="/JoltConnectionPoolTargetdeploy"
+      type="com.bea.console.actions.TargetDeployAction" name="targetDeployForm"
+      scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolTargetdeployForm.jsp" />
+    </action>
+    <action path="/JoltConnectionPoolTargetdeployUpdated"
+      type="com.bea.console.actions.TargetDeployUpdatedAction"
+      name="targetDeployForm" scope="request" validate="false"
+      input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolTargetdeployForm.jsp" />
+      <forward name="success" path="/JoltConnectionPoolTargetdeploy.do" />
+    </action>
+    <action path="/JoltConnectionPoolMonitor"
+      type="com.bea.console.actions.jolt.JoltConnectionPoolMonitorAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolMonitorForm.jsp" />
+    </action>
+    <action path="/JoltConnectionPoolNotes"
+      type="com.bea.console.actions.NotesAction" name="notesForm"
+      scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolNotesForm.jsp" />
+    </action>
+    <action path="/JoltConnectionPoolNotesUpdated"
+      type="com.bea.console.actions.NotesUpdatedAction" name="notesForm"
+      scope="request" validate="false" input="success">
+      <forward name="retry" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolNotesForm.jsp" />
+      <forward name="success" path="/JoltConnectionPoolNotes.do" />
+    </action>
+    <action path="/JoltConnectionMonitor"
+      type="com.bea.console.actions.jolt.JoltConnectionMonitorAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionMonitorForm.jsp" />
+    </action>
+    <action path="/JoltConnectionPoolTable"
+      type="com.bea.console.actions.jolt.JoltConnectionPoolTableAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/jolt/JoltConnectionPoolTable.jsp" />
+    </action>
+    <action path="/ClusterServicesJolt"
+      type="com.bea.console.actions.core.cluster.ClusterServicesJoltAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/core/cluster/ClusterServicesJolt.jsp" />
+    </action>
+    <action path="/ServerServicesJolt"
+      type="com.bea.console.actions.core.server.ServerServicesJoltAction"
+      name="genericTableForm" scope="request" validate="false">
+      <forward name="success" contextRelative="true"
+        path="/jsp/core/server/ServerServicesJoltForm.jsp" />
+    </action>
+  </action-mappings>
+  <controller
+    processorClass="com.bea.console.internal.ConsolePageFlowRequestProcessor">
+    <set-property property="nocache" value="true" />
+    <set-property property="contentType" value="text/html;charset=UTF-8" />
+  </controller>
+  <message-resources factory="com.bea.console.utils.ConsoleMessageResourcesFactory" null="false" parameter="jolt" key="jolt"/>
+</struts-config>

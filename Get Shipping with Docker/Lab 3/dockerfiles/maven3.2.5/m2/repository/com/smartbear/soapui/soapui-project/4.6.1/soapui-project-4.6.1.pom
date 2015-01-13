@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.smartbear.soapui</groupId>
+    <name>SoapUI project</name>
+    <artifactId>soapui-project</artifactId>
+    <version>4.6.1</version>
+    <packaging>pom</packaging>
+
+    <repositories>
+        <repository>
+            <id>eviware</id>
+            <name>Eviware Maven2 Repository</name>
+            <url>http://www.soapui.org/repository/maven2</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>Central Maven2 Repository</name>
+            <url>http://repo1.maven.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- Custom properties -->
+        <assembly.build.directory>${project.build.directory}/assemblies</assembly.build.directory>
+        <installer.build.directory>${project.build.directory}/install4j</installer.build.directory>
+        <build.date>${maven.build.timestamp}</build.date>
+
+        <project.name.full>soapui-${project.version}</project.name.full>
+        <project.name.visible>SoapUI</project.name.visible>
+        <project.src.artifactId>soapui</project.src.artifactId>
+    </properties>
+
+    <modules>
+        <module>soapui</module>
+        <module>soapui-maven-plugin</module>
+        <module>soapui-installer</module>
+        <module>soapui-maven-plugin-tester</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <filesets>
+                      <fileset>
+                          <directory>${project.basedir}</directory>
+                          <includes>
+                              <include>*.log</include>
+                          </includes>
+                          <followSymlinks>false</followSymlinks>
+                      </fileset>
+                    </filesets>
+                </configuration>
+              </plugin>
+        </plugins>
+    </build>
+
+</project>

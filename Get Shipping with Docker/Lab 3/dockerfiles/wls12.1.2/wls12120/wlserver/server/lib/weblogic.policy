@@ -1,0 +1,490 @@
+//
+// To use this file you must turn on the java security manager by defining
+// java.security.manager and setting the java.security.policy property to
+// point to the security policy which should be in the lib directory.
+// For example: 
+//   java -Djava.security.manager
+//        -Djava.security.policy==@WL_HOME/server/lib/weblogic.policy
+//           weblogic.Server
+//
+// You can edit this file and change the permissions for your applications
+// or update the codeBase line to point to where your server is installed 
+//
+// You should grant all permissions to classes in
+// .internal, and .wlnotdelete folders located in your server directory.
+// You can set 
+//   -Duser.domain=<user domain folder> 
+//   -Dweblogic.Name=<server name> 
+// command line properties and use them in your policy file.
+// For example, the basic grant statements for servers in a user domain would be:
+//
+// grant codeBase "file:${user.domain}/servers/${weblogic.Name}/tmp/.internal/-" {
+//   permission java.security.AllPermission;
+// };
+// grant codeBase "file:${user.domain}/servers/${weblogic.Name}/tmp/.wlnotdelete/-" {
+//   permission java.security.AllPermission;
+// };
+//
+// The codeBase location must be a URL, not a file path
+// so Windows users beware of backslashes.
+//
+// For further information see "Using Java Security to Protect WebLogic Resources"
+//
+
+grant codeBase "file:@WL_HOME/server/lib/-" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/modules/-" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/datadirect/fmwgenerictoken.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/datadirect/wldb2.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/datadirect/wlinformix.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/datadirect/wlsqlserver.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/datadirect/wlsybase.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/oracle.rsa_12.1.2/cryptoj_5_0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.oracle.webservices.orasaaj-rt-api_12.1.2.jar" {
+  permission java.util.PropertyPermission "*", "read";
+  permission java.lang.RuntimePermission "setFactory";
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/org.codehaus.woodstox.woodstox-core-asl_4.1.2.jar" {
+  permission java.util.PropertyPermission "*", "read";
+  permission java.lang.RuntimePermission "setFactory";
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.sun.xml.ws.jaxws-rt_2.2.jar" {
+  permission java.util.PropertyPermission "*", "read";
+  permission java.lang.RuntimePermission "setFactory";
+  permission java.io.FilePermission "<<ALL FILES>>", "read";
+  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+  permission java.util.logging.LoggingPermission "control";
+  permission java.lang.RuntimePermission "accessDeclaredMembers";
+  permission java.lang.RuntimePermission "createClassLoader";
+  permission java.lang.RuntimePermission "accessClassInPackage.com.sun.xml.internal.bind";
+  permission java.lang.RuntimePermission "accessClassInPackage.com.sun.xml.internal.bind.annotation"; 
+  permission javax.management.MBeanPermission "*", "unregisterMBean";
+  permission java.net.NetPermission "getProxySelector";
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.sun.xml.stream.buffer.streambuffer_2.2.jar" {
+  permission java.util.PropertyPermission "*", "read";
+  permission java.lang.RuntimePermission "setFactory";
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.oracle.cie.config-wls-online_8.0.0.0.jar" {
+  permission javax.management.MBeanTrustPermission "register", "";
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.oracle.cie.comdev_7.0.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.oracle.cie.config-security-impl_8.0.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.oracle.cie.encryption_2.0.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.oracle.cie.config-wls_8.0.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.oracle.cie.config_8.0.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.bea.core.apache.commons.lang_2.7.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.bea.core.apache.commons.collections_3.2.2.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.bea.core.i18n_2.1.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.sun.jersey.client_1.17.1.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.sun.jersey.core_1.17.1.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.sun.jersey.json_1.17.1.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.sun.jersey.server_1.17.1.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.sun.jersey.multipart_1.17.1.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.sun.jersey.servlet_1.17.1.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.oracle.weblogic.sca.engine_3.0.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/glassfish.el_1.1.0.0_2-2.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/javax.annotation_1.1.0.0_1-1.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/javax.ejb_3.2.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/javax.jsp_3.0.0.0_2-2.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/javax.jms_1.1.3.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/javax.mail_1.1.0.0_1-4-4.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/javax.management.j2ee_1.1.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/javax.persistence_2.1.0.0_1-0-2.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/javax.persistence_2.0.0.0_2-0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/javax.servlet_2.1.0.0_3-0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/javax.xml.bind_2.2.4.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/javax.xml.rpc_1.2.3.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/javax.xml.ws_2.3.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/org.codehaus.jackson.core.asl_1.9.2.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/org.codehaus.jackson.jaxrs_1.9.2.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/org.codehaus.jackson.mapper.asl_1.9.2.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/org.codehaus.jackson.xc_1.9.2.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.oracle.webservices.wls.wls-ws-api_2.0.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.oracle.webservices.ws-databinding-api_3.0.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.oracle.webservices.ws-databinding-impl_3.0.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.oracle.webservices.ws-star-impl_1.0.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.oracle.ws.testpage_1.0.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/weblogic.jaxrs.internal.common_1.1.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/weblogic.jaxrs.client_2.0.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/weblogic.jaxrs.server_2.0.0.0.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/oracle.toplink_12.1.2/eclipselink.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/com.sun.xml.ws.jaxws-eclipselink-plugin_2.2.jar" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:@WL_HOME/../oracle_common/modules/org.glassfish.external.management-api_3.1.0.b001.jar" {
+  permission java.util.PropertyPermission "glassfish.version", "read";
+};
+
+grant codeBase "file:@WL_HOME/../coherence/lib/coherence.jar" {
+  permission java.io.FilePermission "<<ALL FILES>>", "read";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.management";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.rmi.server";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.security.provider";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.security.x509";
+  permission java.lang.RuntimePermission "accessDeclaredMembers";
+  permission java.lang.RuntimePermission "createClassLoader";
+  permission java.lang.RuntimePermission "getClassLoader";
+  permission java.lang.RuntimePermission "getenv.*";
+  permission java.lang.RuntimePermission "getProtectionDomain";
+  permission java.lang.RuntimePermission "selectorProvider";
+  permission java.lang.RuntimePermission "setContextClassLoader";
+  permission java.lang.RuntimePermission "shutdownHooks";
+  permission java.net.SocketPermission "*", "accept,connect,resolve,listen";
+  permission java.security.SecurityPermission "insertProvider.CoherenceSecurityProvider";
+  permission java.security.SecurityPermission "putProviderProperty.CoherenceSecurityProvider";
+  permission java.util.PropertyPermission "java.net.preferIPv4Stack", "read";
+  permission java.util.PropertyPermission "java.net.preferIPv6Addresses", "read";
+  permission java.util.PropertyPermission "java.version", "read";
+  permission java.util.PropertyPermission "os.arch", "read";
+  permission java.util.PropertyPermission "os.name", "read";
+  permission java.util.PropertyPermission "sun.arch.data.model", "read";
+  permission java.util.PropertyPermission "tangosol.*", "read";
+  permission java.util.PropertyPermission "user.dir", "read";
+  permission java.util.PropertyPermission "com.oracle.common.*", "read";
+  permission javax.management.MBeanPermission "com.tangosol.*", "*";
+  permission javax.management.MBeanServerPermission "*";
+  permission javax.management.MBeanTrustPermission "*";
+  permission javax.security.auth.AuthPermission "getSubject";
+  permission java.security.SecurityPermission "putProviderProperty.OracleCommonsSecurityProvider";
+  permission java.security.SecurityPermission "insertProvider.OracleCommonsSecurityProvider";
+
+  permission java.io.SerializablePermission "enableSubstitution";
+  permission javax.management.MBeanPermission "*", "getAttribute";
+  permission java.lang.management.ManagementPermission "monitor";
+
+  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+  permission java.util.PropertyPermission "*", "read, write";
+};
+
+grant codeBase "file:@WL_HOME/server/ext/-" {
+  permission java.security.AllPermission;
+};
+
+//
+// For standard extensions directories
+//
+grant codeBase "file:@WL_HOME/common/lib/ext/*" {
+  permission java.security.AllPermission;
+};
+
+grant codeBase "file:${weblogic.ext.dirs}/*" {
+ permission java.security.AllPermission;
+};
+
+//
+// For the petstore demo
+//
+//grant codeBase "file:@WL_HOME/samples/domains/petstore/servers/petstoreServer/tmp/-" {
+//  permission java.security.AllPermission;
+//};
+
+//grant codeBase "file:@WL_HOME/samples/domains/petstore/-" {
+//	permission java.util.PropertyPermission "*", "read";
+//};
+
+//
+// For the examples
+//
+//
+//grant codeBase "file:@WL_HOME/samples/domains/wl_server/servers/examplesServer/tmp/-" {
+//  permission java.security.AllPermission;
+//};
+
+
+//grant codeBase "file:@WL_HOME/samples/server/examples/build/-" {
+//	permission java.io.FilePermission "@POLICY_WL_HOME${/}samples${/}server${/}examples${/}src${/}-", "read";
+//	permission java.io.FilePermission "@POLICY_WL_HOME${/}samples${/}domains${/}wl_server${/}servers${/}examplesServer${/}data${/}ldap", "read,write";
+//};
+
+//
+// For the MedRec
+//
+//grant codeBase "file:@WL_HOME/samples/domains/medrec/servers/MedRecServer/tmp/-" {
+//  permission java.security.AllPermission;
+//};
+
+
+//grant codeBase "file:@WL_HOME/samples/server/medrec/-" {
+//	permission java.io.FilePermission "@POLICY_WL_HOME${/}samples${/}server${/}medrec${/}src${/}-", "read";
+//	permission java.io.FilePermission "@POLICY_WL_HOME${/}samples${/}domains${/}medrec${/}servers${/}MedRecServer${/}data${/}ldap", "read,write";
+//};
+
+
+//
+// For Oracle JRF to load OPSS Policy provider 
+//
+
+//grant to alternative location as well for some FMW install
+ grant codeBase "file:${common.components.home}/modules/oracle.jps_${opss.version}/*" { 
+    permission java.security.AllPermission; 
+ }; 
+
+
+//
+// For jps Audit to bootstrap during server starup
+//
+
+ grant codeBase "file:${common.components.home}/modules/oracle.iau_${opss.version}/*" { 
+    permission java.security.AllPermission; 
+ }; 
+
+
+//
+// For Oracle JRF to load Oracle Wallet 
+//
+
+//grant to alternative location as well  for some FMW install
+ grant codeBase "file:${common.components.home}/modules/oracle.pki_${opss.version}/*" { 
+    permission java.security.AllPermission; 
+ }; 
+
+//
+// These are for the three app types
+//
+
+// EJB default permissions
+grant codebase "file:/weblogic/application/defaults/EJB" {
+    permission java.lang.RuntimePermission "queuePrintJob"; 
+    permission java.net.SocketPermission "*", "connect"; 
+    permission java.util.PropertyPermission "*", "read";
+    permission java.io.FilePermission "WEBLOGIC-APPLICATION-ROOT${/}-", "read";
+    permission java.lang.management.ManagementPermission "control", "";
+};
+
+// Web App default permissions
+grant codebase "file:/weblogic/application/defaults/Web" {
+    permission java.lang.RuntimePermission "loadLibrary"; 
+    permission java.lang.RuntimePermission "queuePrintJob"; 
+    permission java.net.SocketPermission "*", "connect"; 
+    permission java.io.FilePermission "WEBLOGIC-APPLICATION-ROOT${/}-", "read,write";
+    permission java.io.FilePermission "WEBLOGIC-APPLICATION-ROOT${/}..${/}-", "read";
+    permission java.util.PropertyPermission "*", "read";
+    permission java.lang.management.ManagementPermission "control", "";
+};
+
+// Connector default permissions
+grant codebase "file:/weblogic/application/defaults/Connector" {
+    permission java.net.SocketPermission "*", "connect"; 
+    permission java.io.FilePermission "WEBLOGIC-APPLICATION-ROOT${/}-", "read,write";
+    permission java.io.FilePermission "WEBLOGIC-APPLICATION-ROOT${/}..${/}-", "read";
+    permission java.util.PropertyPermission "*", "read";
+    permission java.lang.management.ManagementPermission "control", "";
+};
+
+
+// Standard extensions get all permissions by default
+grant codeBase "file:${{java.ext.dirs}}/*" {
+	permission java.security.AllPermission;
+};
+grant codeBase "file:${java.home}/lib/ext/*" {
+	permission java.security.AllPermission;
+};
+
+//Granting MBeanPermission(all actions) to the WLS Administrators Subject
+//grant principal weblogic.security.principal.WLSGroupImpl "Administrators" {
+//  permission javax.management.MBeanPermission "*", "*";
+//}; 
+
+// Grant notification listener actions to standard roles
+grant principal weblogic.security.principal.WLSGroupImpl "Administrators" {
+    permission javax.management.MBeanPermission "*", "addNotificationListener";
+    permission javax.management.MBeanPermission "*", "removeNotificationListener";
+}; 
+grant principal weblogic.security.principal.WLSGroupImpl "Deployers" {
+    permission javax.management.MBeanPermission "*", "addNotificationListener";
+    permission javax.management.MBeanPermission "*", "removeNotificationListener";
+}; 
+grant principal weblogic.security.principal.WLSGroupImpl "Operators" {
+    permission javax.management.MBeanPermission "*", "addNotificationListener";
+    permission javax.management.MBeanPermission "*", "removeNotificationListener";
+}; 
+grant principal weblogic.security.principal.WLSGroupImpl "Monitors" {
+    permission javax.management.MBeanPermission "*", "addNotificationListener";
+    permission javax.management.MBeanPermission "*", "removeNotificationListener";
+}; 
+grant principal weblogic.security.principal.WLSKernelIdentity * {
+    permission javax.management.MBeanPermission "*", "addNotificationListener";
+    permission javax.management.MBeanPermission "*", "removeNotificationListener";
+}; 
+
+// default permissions granted to all domains
+grant { 
+	// "standard" properies that can be read by anyone
+
+	permission java.util.PropertyPermission "java.version", "read";
+	permission java.util.PropertyPermission "java.vendor", "read";
+	permission java.util.PropertyPermission "java.vendor.url", "read";
+	permission java.util.PropertyPermission "java.class.version", "read";
+	permission java.util.PropertyPermission "os.name", "read";
+	permission java.util.PropertyPermission "os.version", "read";
+	permission java.util.PropertyPermission "os.arch", "read";
+	permission java.util.PropertyPermission "file.separator", "read";
+	permission java.util.PropertyPermission "path.separator", "read";
+	permission java.util.PropertyPermission "line.separator", "read";
+
+	permission java.util.PropertyPermission "java.specification.version", "read";
+	permission java.util.PropertyPermission "java.specification.vendor", "read";
+	permission java.util.PropertyPermission "java.specification.name", "read";
+
+	permission java.util.PropertyPermission "java.vm.specification.version", "read";
+	permission java.util.PropertyPermission "java.vm.specification.vendor", "read";
+	permission java.util.PropertyPermission "java.vm.specification.name", "read";
+	permission java.util.PropertyPermission "java.vm.version", "read";
+	permission java.util.PropertyPermission "java.vm.vendor", "read";
+	permission java.util.PropertyPermission "java.vm.name", "read";
+};
+
+

@@ -1,0 +1,6 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>saxon</groupId>
+  <artifactId>saxon-dom</artifactId>
+  <version>9.1.0.8j</version>
+</project>

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Target WTC servers</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50501" id="WLACH50501"></a>
+
+
+  <h1 class="topictitle1">Target WTC servers</h1>
+
+  <div><!--topic body-->
+    <div class="prereq"><p class="sectiontitle"><b>
+        Before you begin
+      </b></p>
+      <p>Deciding when to target a WTC server is very important. Once a WTC
+      server is targeted, the configuration deployed to the selected server
+      instance is static. Although you can continue to make changes in your
+      WTC server configuration, any changes made after the configuration is
+      deployed will not be reflected in the selected server instance. You will
+      need to remove the WTC server from the server instance and target the
+      WTC server to the server instance for these changes to take effect.</p>
+    </div>
+
+    <div><br>
+      <p>Targeting deploys the connectivity information contained in a WTC
+      server configuration to a selected server instance. Although you may
+      have many WTC server configurations in the current WebLogic Server
+      domain, only one WTC server configuration can be targeted to any given
+      server instance.</p>
+
+      <p>To target a WTC server:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50501__snmp1125411" id="WLACH50501__snmp1125411"></a>In the
+        Administration Console, expand <b>Interoperability</b>
+        and select <b>WTC Servers</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50501__snmp1125413" id="WLACH50501__snmp1125413"></a>On the
+        <span>WTC Servers</span> page, select the name of the WTC
+        server you want to target.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50501__wtc1110910" id="WLACH50501__wtc1110910"></a>Select
+        <b>Targets</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50501__wtc1111098" id="WLACH50501__wtc1111098"></a>Select the server
+        instance on which you want to target this WTC server.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50501__wtc1110913" id="WLACH50501__wtc1110913"></a>Click
+        <b>Save</b>.</span>
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+  </div>
+
+
+</body></html>

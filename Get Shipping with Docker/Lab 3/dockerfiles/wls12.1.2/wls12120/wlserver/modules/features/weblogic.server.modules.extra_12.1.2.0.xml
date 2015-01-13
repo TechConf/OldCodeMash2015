@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature-definition xmlns="http://www.bea.com/ns/cie/feature" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="weblogic.server.modules.extra" version="12.1.2.0">
+  <!--
+    <annotation>
+      <manifest xmlns="http://www.bea.com/ns/cie/manifest">
+        <attribute name="Implementation-Vendor" value="BEA Systems"/>
+        <attribute name="Implementation-Title" value="Oracle WebLogic Server Modules Extra Dependencies 12.1 Wed May 1 03:30:55 UTC 2013 "/>
+        <attribute name="Source-Repository-Change-Id" value="1524812"/>
+        <attribute name="Source-Repository-URI" value="p4://depot/dev/src1212/repository/modules/features"/>
+        <attribute name="Implementation-Version" value="12.1.2.0"/>
+      </manifest>
+    </annotation>
+  -->
+  <modules>
+    <module file-name="com.bea.core.antlr_1.0.0.0_3-2.jar"/>
+    <module file-name="com.bea.core.apache.commons.logging.api_1.1.2.jar"/>
+    <module file-name="com.bea.core.apache.regexp_1.1.0.0_1-4.jar"/>
+    <module file-name="com.bea.core.apache.velocity_1.4.1.0.jar"/>
+    <module file-name="com.bea.core.apache.velocity.dep_1.5.jar"/>
+    <module file-name="com.bea.core.apache.xalan_2.7.2.jar"/>
+    <module file-name="com.bea.core.apache.xerces.resolver_2.8.1.1.jar"/>
+    <module file-name="com.bea.core.apache.xerces.xml-apis_2.8.1.1.jar"/>
+    <module file-name="com.bea.core.apache.xercesImpl_2.8.1.1.jar"/>
+    <module file-name="com.bea.core.apache.xml.security_1.4.7.jar"/>
+    <module file-name="com.bea.core.apache.xml.serializer_2.7.2.jar"/>
+    <module file-name="com.bea.core.jarbuilder_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.utils_2.2.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.commons.logging_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.xml.stax_1.3.0.0.jar"/>
+    <module file-name="databinding.override_1.1.0.0.jar"/>
+    <module file-name="glassfish.jstl_1.2.2.0.jar"/>
+    <module file-name="../../oracle_common/modules/javax.ejb_3.2.0.jar" isDirectory="true"/>
+    <module file-name="javax.jsf_1.3.0.0_1-2.jar"/>
+    <module file-name="../../oracle_common/modules/javax.jsp_3.0.0.0_2-2.jar" isDirectory="true"/>
+    <module file-name="../../oracle_common/modules/net.sf.antcontrib_1.1.0.0_1-0b2/" isDirectory="true"/>
+    <module file-name="com.bea.core.apache.log4j_1.2.0.0_1-2-15.jar"/>
+    <module file-name="com.bea.core.weblogic.spring.instrument_3.0.0.0.jar"/>
+    <module file-name="com.oracle.core.coherence.server_3.0.0.0.jar"/>
+    <module file-name="com.oracle.weblogic.maven.plugin_1.3.0.0.jar"/>
+    <module file-name="../../oracle_common/modules/org.apache.ant.patch_2.1.0.0_1-7-1.jar" isDirectory="true"/>
+    <module file-name="com.bea.core.apache.commons.fileupload_1.1.0.0_1-2-1.jar"/>
+    <module file-name="com.bea.core.apache.commons.io_1.1.0.0_1-4.jar"/>
+    <module file-name="features/weblogic.server.merge.modules_12.1.2.0.jar" isDirectory="true"/>
+  </modules>
+  
+</feature-definition>

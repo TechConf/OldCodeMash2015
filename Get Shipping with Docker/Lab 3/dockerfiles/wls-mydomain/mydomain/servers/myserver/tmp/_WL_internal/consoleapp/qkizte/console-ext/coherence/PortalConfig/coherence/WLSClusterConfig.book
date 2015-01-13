@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+    xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+    xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd">
+
+  <netuix:page markupName="page" markupType="Page" definitionLabel="WLSClusterConfigCoherencePage"
+                                 presentationClass="page-content"
+                                 title="tab.coherence.label">
+    <netuix:meta name="helpid" content="Coherence.wlsclusterconfig.title;coherence"/>
+    <netuix:meta name="skeleton-resource-bundle" content="coherence"/>
+    <netuix:content>
+      <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+        <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+          <netuix:portlet definitionLabel="WLSClusterConfigCoherencePortlet">
+            <netuix:strutsContent module="/coherence" action="WLSClusterConfigCoherence"
+                                  refreshAction="WLSClusterConfigCoherence"/>
+          </netuix:portlet>                        
+        </netuix:placeholder>
+      </netuix:layout>
+    </netuix:content>
+  </netuix:page>
+</portal:root>

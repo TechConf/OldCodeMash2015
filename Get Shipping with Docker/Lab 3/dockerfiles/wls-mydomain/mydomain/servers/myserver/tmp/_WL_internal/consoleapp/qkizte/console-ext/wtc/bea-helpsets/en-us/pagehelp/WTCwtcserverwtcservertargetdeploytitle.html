@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="WTC.wtc.server.wtcservertargetdeploy.title">
+<title>WTC Server: Targets</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">WTC Server: Targets</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to select the server instance on which you would like to
+    deploy this WTC server. You can reconfigure deployment targets later if
+    you wish.</p>
+<p>Targeting deploys the connectivity information contained in a WTC
+    server configuration to a selected server instance. Although you may have
+    many WTC server configurations in the current WebLogic Server domain, only
+    one WTC server configuration can be targeted to any given server
+    instance.</p>
+<p>Deciding when to target a WTC server is very important. Once a WTC
+    server is targeted, the configuration deployed to the selected server
+    instance is static. Although you can continue to make changes in your WTC
+    server configuration, any changes made after the configuration is deployed
+    will not be reflected in the selected server instance. You will need to
+    remove the service from the server instance and target the service to the
+    server instance for these changes to take effect.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.server.wtcservertargetdeploy.target.label">Target</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;">
+<p>The list of all WebLogic Server instances in the current domain
+        that are candidates for hosting this WTC server.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCServerMBean.html#Targets">WTCServerMBean.Targets</a></code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.AssignWTCServicesToServers">Target WTC servers</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/WTCCF/install.htm">Configuring Oracle WebLogic
+    Tuxedo Connector</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="WTC.wtc.tbridge.wtctbridgeglobalconnections.title">
+<title>Queuing Bridge: Connections</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Queuing Bridge: Connections</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to define the connection configuration for this Tuxedo
+    queuing bridge.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeglobalconnections.timeout.label">Timeout</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTimeout"></a><a name="Timeout"></a>
+<p>The number of timeout seconds for an entire redirection when this Tuxedo queuing bridge places a message on the target location. A value of <code>0</code> specifies an infinite wait.</p>
+<p>
+<b>Range of Values:</b> Between <code>0</code> and a positive 32-bit integer.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeGlobalMBean.html#Timeout">WTCtBridgeGlobalMBean.Timeout</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+<p>Secure value: <code>60</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeglobalconnections.retries.label">Retries</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRetries"></a><a name="Retries"></a>
+<p>The number of attempts to redirect a message before this Tuxedo queuing bridge places the message in the specified error location and logs an error.</p>
+<p>
+<b>Range of Values:</b> Between 0 and a positive 32-bit integer.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeGlobalMBean.html#Retries">WTCtBridgeGlobalMBean.Retries</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.tbridge.wtctbridgeglobalconnections.retrydelay.label">Retry Delay</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRetryDelay"></a><a name="RetryDelay"></a>
+<p>The minimum number of milliseconds this Tuxedo queuing bridge waits before redirecting a message after a failure.</p>
+<p>
+<i>Note:</i> During this waiting period, no other messages are redirected from the thread. Other threads may continue to redirect messages.</p>
+<p>
+<b>Range of Values:</b> Between <code><code>0</code></code> and a positive 32-bit integer.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCtBridgeGlobalMBean.html#RetryDelay">WTCtBridgeGlobalMBean.RetryDelay</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.ConfigureConnectionAttributesForTuxedoQueuingBridges">Configure connections for
+  queuing bridges</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/WTCCF/tbridge.htm">How to Configure the Oracle
+    Tuxedo Queuing Bridge</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

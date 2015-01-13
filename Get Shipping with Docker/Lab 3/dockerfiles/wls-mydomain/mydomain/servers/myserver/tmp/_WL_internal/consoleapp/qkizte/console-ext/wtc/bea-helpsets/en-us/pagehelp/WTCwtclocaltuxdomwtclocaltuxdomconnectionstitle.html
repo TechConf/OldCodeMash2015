@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="WTC.wtc.localtuxdom.wtclocaltuxdomconnections.title">
+<title>Local Tuxedo Access Points: Connections</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Local Tuxedo Access Points: Connections</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to define the connection configuration of a local Tuxedo
+    access point that will be used with this WTC server.</p>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.localtuxdom.wtclocaltuxdomconnections.connectionpolicy.label">Connection Policy</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getConnectionPolicy"></a><a name="ConnectionPolicy"></a>
+<p>The conditions under which this local Tuxedo access point establishes a session connection with a remote Tuxedo access point.</p>
+<p>The connection policies are:</p>
+<ul> 
+<li> 
+<p>ON_DEMAND: A connection is attempted only when requested by either a client request to a remote service or an administrative connect command.</p> 
+</li>  
+<li> 
+<p>ON_STARTUP: A domain gateway attempts to establish a connection with its remote Tuxedo access points at gateway server initialization time. Remote services (services advertised in JNDI by the domain gateway for this local access point) are advertised only if a connection is successfully established to that remote Tuxedo access point. If there is no active connection to a remote Tuxedo access point, then the remote services are suspended. By default, this connection policy retries failed connections every 60 seconds. Use the MaxRetry and RetryInterval values to specify application specific values.</p> 
+</li>  
+<li> 
+<p>INCOMING_ONLY: A domain gateway does not attempt an initial connection to remote Tuxedo access points at startup and remote services are initially suspended. The domain gateway is available for incoming connections from remote Tuxedo access points and remote services are advertised when the domain gateway for this local Tuxedo access point receives an incoming connection. Connection retry processing is not allowed.</p> 
+</li> 
+</ul>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCLocalTuxDomMBean.html#ConnectionPolicy">WTCLocalTuxDomMBean.ConnectionPolicy</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.localtuxdom.wtclocaltuxdomconnections.connprincipalname.label">Connection Principal Name</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getConnPrincipalName"></a><a name="ConnPrincipalName"></a>
+<p>The principal name used to verify the identity of this domain when establishing a connection to another domain.</p>
+<p>
+<i>Note:</i> This parameter only applies to domains of type TDOMAIN that are running Oracle Tuxedo 7.1 or later software. If not specified, the connection principal name defaults to the AccessPointID for this <code>domain.ConnPrincipalName</code>.</p>
+<p>
+<i>Note:</i> ConnPrincipalName is not supported in this release.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCLocalTuxDomMBean.html#ConnPrincipalName">WTCLocalTuxDomMBean.ConnPrincipalName</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.localtuxdom.wtclocaltuxdomconnections.retryinterval.label">Retry Interval</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getRetryInterval"></a><a name="RetryInterval"></a>
+<p>The number of seconds that this local Tuxedo access point waits between automatic connection attempts to remote Tuxedo access points. Use this value only when Connection Policy is set to <code>ON_STARTUP</code>.</p>
+<p>
+<b>Range of Values:</b> Between 0 and a positive 32-bit integer.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCLocalTuxDomMBean.html#RetryInterval">WTCLocalTuxDomMBean.RetryInterval</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.localtuxdom.wtclocaltuxdomconnections.maxretries.label">Max Retries</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMaxRetries"></a><a name="MaxRetries"></a>
+<p>The maximum number of times that this local Tuxedo access point tries to establish a session connection to remote Tuxedo access points. Use this value only when Connection Policy is set to <code>ON_STARTUP</code>.</p>
+<p>
+<b>Range of Values:</b> Between <code>0</code> and a positive 64 bit integer.</p>
+<p>
+<i>Note:</i> Use the minimum value to disable the retry mechanism. Use the maximum value to try until a connection is established.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCLocalTuxDomMBean.html#MaxRetries">WTCLocalTuxDomMBean.MaxRetries</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>9223372036854775807</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.localtuxdom.wtclocaltuxdomconnections.blocktime.label">Blocking Time Out</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getBlockTime"></a><a name="BlockTime"></a>
+<p>The maximum number of seconds this local Tuxedo access point allows for a blocking call.</p>
+<p>
+<b>Range of Values:</b> Between <code>0</code> and a positive 32 bit integer.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCLocalTuxDomMBean.html#BlockTime">WTCLocalTuxDomMBean.BlockTime</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.localtuxdom.wtclocaltuxdomconnections.interoperate.label">Interoperate</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getInteroperate"></a><a name="Interoperate"></a>
+<p>Specifies whether this local Tuxedo access point interoperates with remote Tuxedo access points that are based upon Tuxedo release 6.5. If this value is set to <code>Yes</code>, the local Tuxedo access point interoperates with a Tuxedo 6.5 domain.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCLocalTuxDomMBean.html#Interoperate">WTCLocalTuxDomMBean.Interoperate</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.localtuxdom.wtclocaltuxdomconnections.cmplimit.label">Compression Limit</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getCmpLimit"></a><a name="CmpLimit"></a>
+<p>The compression threshold this local Tuxedo access point uses when sending data to a remote Tuxedo access point. Application buffers larger than this size are compressed.</p>
+<p>
+<b>Range of Values:</b> Between <code>0</code> and a positive 32-bit integer.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCLocalTuxDomMBean.html#CmpLimit">WTCLocalTuxDomMBean.CmpLimit</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.localtuxdom.wtclocaltuxdomconnections.keepalive.label">Keep Alive</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getKeepAlive"></a><a name="KeepAlive"></a>
+<p>Return value tells whether this local Tuxedo access point is configured with Application Level Keep Alive, and it maximum idle time value before wait timer start ticking.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCLocalTuxDomMBean.html#KeepAlive">WTCLocalTuxDomMBean.KeepAlive</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.localtuxdom.wtclocaltuxdomconnections.keepalivewait.label">Keep Alive Wait</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getKeepAliveWait"></a><a name="KeepAliveWait"></a>
+<p>Return value that tells whether this local Tuxedo access point requires the acknowledgement of Application Level Keep Alive, and how long it will wait without receiving acknowledgement before declare the connection is inaccessible.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCLocalTuxDomMBean.html#KeepAliveWait">WTCLocalTuxDomMBean.KeepAliveWait</a></code>
+</p>
+<p>Minimum value: <code>0</code>
+</p>
+<p>Maximum value: <code>2147483647</code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.CreateLocalTuxedoAccessPoints">Create local access
+  points</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.ConfigureConnectionAttributesForLocalTuxedoAccessPoints">Configure connections for
+  local access points</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.ConfigureRemoteTuxedoAccessPointSecurity">Configure security for remote
+  access points</a>
+</li>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.DeleteLocalTuxedoAccessPoints">Delete local access
+  points</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/WTCCF/install.htm">Configuring Oracle WebLogic
+    Tuxedo Connector</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

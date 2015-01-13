@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal:root xmlns:netuix="http://www.bea.com/servers/netuix/xsd/controls/netuix/1.0.0"
+             xmlns:html="http://www.w3.org/1999/xhtml-netuix-modified/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:portal="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0"
+             xsi:schemaLocation="http://www.bea.com/servers/netuix/xsd/portal/support/1.0.0 portal-support-1_0_0.xsd"><!--
+    Definition file for the pages in the jolt subsystem
+    of the WebLogic Server administration console
+
+    Copyright (c) 2004,2009, Oracle and/or its affiliates. All rights reserved.
+-->
+  <netuix:book definitionLabel="JoltExtension" title="book.title" markupName="book"
+               markupType="Book"
+               presentationClass="invisible">
+    <netuix:content>
+      <netuix:book definitionLabel="JoltBook" title="book.title" markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.JoltGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="JoltPages"
+                       title="not.used"
+                       hidden="true">
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:book markupName="book" markupType="Book" definitionLabel="JoltTabsBook"
+                               title="JoltTabsBook">
+                    <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu"/>
+                    <netuix:content>
+                      <!-- Definition for the config tab -->
+                      <netuix:book markupName="book" markupType="Book"
+                                   definitionLabel="JoltConnectionPoolConfigTabPage"
+                                   title="tab.config.label">
+                        <netuix:singleLevelMenu markupType="Menu" markupName="singleLevelMenu" presentationClass="menu-level1"/>
+                        <netuix:meta name="skeleton-resource-bundle" content="jolt"/>
+                        <netuix:content>
+                          <!-- Definition for the general tab -->
+                          <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="JoltConnectionPoolConfigGeneralTabPage"
+                                       title="tab.general.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Jolt.jolt.joltconnectionpoolconfiggeneral.title;jolt"/>
+                            <netuix:meta name="breadcrumb-context" content="handle"/>
+                            <netuix:meta name="configuration-page" content="JoltConnectionPool"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="jolt"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="JoltJoltConnectionPoolConfigGeneralPortlet"
+                                                          contentUri="/PortalConfig/jolt/JoltConnectionPoolConfigGeneral.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the addresses tab -->
+                          <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="JoltConnectionPoolAddressesTabPage"
+                                       title="tab.addresses.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Jolt.jolt.joltconnectionpoolconfigaddresses.title;jolt"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="jolt"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet"
+                                                          instanceLabel="JoltJoltConnectionPoolConfigAddressesPortlet"
+                                                          contentUri="/PortalConfig/jolt/JoltConnectionPoolConfigAddresses.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the user tab -->
+                          <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="JoltConnectionPoolUserTabPage"
+                                       title="tab.user.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Jolt.jolt.joltconnectionpoolconfiguser.title;jolt"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="jolt"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="JoltJoltConnectionPoolConfigUserPortlet"
+                                                          contentUri="/PortalConfig/jolt/JoltConnectionPoolConfigUser.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                          <!-- Definition for the SSL tab -->
+                          <netuix:page markupName="page" markupType="Page"
+                                       definitionLabel="JoltConnectionPoolSSLTabPage"
+                                       title="tab.ssl.label"
+                                       presentationClass="page-content">
+                            <netuix:meta name="helpid" content="Jolt.jolt.joltconnectionpoolconfigssl.title;jolt"/>
+                            <netuix:meta name="skeleton-resource-bundle" content="jolt"/>
+                            <netuix:content>
+                              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                                  <netuix:portletInstance markupType="Portlet" instanceLabel="JoltJoltConnectionPoolConfigSSLPortlet"
+                                                          contentUri="/PortalConfig/jolt/JoltConnectionPoolConfigSSL.portlet"/>
+                                </netuix:placeholder>
+                              </netuix:layout>
+                            </netuix:content>
+                          </netuix:page>
+                        </netuix:content>
+                      </netuix:book>
+                      <!-- Definition for the targetdeploy tab -->
+                      <netuix:page markupName="page" markupType="Page"
+                                   definitionLabel="JoltConnectionPoolTargetDeployTabPage"
+                                   title="tab.targets.label"
+                                   presentationClass="page-content">
+                        <netuix:meta name="helpid" content="Jolt.jolt.joltconnectionpooltargetdeploy.title;jolt"/>
+                        <netuix:meta name="skeleton-resource-bundle" content="jolt"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" instanceLabel="JoltJoltConnectionPoolTargetdeployPortlet"
+                                                      contentUri="/PortalConfig/jolt/JoltConnectionPoolTargetdeploy.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      <!-- Definition for the monitor tab -->
+                      <netuix:page markupName="page" markupType="Page"
+                                   definitionLabel="JoltConnectionPoolMonitorTabPage"
+                                   title="tab.monitor.label"
+                                   presentationClass="page-content">
+                        <netuix:meta name="helpid" content="Jolt.jolt.joltconnectionpoolmonitor.title;jolt"/>
+                        <netuix:meta name="skeleton-resource-bundle" content="jolt"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" instanceLabel="JoltJoltConnectionPoolMonitorPortlet"
+                                                      contentUri="/PortalConfig/jolt/JoltConnectionPoolMonitor.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                      <!-- Definition for the notes tab -->
+                      <netuix:page markupName="page" markupType="Page"
+                                   definitionLabel="JoltConnectionPoolNotesTabPage"
+                                   title="tab.notes.label"
+                                   presentationClass="page-content">
+                        <netuix:meta name="helpid" content="Jolt.jolt.joltconnectionpoolnotes.title;jolt"/>
+                        <netuix:meta name="skeleton-resource-bundle" content="jolt"/>
+                        <netuix:content>
+                          <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                            <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                              <netuix:portletInstance markupType="Portlet" instanceLabel="JoltJoltConnectionPoolNotesPortlet"
+                                                      contentUri="/PortalConfig/jolt/JoltConnectionPoolNotes.portlet"/>
+                            </netuix:placeholder>
+                          </netuix:layout>
+                        </netuix:content>
+                      </netuix:page>
+                    </netuix:content>
+                  </netuix:book>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the JoltConnectionMonitor table page -->
+      <netuix:book definitionLabel="JoltConnectionMonitorTable" title="joltconnections.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.JoltGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page"
+                       definitionLabel="JoltConnectionMonitorTablePage"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-table">
+            <netuix:meta name="helpid" content="Jolt.jolt.joltconnectionmonitor.title;jolt"/>
+            <netuix:meta name="breadcrumb" content="joltconnections.title"/>
+            <netuix:meta name="skeleton-resource-bundle" content="jolt"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="JoltConnectionMonitorTablePortlet"
+                                          contentUri="/PortalConfig/jolt/JoltConnectionMonitor.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the JoltConnectionPool creation assistant page -->
+      <netuix:book definitionLabel="JoltConnectionPoolCreate"
+                   title="assistant.create.joltconnectionpool.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.JoltGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CreateJoltConnectionPool"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Jolt.jolt.createjoltconnectionpool.page.title;jolt"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CreateJoltConnectionPoolPortlet"
+                                          contentUri="/PortalConfig/jolt/CreateJoltConnectionPool.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the JoltConnectionPool clone assistant page -->
+      <netuix:book definitionLabel="JoltConnectionPoolClone"
+                   title="assistant.create.joltconnectionpool.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.JoltGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="CloneJoltConnectionPool"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Jolt.jolt.createjoltconnectionpool.page.title;jolt"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="CloneJoltConnectionPoolPortlet"
+                                          contentUri="/PortalConfig/jolt/CloneJoltConnectionPool.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the JoltConnectionPool deletion assistant page -->
+      <netuix:book definitionLabel="JoltConnectionPoolDelete"
+                   title="assistant.delete.joltconnectionpool.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.JoltGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="DeleteJoltConnectionPool"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Jolt.jolt.deletejoltconnectionpool.page.title;jolt"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="DeleteJoltConnectionPoolPortlet"
+                                          contentUri="/PortalConfig/jolt/DeleteJoltConnectionPool.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+      <!-- Definition for the Pool Reset assistant -->
+      <netuix:book definitionLabel="JoltConnectionPoolResetBook"
+                   title="assistant.reset.joltconnectionpool.title"
+                   markupName="book"
+                   markupType="Book"
+                   backingFile="com.bea.console.utils.JoltGeneralBackingFile"
+                   presentationClass="wlsc-frame">
+        <netuix:titlebar/>
+        <netuix:content>
+          <netuix:page markupName="page" markupType="Page" definitionLabel="JoltConnectionPoolReset"
+                       title="not.used"
+                       hidden="true"
+                       presentationClass="page-assistant">
+            <netuix:meta name="helpid" content="Jolt.jolt.resetjoltconnectionpool.page.title;jolt"/>
+            <netuix:content>
+              <netuix:layout type="no" markupType="Layout" markupName="NoLayout">
+                <netuix:placeholder usingFlow="false" markupType="Placeholder" markupName="ph1">
+                  <netuix:portletInstance markupType="Portlet" instanceLabel="JoltConnectionPoolResetPortlet"
+                                          contentUri="/PortalConfig/jolt/Reset.portlet"/>
+                </netuix:placeholder>
+              </netuix:layout>
+            </netuix:content>
+          </netuix:page>
+        </netuix:content>
+      </netuix:book>
+    </netuix:content>
+  </netuix:book>
+</portal:root>

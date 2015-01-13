@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature-definition xmlns="http://www.bea.com/ns/cie/feature" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="oracle.wls.common.nodemanager" version="1.0.0.0">
+  <!--
+    <annotation>
+      <manifest xmlns="http://www.bea.com/ns/cie/manifest">
+        <attribute name="Implementation-Vendor" value="BEA Systems"/>
+        <attribute name="Implementation-Title" value="Common jar files for standalone NodeManager in WebLogic and CAM Dependencies 1.0 Sat Mar 2 19:03:07 EST 2013 "/>
+        <attribute name="Source-Repository-Change-Id" value="1513398"/>
+        <attribute name="Source-Repository-URI" value="p4://depot/dev/src1212/repository/modules/features"/>
+        <attribute name="Implementation-Version" value="1.0.0.0"/>
+      </manifest>
+    </annotation>
+  -->
+  <modules>
+    <module file-name="com.oracle.core.nodemanager.server_1.0.0.0.jar"/>
+    <module file-name="com.bea.core.xml.beaxmlbeans_2.7.0.0_2-5-1.jar"/>
+    <module file-name="com.bea.core.weblogic.stax_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.beaninfo_3.1.0.0.jar"/>
+    <module file-name="com.bea.core.xml.staxb.runtime_2.1.0.0.jar"/>
+    <module file-name="../../oracle_common/modules/javax.servlet_2.1.0.0_3-0.jar" isDirectory="true"/>
+    <module file-name="com.bea.core.apache.dom_1.1.0.0.jar"/>
+    <module file-name="com.bea.core.apache_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.annogen_2.1.0.0.jar"/>
+    <module file-name="../../oracle_common/modules/org.apache.ant_1.7.1/lib/ant-all.jar" isDirectory="true"/>
+    <module file-name="com.oracle.weblogic.cam.plugin_1.0.0.0.jar"/>
+    <module file-name="com.oracle.weblogic.security.encryption_1.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.security.logger_2.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.security.digest_3.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.security.identity_3.0.0.0.jar"/>
+    <module file-name="../../oracle_common/modules/com.bea.core.i18n_2.1.0.0.jar" isDirectory="true"/>
+    <module file-name="com.bea.core.utils.classloaders_4.0.0.0.jar"/>
+    <module file-name="com.oracle.core.nodemanager.common_1.0.0.0.jar"/>
+    <module file-name="com.bea.core.logging_2.1.0.0.jar"/>
+    <module file-name="com.oracle.css.weblogic.security.wls_7.0.0.0.jar"/>
+    <module file-name="com.oracle.css.weblogic.security_7.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.workmanager_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.management.core_4.0.0.0.jar"/>
+    <module file-name="com.bea.core.nodemanager.plugin_2.1.0.0.jar"/>
+    <module file-name="com.bea.core.xml.xmlbeans_2.4.0.0_2-5-1.jar"/>
+    <module file-name="com.oracle.css.common.security.i18n_7.0.0.0.jar"/>
+    <module file-name="../server/lib/cryptoj.jar" isDirectory="true"/>
+    <module file-name="com.oracle.css.common.security.utils_7.0.0.0.jar"/>
+    <module file-name="com.bea.core.weblogic.lifecycle_3.0.0.0.jar"/>
+  </modules>
+  
+</feature-definition>

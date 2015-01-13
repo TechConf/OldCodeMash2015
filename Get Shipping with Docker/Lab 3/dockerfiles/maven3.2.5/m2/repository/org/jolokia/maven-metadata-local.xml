@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <plugins>
+    <plugin>
+      <name>maven-docker-plugin</name>
+      <prefix>docker</prefix>
+      <artifactId>docker-maven-plugin</artifactId>
+    </plugin>
+  </plugins>
+</metadata>

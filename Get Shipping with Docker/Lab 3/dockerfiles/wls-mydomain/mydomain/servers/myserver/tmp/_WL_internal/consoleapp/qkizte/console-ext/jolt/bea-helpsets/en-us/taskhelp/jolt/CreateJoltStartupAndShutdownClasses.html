@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Configure Jolt startup and
+  shutdown classes</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50905" id="WLACH50905"></a>
+
+
+  <h1 class="topictitle1">Configure Jolt startup and
+  shutdown classes</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="WLACH50905__jolt1106934" id="WLACH50905__jolt1106934"></a>On each WebLogic Server instance
+      that hosts a Jolt connection pool, you must configure Jolt classes to
+      run as server startup up and shutdown classes. The classes establish and
+      terminate the connection between Tuxedo and WebLogic Server.</p>
+
+      <p>To configure the Jolt startup and shutdown classes:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50905__startup_shutdown1105831" id="WLACH50905__startup_shutdown1105831"></a>In the
+        Administration Console, expand <b>Environment</b> and
+        select <b>Startup and Shutdown Classes</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50905__startup_shutdown1108183" id="WLACH50905__startup_shutdown1108183"></a>To
+        configure the startup class:</span>
+
+        <ol type="a">
+          <li>
+            <span>On the <span>Startup and Shutdown Classes</span>
+            page, click <b>New</b>.</span>
+          </li>
+
+          <li>
+            <span><a name="WLACH50905__startup_shutdown1105832" id="WLACH50905__startup_shutdown1105832"></a>On
+            the <span>Configure a New Startup or Shutdown Class: Class
+            Type</span> page, select <b>Startup Class</b>
+            and click <b>Next</b>.</span>
+          </li>
+
+          <li>
+            <span><a name="WLACH50905__startup_shutdown1107225" id="WLACH50905__startup_shutdown1107225"></a>On
+            the <span>Startup Class Properties</span> page, enter a
+            name that you will use the identify this configuration of your
+            Java class. For example,
+            <kbd>MyJoltStartupClass</kbd>.</span>
+          </li>
+
+          <li>
+            <span><a name="WLACH50905__jolt1107057" id="WLACH50905__jolt1107057"></a>In the
+            <b>ClassName</b> field, enter the following:
+            <kbd>bea.jolt.pool.servlet.weblogic.PoolManagerStartUp</kbd></span>
+          </li>
+
+          <li>
+            <span>Select <b>Failure is Fatal</b>.</span>
+          </li>
+
+          <li>
+            <span>Click <b>Save</b>.</span>
+          </li>
+
+          <li>
+            <span>Select the <span>Target and Deploy</span> tab.</span>
+          </li>
+
+          <li>
+            <span>Select the servers or clusters that host Jolt connection
+            pools and click <b>Save</b>.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span><a name="WLACH50905__startup_shutdown1108183" id="WLACH50905__startup_shutdown1108183"></a>To
+        configure the shutdown class:</span>
+
+        <ol type="a">
+          <li>
+            <span>On the <span>Startup and Shutdown Classes</span>
+            page, click <b>New</b>.</span>
+          </li>
+
+          <li>
+            <span><a name="WLACH50905__startup_shutdown1105832" id="WLACH50905__startup_shutdown1105832"></a>On
+            the <span>Configure a New Startup or Shutdown Class: Class
+            Type</span> page, select <b>Shutdown Class</b>
+            and click <b>Next</b>.</span>
+          </li>
+
+          <li>
+            <span><a name="WLACH50905__startup_shutdown1107225" id="WLACH50905__startup_shutdown1107225"></a>On
+            the <span>Shutdown Class Properties</span> page, enter a
+            name that you will use the identify this configuration of your
+            Java class. For example,
+            <kbd>MyJoltShutdownClass</kbd>.</span>
+          </li>
+
+          <li>
+            <span><a name="WLACH50905__jolt1107057" id="WLACH50905__jolt1107057"></a>In the
+            <b>ClassName</b> field, enter the following:
+            <kbd>bea.jolt.pool.servlet.weblogic.PoolManagerShutDown</kbd></span>
+          </li>
+
+          <li>
+            <span>Click <b>Save</b>.</span>
+          </li>
+
+          <li>
+            <span>Select the <span>Target and Deploy</span> tab.</span>
+          </li>
+
+          <li>
+            <span>Select the servers or clusters that host Jolt connection
+            pools and click <b>Save</b>.</span>
+          </li>
+        </ol>
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+
+    <div class="postreq"><p class="sectiontitle"><b>
+        After you finish
+      </b></p>
+      <div><ol>
+          <li>Add the Jolt startup and shutdown classes to the classpath.</li>
+
+          <li>Restart each server instance on which you have deployed the
+          classes.</li>
+        </ol></div>
+    </div>
+  </div>
+
+
+</body></html>

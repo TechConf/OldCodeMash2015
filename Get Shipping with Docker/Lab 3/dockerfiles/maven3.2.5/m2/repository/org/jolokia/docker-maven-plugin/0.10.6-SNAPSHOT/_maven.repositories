@@ -1,0 +1,4 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Mon Dec 29 13:55:53 EST 2014
+docker-maven-plugin-0.10.6-SNAPSHOT.jar>=
+docker-maven-plugin-0.10.6-SNAPSHOT.pom>=

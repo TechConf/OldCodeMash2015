@@ -1,0 +1,134 @@
+<?xml version="1.0" ?>
+<!--
+  - This build file is used to detect if a 64 bit JVM is used
+  - Also used to detect the Vendor and VM_TYPE
+  -->
+
+<project name="presetup" default="all">
+
+    <property environment="env"/>
+    <target name="all" depends="set.default.java_home,systems.property">
+    </target>
+
+    <target name="set.default.java_home">
+       <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.sh">
+           <replacefilter token="@JAVA_HOME@" value="${env.JAVA_HOME}"/>
+       </replace>
+       <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.cmd">
+           <replacefilter token="@JAVA_HOME@" value="${env.JAVA_HOME}"/>
+       </replace>       
+    </target>
+    
+    <target name="systems.property" depends="detect.os,vminfo">
+      <antcall target="product.property.unix64" />
+      <antcall target="product.property.win64" />
+      <antcall target="set.vm_type.jrockit" />
+      <antcall target="set.vm_type.hotspot" />
+      <antcall target="set.java_vendor.oracle" />
+      <antcall target="set.java_vendor.sun" />
+      <antcall target="set.java_vendor.apple" />
+    </target>
+
+    <target name="set.vm_type.jrockit" if="isjrockit">
+       <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.sh">
+           <replacefilter token="@VM_TYPE@" value="JRockit"/>
+       </replace>
+       <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.cmd">
+           <replacefilter token="@VM_TYPE@" value="JRockit"/>
+       </replace>       
+    </target>
+    <target name="set.java_vendor.oracle" if="isOracle">
+       <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.sh">
+           <replacefilter token="@JAVA_VENDOR@" value="Oracle"/>
+       </replace>
+       <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.cmd">
+           <replacefilter token="@JAVA_VENDOR@" value="Oracle"/>
+       </replace>       
+    </target>
+    <target name="set.java_vendor.apple" if="isApple">
+       <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.sh">
+           <replacefilter token="@JAVA_VENDOR@" value="Apple"/>
+       </replace>
+       <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.cmd">
+           <replacefilter token="@JAVA_VENDOR@" value="Apple"/>
+       </replace>       
+    </target>    
+    <target name="set.vm_type.hotspot" if="isHotSpot">
+       <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.sh">
+           <replacefilter token="@VM_TYPE@" value="Hotspot"/>
+       </replace>
+       <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.cmd">
+           <replacefilter token="@VM_TYPE@" value="Hotspot"/>
+       </replace>       
+    </target>
+    <target name="set.java_vendor.sun" if="isSun">
+       <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.sh">
+           <replacefilter token="@JAVA_VENDOR@" value="Sun"/>
+       </replace>
+       <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.cmd">
+           <replacefilter token="@JAVA_VENDOR@" value="Sun"/>
+       </replace>       
+    </target>
+
+
+    <target name="product.property.unix64" if="isUnix64">
+        <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.sh">
+           <replacefilter token="@JAVA_USE_64BIT@" value="true"/>
+       </replace>
+    </target>
+
+    <target name="product.property.win64" if="iswin64">
+    <!-- No need to set JAVA_USE_64BIT to true in Windows script -->
+        <replace file="${env.MW_HOME}/oracle_common/common/bin/commEnv.sh">
+           <replacefilter token="@JAVA_USE_64BIT@" value="true"/>
+       </replace>
+    </target>
+
+    <!-- Detect which type of OS bit arch we are executing on -->
+    <target name="detect.os">
+       <condition property="isUnix64">
+         <or>
+          <os family="unix" arch="amd64"/>
+          <os family="unix" arch="x86_64"/>
+         </or>
+       </condition>
+
+       <condition property="iswin64">
+         <or>
+          <os family="windows" arch="amd64"/>
+          <os family="windows" arch="x86_64"/>
+         </or>
+       </condition>
+    </target>
+
+
+    <target name="vminfo">
+       <condition property="isOracle">
+         <contains casesensitive="false"
+            string="${java.vm.vendor}"
+            substring="Oracle"/>
+       </condition>
+       <condition property="isSun">
+         <contains casesensitive="false"
+            string="${java.vm.vendor}"
+            substring="Sun"/>
+       </condition>
+      <condition property="isApple">
+         <contains casesensitive="false"
+            string="${java.vm.vendor}"
+            substring="Apple"/>
+       </condition>       
+       <condition property="isjrockit">
+         <contains casesensitive="false"
+            string="${java.vm.name}"
+            substring="jrockit"/>
+       </condition>
+       <condition property="isHotSpot">
+         <contains casesensitive="false"
+            string="${java.vm.name}"
+            substring="HotSpot"/>
+       </condition>
+
+    </target>         
+
+</project>

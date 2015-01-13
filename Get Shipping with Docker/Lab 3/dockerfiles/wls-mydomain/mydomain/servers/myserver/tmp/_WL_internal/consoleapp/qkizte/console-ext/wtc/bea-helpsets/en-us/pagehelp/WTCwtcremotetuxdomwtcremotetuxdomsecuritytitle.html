@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="help ID" content="WTC.wtc.remotetuxdom.wtcremotetuxdomsecurity.title">
+<title>Remote Tuxedo Access Points: Security</title>
+<script language="JavaScript" src="/consolehelp/en-us/topicInfo.js"></script><script language="JavaScript" src="/consolehelp/en-us/CookieClass.js"></script>
+</head>
+<body class="base">
+<blockquote>
+<h1 class="Title">Remote Tuxedo Access Points: Security</h1>
+<p>
+<a href="#attributes">Configuration Options</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tasks">Related Tasks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#concepts">Related Topics</a>
+</p>
+<p>Use this page to define the security configuration of a remote Tuxedo
+    access point that will be used with this WTC server.</p>
+<p>Access Control Lists (ACLs) limit the access to local services within a
+    local Tuxedo access point by restricting the remote Tuxedo access points
+    that can execute these services. Inbound policy from a remote Tuxedo
+    access point is specified using the <code>AclPolicy</code> element.
+    Outbound policy towards a remote Tuxedo access point is specified using
+    the <code>CredentialPolicy</code> element. This allows WebLogic Server and
+    Tuxedo applications to share the same set of users, and the users are able
+    to propagate their credentials from one system to the other. WebLogic
+    Tuxedo Connector provides the following AppKey Generator plug-ins to
+    provide user security information to Tuxedo:</p>
+<ul>
+      
+<li>TpUsrFile&mdash;Provides traditional Tuxedo TpUsrFile functionality for
+      users who do not need single point security administration or custom
+      security authentication.</li>
+      
+<li>LDAP&mdash;Provides single point security administration that allows you
+      to maintain user security information in a WebLogic Server embedded LDAP
+      server and use the WebLogic Server Console to administer the security
+      information from a single system. Requires Tuxedo 8.1 and higher.</li>
+      
+<li>Custom&mdash;Provides the ability for you to create customized security
+      authentication.</li>
+    
+</ul>
+<h4>
+<a name="attributes">Configuration Options</a>
+</h4>
+<div class="tblmargin">
+<table class="edocshelp">
+<thead>
+<tr>
+<th valign="top" style="padding:0px"> Name</th><th valign="top" style="padding:0px"> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomsecurity.aclpolicy.label">ACL Policy</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getAclPolicy"></a><a name="AclPolicy"></a>
+<p>The inbound access control list (ACL) policy toward requests from a remote Tuxedo access point.</p>
+<p>The allowed values are:</p>
+<ul> 
+<li> 
+<p>LOCAL: The local Tuxedo access point modifies the identity of service requests received from a given remote Tuxedo access point to the principal name specified in the local principal name for a given remote Tuxedo access point.</p> 
+</li>  
+<li> 
+<p>GLOBAL: The local Tuxedo access point passes the service request with no change in identity.</p> 
+</li> 
+</ul>
+<p>
+<i>Note:</i> If Interoperate is set to Yes, AclPolicy is ignored.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#AclPolicy">WTCRemoteTuxDomMBean.AclPolicy</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomsecurity.credentialpolicy.label">Credential Policy</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getCredentialPolicy"></a><a name="CredentialPolicy"></a>
+<p>The outbound access control list (ACL) policy toward requests to a remote Tuxedo access point.</p>
+<p>The allowed values are:</p>
+<ul> 
+<li> 
+<p>LOCAL: The remote Tuxedo access point controls the identity of service requests received from the local Tuxedo access point to the principal name specified in the local principal name for this remote Tuxedo access point.</p> 
+</li>  
+<li> 
+<p>GLOBAL: The remote Tuxedo access point passes the service request with no change.</p> 
+</li> 
+</ul>
+<p>
+<i>Note:</i>If Interoperate is set to Yes, CredentialPolicy is ignored.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#CredentialPolicy">WTCRemoteTuxDomMBean.CredentialPolicy</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomsecurity.minencryptbits.label">Min Encryption Level</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMinEncryptBits"></a><a name="MinEncryptBits"></a>
+<p>The minimum encryption key length (in bits) this remote Tuxedo access point uses when establishing a session connection. A value of <code>0</code> indicates no encryption is used.</p>
+<p>Value Restrictions:</p>
+<ul> 
+<li> 
+<p>The MinEncrypBits value must be less than or equal to the MaxEncrypBits value.</p> 
+</li>  
+<li> 
+<p>A MinEncrypBits value of 40 can be used only with domains running Tuxedo 7.1 or higher.</p> 
+</li> 
+</ul>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#MinEncryptBits">WTCRemoteTuxDomMBean.MinEncryptBits</a></code>
+</p>
+<p>Secure value: <code>40</code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomsecurity.maxencryptbits.label">Max Encryption Level</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getMaxEncryptBits"></a><a name="MaxEncryptBits"></a>
+<p>The maximum encryption key length (in bits) this remote Tuxedo access point uses when establishing a session connection. A value of <code>0</code> indicates no encryption is used.</p>
+<p>Value Restrictions:</p>
+<ul> 
+<li> 
+<p>The value of the MaxEncryptBits attribute must be greater than or equal to the value of the MinEncrypBits attribute.</p> 
+</li>  
+<li> 
+<p>A MaxEncryptBits of 40 can be used only with domains running Tuxedo 7.1 or higher.</p> 
+</li> 
+</ul>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#MaxEncryptBits">WTCRemoteTuxDomMBean.MaxEncryptBits</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomsecurity.allowanonymous.label">Allow Anonymous</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getAllowAnonymous"></a><a name="AllowAnonymous"></a>
+<p>Specifies whether the anonymous user is allowed to access remote Tuxedo services.</p>
+<p>
+<i>Note:</i> If the anonymous user is allowed to access Tuxedo, the default AppKey will be used for <code>TpUsrFile</code> and <code>LDAP</code> AppKey plug-ins. Interaction with the <code>Custom</code> AppKey plug-in depends on the design of the Custom AppKey generator.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#AllowAnonymous">WTCRemoteTuxDomMBean.AllowAnonymous</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomsecurity.defaultappkey.label">Default AppKey</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getDefaultAppKey"></a><a name="DefaultAppKey"></a>
+<p>The default <code>AppKey</code> value to be used by the anonymous user and other users who are not defined in the user database if the plug-in allows them to access Tuxedo.</p>
+<p>
+<i>Note:</i> The <code>TpUsrFile</code> and <code>LDAP</code> plug-ins do not allow users that are not defined in user database to access Tuxedo unless Allow Anonymous is enabled.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#DefaultAppKey">WTCRemoteTuxDomMBean.DefaultAppKey</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomsecurity.appkey.label">AppKey Generator</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getAppKey"></a><a name="AppKey"></a>
+<p>Specifies the type of AppKey plug-in used.</p>
+<p>The allowed values are:</p>
+<ul> 
+<li> 
+<p>TpUsrFile: <code>TpUsrFile</code> is the default plug-in. It uses an imported Tuxedo TPUSR file to provide user security information. Previous releases of WebLogic Tuxedo Connector support this option.</p> 
+</li>  
+<li> 
+<p>LDAP: The <code>LDAP</code> plug-in utilizes an embedded LDAP server to provide user security information. The user record must define the Tuxedo UID and GID information in the description field. This functionality is not supported in previous releases of WebLogic Tuxedo Connector.</p> 
+</li>  
+<li> 
+<p>Custom: The <code>Custom</code> plug-in provides the ability to write your own AppKey generator class to provide the security information required by Tuxedo. This functionality is not supported in previous releases of WebLogic Tuxedo Connector.</p> 
+</li> 
+</ul>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#AppKey">WTCRemoteTuxDomMBean.AppKey</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomsecurity.tpusrfile.label">Tp User File</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTpUsrFile"></a><a name="TpUsrFile"></a>
+<p>The full path to the user password file containing UID/GID information. (This field is only relevant if you specify <code>TpUsrFile</code> as the AppKey Generator.)</p>
+<p>
+<i>Note:</i> This file is generated by the Tuxedo <code>tpusradd</code> utility on the remote Tuxedo domain specified by the remote Tuxedo access point. A copy of this file must be available in your WebLogic Tuxedo Connector environment to provide correct authorization, authentication, and auditing.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#TpUsrFile">WTCRemoteTuxDomMBean.TpUsrFile</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomsecurity.tuxedouidkw.label">Tuxedo UID Keyword</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTuxedoUidKw"></a><a name="TuxedoUidKw"></a>
+<p>The keyword for Tuxedo UID (User ID) used in the <code>WlsUser</code> when using the Tuxedo migration utility <code>tpmigldap</code>. This keyword is only relevant if you specify <code>LDAP</code> as the AppKey Generator.)</p>
+<p>
+<i>Note:</i> The keyword is used to find Tuxedo UID in the user record in the embedded LDAP database.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#TuxedoUidKw">WTCRemoteTuxDomMBean.TuxedoUidKw</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomsecurity.tuxedogidkw.label">Tuxedo GID Keyword</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getTuxedoGidKw"></a><a name="TuxedoGidKw"></a>
+<p>The keyword for Tuxedo GID (Group ID) used in the <code>WlsUser</code> when using the Tuxedo migration utility <code>tpmigldap</code>. This field is only relevant if you specify <code>LDAP</code> as the AppKey Generator.)</p>
+<p>
+<i>Note:</i> The keyword is used to find Tuxedo GID in the user record in the embedded LDAP database.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#TuxedoGidKw">WTCRemoteTuxDomMBean.TuxedoGidKw</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#F6F6F6">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomsecurity.customappkeyclass.label">Custom AppKey Class</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getCustomAppKeyClass"></a><a name="CustomAppKeyClass"></a>
+<p>The full pathname to the custom <code>AppKey</code> generator class. (This class is only relevant if you specify <code>Custom</code> as the AppKey Generator.)</p>
+<p>
+<i>Note:</i> This class is loaded at runtime if the <code>Custom</code> AppKey generator plug-in is selected.</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#CustomAppKeyClass">WTCRemoteTuxDomMBean.CustomAppKeyClass</a></code>
+</p>
+</td>
+</tr>
+<tr bgcolor="#FFFFFF">
+<td width="25%" valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="wtc.remotetuxdom.wtcremotetuxdomsecurity.customappkeyclassparam.label">Custom AppKey Param</a></td><td valign="top" style="padding-top:10px;padding-bottom:10px;border-top:1px dotted #cccccc;"><a name="getCustomAppKeyClassParam"></a><a name="CustomAppKeyClassParam"></a>
+<p>The optional parameters to be used by the custom <code>AppKey</code> class at the class initialization time. This class is only relevant if you specify <code>Custom</code> as the AppKey Generator.)</p>
+<p>MBean Attribute: 
+					<br>
+<code><a href="http://docs.oracle.com/middleware/1212/wls/../wls/WLMBR/mbeans/WTCRemoteTuxDomMBean.html#CustomAppKeyClassParam">WTCRemoteTuxDomMBean.CustomAppKeyClassParam</a></code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="relatedtopics">
+<a name="tasks">Related Tasks</a>
+</p>
+<ul>
+<li>
+<a href="/consolehelp/console-help.portal?_nfpb=true&amp;_pageLabel=page&amp;helpId=wtc.ConfigureRemoteTuxedoAccessPointSecurity">Configure security for remote
+  access points</a>
+</li>
+</ul>
+<p class="relatedtopics">
+<a name="concepts">Related Topics</a>
+</p>
+<ul>
+<li>
+<a href="http://docs.oracle.com/middleware/1212/wls/WTCCF/install.htm">Configuring Oracle WebLogic
+    Tuxedo Connector</a>
+</li>
+</ul>
+</blockquote>
+</body>
+</html>

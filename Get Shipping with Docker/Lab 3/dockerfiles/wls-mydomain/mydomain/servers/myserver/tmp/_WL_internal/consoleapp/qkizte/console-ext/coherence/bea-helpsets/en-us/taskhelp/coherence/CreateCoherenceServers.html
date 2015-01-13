@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/consolehelp/wls.css" type="text/css" rel="stylesheet"><title>Create Coherence
+  servers</title>
+<script src="/consolehelp/en-us/topicInfo.js" language="JavaScript"></script>
+<script src="/consolehelp/en-us/CookieClass.js" language="JavaScript"></script>
+
+</head><body class="base"><a name="WLACH50015" id="WLACH50015"></a>
+
+
+  <h1 class="topictitle1">Create Coherence
+  servers</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p>Coherence servers (also known as Coherence data nodes) are
+      stand-alone cache servers, dedicated JVM instances responsible for
+      maintaining and managing cached data.</p>
+
+      <p><b>Note: </b>The Coherence servers feature is deprecated and
+      remains supported for backwards compatibility. Coherence tiers should be
+      configured to use Managed Coherence Servers instead. See <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=coherence.ConfigureCoherenceClusterTiers">Configure and deploy
+  Coherence deployment tiers</a></p>
+
+      <p><a name="WLACH50015__servers1160646" id="WLACH50015__servers1160646"></a>To create a Coherence server
+      in an existing domain:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH50015__servers1160647" id="WLACH50015__servers1160647"></a>In the left pane
+        of the Console, expand <b>Environment</b> and select
+        <b>Coherence Servers</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50015__servers1168736" id="WLACH50015__servers1168736"></a>In the
+        <b>Coherence Servers</b> table, click
+        <b>New</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH50015__servers1160649" id="WLACH50015__servers1160649"></a>On the
+        <span>Coherence Server Properties</span> page:</span>
+
+        <ol type="a">
+          <li>
+            <span>Enter the name of the server in the
+            <b>Name</b> field.</span>
+
+             
+              <p><a name="WLACH50015__servers1160653" id="WLACH50015__servers1160653"></a>The server name is not
+              used as part of the URL for applications that are deployed on
+              the server. It is for your identification purposes only. The
+              server name displays in the Administration Console, and if you
+              use WebLogic Server command-line utilities or APIs, you use this
+              name to identify the server.</p>
+            
+          </li>
+
+          <li>
+            <span>Select an existing <b>Machine</b> (WebLogic
+            Server host computer name on which this server is meant to run)
+            from the drop-down list.</span>
+
+             
+              <p>In order to use Node Manager to start this Coherence server,
+              you must assign the server to a machine and you configure the
+              machine for the Node Manager. See <a href="http://docs.oracle.com/middleware/1212/wls//../WLACH/taskhelp/machines/ConfigureMachines.html">Create and configure machines</a>.</p>
+            
+          </li>
+
+          <li>
+            <span>Optional. In <b>Cluster</b>, enter the
+            system-level Coherence cluster resource associated with this
+            server.</span>
+          </li>
+
+          <li>
+            <span>Optional. In <b>Unicast Listen Address</b>,
+            enter the IP address for the cluster unicast listener. This
+            attribute may be used to override the value of the referenced
+            Coherence cluster.</span>
+          </li>
+
+          <li>
+            <span>Optional. In <b>Unicast Listen Port</b>,
+            enter the port for the cluster unicast listener.</span>
+          </li>
+
+          <li>
+            <span>Optional. Use the <b>Unicast Port Auto
+            Adjust</b> check box to specify whether the unicast port
+            will be automatically incremented if the port cannot be bound
+            because it is already in use.</span>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <span>Click <b>Finish</b>.</span>
+
+         
+          <p>The new server appears in the Summary of Coherence Servers
+          table.</p>
+        
+      </li>
+    <li>To activate these changes, in the Change Center of the Administration Console, click <b>Activate Changes</b>. <br>Not all changes take effect immediately&mdash;some require a restart (see <a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=console.UseTheChangeCenter">Use the Change Center</a>).</li></ol>
+
+    <div class="postreq"><p class="sectiontitle"><b>
+        After you finish
+      </b></p>
+      <p>(Optional) Do any of the following:</p>
+
+      <ul>
+        <li><a href="http://docs.oracle.com/middleware/1212/wls//../WLACH/taskhelp/machines/BindToProtectedPortsOnServersStartedByNodeManager.html">Configure Node Manager</a></li>
+
+        <li><a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=coherence.ConfigureStartupArgumentsForCoherenceServers">Configure startup
+  arguments for Coherence servers</a></li>
+
+        <li><a href="/consolehelp/console-help.portal?_nfpb=true&_pageLabel=page&helpId=coherence.StartCoherenceServers">Start Coherence servers
+  from the Administration Console</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+</body></html>

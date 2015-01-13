@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE component SYSTEM "component.dtd">
+<component name="WLS" description="Oracle WebLogicServer"
+           messageclass="oracle.ias.update.plugin.weblogic.WebLogicPluginResourceBundle">
+  <libraries>
+    <library path="$OH/plugins/upgrade/WebLogicPlugin.jar"/>
+  </libraries>
+  <plugin name="WLS"
+          class="oracle.ias.update.plugin.weblogic.WebLogicPlugin"
+          type="schema">
+    <schema name="WLS"
+        newversion="12.1.2.0.0"
+        type="Oracle Database, Microsoft SQL Server, IBM DB2, MySQL"
+        schemaname="WLS"
+        schemapass="yes"/>
+  </plugin>
+</component>
